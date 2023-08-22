@@ -4,7 +4,7 @@
 	"description": "香港本土語言文字轉語音朗讀器",
 	"scripts": {
 		"start": "parcel public/index.html --dist-dir build --open --port 3000",
-		"build": "parcel build public/index.html --dist-dir build"
+		"build": "parcel build public/index.html --dist-dir build --public-url /hkilang-tts --no-cache"
 	},
 	"browserslist": {
 		"production": [
@@ -35,5 +35,5 @@
 		"typescript": "^5.1.6"
 	},
 	"license": "MIT",
-	"homepage": "/"
+	"homepage": "hkilang-tts/"
 }
