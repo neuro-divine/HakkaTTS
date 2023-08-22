@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	html {
+		font-size: 12px;
+		@screen md {
+			font-size: 16px;
+		}
+	}
+	:root,
+	body {
+		@apply bg-base-200;
+	}
+	h1 {
+		@apply text-3xl font-bold;
+	}
+	p {
+		@apply text-lg;
+	}
+	ruby {
+		@apply inline-flex flex-col-reverse items-center gap-0.5 mr-4;
+	}
+}
+
+@layer components {
+	.dropdown-content:not(:hover):focus-within {
+		@apply invisible opacity-0;
+	}
+}

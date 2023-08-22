@@ -1,0 +1,39 @@
+{
+	"name": "hkilang-tts",
+	"version": "0.0.0",
+	"description": "香港本土語言文字轉語音朗讀器",
+	"scripts": {
+		"start": "parcel public/index.html --dist-dir build --open --port 3000",
+		"build": "parcel build public/index.html --dist-dir build"
+	},
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
+	},
+	"dependencies": {
+		"eastasianwidth": "^0.2.0",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0"
+	},
+	"devDependencies": {
+		"@parcel/transformer-webmanifest": "^2.9.3",
+		"@types/react": "^18.2.20",
+		"@types/react-dom": "^18.2.7",
+		"daisyui": "^3.5.1",
+		"parcel": "^2.9.3",
+		"parcel-transformer-papaparse": "^0.1.0",
+		"process": "^0.11.10",
+		"tailwindcss": "^3.3.3",
+		"typescript": "^5.1.6"
+	},
+	"license": "MIT",
+	"homepage": "/"
+}

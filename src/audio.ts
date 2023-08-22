@@ -1,0 +1,131 @@
+import { Language } from "./types";
+
+const AUDIO_PATH = "https://chaaklau.github.io/hkilang-tts-prototype/audio";
+const HAKKA_TONE_MAP: Record<string, string> = {
+	"1": "13",
+	"2": "11",
+	"3": "31",
+	"4": "55",
+	"5": "32",
+	"6": "55",
+	"x": "35",
+};
+const ROM_FILENAME_MAP: Record<string, string> = {
+	ü: "v",
+	ä: "a'",
+	ö: "o'",
+	æ: "ae",
+};
+
+function trimSilence(audioContext: AudioContext, audioBuffer: AudioBuffer) {
+	const threshold = 0.1; // Adjust this threshold as needed
+	const channelData = audioBuffer.getChannelData(0); // Assuming mono audio
+
+	let start = 0;
+	let end = channelData.length - 1;
+
+	// Find the start index where audio exceeds the threshold
+	for (let i = 0; i < channelData.length; i++) {
+		if (Math.abs(channelData[i]) > threshold) {
+			start = i;
+			break;
+		}
+	}
+
+	// Find the end index where audio exceeds the threshold
+	for (let i = channelData.length - 1; i >= 0; i--) {
+		if (Math.abs(channelData[i]) > threshold) {
+			end = i;
+			break;
+		}
+	}
+
+	// Create a new audio buffer with trimmed data
+	const newBuffer = audioContext.createBuffer(audioBuffer.numberOfChannels, end - start + 1, audioBuffer.sampleRate);
+
+	for (let channel = 0; channel < audioBuffer.numberOfChannels; channel++) {
+		const sourceData = audioBuffer.getChannelData(channel);
+		const newData = newBuffer.getChannelData(channel);
+		for (let i = start; i <= end; i++) {
+			newData[i - start] = sourceData[i];
+		}
+	}
+
+	return newBuffer;
+}
+
+// Function to fetch audio and trim silence
+async function fetchAndTrimAudio(audioContext: AudioContext, audioPath: string) {
+	try {
+		const response = await fetch(audioPath);
+		const arrayBuffer = await response.arrayBuffer();
+		const audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
+
+		const bufferSource = audioContext.createBufferSource();
+		bufferSource.buffer = trimSilence(audioContext, audioBuffer);
+		return bufferSource;
+	} catch {
+		return createEmptyBufferSource(audioContext);
+	}
+}
+
+function createEmptyBufferSource(audioContext: AudioContext) {
+	const bufferSource = audioContext.createBufferSource();
+	bufferSource.buffer = audioContext.createBuffer(1, Math.ceil(audioContext.sampleRate * 0.4), audioContext.sampleRate);
+	return bufferSource;
+}
+
+// Function to concatenate audio sources with silence in between
+function concatenateAudioSources(audioContext: AudioContext, sources: AudioBufferSourceNode[]) {
+	const totalDuration = sources.reduce((totalDuration, source) => totalDuration + source.buffer!.duration, 0);
+	const outputBuffer = audioContext.createBuffer(1, Math.ceil(audioContext.sampleRate * totalDuration), audioContext.sampleRate);
+	const outputChannelData = outputBuffer.getChannelData(0);
+
+	let outputOffset = 0;
+	sources.forEach(source => {
+		const sourceChannelData = source.buffer!.getChannelData(0);
+
+		// Copy source audio data to output buffer
+		outputChannelData.set(sourceChannelData, outputOffset);
+		outputOffset += source.buffer!.length;
+	});
+
+	const outputSource = audioContext.createBufferSource();
+	outputSource.buffer = outputBuffer;
+	return outputSource;
+}
+
+// Play concatenated audio
+function playConcatenatedAudio(audioContext: AudioContext, concatenatedSource: AudioBufferSourceNode) {
+	concatenatedSource.connect(audioContext.destination);
+	concatenatedSource.start();
+}
+
+function getFileArray(rom: string[], lang: Language) {
+	if (lang === "hakka") {
+		// Handle tone sandhi rules here.
+		rom = rom.slice();
+		for (let i = 0; i < rom.length; ++i) {
+			if (rom[i]) {
+				if (rom[i].slice(-1) === "1" && rom[i + 1] && ["2", "3", "5"].includes(rom[i + 1].slice(-1))) {
+					rom[i] = rom[i].slice(0, -1) + "x";
+				}
+				rom[i] = rom[i].slice(0, -1) + HAKKA_TONE_MAP[rom[i].slice(-1)];
+			}
+		}
+	}
+	// generate path
+	return rom.map(syll => syll && `${AUDIO_PATH}/${lang[0]}/${Array.from(syll, c => ROM_FILENAME_MAP[c] || c).join("")}.mp3`);
+}
+
+export default async function playAudio(rom: string[], lang: Language) {
+	const context = new AudioContext();
+	const audioSources = await Promise.all(
+		getFileArray(rom, lang).map(audioPath => (audioPath ? fetchAndTrimAudio(context, audioPath) : createEmptyBufferSource(context)))
+	);
+	const concatenatedSource = concatenateAudioSources(
+		context,
+		audioSources.filter(source => source && source.buffer)
+	);
+	playConcatenatedAudio(context, concatenatedSource);
+}
