@@ -1,15 +1,8 @@
 import { useState } from "react";
 import Char from "./Char";
-import { Genre, Language, Sentence } from "./types";
+import { Sentence } from "./types";
 import playAudio from "./audio";
-
-const TERMINOLOGY: Record<Language | Genre, string> = {
-	hakka: "客家話",
-	waitau: "圍頭話",
-	swc: "書面語",
-	lit: "文言",
-	col: "口語材料",
-};
+import { TERMINOLOGY } from "./consts";
 
 export default function SentenceCard({ sentence: { language, genre, sentence } }: { sentence: Sentence }) {
 	const [syllables, setSyllables] = useState(() => sentence.map(([, pronNoteArray]) => pronNoteArray[0]?.[0] || ""));

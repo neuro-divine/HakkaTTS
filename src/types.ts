@@ -7,6 +7,7 @@ export type WordsFile = {
 
 export type Language = "waitau" | "hakka";
 export type Genre = "lit" | "swc" | "col";
+export type Terminology = Language | Genre;
 
 export type PronToNoteMap = Map<string, string>;
 export type PronNoteArray = [string, string][];

@@ -18,7 +18,7 @@ for (const { char, waitau, hakka1, hakka2, Notes } of Chars) {
 function segment(text: string) {
 	const result: string[] = [];
 	let curr = "";
-	Array.from(text).map(c => {
+	for (const c of text) {
 		if (c.trim()) {
 			const width = eastAsianWidth(c);
 			if (width == "W" || width == "F") {
@@ -32,7 +32,7 @@ function segment(text: string) {
 			if (curr) result.push(curr);
 			curr = "";
 		}
-	});
+	}
 	if (curr) result.push(curr);
 	return result;
 }

@@ -47,7 +47,7 @@ export default function Char({
 		<ruby>
 			{char}
 			<rt>{pron}</rt>
-			<span className="-order-1 text-sm text-slate-400">{note || "\xa0"}</span>
+			<span className="-order-1 text-sm text-slate-500">{note || "\xa0"}</span>
 		</ruby>
 	);
 }

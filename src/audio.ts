@@ -71,14 +71,14 @@ async function fetchAndTrimAudio(audioContext: AudioContext, audioPath: string) 
 
 function createEmptyBufferSource(audioContext: AudioContext) {
 	const bufferSource = audioContext.createBufferSource();
-	bufferSource.buffer = audioContext.createBuffer(1, Math.ceil(audioContext.sampleRate * 0.4), audioContext.sampleRate);
+	bufferSource.buffer = audioContext.createBuffer(1, Math.ceil(audioContext.sampleRate * 0.5), audioContext.sampleRate);
 	return bufferSource;
 }
 
-// Function to concatenate audio sources with silence in between
+// Function to concatenate audio sources
 function concatenateAudioSources(audioContext: AudioContext, sources: AudioBufferSourceNode[]) {
-	const totalDuration = sources.reduce((totalDuration, source) => totalDuration + source.buffer!.duration, 0);
-	const outputBuffer = audioContext.createBuffer(1, Math.ceil(audioContext.sampleRate * totalDuration), audioContext.sampleRate);
+	const totalLength = sources.reduce((totalLength, source) => totalLength + source.buffer!.length, 0);
+	const outputBuffer = audioContext.createBuffer(1, totalLength, audioContext.sampleRate);
 	const outputChannelData = outputBuffer.getChannelData(0);
 
 	let outputOffset = 0;

@@ -1,28 +1,26 @@
-import { Dispatch, SetStateAction, useId } from "react";
+import { Dispatch, SetStateAction } from "react";
+import { Terminology } from "./types";
+import { TERMINOLOGY } from "./consts";
 
-export default function Radio<T extends string>({
+export default function Radio<T extends Terminology>({
 	name,
 	className,
 	state,
 	setState,
 	value,
-	label,
 }: {
 	name: string;
 	className: string;
 	state: T;
 	setState: Dispatch<SetStateAction<T>>;
 	value: T;
-	label: string;
 }) {
-	const id = useId();
 	return (
 		<label className={"btn btn-outline text-base join-item " + className + (state === value ? " btn-active" : "")}>
 			<input
 				type="radio"
 				className="absolute [clip:rect(0,0,0,0)] pointer-events-none"
 				name={name}
-				id={id}
 				value={value}
 				autoComplete="off"
 				autoCorrect="off"
@@ -31,7 +29,7 @@ export default function Radio<T extends string>({
 				checked={state === value}
 				onClick={() => setState(value)}
 			/>
-			{label}
+			{TERMINOLOGY[value]}
 		</label>
 	);
 }

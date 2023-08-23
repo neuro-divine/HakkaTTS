@@ -24,13 +24,13 @@ export default function App() {
 			<div>
 				<div className="mt-3">
 					<div className="join me-3" role="group" aria-label="Language Selection">
-						<Radio name="btnlanguage" className="btn-primary" state={language} setState={setLanguage} value="waitau" label="圍頭話" />
-						<Radio name="btnlanguage" className="btn-primary" state={language} setState={setLanguage} value="hakka" label="客家話" />
+						<Radio name="btnlanguage" className="btn-primary" state={language} setState={setLanguage} value="waitau" />
+						<Radio name="btnlanguage" className="btn-primary" state={language} setState={setLanguage} value="hakka" />
 					</div>
 					<div className="join me-3" role="group" aria-label="Genre Selection">
-						<Radio name="btngenre" className="btn-secondary" state={genre} setState={setGenre} value="lit" label="文言" />
-						<Radio name="btngenre" className="btn-secondary" state={genre} setState={setGenre} value="swc" label="現代白話文" />
-						<Radio name="btngenre" className="btn-secondary" state={genre} setState={setGenre} value="col" label="口語材料" />
+						<Radio name="btngenre" className="btn-secondary" state={genre} setState={setGenre} value="lit" />
+						<Radio name="btngenre" className="btn-secondary" state={genre} setState={setGenre} value="swc" />
+						<Radio name="btngenre" className="btn-secondary" state={genre} setState={setGenre} value="col" />
 					</div>
 				</div>
 				<div className="join w-full mt-4">
