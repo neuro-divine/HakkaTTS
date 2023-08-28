@@ -1,8 +1,8 @@
 import { useState } from "react";
 import Char from "./Char";
 import { Sentence } from "./types";
-import playAudio from "./audio";
 import { TERMINOLOGY } from "./consts";
+import AudioPlayer from "./AudioPlayer";
 
 export default function SentenceCard({ sentence: { language, genre, sentence } }: { sentence: Sentence }) {
 	const [syllables, setSyllables] = useState(() => sentence.map(([, pronNoteArray]) => pronNoteArray[0]?.[0] || ""));
@@ -27,11 +27,7 @@ export default function SentenceCard({ sentence: { language, genre, sentence } }
 						/>
 					))}
 				</p>
-				<div className="mt-2">
-					<button className="btn btn-warning text-lg" onClick={() => playAudio(syllables, language)}>
-						▶️
-					</button>
-				</div>
+				<AudioPlayer syllables={syllables} language={language} />
 			</div>
 		</div>
 	);

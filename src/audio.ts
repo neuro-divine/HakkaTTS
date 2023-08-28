@@ -90,15 +90,7 @@ function concatenateAudioSources(audioContext: AudioContext, sources: AudioBuffe
 		outputOffset += source.buffer!.length;
 	});
 
-	const outputSource = audioContext.createBufferSource();
-	outputSource.buffer = outputBuffer;
-	return outputSource;
-}
-
-// Play concatenated audio
-function playConcatenatedAudio(audioContext: AudioContext, concatenatedSource: AudioBufferSourceNode) {
-	concatenatedSource.connect(audioContext.destination);
-	concatenatedSource.start();
+	return outputBuffer;
 }
 
 function getFileArray(rom: string[], lang: Language) {
@@ -118,14 +110,14 @@ function getFileArray(rom: string[], lang: Language) {
 	return rom.map(syll => syll && `${AUDIO_PATH}/${lang[0]}/${Array.from(syll, c => ROM_FILENAME_MAP[c] || c).join("")}.mp3`);
 }
 
-export default async function playAudio(rom: string[], lang: Language) {
-	const context = new AudioContext();
+export default async function getAudio(audioContext: AudioContext, rom: string[], lang: Language) {
 	const audioSources = await Promise.all(
-		getFileArray(rom, lang).map(audioPath => (audioPath ? fetchAndTrimAudio(context, audioPath) : createEmptyBufferSource(context)))
+		getFileArray(rom, lang).map(audioPath =>
+			audioPath ? fetchAndTrimAudio(audioContext, audioPath) : createEmptyBufferSource(audioContext)
+		)
 	);
-	const concatenatedSource = concatenateAudioSources(
-		context,
+	return concatenateAudioSources(
+		audioContext,
 		audioSources.filter(source => source && source.buffer)
 	);
-	playConcatenatedAudio(context, concatenatedSource);
 }

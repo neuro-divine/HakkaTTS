@@ -23,17 +23,17 @@ export default function App() {
 			<p className="text-slate-500 my-2">香港本土語言保育協會（2023 年 8 月 22 日）</p>
 			<div>
 				<div className="mt-3">
-					<div className="join me-3" role="group" aria-label="Language Selection">
+					<div className="join me-3 mb-4" role="group" aria-label="Language Selection">
 						<Radio name="btnlanguage" className="btn-primary" state={language} setState={setLanguage} value="waitau" />
 						<Radio name="btnlanguage" className="btn-primary" state={language} setState={setLanguage} value="hakka" />
 					</div>
-					<div className="join me-3" role="group" aria-label="Genre Selection">
+					<div className="join me-3 mb-4" role="group" aria-label="Genre Selection">
 						<Radio name="btngenre" className="btn-secondary" state={genre} setState={setGenre} value="lit" />
 						<Radio name="btngenre" className="btn-secondary" state={genre} setState={setGenre} value="swc" />
 						<Radio name="btngenre" className="btn-secondary" state={genre} setState={setGenre} value="col" />
 					</div>
 				</div>
-				<div className="join w-full mt-4">
+				<div className="join w-full">
 					<textarea
 						className="textarea textarea-accent textarea-lg text-xl min-h-16 flex-grow join-item"
 						placeholder="【輸入文字】"
