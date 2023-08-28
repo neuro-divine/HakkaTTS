@@ -3,11 +3,13 @@ import Resource from "./Resource";
 import Chars from "./res/Chars.csv";
 import WaitauWords from "./res/WaitauWords.csv";
 import HakkaWords from "./res/HakkaWords.csv";
+import WaitauGeneratedWords from "./res/WaitauGeneratedWords.csv";
+import HakkaGeneratedWords from "./res/HakkaGeneratedWords.csv";
 import { Language, PronNoteArray } from "./types";
 
 const resources: Record<Language, Resource> = {
-	waitau: new Resource(WaitauWords),
-	hakka: new Resource(HakkaWords),
+	waitau: new Resource(WaitauWords, WaitauGeneratedWords),
+	hakka: new Resource(HakkaWords, HakkaGeneratedWords),
 };
 for (const { char, waitau, hakka1, hakka2, Notes } of Chars) {
 	if (waitau) resources.waitau.set(char, new Map([[waitau, Notes]]));

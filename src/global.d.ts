@@ -4,6 +4,12 @@ declare module "*Chars.csv" {
 	export default CharsFile;
 }
 
+declare module "*GeneratedWords.csv" {
+	type GeneratedWordsFile = import("./types").GeneratedWordsFile;
+	const GeneratedWordsFile: GeneratedWordsFile;
+	export default GeneratedWordsFile;
+}
+
 declare module "*Words.csv" {
 	type WordsFile = import("./types").WordsFile;
 	const WordsFile: WordsFile;
