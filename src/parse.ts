@@ -3,7 +3,8 @@ import Resource from "./Resource";
 import Chars from "./res/chars.csv";
 import WaitauWords from "./res/waitau_words.csv";
 import HakkaWords from "./res/hakka_words.csv";
-import { Language, PronNoteArray } from "./types";
+
+import type { Language, PronNoteArray } from "./types";
 
 const resources: Record<Language, Resource> = {
 	waitau: new Resource(WaitauWords),

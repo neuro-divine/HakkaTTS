@@ -1,9 +1,10 @@
 import { useState } from "react";
 import "./index.css";
 import Radio from "./Radio";
-import { Genre, Language, Sentence } from "./types";
 import parse from "./parse";
 import SentenceCard from "./SentenceCard";
+
+import type { Genre, Language, Sentence } from "./types";
 
 export default function App() {
 	const [language, setLanguage] = useState<Language>("waitau");

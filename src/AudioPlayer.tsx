@@ -1,6 +1,8 @@
-import { ChangeEvent, useEffect, useRef, useState } from "react";
-import { Language } from "./types";
+import { useEffect, useRef, useState } from "react";
 import getAudio from "./audio";
+
+import type { ChangeEvent } from "react";
+import type { Language } from "./types";
 
 export default function AudioPlayer({ syllables, language }: { syllables: string[]; language: Language }) {
 	const [context] = useState(() => new AudioContext());

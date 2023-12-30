@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { PronNoteArray } from "./types";
+
+import type { PronNoteArray } from "./types";
 
 export default function Char({
 	char,

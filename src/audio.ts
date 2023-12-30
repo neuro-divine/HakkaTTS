@@ -1,4 +1,4 @@
-import { Language } from "./types";
+import type { Language } from "./types";
 
 const AUDIO_PATH = "https://chaaklau.github.io/hkilang-tts-prototype/audio";
 const HAKKA_TONE_MAP: Record<string, string> = {

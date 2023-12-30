@@ -1,4 +1,4 @@
-import { PronToNoteMap, WordsFile } from "./types";
+import type { PronToNoteMap, WordsFile } from "./types";
 
 type Node = Map<string, Node> & { v?: PronToNoteMap };
 

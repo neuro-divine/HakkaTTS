@@ -1,6 +1,7 @@
-import { Dispatch, SetStateAction } from "react";
-import { Terminology } from "./types";
 import { TERMINOLOGY } from "./consts";
+
+import type { Dispatch, SetStateAction } from "react";
+import type { Terminology } from "./types";
 
 export default function Radio<T extends Terminology>({
 	name,

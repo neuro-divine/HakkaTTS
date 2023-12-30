@@ -1,8 +1,9 @@
 import { useState } from "react";
 import Char from "./Char";
-import { Sentence } from "./types";
 import { TERMINOLOGY } from "./consts";
 import AudioPlayer from "./AudioPlayer";
+
+import type { Sentence } from "./types";
 
 export default function SentenceCard({ sentence: { language, genre, sentence } }: { sentence: Sentence }) {
 	const [syllables, setSyllables] = useState(() => sentence.map(([, pronNoteArray]) => pronNoteArray[0]?.[0] || ""));

@@ -1,4 +1,4 @@
-import { Terminology } from "./types";
+import type { Terminology } from "./types";
 
 export const TERMINOLOGY: Record<Terminology, string> = {
 	hakka: "客家話",
