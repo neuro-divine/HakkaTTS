@@ -22,8 +22,7 @@ export default function App() {
 		<div className="m-auto p-8 max-w-7xl">
 			<div
 				className="text-base-100 opacity-80 [text-shadow:0_0_0.5rem_hsl(var(--bc)/0.1)] float-right select-none relative"
-				aria-hidden="true"
-			>
+				aria-hidden="true">
 				<div className="absolute right-12 top-5 text-7xl">❅</div>
 				<div className="absolute right-6 top-10 text-7xl">❆</div>
 			</div>

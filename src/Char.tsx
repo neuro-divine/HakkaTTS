@@ -34,8 +34,7 @@ export default function Char({
 						onClick={() => {
 							setSelected(i);
 							setSyllable(pron);
-						}}
-					>
+						}}>
 						<div className={"table-row join" + (i == selected ? " active" : "")}>
 							<span className="table-cell px-4 py-3 text-lg join-item whitespace-nowrap">{pron}</span>
 							<span className="table-cell px-4 py-3 text-lg join-item whitespace-nowrap">{note}</span>
