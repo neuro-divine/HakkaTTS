@@ -20,29 +20,42 @@ export default function App() {
 	}
 	return (
 		<div className="m-auto p-8 max-w-7xl">
-			<h1>香港本土語言文字轉語音朗讀器（Prototype）</h1>
-			<p className="text-slate-500 my-2">香港本土語言保育協會（2023 年 8 月 22 日）</p>
+			<div
+				className="text-base-100 opacity-80 [text-shadow:0_0_0.5rem_hsl(var(--bc)/0.1)] float-right select-none relative"
+				aria-hidden="true"
+			>
+				<div className="absolute right-12 top-5 text-7xl">❅</div>
+				<div className="absolute right-6 top-10 text-7xl">❆</div>
+			</div>
+			<h1 className="whitespace-nowrap">香港本土語言文字轉語音朗讀器（預覽版本）</h1>
+			<p className="text-slate-500 my-2 whitespace-nowrap">香港本土語言保育協會（2023 年 12 月 22 日）</p>
 			<div>
-				<div className="mt-3">
-					<div className="join me-3 mb-4" role="group" aria-label="Language Selection">
-						<Radio name="btnlanguage" className="btn-primary" state={language} setState={setLanguage} value="waitau" />
-						<Radio name="btnlanguage" className="btn-primary" state={language} setState={setLanguage} value="hakka" />
+				<div>
+					<div className="inline-block">
+						<div className="text-primary text-lg font-semibold ms-0.5 mb-0.5 tracking-widest">語言</div>
+						<div className="join me-3 mb-4" role="group" aria-label="選擇語言">
+							<Radio name="btnlanguage" className="btn-primary" state={language} setState={setLanguage} value="waitau" />
+							<Radio name="btnlanguage" className="btn-primary" state={language} setState={setLanguage} value="hakka" />
+						</div>
 					</div>
-					<div className="join me-3 mb-4" role="group" aria-label="Genre Selection">
-						<Radio name="btngenre" className="btn-secondary" state={genre} setState={setGenre} value="lit" />
-						<Radio name="btngenre" className="btn-secondary" state={genre} setState={setGenre} value="swc" />
-						<Radio name="btngenre" className="btn-secondary" state={genre} setState={setGenre} value="col" />
+					<div className="inline-block">
+						<div className="text-secondary text-lg font-semibold ms-0.5 mb-0.5 tracking-widest">語體</div>
+						<div className="join me-3 mb-4" role="group" aria-label="選擇語體">
+							<Radio name="btngenre" className="btn-secondary" state={genre} setState={setGenre} value="lit" />
+							<Radio name="btngenre" className="btn-secondary" state={genre} setState={setGenre} value="swc" />
+							<Radio name="btngenre" className="btn-secondary" state={genre} setState={setGenre} value="col" />
+						</div>
 					</div>
 				</div>
 				<div className="join w-full">
 					<textarea
 						className="textarea textarea-accent textarea-lg text-xl min-h-16 flex-grow join-item"
-						placeholder="【輸入文字】"
+						placeholder="輸入文字……"
 						rows={1}
 						value={text}
 						onChange={event => setText(event.target.value)}
 					/>
-					<button type="button" className="btn btn-success btn-lg h-full join-item" onClick={addSentence}>
+					<button type="button" className="btn btn-accent btn-lg h-full join-item" onClick={addSentence}>
 						加入句子
 					</button>
 				</div>
