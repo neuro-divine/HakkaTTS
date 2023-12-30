@@ -1,20 +1,17 @@
 import { eastAsianWidth } from "eastasianwidth";
 import Resource from "./Resource";
-import Chars from "./res/Chars.csv";
-import WaitauWords from "./res/WaitauWords.csv";
-import HakkaWords from "./res/HakkaWords.csv";
-import WaitauGeneratedWords from "./res/WaitauGeneratedWords.csv";
-import HakkaGeneratedWords from "./res/HakkaGeneratedWords.csv";
+import Chars from "./res/chars.csv";
+import WaitauWords from "./res/waitau_words.csv";
+import HakkaWords from "./res/hakka_words.csv";
 import { Language, PronNoteArray } from "./types";
 
 const resources: Record<Language, Resource> = {
-	waitau: new Resource(WaitauWords, WaitauGeneratedWords),
-	hakka: new Resource(HakkaWords, HakkaGeneratedWords),
+	waitau: new Resource(WaitauWords),
+	hakka: new Resource(HakkaWords),
 };
-for (const { char, waitau, hakka1, hakka2, Notes } of Chars) {
-	if (waitau) resources.waitau.set(char, new Map([[waitau, Notes]]));
-	if (hakka1) resources.hakka.set(char, new Map([[hakka1, Notes]]));
-	if (hakka2) resources.hakka.set(char, new Map([[hakka2, Notes]]));
+for (const { char, waitau, hakka, notes } of Chars) {
+	if (waitau) resources.waitau.set(char, new Map([[waitau, notes]]));
+	if (hakka) resources.hakka.set(char, new Map([[hakka, notes]]));
 }
 
 function segment(text: string) {

@@ -1,20 +1,13 @@
-import { GeneratedWordsFile, PronToNoteMap, WordsFile } from "./types";
+import { PronToNoteMap, WordsFile } from "./types";
 
 type Node = Map<string, Node> & { v?: PronToNoteMap };
 
 export default class Resource {
 	t: Node = new Map();
 
-	constructor(res: WordsFile, other: GeneratedWordsFile) {
+	constructor(res: WordsFile) {
 		const data = new Map<string, PronToNoteMap>();
-		for (const { Character, Rom, ["1st check"]: Check } of res) {
-			if (Check !== "OK") continue;
-			const map = data.get(Character);
-			if (map) {
-				if (!map.has(Rom)) map.set(Rom, "");
-			} else data.set(Character, new Map([[Rom, ""]]));
-		}
-		for (const { char, pron } of other) {
+		for (const { char, pron } of res) {
 			const map = data.get(char);
 			if (map) {
 				if (!map.has(pron)) map.set(pron, "");
@@ -57,7 +50,8 @@ export default class Resource {
 			if (!u) t.set(c, (u = new Map()));
 			return u;
 		}, this.t);
-		if (u.v) v.forEach((m, k) => u.v!.set(k, m));
+		const n = u.v;
+		if (n) v.forEach((m, k) => n.set(k, n.has(k) ? n.get(k) + (n.get(k) && m ? "、" : "") + m : m));
 		else u.v = v;
 	}
 }

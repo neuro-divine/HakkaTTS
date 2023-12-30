@@ -1,16 +1,10 @@
-declare module "*Chars.csv" {
+declare module "*chars.csv" {
 	type CharsFile = import("./types").CharsFile;
 	const CharsFile: CharsFile;
 	export default CharsFile;
 }
 
-declare module "*GeneratedWords.csv" {
-	type GeneratedWordsFile = import("./types").GeneratedWordsFile;
-	const GeneratedWordsFile: GeneratedWordsFile;
-	export default GeneratedWordsFile;
-}
-
-declare module "*Words.csv" {
+declare module "*words.csv" {
 	type WordsFile = import("./types").WordsFile;
 	const WordsFile: WordsFile;
 	export default WordsFile;

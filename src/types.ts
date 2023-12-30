@@ -1,12 +1,5 @@
-export type CharsFile = {
-	[P in "char" | "canton" | "waitau" | "searchkey" | "hakka1" | "hakka2" | "Notes"]: string;
-}[];
-export type GeneratedWordsFile = {
-	[P in "char" | "pron"]: string;
-}[];
-export type WordsFile = {
-	[P in "Index" | "Word" | "Glossary" | "EnglishGlossary" | "Type" | "Character" | "IPA" | "Rom" | "1st check" | "Remark"]: string;
-}[];
+export type CharsFile = { [P in "char" | "waitau" | "hakka" | "notes"]: string }[];
+export type WordsFile = { [P in "char" | "pron"]: string }[];
 
 export type Language = "waitau" | "hakka";
 export type Genre = "lit" | "swc" | "col";
