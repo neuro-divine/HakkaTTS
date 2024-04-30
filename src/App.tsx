@@ -20,14 +20,8 @@ export default function App() {
 	}
 	return (
 		<div className="m-auto p-8 max-w-7xl">
-			<div
-				className="text-base-100 opacity-80 [text-shadow:0_0_0.5rem_hsl(var(--bc)/0.1)] float-right select-none relative"
-				aria-hidden="true">
-				<div className="absolute right-12 top-5 text-7xl">❅</div>
-				<div className="absolute right-6 top-10 text-7xl">❆</div>
-			</div>
-			<h1 className="whitespace-nowrap">香港本土語言文字轉語音朗讀器（預覽版本）</h1>
-			<p className="text-slate-500 my-2 whitespace-nowrap">香港本土語言保育協會（2023 年 12 月 22 日）</p>
+			<h1 className="whitespace-nowrap">香港本土語言文字轉語音朗讀器（測試版本）</h1>
+			<p className="text-slate-500 my-2 whitespace-nowrap">香港本土語言保育協會（2024 年 4 月 20 日）</p>
 			<div>
 				<div>
 					<div className="inline-block">

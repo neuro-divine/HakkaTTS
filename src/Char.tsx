@@ -19,7 +19,7 @@ export default function Char({
 
 	return pronNoteArray.length > 1 ? (
 		<div className="dropdown dropdown-hover">
-			<label className={resolved ? "text-primary" : "text-accent"} tabIndex={0}>
+			<label className={resolved ? "text-info" : "text-error"} tabIndex={0}>
 				<ruby>
 					{char}
 					<rt>{pron}</rt>
