@@ -9,7 +9,3 @@ declare module "*words.csv" {
 	const WordsFile: WordsFile;
 	export default WordsFile;
 }
-
-declare module "eastasianwidth" {
-	export function eastAsianWidth(character: string): "N" | "Na" | "H" | "A" | "W" | "F";
-}
