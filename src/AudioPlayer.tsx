@@ -42,6 +42,7 @@ export default function AudioPlayer({ syllables, language }: { syllables: string
 		}
 		const sourceNode = context.createBufferSource();
 		sourceNode.buffer = _buffer;
+		sourceNode.playbackRate.value = 1.15;
 
 		const _progress = progress * _buffer.duration;
 		sourceNode.connect(context.destination);
