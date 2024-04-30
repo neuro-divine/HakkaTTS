@@ -5,9 +5,7 @@ from functools import reduce
 def str_columns(columns):
 	return {"names": columns, "dtype": {key: "str" for key in columns}}
 
-df_chars = pd.read_csv("dictionary.csv", index_col=0, **str_columns(["canton", "waitau", "char", "hakka1", "hakka2", "notes"]))
-df_chars["hakka"] = [[v for v in row if v == v] for row in df_chars[["hakka1", "hakka2"]].values.tolist()]
-df_chars = df_chars.explode("hakka")
+df_chars = pd.read_csv("dictionary.csv", header=0, usecols=[0, 1, 2, 3, 4], **str_columns(["char", "canton", "waitau", "hakka", "notes"]))
 
 def normalize_char(char):
 	if isinstance(char, str):
@@ -66,7 +64,7 @@ def get_collocations(row):
 		note = note.replace("～", row["char"])
 		note = re.sub("（.*?）", "", note)
 		if note:
-			return note.split("、")
+			return [collocation for collocation in note.split("、") if row["char"] in collocation]
 	return []
 
 df_chars["collocation"] = df_chars.apply(get_collocations, axis=1)
@@ -94,7 +92,7 @@ def generate(language):
 		if isinstance(pron, str):
 			return [pron]
 		elif isinstance(pron, pd.Series):
-			return pron.unique()
+			return [value for value in pron.unique() if not pd.isna(value)]
 		else:
 			return []
 
