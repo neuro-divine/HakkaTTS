@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./index.css";
+import { NO_AUTO_FILL } from "./consts";
 import Radio from "./Radio";
 import parse from "./parse";
 import SentenceCard from "./SentenceCard";
@@ -45,6 +45,7 @@ export default function App() {
 						className="textarea textarea-accent textarea-lg text-xl min-h-16 flex-grow join-item"
 						placeholder="輸入文字……"
 						rows={1}
+						{...NO_AUTO_FILL}
 						value={text}
 						onChange={event => setText(event.target.value)}
 					/>

@@ -1,4 +1,4 @@
-import { TERMINOLOGY } from "./consts";
+import { NO_AUTO_FILL, TERMINOLOGY } from "./consts";
 
 import type { Dispatch, SetStateAction } from "react";
 import type { Terminology } from "./types";
@@ -23,10 +23,7 @@ export default function Radio<T extends Terminology>({
 				className="sr-only"
 				name={name}
 				value={value}
-				autoComplete="off"
-				autoCorrect="off"
-				autoCapitalize="off"
-				spellCheck="false"
+				{...NO_AUTO_FILL}
 				checked={state === value}
 				onClick={() => setState(value)}
 			/>

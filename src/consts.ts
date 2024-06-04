@@ -7,3 +7,10 @@ export const TERMINOLOGY: Record<Terminology, string> = {
 	lit: "文言",
 	col: "口語材料",
 };
+
+export const NO_AUTO_FILL = {
+	autoComplete: "off",
+	autoCorrect: "off",
+	autoCapitalize: "off",
+	spellCheck: "false",
+} as const;
