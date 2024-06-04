@@ -26,14 +26,14 @@ export default function App() {
 				<div>
 					<div className="inline-block">
 						<div className="text-primary text-lg font-semibold ms-0.5 mb-0.5 tracking-widest">語言</div>
-						<div className="join me-3 mb-4" role="group" aria-label="選擇語言">
+						<div className="join me-3 mb-4 bg-base-100" role="group" aria-label="選擇語言">
 							<Radio name="btnlanguage" className="btn-primary" state={language} setState={setLanguage} value="waitau" />
 							<Radio name="btnlanguage" className="btn-primary" state={language} setState={setLanguage} value="hakka" />
 						</div>
 					</div>
 					<div className="inline-block">
 						<div className="text-secondary text-lg font-semibold ms-0.5 mb-0.5 tracking-widest">語體</div>
-						<div className="join me-3 mb-4" role="group" aria-label="選擇語體">
+						<div className="join me-3 mb-4 bg-base-100" role="group" aria-label="選擇語體">
 							<Radio name="btngenre" className="btn-secondary" state={genre} setState={setGenre} value="lit" />
 							<Radio name="btngenre" className="btn-secondary" state={genre} setState={setGenre} value="swc" />
 							<Radio name="btngenre" className="btn-secondary" state={genre} setState={setGenre} value="col" />

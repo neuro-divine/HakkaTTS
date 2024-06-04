@@ -8,7 +8,7 @@ import type { Sentence } from "./types";
 export default function SentenceCard({ sentence: { language, genre, sentence } }: { sentence: Sentence }) {
 	const [syllables, setSyllables] = useState(() => sentence.map(([, pronNoteArray]) => pronNoteArray[0]?.[0] || ""));
 	return (
-		<div className="card card-bordered border-neutral-300 bg-base-100 rounded-xl shadow-lg mb-3">
+		<div className="card card-bordered border-base-300 bg-base-100 rounded-xl shadow-lg mb-3">
 			<div className="card-body">
 				<div className="join">
 					<span className="badge badge-primary join-item">{TERMINOLOGY[language]}</span>

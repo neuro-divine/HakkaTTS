@@ -20,7 +20,7 @@ export default function Radio<T extends Terminology>({
 		<label className={"btn btn-outline text-base join-item " + className + (state === value ? " btn-active" : "")}>
 			<input
 				type="radio"
-				className="absolute [clip:rect(0,0,0,0)] pointer-events-none"
+				className="sr-only"
 				name={name}
 				value={value}
 				autoComplete="off"
