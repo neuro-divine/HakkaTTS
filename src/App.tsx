@@ -20,8 +20,8 @@ export default function App() {
 	}
 	return (
 		<div className="m-auto p-8 max-w-7xl">
-			<h1 className="whitespace-nowrap">香港本土語言文字轉語音朗讀器（測試版本）</h1>
-			<p className="text-slate-500 my-2 whitespace-nowrap">香港本土語言保育協會（2024 年 4 月 20 日）</p>
+			<h1 className="whitespace-nowrap">香港本土語言文字轉語音朗讀器</h1>
+			<h2 className="text-slate-500 my-2 whitespace-nowrap">香港本土語言保育協會</h2>
 			<div>
 				<div>
 					<div className="inline-block">
