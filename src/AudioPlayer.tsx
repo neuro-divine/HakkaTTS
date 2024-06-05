@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
 import getAudio from "./audio";
+import { NO_AUTO_FILL } from "./consts";
 
 import type { Language } from "./types";
 import type { ChangeEvent } from "react";
@@ -92,7 +93,8 @@ export default function AudioPlayer({ syllables, language }: { syllables: string
 			min={0}
 			max={1}
 			value={progress}
-			step={"any"}
+			step="any"
+			{...NO_AUTO_FILL}
 			onMouseDown={seekBarDown}
 			onTouchStart={seekBarDown}
 			onChange={seekBarMove}
