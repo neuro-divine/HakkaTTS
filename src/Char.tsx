@@ -17,37 +17,35 @@ export default function Char({
 	const currIndex = +resolved && selected;
 	const [pron, note] = pronNoteArray[currIndex] || ["-", ""];
 
-	return pronNoteArray.length > 1 ? (
-		<div className="dropdown dropdown-hover">
-			<label className={resolved ? "text-success" : "text-error"} tabIndex={0}>
+	return pronNoteArray.length > 1
+		? <div className="dropdown dropdown-hover">
+			<label className={resolved ? "text-success" : "text-error"}>
 				<ruby>
 					{char}
 					<rt>{pron}</rt>
 					<span className="-order-1 text-sm text-slate-500">{note || "\xa0"}</span>
 				</ruby>
 			</label>
-			<ul tabIndex={0} className="dropdown-content z-10 menu p-2 shadow bg-base-100 rounded-box [display:table]">
+			<ul className="dropdown-content z-10 menu p-2 shadow bg-base-100 rounded-box [display:table]">
 				{pronNoteArray.map(([pron, note], i) => (
-					<li
-						key={i}
-						className="table-row-group"
-						onClick={() => {
-							setSelected(i);
-							setSyllable(pron);
-						}}>
-						<div className={"table-row join" + (i == selected ? " active" : "")}>
-							<span className="table-cell px-4 py-3 text-lg join-item whitespace-nowrap">{pron}</span>
-							<span className="table-cell px-4 py-3 text-lg join-item whitespace-nowrap">{note}</span>
-						</div>
+					<li key={i} className="table-row-group">
+						<button
+							onClick={() => {
+								setSelected(i);
+								setSyllable(pron);
+							}}>
+							<div className={`table-row join${i === selected ? " active" : ""}`}>
+								<span className="table-cell px-4 py-3 text-lg join-item whitespace-nowrap">{pron}</span>
+								<span className="table-cell px-4 py-3 text-lg join-item whitespace-nowrap">{note}</span>
+							</div>
+						</button>
 					</li>
 				))}
 			</ul>
 		</div>
-	) : (
-		<ruby>
+		: <ruby>
 			{char}
 			<rt>{pron}</rt>
 			<span className="-order-1 text-sm text-slate-500">{note || "\xa0"}</span>
-		</ruby>
-	);
+		</ruby>;
 }

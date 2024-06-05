@@ -64,7 +64,8 @@ async function fetchAndTrimAudio(audioContext: AudioContext, audioPath: string) 
 		const bufferSource = audioContext.createBufferSource();
 		bufferSource.buffer = trimSilence(audioContext, audioBuffer);
 		return bufferSource;
-	} catch {
+	}
+	catch {
 		return createEmptyBufferSource(audioContext);
 	}
 }
@@ -100,7 +101,7 @@ function getFileArray(rom: string[], lang: Language) {
 		for (let i = 0; i < rom.length; ++i) {
 			if (rom[i]) {
 				if (rom[i].slice(-1) === "1" && rom[i + 1] && ["2", "3", "5"].includes(rom[i + 1].slice(-1))) {
-					rom[i] = rom[i].slice(0, -1) + "x";
+					rom[i] = `${rom[i].slice(0, -1)}x`;
 				}
 				rom[i] = rom[i].slice(0, -1) + HAKKA_TONE_MAP[rom[i].slice(-1)];
 			}
@@ -112,12 +113,12 @@ function getFileArray(rom: string[], lang: Language) {
 
 export default async function getAudio(audioContext: AudioContext, rom: string[], lang: Language) {
 	const audioSources = await Promise.all(
-		getFileArray(rom, lang).map(audioPath =>
-			audioPath ? fetchAndTrimAudio(audioContext, audioPath) : createEmptyBufferSource(audioContext)
-		)
+		getFileArray(rom, lang).map(
+			audioPath => audioPath ? fetchAndTrimAudio(audioContext, audioPath) : createEmptyBufferSource(audioContext),
+		),
 	);
 	return concatenateAudioSources(
 		audioContext,
-		audioSources.filter(source => source && source.buffer)
+		audioSources.filter(source => source.buffer),
 	);
 }

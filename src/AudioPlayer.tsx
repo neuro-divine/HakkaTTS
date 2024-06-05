@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from "react";
+
 import getAudio from "./audio";
 
-import type { ChangeEvent } from "react";
 import type { Language } from "./types";
+import type { ChangeEvent } from "react";
 
 export default function AudioPlayer({ syllables, language }: { syllables: string[]; language: Language }) {
 	const [context] = useState(() => new AudioContext());
@@ -27,6 +28,7 @@ export default function AudioPlayer({ syllables, language }: { syllables: string
 		}
 		updateSeekBar();
 		return () => cancelAnimationFrame(animationId.current);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [isPlaying, buffer]);
 
 	async function playAudio() {
@@ -74,30 +76,35 @@ export default function AudioPlayer({ syllables, language }: { syllables: string
 		if (buffer) setStartTime(context.currentTime - _progress * buffer.duration);
 	}
 	function seekBarUp() {
-		if (isPlaying === null) playAudio();
+		if (isPlaying === null) void playAudio();
 	}
-	return (
-		<div className="flex items-center mt-2">
-			<button type="button" className="btn btn-warning btn-square text-lg font-mono" onClick={isPlaying !== false ? pauseAudio : playAudio}>
-				{isPlaying !== false ? "⏸︎" : "▶︎"}
-			</button>
-			<input
-				type="range"
-				className="range range-warning range-sm grow mx-4"
-				min={0}
-				max={1}
-				value={progress}
-				step={"any"}
-				onMouseDown={seekBarDown}
-				onTouchStart={seekBarDown}
-				onChange={seekBarMove}
-				onMouseUp={seekBarUp}
-				onTouchEnd={seekBarUp}
-				onTouchCancel={seekBarUp}
-			/>
-			<button type="button" className="btn btn-warning btn-square text-lg font-mono" onClick={stopAudio}>
-				⏹︎
-			</button>
-		</div>
-	);
+	return <div className="flex items-center mt-2">
+		<button
+			type="button"
+			className="btn btn-warning btn-square text-lg font-symbol"
+			onClick={isPlaying === false ? playAudio : pauseAudio}
+			aria-label={isPlaying === false ? "播放" : "暫停"}>
+			{isPlaying === false ? "▶︎" : "⏸︎"}
+		</button>
+		<input
+			type="range"
+			className="range range-warning range-sm grow mx-4"
+			min={0}
+			max={1}
+			value={progress}
+			step={"any"}
+			onMouseDown={seekBarDown}
+			onTouchStart={seekBarDown}
+			onChange={seekBarMove}
+			onMouseUp={seekBarUp}
+			onTouchEnd={seekBarUp}
+			onTouchCancel={seekBarUp} />
+		<button
+			type="button"
+			className="btn btn-warning btn-square text-lg font-symbol"
+			onClick={stopAudio}
+			aria-label="停止">
+			⏹︎
+		</button>
+	</div>;
 }

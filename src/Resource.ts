@@ -11,7 +11,8 @@ export default class Resource {
 			const map = data.get(char);
 			if (map) {
 				if (!map.has(pron)) map.set(pron, "");
-			} else data.set(char, new Map([[pron, ""]]));
+			}
+			else data.set(char, new Map([[pron, ""]]));
 		}
 		for (const line of data) this.set(...line);
 	}
@@ -30,13 +31,14 @@ export default class Resource {
 				if (!u) break;
 				if ((t = u).v) {
 					const l = j - i;
-					for (const [p] of t.v)
+					for (const [p] of t.v) {
 						for (let d = p.split(" "), k = i; k <= j; k++) {
 							const s = r[k][2];
 							const v = d[k - i];
-							if (!(l in s)) s[l] = new Map([[v, ""]]);
-							else s[l].set(v, "");
+							if (l in s) s[l].set(v, "");
+							else s[l] = new Map([[v, ""]]);
 						}
+					}
 				}
 			}
 		}
@@ -47,7 +49,7 @@ export default class Resource {
 		if (!k) return;
 		const u = Array.from(k).reduce((t, c) => {
 			let u = t.get(c);
-			if (!u) t.set(c, (u = new Map()));
+			if (!u) t.set(c, u = new Map());
 			return u;
 		}, this.t);
 		const n = u.v;

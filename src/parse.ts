@@ -1,8 +1,9 @@
 import { eastAsianWidth } from "eastasianwidth";
-import Resource from "./Resource";
+
 import Chars from "./res/chars.csv";
-import WaitauWords from "./res/waitau_words.csv";
 import HakkaWords from "./res/hakka_words.csv";
+import WaitauWords from "./res/waitau_words.csv";
+import Resource from "./Resource";
 
 import type { Language, PronNoteArray } from "./types";
 
@@ -21,14 +22,16 @@ function segment(text: string) {
 	for (const c of text) {
 		if (c.trim()) {
 			const width = eastAsianWidth(c);
-			if (width == "W" || width == "F") {
+			if (width === "W" || width === "F") {
 				if (curr) result.push(curr);
 				result.push(c);
 				curr = "";
-			} else {
+			}
+			else {
 				curr += c;
 			}
-		} else {
+		}
+		else {
 			if (curr) result.push(curr);
 			curr = "";
 		}
