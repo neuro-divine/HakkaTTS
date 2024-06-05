@@ -2,6 +2,7 @@
 	"name": "hkilang-tts",
 	"version": "0.0.0",
 	"description": "香港本土語言文字轉語音朗讀器",
+	"type": "module",
 	"scripts": {
 		"start": "parcel public/index.html --dist-dir build --open --port 3000",
 		"build": "parcel build public/index.html --dist-dir build --public-url /TTS --no-cache"
@@ -28,6 +29,7 @@
 		"eslint-plugin-react-refresh": "^0.4.7",
 		"parcel": "^2.12.0",
 		"parcel-transformer-papaparse": "^0.1.0",
+		"postcss-nesting": "^12.1.5",
 		"tailwindcss": "^3.4.3",
 		"typescript": "^5.4.5"
 	},

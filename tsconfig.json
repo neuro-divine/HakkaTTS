@@ -1,9 +1,10 @@
 {
 	"compilerOptions": {
-		"target": "ES6",
+		"target": "ES2017",
 		"lib": ["DOM", "DOM.Iterable", "ESNext"],
 		"module": "ESNext",
-		"moduleResolution": "Node",
+		"moduleResolution": "Bundler",
+		"moduleDetection": "force",
 
 		"strict": true,
 		"allowUnusedLabels": false,
@@ -26,5 +27,5 @@
 		"noEmit": true,
 		"jsx": "react-jsx"
 	},
-	"include": ["src"]
+	"include": ["src", "*.config.[jt]s"]
 }

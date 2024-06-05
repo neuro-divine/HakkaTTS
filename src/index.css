@@ -39,6 +39,7 @@
 		&:first-child,
 		hr + &,
 		& + hr {
+			/* must be transformed by transpiler conforming the web standard (postcss-nesting, not postcss-nested) for this to work */
 			@apply mt-[1.125rem];
 		}
 	}

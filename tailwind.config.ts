@@ -1,7 +1,11 @@
-/** @type {import("tailwindcss").Config} */
-module.exports = {
+import daisyui from "daisyui";
+
+import type { Config as DaisyUIConfig } from "daisyui";
+import type { Config } from "tailwindcss";
+
+export default {
 	important: true,
-	content: ["./src/**/*"],
+	content: ["./public/index.html", "./src/**/*"],
 	theme: {
 		fontFamily: {
 			sans: [
@@ -24,9 +28,15 @@ module.exports = {
 				"Segoe UI Symbol",
 				"Noto Color Emoji",
 			],
+			symbol: [
+				"-apple-system",
+				"BlinkMacSystemFont",
+				"Segoe UI Symbol",
+				"sans-serif",
+			],
 		},
 	},
-	plugins: [require("daisyui")],
+	plugins: [daisyui],
 	daisyui: {
 		themes: [
 			{
@@ -50,5 +60,5 @@ module.exports = {
 				},
 			},
 		],
-	},
-};
+	} satisfies DaisyUIConfig,
+} satisfies Config;
