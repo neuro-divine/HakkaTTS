@@ -28,18 +28,20 @@ export default function Char({
 			</label>
 			<ul className="dropdown-content z-10 menu p-2 shadow bg-base-100 rounded-box [display:table]">
 				{pronNoteArray.map(([pron, note], i) => (
-					<li key={i} className="table-row-group">
-						<button
-							onClick={() => {
-								setSelected(i);
-								setSyllable(pron);
-							}}>
+					<button
+						key={i}
+						className="contents"
+						onClick={() => {
+							setSelected(i);
+							setSyllable(pron);
+						}}>
+						<li className="table-row-group">
 							<div className={`table-row join${i === selected ? " active" : ""}`}>
 								<span className="table-cell px-4 py-3 text-lg join-item whitespace-nowrap">{pron}</span>
 								<span className="table-cell px-4 py-3 text-lg join-item whitespace-nowrap">{note}</span>
 							</div>
-						</button>
-					</li>
+						</li>
+					</button>
 				))}
 			</ul>
 		</div>
