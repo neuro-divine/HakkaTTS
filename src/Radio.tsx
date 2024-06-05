@@ -24,7 +24,7 @@ export default function Radio<T extends Terminology>({
 			value={value}
 			{...NO_AUTO_FILL}
 			checked={state === value}
-			onClick={() => setState(value)} />
+			onChange={() => setState(value)} />
 		{TERMINOLOGY[value]}
 	</label>;
 }
