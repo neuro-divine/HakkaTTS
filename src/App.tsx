@@ -29,7 +29,7 @@ export default function App() {
 						   max-sm:text-xl max-sm:font-normal max-sm:relative max-sm:left-4
 						   sm:btn-lg sm:text-[1.375rem] sm:leading-[1.875rem] sm:text-slate-500 sm:col-start-2 sm:row-start-1 sm:row-end-3"
 				onClick={() => (document.getElementById("about-dialog") as HTMLDialogElement).showModal()}>
-				ⓘ 關於
+				<span className="font-symbol">🛈</span> 關於
 			</button>
 		</div>
 		<div>
