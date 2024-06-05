@@ -23,7 +23,7 @@ export default function Char({
 				<ruby>
 					{char}
 					<rt>{pron}</rt>
-					<span className="-order-1 text-sm text-slate-500">{note || "\xa0"}</span>
+					<span className="-order-1 text-xs sm:text-sm text-slate-500">{note || "\xa0"}</span>
 				</ruby>
 			</label>
 			<ul className="dropdown-content z-10 menu p-2 shadow bg-base-100 rounded-box [display:table]">
@@ -36,9 +36,9 @@ export default function Char({
 							setSyllable(pron);
 						}}>
 						<li className="table-row-group">
-							<div className={`table-row join${i === selected ? " active" : ""}`}>
-								<span className="table-cell px-4 py-3 text-lg join-item whitespace-nowrap">{pron}</span>
-								<span className="table-cell px-4 py-3 text-lg join-item whitespace-nowrap">{note}</span>
+							<div className={`table-row join sm:text-lg${i === selected ? " active" : ""}`}>
+								<span className="table-cell px-4 py-3 join-item whitespace-nowrap">{pron}</span>
+								<span className="table-cell px-4 py-3 join-item whitespace-nowrap">{note}</span>
 							</div>
 						</li>
 					</button>
@@ -48,6 +48,6 @@ export default function Char({
 		: <ruby>
 			{char}
 			<rt>{pron}</rt>
-			<span className="-order-1 text-sm text-slate-500">{note || "\xa0"}</span>
+			<span className="-order-1 text-xs sm:text-sm text-slate-500">{note || "\xa0"}</span>
 		</ruby>;
 }
