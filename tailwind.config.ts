@@ -36,6 +36,12 @@ export default {
 				"sans-serif",
 			],
 		},
+		extend: {
+			screens: {
+				xs: "440px",
+				sm: "540px",
+			},
+		},
 	},
 	plugins: [daisyui],
 	daisyui: {

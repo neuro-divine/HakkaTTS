@@ -22,8 +22,8 @@ export default function App() {
 		setText("");
 	}
 	return <div className="m-auto p-8 max-w-7xl">
-		<div className="grid items-center justify-center grid-cols-1 sm:grid-cols-[auto_1fr_auto] max-sm:max-w-fit">
-			<img className="row-span-2 h-16 mr-4 mb-2 max-sm:hidden" src={logo} alt="應用程式標誌" />
+		<div className="grid items-center justify-center grid-cols-1 xs:grid-cols-[auto_1fr_auto] max-sm:max-w-fit">
+			<img className="row-span-2 h-16 mr-4 mb-2 max-xs:hidden" src={logo} alt="應用程式標誌" />
 			<h1 className="max-sm:col-span-2">香港本土語言文字轉語音朗讀器</h1>
 			<h2 className="my-2">香港本土語言保育協會</h2>
 			<button
