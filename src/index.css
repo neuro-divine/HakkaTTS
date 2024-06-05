@@ -9,15 +9,21 @@
 			font-size: 16px;
 		}
 	}
-	:root,
-	body {
+	:root {
+		--btn-text-case: none;
 		@apply bg-base-200;
 	}
 	h1 {
-		@apply text-3xl font-bold;
+		@apply text-3xl font-bold whitespace-nowrap;
 	}
 	h2 {
-		@apply text-xl;
+		@apply text-xl text-slate-500 whitespace-nowrap;
+	}
+	h3 {
+		@apply text-[1.6875rem] leading-[2.125rem] font-bold whitespace-nowrap;
+	}
+	a {
+		@apply link link-primary no-underline;
 	}
 	ruby {
 		@apply inline-flex flex-col-reverse items-center gap-0.5 mr-4;
@@ -28,4 +34,19 @@
 	.dropdown-content:not(:hover):focus-within {
 		@apply invisible opacity-0;
 	}
+	.modal :where(p, ul, ol) {
+		@apply text-lg mx-6 my-3;
+		&:first-child,
+		hr + &,
+		& + hr {
+			@apply mt-[1.125rem];
+		}
+	}
+}
+
+/* https://w3c.github.io/predefined-counter-styles/#circled-decimal */
+@counter-style circled-decimal {
+	system: fixed 0;
+	symbols: "\24EA" "\2460" "\2461" "\2462" "\2463" "\2464" "\2465" "\2466" "\2467" "\2468" "\2469" "\246A" "\246B" "\246C" "\246D" "\246E" "\246F" "\2470" "\2471" "\2472" "\2473" "\3251" "\3252" "\3253" "\3254" "\3255" "\3256" "\3257" "\3258" "\3259" "\325a" "\325b" "\325c" "\325d" "\325e" "\325f" "\32b1" "\32b2" "\32b3" "\32b4" "\32b5" "\32b6" "\32b7" "\32b8" "\32b9" "\32ba" "\32bb" "\32bc" "\32bd" "\32be" "\32bf";
+	suffix: " ";
 }

@@ -20,8 +20,18 @@ export default function App() {
 		setText("");
 	}
 	return <div className="m-auto p-8 max-w-7xl">
-		<h1 className="whitespace-nowrap">香港本土語言文字轉語音朗讀器</h1>
-		<h2 className="text-slate-500 my-2 whitespace-nowrap">香港本土語言保育協會</h2>
+		<div className="flex items-center">
+			<div className="flex-1">
+				<h1>香港本土語言文字轉語音朗讀器</h1>
+				<h2 className="my-2">香港本土語言保育協會</h2>
+			</div>
+			<button
+				type="button"
+				className="btn btn-ghost btn-lg text-slate-500 text-[1.375rem] leading-7 hover:bg-opacity-10"
+				onClick={() => (document.getElementById("about-dialog") as HTMLDialogElement).showModal()}>
+				ⓘ 關於
+			</button>
+		</div>
 		<div>
 			<div>
 				<div className="inline-block">

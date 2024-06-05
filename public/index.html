@@ -4,17 +4,54 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<title>香港本土語言文字轉語音朗讀器</title>
-		<link rel="apple-touch-icon" sizes="512x512" href="./fav/apple-touch-icon-512x512.png" />
-		<link rel="apple-touch-icon" sizes="180x180" href="./fav/apple-touch-icon-180x180.png" />
-		<link rel="icon" type="image/png" sizes="32x32" href="./fav/favicon-32x32.png" />
-		<link rel="icon" type="image/png" sizes="16x16" href="./fav/favicon-16x16.png" />
+		<link rel="apple-touch-icon" sizes="512x512" href="./assets/apple-touch-icon-512x512.png" />
+		<link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon-180x180.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16x16.png" />
 		<link rel="manifest" href="./site.webmanifest" />
-		<link rel="mask-icon" href="./fav/safari-pinned-tab.svg" color="#f5ad3b" />
+		<link rel="mask-icon" href="./assets/safari-pinned-tab.svg" color="#f5ad3b" />
 		<meta name="msapplication-TileColor" content="#ffe527" />
 		<meta name="theme-color" content="#d29f10" />
 	</head>
 	<body>
 		<div id="root"></div>
+		<dialog id="about-dialog" class="modal modal-bottom sm:modal-middle relative">
+			<div class="modal-box p-0 flex flex-col sm:max-w-3xl">
+				<form method="dialog">
+					<button type="submit" class="btn btn-ghost w-14 h-14 min-h-14 text-[2.5rem] absolute right-3 top-3 text-slate-500 hover:bg-opacity-10" aria-label="關閉">╳</button>
+				</form>
+				<h3 class="mx-6 mt-6 mb-[1.125rem]">ⓘ 關於</h3>
+				<hr />
+				<div class="overflow-y-auto">
+					<p>歡迎使用<b>香港本土語言文字轉語音（Text-to-Speech）朗讀器</b>！</p>
+					<p><b>圍頭話</b>及<b>客家話</b>皆是香港的非物質文化遺產，然而這些本土語言傳承因城市化出現了斷層。圍村新一代接觸圍頭話、客家話的機會甚少，或「曉聽唔曉講」。</p>
+					<p>使用本文字轉語音（<abbr>TTS</abbr>）朗讀器，可以作為學習圍頭話、客家話的資源，亦可以成為與圍村長輩溝通的工具，延續家庭和社區的語言傳承。</p>
+					<hr />
+					<p>只需在程式中輸入文字，程式便會生成自然流暢的圍頭話或客家話語音。使用方法如下：</p>
+					<ol class="list-[circled-decimal] marker:text-slate-400 ml-12">
+						<li>在輸入框輸入文字</li>
+						<li>選擇語言：圍頭話／客家話</li>
+						<li>選擇語體：文言／書面語／口語材料</li>
+						<li>點選<button class="btn btn-accent btn-xs text-lg leading-none mx-1 pointer-events-none">加入句子</button></li>
+						<li>按播放鍵<button class="btn btn-warning btn-xs text-lg leading-none mx-1 pointer-events-none font-symbol">▶︎</button></li>
+					</ol>
+					<hr />
+					<p>
+						本程式由<a href="https://hkilang.org" target="_blank">香港本土語言保育協會</a>及<a href="https://crlls.eduhk.hk" target="_blank">香港教育大學語言學及語言研究中心</a>開發，語言模型部份由
+						<a href="https://hon9kon9ize.com" target="_blank">hon9kon9ize</a>
+						參與製作。特別鳴謝康樂及文化事務署<a href="https://www.icho.hk/tc/web/icho/home.html" target="_blank">非物質文化遺產辦事處</a>資助本計劃。
+					</p>
+					<p>
+						如有任何查詢，歡迎電郵至
+						<a href="mailto:info@hkilang.org" target="_blank">info@hkilang.org</a> 或 <a href="mailto:lchaakming@eduhk.hk" target="_blank">lchaakming@eduhk.hk</a>。
+					</p>
+					<picture>
+						<source media="(max-width: 640px)" srcset="./assets/credit-logos-small.svg" />
+						<img src="./assets/credit-logos-large.svg" alt="康樂及文化事務署非物質文化遺產資助計劃" />
+					</picture>
+				</div>
+			</div>
+		</dialog>
 		<script src="../src/index.tsx" type="module"></script>
 	</body>
 </html>
