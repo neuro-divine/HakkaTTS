@@ -20,14 +20,14 @@ export default function App() {
 		setText("");
 	}
 	return <div className="m-auto p-8 max-w-7xl">
-		<div className="flex items-center">
-			<div className="flex-1">
-				<h1>香港本土語言文字轉語音朗讀器</h1>
-				<h2 className="my-2">香港本土語言保育協會</h2>
-			</div>
+		<div className="grid items-center justify-center grid-cols-1 max-sm:max-w-fit">
+			<h1 className="max-sm:col-span-2">香港本土語言文字轉語音朗讀器</h1>
+			<h2 className="my-2">香港本土語言保育協會</h2>
 			<button
 				type="button"
-				className="btn btn-ghost btn-lg text-slate-500 text-[1.375rem] leading-7 hover:bg-opacity-10"
+				className="btn btn-ghost hover:bg-opacity-10
+						   max-sm:text-xl max-sm:font-normal max-sm:relative max-sm:left-4
+						   sm:btn-lg sm:text-[1.375rem] sm:leading-[1.875rem] sm:text-slate-500 sm:col-start-2 sm:row-start-1 sm:row-end-3"
 				onClick={() => (document.getElementById("about-dialog") as HTMLDialogElement).showModal()}>
 				ⓘ 關於
 			</button>
