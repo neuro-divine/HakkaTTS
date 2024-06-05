@@ -31,7 +31,7 @@ export default {
 			symbol: [
 				"-apple-system",
 				"BlinkMacSystemFont",
-				"Noto Sans Symbols 2",
+				'"Noto Sans Symbols 2"',
 				"Segoe UI Symbol",
 				"sans-serif",
 			],

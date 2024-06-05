@@ -9,6 +9,12 @@
 			font-size: 16px;
 		}
 	}
+	@font-face {
+		font-family: "Noto Sans Symbols 2";
+		font-display: swap;
+		src: url("https://fonts.gstatic.com/l/font?kit=I_uyMoGduATTei9eI8daxVHDyfisHr71ypbydJR7WOGXo6nZf0eLJkc&skey=5cf84917987cc637&v=v23") format("woff2");
+		descent-override: 25%;
+	}
 	:root {
 		--btn-text-case: none;
 		@apply bg-base-200;
