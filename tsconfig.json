@@ -27,5 +27,5 @@
 		"noEmit": true,
 		"jsx": "react-jsx"
 	},
-	"include": ["src", "*.config.[jt]s"]
+	"include": ["src", "*.config.ts"]
 }

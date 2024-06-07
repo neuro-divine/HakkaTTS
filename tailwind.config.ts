@@ -5,7 +5,7 @@ import type { Config } from "tailwindcss";
 
 export default {
 	important: true,
-	content: ["./public/index.html", "./src/**/*"],
+	content: ["./index.html", "./src/**/*"],
 	theme: {
 		fontFamily: {
 			sans: [

@@ -97,7 +97,7 @@
 		"import/no-absolute-path": "error",
 		"import/no-anonymous-default-export": ["warn", { "allowCallExpression": false }],
 		"import/no-extraneous-dependencies": ["error", {
-			"devDependencies": ["*.config.[jt]s"],
+			"devDependencies": ["*.config.ts"],
 			"includeInternal": true,
 			"includeTypes": true
 		}],
