@@ -1,85 +1,103 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
-import getAudio from "./audio";
+import { Client } from "@gradio/client";
+
 import { NO_AUTO_FILL } from "./consts";
 
 import type { Language } from "./types";
 import type { ChangeEvent } from "react";
 
+let waitau: Client | undefined;
+let hakka: Client | undefined;
+
+async function getClient(language: Language) {
+	switch (language) {
+		case "waitau":
+			return waitau ||= await Client.connect("Naozumi0512/WR");
+		case "hakka":
+			return hakka ||= await Client.connect("Naozumi0512/Hakka");
+	}
+}
+
 export default function AudioPlayer({ syllables, language }: { syllables: string[]; language: Language }) {
-	const [context] = useState(() => new AudioContext());
-	const [buffer, setBuffer] = useState<AudioBuffer | undefined>();
-	const [shouldUpdate, setshouldUpdate] = useState<boolean | null>(true);
-	const [sourceNode, setSourceNode] = useState<AudioBufferSourceNode | undefined>();
+	const [isReady, setIsReady] = useState(false);
 	const [isPlaying, setIsPlaying] = useState<boolean | null>(false);
-	const [startTime, setStartTime] = useState(0);
 	const [progress, setProgress] = useState(0);
 	const animationId = useRef(0);
+	const audio = useRef(new Audio());
 
-	useEffect(() => setshouldUpdate(true), [syllables]);
-	useEffect(() => {
-		if (!isPlaying || !buffer) return;
-		function updateSeekBar() {
-			if (isPlaying && buffer) {
-				const _progress = (context.currentTime - startTime) / buffer.duration;
-				setProgress(_progress);
-				if (_progress >= 1) stopAudio();
-			}
-			animationId.current = requestAnimationFrame(updateSeekBar);
-		}
-		updateSeekBar();
-		return () => cancelAnimationFrame(animationId.current);
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [isPlaying, buffer]);
-
-	async function playAudio() {
-		if (isPlaying || shouldUpdate === null) return;
-		let _buffer = buffer;
-		if (!_buffer || shouldUpdate) {
-			setshouldUpdate(null);
-			const context = new AudioContext();
-			_buffer = await getAudio(context, syllables, language);
-			context.addEventListener("statechange", pauseAudio);
-			setBuffer(_buffer);
-			setshouldUpdate(false);
-		}
-		const sourceNode = context.createBufferSource();
-		sourceNode.buffer = _buffer;
-		sourceNode.playbackRate.value = 1.15;
-
-		const _progress = progress * _buffer.duration;
-		sourceNode.connect(context.destination);
-		sourceNode.start(0, _progress);
-		setSourceNode(sourceNode);
+	const playAudio = useCallback(async () => {
+		if (isPlaying || !isReady) return;
+		await audio.current.play();
 		setIsPlaying(true);
-		setStartTime(context.currentTime - _progress);
-	}
-	function pauseAudio() {
+	}, [isPlaying, isReady]);
+
+	const pauseAudio = useCallback(() => {
 		setIsPlaying(false);
-		if (!sourceNode) return;
-		sourceNode.stop();
-		sourceNode.disconnect();
-		setSourceNode(undefined);
-	}
-	function stopAudio() {
+		audio.current.pause();
+	}, []);
+
+	const stopAudio = useCallback(() => {
 		pauseAudio();
 		setProgress(0);
-		setStartTime(context.currentTime);
-	}
-	function seekBarDown() {
+	}, [pauseAudio]);
+
+	useEffect(() => {
+		async function fetchAudio() {
+			const response = await (await getClient(language)).predict("/tts_fn", {
+				text: syllables.join(" "),
+				reference_audio: null,
+				style_text: null,
+				x: null,
+			});
+			const url = (response.data as { url: string }[] | undefined)?.[1]?.url;
+			if (url) {
+				audio.current.src = url;
+				await audio.current.play();
+				audio.current.pause();
+				audio.current.currentTime = progress * audio.current.duration;
+				setIsReady(true);
+			}
+		}
+		pauseAudio();
+		setIsReady(false);
+		void fetchAudio();
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [syllables, language, pauseAudio]);
+
+	useEffect(() => {
+		function updateSeekBar() {
+			if (isReady && isPlaying) setProgress(audio.current.currentTime / audio.current.duration);
+			animationId.current = requestAnimationFrame(updateSeekBar);
+		}
+		if (isReady && isPlaying) updateSeekBar();
+		return () => cancelAnimationFrame(animationId.current);
+	}, [isReady, isPlaying]);
+
+	useEffect(() => {
+		const element = audio.current;
+		element.addEventListener("ended", stopAudio);
+		return () => {
+			element.removeEventListener("ended", stopAudio);
+		};
+	}, [stopAudio]);
+
+	const seekBarDown = useCallback(() => {
 		if (!isPlaying) return;
 		pauseAudio();
 		setIsPlaying(null);
-	}
-	function seekBarMove(event: ChangeEvent<HTMLInputElement>) {
-		const _progress = +event.target.value;
-		setProgress(_progress);
-		if (buffer) setStartTime(context.currentTime - _progress * buffer.duration);
-	}
-	function seekBarUp() {
+	}, [isPlaying, pauseAudio]);
+
+	const seekBarMove = useCallback((event: ChangeEvent<HTMLInputElement>) => {
+		setProgress(+event.target.value);
+	}, []);
+
+	const seekBarUp = useCallback((event: ChangeEvent<HTMLInputElement>) => {
+		audio.current.currentTime = +event.target.value * audio.current.duration;
 		if (isPlaying === null) void playAudio();
-	}
-	return <div className="flex items-center mt-2">
+	}, [isPlaying, playAudio]);
+
+	return <div className="flex items-center mt-2 relative">
 		<button
 			type="button"
 			className="btn btn-warning btn-square text-xl font-symbol"
@@ -108,5 +126,8 @@ export default function AudioPlayer({ syllables, language }: { syllables: string
 			aria-label="停止">
 			⏹︎
 		</button>
+		{!isReady && <div className="absolute inset-0 flex items-center justify-center bg-base-content bg-opacity-10 rounded-lg">
+			<span className="loading loading-spinner loading-lg" />
+		</div>}
 	</div>;
 }
