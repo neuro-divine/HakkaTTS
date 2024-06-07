@@ -27,14 +27,13 @@ export default function AudioPlayer({ syllables, language }: { syllables: string
 	const audio = useRef(new Audio());
 
 	const playAudio = useCallback(async () => {
-		if (isPlaying || !isReady) return;
 		await audio.current.play();
 		setIsPlaying(true);
-	}, [isPlaying, isReady]);
+	}, []);
 
 	const pauseAudio = useCallback(() => {
-		setIsPlaying(false);
 		audio.current.pause();
+		setIsPlaying(false);
 	}, []);
 
 	const stopAudio = useCallback(() => {
@@ -84,9 +83,9 @@ export default function AudioPlayer({ syllables, language }: { syllables: string
 
 	const seekBarDown = useCallback(() => {
 		if (!isPlaying) return;
-		pauseAudio();
+		audio.current.pause();
 		setIsPlaying(null);
-	}, [isPlaying, pauseAudio]);
+	}, [isPlaying]);
 
 	const seekBarMove = useCallback((event: SyntheticEvent<HTMLInputElement>) => {
 		setProgress(+event.currentTarget.value);
