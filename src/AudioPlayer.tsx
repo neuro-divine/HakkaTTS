@@ -82,7 +82,7 @@ export default function AudioPlayer({ syllables, language }: { syllables: string
 	return <div className="flex items-center mt-2">
 		<button
 			type="button"
-			className="btn btn-warning btn-square text-lg font-symbol"
+			className="btn btn-warning btn-square text-xl font-symbol"
 			onClick={isPlaying === false ? playAudio : pauseAudio}
 			aria-label={isPlaying === false ? "播放" : "暫停"}>
 			{isPlaying === false ? "▶︎" : "⏸︎"}
@@ -103,7 +103,7 @@ export default function AudioPlayer({ syllables, language }: { syllables: string
 			onTouchCancel={seekBarUp} />
 		<button
 			type="button"
-			className="btn btn-warning btn-square text-lg font-symbol"
+			className="btn btn-warning btn-square text-xl font-symbol"
 			onClick={stopAudio}
 			aria-label="停止">
 			⏹︎
