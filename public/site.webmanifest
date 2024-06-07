@@ -39,7 +39,13 @@
 		{ "src": "./assets/screenshot-ios-narrow-about.png", "sizes": "1242x2208", "type": "image/png", "platform": "ios", "form_factor": "narrow", "label": "關於" },
 		{ "src": "./assets/screenshot-ios-wide-waitau.png", "sizes": "2732x2048", "type": "image/png", "platform": "ios", "form_factor": "wide", "label": "圍頭話" },
 		{ "src": "./assets/screenshot-ios-wide-hakka.png", "sizes": "2732x2048", "type": "image/png", "platform": "ios", "form_factor": "wide", "label": "客家話" },
-		{ "src": "./assets/screenshot-ios-wide-about.png", "sizes": "2732x2048", "type": "image/png", "platform": "ios", "form_factor": "wide", "label": "關於" }
+		{ "src": "./assets/screenshot-ios-wide-about.png", "sizes": "2732x2048", "type": "image/png", "platform": "ios", "form_factor": "wide", "label": "關於" },
+		{ "src": "./assets/screenshot-windows-waitau.png", "sizes": "1920x1080", "type": "image/png", "platform": "windows", "label": "圍頭話" },
+		{ "src": "./assets/screenshot-windows-hakka.png", "sizes": "1920x1080", "type": "image/png", "platform": "windows", "label": "客家話" },
+		{ "src": "./assets/screenshot-windows-about.png", "sizes": "1920x1080", "type": "image/png", "platform": "windows", "label": "關於" },
+		{ "src": "./assets/screenshot-macos-waitau.png", "sizes": "3840x2160", "type": "image/png", "platform": "macos", "label": "圍頭話" },
+		{ "src": "./assets/screenshot-macos-hakka.png", "sizes": "3840x2160", "type": "image/png", "platform": "macos", "label": "客家話" },
+		{ "src": "./assets/screenshot-macos-about.png", "sizes": "3840x2160", "type": "image/png", "platform": "macos", "label": "關於" }
 	],
 	"theme_color": "#f1ede3",
 	"background_color": "#f1ede3",
