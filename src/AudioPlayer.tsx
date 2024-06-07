@@ -5,7 +5,7 @@ import { Client } from "@gradio/client";
 import { NO_AUTO_FILL } from "./consts";
 
 import type { Language } from "./types";
-import type { ChangeEvent } from "react";
+import type { SyntheticEvent } from "react";
 
 let waitau: Client | undefined;
 let hakka: Client | undefined;
@@ -88,12 +88,12 @@ export default function AudioPlayer({ syllables, language }: { syllables: string
 		setIsPlaying(null);
 	}, [isPlaying, pauseAudio]);
 
-	const seekBarMove = useCallback((event: ChangeEvent<HTMLInputElement>) => {
-		setProgress(+event.target.value);
+	const seekBarMove = useCallback((event: SyntheticEvent<HTMLInputElement>) => {
+		setProgress(+event.currentTarget.value);
 	}, []);
 
-	const seekBarUp = useCallback((event: ChangeEvent<HTMLInputElement>) => {
-		audio.current.currentTime = +event.target.value * audio.current.duration;
+	const seekBarUp = useCallback((event: SyntheticEvent<HTMLInputElement>) => {
+		audio.current.currentTime = +event.currentTarget.value * audio.current.duration;
 		if (isPlaying === null) void playAudio();
 	}, [isPlaying, playAudio]);
 
