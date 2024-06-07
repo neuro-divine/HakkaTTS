@@ -31,6 +31,9 @@
 		"importDeclaration.sortNamedImports": "maintain"
 	},
 	"json": {
+		"associations": [
+			"**/*.{json,jsonc,webmanifest,*rc}"
+		],
 		"trailingCommas": "never"
 	},
 	"markdown": {},

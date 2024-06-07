@@ -7,7 +7,9 @@ import SentenceCard from "./SentenceCard";
 
 import type { Genre, Language, Sentence } from "./types";
 
-const logo = String(new URL("url:../public/assets/android-chrome-192x192.png", import.meta.url));
+const icon64 = String(new URL("url:../public/assets/favicon-64x64.png", import.meta.url));
+const icon128 = String(new URL("url:../public/assets/favicon-128x128.png", import.meta.url));
+const icon192 = String(new URL("url:../public/assets/favicon-192x192.png", import.meta.url));
 
 export default function App() {
 	const [language, setLanguage] = useState<Language>("waitau");
@@ -23,7 +25,7 @@ export default function App() {
 	}
 	return <div className="m-auto p-8 max-w-7xl">
 		<div className="grid items-center justify-center grid-cols-1 xs:grid-cols-[auto_1fr_auto] max-sm:max-w-fit">
-			<img className="row-span-2 h-16 mr-4 mb-2 max-xs:hidden" src={logo} alt="應用程式標誌" />
+			<img className="row-span-2 w-16 mr-4 mb-2 max-xs:hidden" srcSet={`${icon64}, ${icon128} 2x, ${icon192} 3x`} alt="應用程式標誌" />
 			<h1 className="max-sm:col-span-2">香港本土語言文字轉語音朗讀器</h1>
 			<h2 className="my-2">香港本土語言保育協會</h2>
 			<button

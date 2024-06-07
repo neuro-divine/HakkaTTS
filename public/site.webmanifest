@@ -4,28 +4,42 @@
 	"start_url": ".",
 	"lang": "zh-HK",
 	"icons": [
-		{
-			"src": "./assets/android-chrome-192x192.png",
-			"sizes": "192x192",
-			"type": "image/png"
-		},
-		{
-			"src": "./assets/android-chrome-512x512.png",
-			"sizes": "512x512",
-			"type": "image/png"
-		},
-		{
-			"src": "./assets/android-maskable-192x192.png",
-			"sizes": "192x192",
-			"type": "image/png",
-			"purpose": "maskable"
-		},
-		{
-			"src": "./assets/android-maskable-512x512.png",
-			"sizes": "512x512",
-			"type": "image/png",
-			"purpose": "maskable"
-		}
+		{ "src": "./assets/favicon-16x16.png", "sizes": "16x16", "type": "image/png" },
+		{ "src": "./assets/favicon-32x32.png", "sizes": "32x32", "type": "image/png" },
+		{ "src": "./assets/favicon-64x64.png", "sizes": "64x64", "type": "image/png" },
+		{ "src": "./assets/favicon-128x128.png", "sizes": "128x128", "type": "image/png" },
+		{ "src": "./assets/favicon-192x192.png", "sizes": "192x192", "type": "image/png" },
+		{ "src": "./assets/favicon-256x256.png", "sizes": "256x256", "type": "image/png" },
+		{ "src": "./assets/favicon-384x384.png", "sizes": "384x384", "type": "image/png" },
+		{ "src": "./assets/favicon-512x512.png", "sizes": "512x512", "type": "image/png" },
+		{ "src": "./assets/favicon-576x576.png", "sizes": "576x576", "type": "image/png" },
+		{ "src": "./assets/favicon-768x768.png", "sizes": "768x768", "type": "image/png" },
+		{ "src": "./assets/favicon-1024x1024.png", "sizes": "1024x1024", "type": "image/png" },
+		{ "src": "./assets/android-maskable-16x16.png", "sizes": "16x16", "type": "image/png", "purpose": "maskable" },
+		{ "src": "./assets/android-maskable-32x32.png", "sizes": "32x32", "type": "image/png", "purpose": "maskable" },
+		{ "src": "./assets/android-maskable-64x64.png", "sizes": "64x64", "type": "image/png", "purpose": "maskable" },
+		{ "src": "./assets/android-maskable-128x128.png", "sizes": "128x128", "type": "image/png", "purpose": "maskable" },
+		{ "src": "./assets/android-maskable-192x192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+		{ "src": "./assets/android-maskable-256x256.png", "sizes": "256x256", "type": "image/png", "purpose": "maskable" },
+		{ "src": "./assets/android-maskable-384x384.png", "sizes": "384x384", "type": "image/png", "purpose": "maskable" },
+		{ "src": "./assets/android-maskable-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
+		{ "src": "./assets/android-maskable-576x576.png", "sizes": "576x576", "type": "image/png", "purpose": "maskable" },
+		{ "src": "./assets/android-maskable-768x768.png", "sizes": "768x768", "type": "image/png", "purpose": "maskable" },
+		{ "src": "./assets/android-maskable-1024x1024.png", "sizes": "1024x1024", "type": "image/png", "purpose": "maskable" }
+	],
+	"screenshots": [
+		{ "src": "./assets/screenshot-android-narrow-waitau.png", "sizes": "1080x2220", "type": "image/png", "platform": "android", "form_factor": "narrow", "label": "圍頭話" },
+		{ "src": "./assets/screenshot-android-narrow-hakka.png", "sizes": "1080x2220", "type": "image/png", "platform": "android", "form_factor": "narrow", "label": "客家話" },
+		{ "src": "./assets/screenshot-android-narrow-about.png", "sizes": "1080x2220", "type": "image/png", "platform": "android", "form_factor": "narrow", "label": "關於" },
+		{ "src": "./assets/screenshot-android-wide-waitau.png", "sizes": "2560x1800", "type": "image/png", "platform": "android", "form_factor": "wide", "label": "圍頭話" },
+		{ "src": "./assets/screenshot-android-wide-hakka.png", "sizes": "2560x1800", "type": "image/png", "platform": "android", "form_factor": "wide", "label": "客家話" },
+		{ "src": "./assets/screenshot-android-wide-about.png", "sizes": "2560x1800", "type": "image/png", "platform": "android", "form_factor": "wide", "label": "關於" },
+		{ "src": "./assets/screenshot-ios-narrow-waitau.png", "sizes": "1242x2208", "type": "image/png", "platform": "ios", "form_factor": "narrow", "label": "圍頭話" },
+		{ "src": "./assets/screenshot-ios-narrow-hakka.png", "sizes": "1242x2208", "type": "image/png", "platform": "ios", "form_factor": "narrow", "label": "客家話" },
+		{ "src": "./assets/screenshot-ios-narrow-about.png", "sizes": "1242x2208", "type": "image/png", "platform": "ios", "form_factor": "narrow", "label": "關於" },
+		{ "src": "./assets/screenshot-ios-wide-waitau.png", "sizes": "2732x2048", "type": "image/png", "platform": "ios", "form_factor": "wide", "label": "圍頭話" },
+		{ "src": "./assets/screenshot-ios-wide-hakka.png", "sizes": "2732x2048", "type": "image/png", "platform": "ios", "form_factor": "wide", "label": "客家話" },
+		{ "src": "./assets/screenshot-ios-wide-about.png", "sizes": "2732x2048", "type": "image/png", "platform": "ios", "form_factor": "wide", "label": "關於" }
 	],
 	"theme_color": "#f1ede3",
 	"background_color": "#f1ede3",
