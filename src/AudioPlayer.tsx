@@ -1,12 +1,16 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useReducer, useRef, useState } from "react";
 
 import { NO_AUTO_FILL } from "./consts";
 
-import type { Language } from "./types";
+import type { Language, ServerError } from "./types";
 import type { SyntheticEvent } from "react";
+
+const audioCache: Record<Language, Map<string, string>> = { waitau: new Map(), hakka: new Map() };
 
 export default function AudioPlayer({ syllables, language }: { syllables: string[]; language: Language }) {
 	const [isReady, setIsReady] = useState(false);
+	const [serverError, setServerError] = useState<ServerError | undefined>();
+	const [retryCounter, retry] = useReducer((n: number) => n + 1, 0);
 	const [isPlaying, setIsPlaying] = useState<boolean | null>(false);
 	const [progress, setProgress] = useState(0);
 	const animationId = useRef(0);
@@ -27,12 +31,22 @@ export default function AudioPlayer({ syllables, language }: { syllables: string
 		setProgress(0);
 	}, [pauseAudio]);
 
+	const text = syllables.join("+");
 	useEffect(() => {
 		const _isPlaying = isPlaying;
 		async function fetchAudio() {
-			const response = await fetch(`https://Chaak2.pythonanywhere.com/TTS/${language}/${encodeURIComponent(syllables.join("+"))}`);
-			if (response.ok) {
-				audio.current.src = URL.createObjectURL(await response.blob());
+			let url = audioCache[language].get(text);
+			if (!url) {
+				const response = await fetch(`https://Chaak2.pythonanywhere.com/TTS/${language}/${text}`);
+				if (response.ok) {
+					audioCache[language].set(text, url = URL.createObjectURL(await response.blob()));
+				}
+				else {
+					setServerError(await response.json() as ServerError);
+				}
+			}
+			if (url) {
+				audio.current.src = url;
 				await audio.current.play();
 				audio.current.pause();
 				audio.current.currentTime = progress * audio.current.duration;
@@ -42,10 +56,11 @@ export default function AudioPlayer({ syllables, language }: { syllables: string
 			}
 		}
 		audio.current.pause();
+		setServerError(undefined);
 		setIsReady(false);
 		void fetchAudio();
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [language, syllables, pauseAudio]);
+	}, [language, text, retryCounter]);
 
 	useEffect(() => {
 		if (!isReady || !isPlaying) return;
@@ -112,8 +127,20 @@ export default function AudioPlayer({ syllables, language }: { syllables: string
 			tabIndex={isReady ? 0 : -1}>
 			⏹︎
 		</button>
-		{!isReady && <div className="absolute inset-0 flex items-center justify-center bg-base-content bg-opacity-10 rounded-lg">
-			<span className="loading loading-spinner loading-lg" />
+		{!isReady && <div className="absolute inset-0 flex items-center justify-center bg-base-content bg-opacity-10 rounded-lg text-xl">
+			{serverError
+				? <div>
+					<span className="font-semibold">錯誤：</span>
+					{serverError.error}
+					{serverError.message && <>
+						{": "}
+						<code>{serverError.message}</code>
+					</>}
+					<button type="button" className="btn btn-info btn-sm text-lg text-neutral-content ml-2 gap-1" onClick={retry}>
+						<span className="font-symbol rotate-90">⭮</span>重試
+					</button>
+				</div>
+				: <span className="loading loading-spinner loading-lg" />}
 		</div>}
 	</div>;
 }
