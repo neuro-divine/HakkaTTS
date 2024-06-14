@@ -23,7 +23,7 @@
 	}
 	:root {
 		--btn-text-case: none;
-		@apply bg-base-200;
+		@apply bg-base-200 overscroll-none size-0;
 	}
 	body {
 		@apply overflow-hidden;
