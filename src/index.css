@@ -4,7 +4,10 @@
 
 @layer base {
 	html {
-		font-size: 12px;
+		font-size: 3.25vw;
+		@screen xs {
+			font-size: 12px;
+		}
 		@media (min-width: 640px) {
 			font-size: 14px;
 		}
@@ -21,10 +24,6 @@
 	:root {
 		--btn-text-case: none;
 		@apply bg-base-200;
-	}
-	body,
-	.modal {
-		min-width: 384px;
 	}
 	h1 {
 		@apply text-3xl font-bold whitespace-nowrap;

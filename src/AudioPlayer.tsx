@@ -98,7 +98,7 @@ export default function AudioPlayer({ syllables, language }: { syllables: string
 	return <div className="flex items-center mt-2 relative">
 		<button
 			type="button"
-			className="btn btn-warning btn-square text-xl font-symbol"
+			className="btn btn-warning btn-square text-lg max-sm:size-10 max-sm:min-h-10 sm:text-xl font-symbol"
 			onClick={isPlaying === false ? playAudio : pauseAudio}
 			aria-label={isPlaying === false ? "播放" : "暫停"}
 			tabIndex={isReady ? 0 : -1}>
@@ -106,7 +106,7 @@ export default function AudioPlayer({ syllables, language }: { syllables: string
 		</button>
 		<input
 			type="range"
-			className="range range-warning range-sm grow mx-4"
+			className="range range-warning range-xs sm:range-sm grow mx-4"
 			min={0}
 			max={1}
 			value={progress}
@@ -121,7 +121,7 @@ export default function AudioPlayer({ syllables, language }: { syllables: string
 			tabIndex={isReady ? 0 : -1} />
 		<button
 			type="button"
-			className="btn btn-warning btn-square text-xl font-symbol"
+			className="btn btn-warning btn-square text-lg max-sm:size-10 max-sm:min-h-10 sm:text-xl font-symbol"
 			onClick={stopAudio}
 			aria-label="停止"
 			tabIndex={isReady ? 0 : -1}>
