@@ -48,11 +48,11 @@
 		@apply invisible opacity-0;
 	}
 	.modal {
-		display: none;
-		transition-property: transform, opacity, visibility, display;
-		transition-behavior: allow-discrete;
-		&[open] {
-			display: grid;
+		&:not([open]) * {
+			/* https://stackoverflow.com/a/66951594 */
+			visibility: hidden;
+			/* Follows DaisyUI */
+			transition: all 200ms cubic-bezier(0, 0, 0.2, 1);
 		}
 		:where(p, ul, ol) {
 			@apply text-lg mx-6 my-3;
