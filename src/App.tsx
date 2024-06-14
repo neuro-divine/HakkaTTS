@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 import { NO_AUTO_FILL } from "./consts";
 import parse from "./parse";
@@ -10,15 +10,42 @@ import type { Genre, Language, Sentence } from "./types";
 export default function App() {
 	const [language, setLanguage] = useState<Language>("waitau");
 	const [genre, setGenre] = useState<Genre>("lit");
-	const [text, setText] = useState("");
 	const [sentences, setSentences] = useState<Sentence[]>([]);
-	function addSentence() {
+
+	const textArea = useRef<HTMLTextAreaElement>(null);
+	const btnAddSentence = useRef<HTMLButtonElement>(null);
+
+	const resizeElements = useCallback(() => {
+		if (textArea.current && btnAddSentence.current) {
+			const height = textArea.current.style.height;
+			textArea.current.style.setProperty("height", "");
+			textArea.current.style.setProperty("min-height", "");
+			btnAddSentence.current.style.setProperty("min-height", "");
+			const scrollHeight = textArea.current.scrollHeight;
+			textArea.current.style.setProperty("height", height);
+			textArea.current.style.setProperty("min-height", `${scrollHeight}px`, "important");
+			btnAddSentence.current.style.setProperty("min-height", `${Math.max(parseInt(height) || 0, scrollHeight)}px`, "important");
+		}
+	}, [textArea, btnAddSentence]);
+
+	const addSentence = useCallback(() => {
+		if (!textArea.current) return;
 		setSentences([
-			...text.split("\n").flatMap(line => (line.trim() ? [{ language, genre, sentence: parse(language, line) }] : [])),
+			...textArea.current.value.split("\n").flatMap(line => (line.trim() ? [{ language, genre, sentence: parse(language, line) }] : [])),
 			...sentences,
 		]);
-		setText("");
-	}
+		textArea.current.value = "";
+		resizeElements();
+	}, [textArea, genre, language, sentences, resizeElements]);
+
+	useEffect(() => {
+		if (!textArea.current) return;
+		const currTextArea = textArea.current;
+		const observer = new ResizeObserver(resizeElements);
+		observer.observe(currTextArea);
+		return () => observer.unobserve(currTextArea);
+	}, [textArea, resizeElements]);
+
 	return <div>
 		<div>
 			<div className="flex gap-3 mb-4">
@@ -40,13 +67,17 @@ export default function App() {
 			</div>
 			<div className="join w-full">
 				<textarea
-					className="textarea textarea-accent xs:textarea-md xs:text-lg xs:min-h-14 sm:textarea-lg sm:text-xl sm:min-h-16 flex-grow join-item"
+					className="textarea textarea-accent xs:textarea-md xs:text-lg xs:min-h-14 sm:textarea-lg sm:text-xl sm:min-h-16 flex-grow join-item overflow-hidden"
 					placeholder="輸入文字……"
 					rows={1}
 					{...NO_AUTO_FILL}
-					value={text}
-					onChange={event => setText(event.target.value)} />
-				<button type="button" className="btn btn-accent xs:max-sm:text-base xs:max-sm:min-h-14 sm:btn-lg h-full join-item" onClick={addSentence}>
+					ref={textArea}
+					onChange={resizeElements} />
+				<button
+					type="button"
+					className="btn btn-accent xs:max-sm:text-base xs:max-sm:min-h-14 sm:btn-lg h-full join-item"
+					ref={btnAddSentence}
+					onClick={addSentence}>
 					加入句子
 				</button>
 			</div>
