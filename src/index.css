@@ -64,6 +64,9 @@
 			}
 		}
 	}
+	label.btn:has(input:focus-visible) {
+		@apply outline outline-2 outline-offset-2;
+	}
 }
 
 /* https://w3c.github.io/predefined-counter-styles/#circled-decimal */
