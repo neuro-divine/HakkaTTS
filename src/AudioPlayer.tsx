@@ -37,12 +37,17 @@ export default function AudioPlayer({ syllables, language }: { syllables: string
 		async function fetchAudio() {
 			let url = audioCache[language].get(text);
 			if (!url) {
-				const response = await fetch(`https://Chaak2.pythonanywhere.com/TTS/${language}/${text}`);
-				if (response.ok) {
-					audioCache[language].set(text, url = URL.createObjectURL(await response.blob()));
+				try {
+					const response = await fetch(`https://Chaak2.pythonanywhere.com/TTS/${language}/${text}`);
+					if (response.ok) {
+						audioCache[language].set(text, url = URL.createObjectURL(await response.blob()));
+					}
+					else {
+						setServerError(await response.json() as ServerError);
+					}
 				}
-				else {
-					setServerError(await response.json() as ServerError);
+				catch {
+					setServerError({ error: "載入失敗" });
 				}
 			}
 			if (url) {
