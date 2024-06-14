@@ -47,12 +47,12 @@ export default function AudioPlayer({ syllables, language }: { syllables: string
 			}
 			if (url) {
 				audio.current.src = url;
-				await audio.current.play();
-				audio.current.pause();
-				audio.current.currentTime = progress * audio.current.duration;
-				setIsReady(true);
-				if (_isPlaying) await audio.current.play();
-				setIsPlaying(_isPlaying);
+				audio.current.addEventListener("canplay", async () => {
+					audio.current.currentTime = progress * audio.current.duration;
+					setIsReady(true);
+					if (_isPlaying) await audio.current.play();
+					setIsPlaying(_isPlaying);
+				}, { once: true });
 			}
 		}
 		audio.current.pause();
