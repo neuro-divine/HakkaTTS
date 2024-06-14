@@ -25,6 +25,9 @@
 		--btn-text-case: none;
 		@apply bg-base-200;
 	}
+	body {
+		@apply overflow-hidden;
+	}
 	h1 {
 		@apply text-3xl font-bold whitespace-nowrap;
 	}
