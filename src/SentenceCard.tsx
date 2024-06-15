@@ -15,7 +15,7 @@ export default function SentenceCard({ sentence: { language, genre, sentence } }
 				<span className="badge badge-primary join-item">{TERMINOLOGY[language]}</span>
 				<span className="badge badge-secondary join-item">{TERMINOLOGY[genre]}</span>
 			</div>
-			<p className="text-2xl leading-6 sm:text-4xl mt-2 sm:mt-5">
+			<div className="text-2xl leading-6 sm:text-4xl mt-2 sm:mt-5">
 				{sentence.map(([char, pronNoteArray], i) => (
 					<Char
 						key={i}
@@ -27,7 +27,7 @@ export default function SentenceCard({ sentence: { language, genre, sentence } }
 							setSyllables(newSyllables);
 						}} />
 				))}
-			</p>
+			</div>
 			<AudioPlayer syllables={syllables} language={language} />
 		</div>
 	</div>;
