@@ -22,7 +22,7 @@ export default function App() {
 			textArea.current.style.setProperty("min-height", "");
 			btnAddSentence.current.style.setProperty("min-height", "");
 			const scrollHeight = textArea.current.scrollHeight;
-			textArea.current.style.setProperty("height", height);
+			textArea.current.style.setProperty("height", height, "important");
 			textArea.current.style.setProperty("min-height", `${scrollHeight}px`, "important");
 			btnAddSentence.current.style.setProperty("min-height", `${Math.max(parseInt(height) || 0, scrollHeight)}px`, "important");
 		}
@@ -67,7 +67,7 @@ export default function App() {
 			</div>
 			<div className="join w-full">
 				<textarea
-					className="textarea textarea-accent xs:textarea-md xs:text-lg xs:min-h-14 sm:textarea-lg sm:text-xl sm:min-h-16 flex-grow join-item overflow-hidden"
+					className="textarea textarea-accent text-lg h-0 min-h-0 max-sm:py-2.5 sm:textarea-lg sm:text-xl flex-grow join-item overflow-hidden"
 					placeholder="輸入文字……"
 					rows={1}
 					{...NO_AUTO_FILL}
@@ -75,7 +75,7 @@ export default function App() {
 					onChange={resizeElements} />
 				<button
 					type="button"
-					className="btn btn-accent xs:max-sm:text-base xs:max-sm:min-h-14 sm:btn-lg h-full join-item"
+					className="btn btn-accent h-0 min-h-0 max-sm:text-base sm:btn-lg join-item"
 					ref={btnAddSentence}
 					onClick={addSentence}>
 					加入句子

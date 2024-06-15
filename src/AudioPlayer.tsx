@@ -101,7 +101,7 @@ export default function AudioPlayer({ syllables, language }: { syllables: string
 	return <div className="flex items-center mt-2 relative">
 		<button
 			type="button"
-			className="btn btn-warning btn-square text-lg max-sm:size-10 max-sm:min-h-10 sm:text-xl font-symbol"
+			className="btn btn-warning btn-square text-xl max-sm:size-10 max-sm:min-h-10 font-symbol"
 			onClick={isPlaying === false ? playAudio : pauseAudio}
 			aria-label={isPlaying === false ? "播放" : "暫停"}
 			tabIndex={isReady ? 0 : -1}>
@@ -109,7 +109,7 @@ export default function AudioPlayer({ syllables, language }: { syllables: string
 		</button>
 		<input
 			type="range"
-			className="range range-warning range-xs sm:range-sm grow mx-4"
+			className="range range-warning range-sm grow mx-3 sm:mx-4"
 			min={0}
 			max={1}
 			value={progress}
@@ -124,16 +124,16 @@ export default function AudioPlayer({ syllables, language }: { syllables: string
 			tabIndex={isReady ? 0 : -1} />
 		<button
 			type="button"
-			className="btn btn-warning btn-square text-lg max-sm:size-10 max-sm:min-h-10 sm:text-xl font-symbol"
+			className="btn btn-warning btn-square text-xl max-sm:size-10 max-sm:min-h-10 font-symbol"
 			onClick={stopAudio}
 			aria-label="停止"
 			tabIndex={isReady ? 0 : -1}>
 			⏹︎
 		</button>
-		{!isReady && <div className="absolute inset-0 flex items-center justify-center bg-base-content bg-opacity-10 rounded-lg text-xl">
+		{!isReady && <div className={`absolute inset-0 flex items-center justify-center ${serverError ? "bg-gray-300 bg-opacity-50" : "bg-gray-500 bg-opacity-20"} rounded-lg text-xl`}>
 			{serverError
 				? <div>
-					<span className="font-semibold">錯誤：</span>
+					<span className="font-bold">錯誤：</span>
 					{serverError.error}
 					{serverError.message && <>
 						{": "}
@@ -143,7 +143,7 @@ export default function AudioPlayer({ syllables, language }: { syllables: string
 						<span className="font-symbol rotate-90">⭮</span>重試
 					</button>
 				</div>
-				: <span className="loading loading-spinner loading-lg" />}
+				: <span className="loading loading-spinner max-sm:w-8 sm:loading-lg" />}
 		</div>}
 	</div>;
 }
