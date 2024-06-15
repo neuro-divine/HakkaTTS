@@ -30,6 +30,9 @@
 		<link rel="manifest" href="./site.webmanifest" />
 		<link rel="mask-icon" href="./assets/safari-pinned-tab.svg" color="#f5ad3b" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link rel="preconnect" href="https://cdn.jsdelivr.net" />
+		<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chiron-sung-hk-webfont/css/vf.min.css" />
 		<meta name="theme-color" content="#f1ede3" />
 		<meta name="apple-mobile-web-app-title" content="香港本土語言文字轉語音朗讀器" />
 		<meta name="application-name" content="香港本土語言文字轉語音朗讀器" />
@@ -51,7 +54,9 @@
 					<img class="row-span-2 w-16 mr-4 mb-2 max-xs:hidden" srcset="./assets/favicon-64x64.png, ./assets/favicon-128x128.png 2x, ./assets/favicon-192x192.png 3x" alt="應用程式標誌" />
 					<h1 class="max-sm:col-span-2">香港本土語言文字轉語音朗讀器</h1>
 					<h2 class="my-2">香港本土語言保育協會</h2>
-					<button id="btn-show" type="button" class="btn btn-ghost hover:bg-opacity-10 max-sm:text-xl max-sm:font-normal max-sm:relative max-sm:left-4 sm:btn-lg sm:text-[1.375rem] sm:leading-[1.875rem] sm:text-slate-500 sm:col-start-3 sm:row-start-1 sm:row-end-3"><span class="font-symbol font-normal">🛈</span>關於</button>
+					<button id="btn-show" type="button" class="btn btn-ghost hover:bg-opacity-10 max-sm:text-xl max-sm:font-normal max-sm:relative max-sm:left-4 sm:btn-lg sm:text-1.5xl sm:text-slate-500 sm:col-start-3 sm:row-start-1 sm:row-end-3">
+						<span><span class="font-symbol font-normal mr-2">🛈</span>關於</span>
+					</button>
 				</header>
 				<main id="root"></main>
 			</div>
@@ -60,9 +65,9 @@
 			<div class="modal-box p-0 flex flex-col sm:max-w-3xl max-h-[calc(100%-5rem)]">
 				<form method="dialog">
 					<!-- TODO: Should use 🗙 U+1F5D9 CANCELLATION X instead, but its font metrics and weight are different from other characters -->
-					<button type="submit" class="btn btn-ghost w-14 h-14 min-h-14 text-[2.5rem] font-symbol font-normal absolute right-3 top-3 text-slate-500 hover:bg-opacity-10" aria-label="關閉"><span class="relative bottom-1">✕</span></button>
+					<button type="submit" class="btn btn-ghost w-14 h-14 min-h-14 text-4.5xl font-symbol font-normal absolute right-3 top-3 text-slate-500 hover:bg-opacity-10" aria-label="關閉"><span class="relative bottom-1">✕</span></button>
 				</form>
-				<h3 class="mx-6 mt-6 mb-[1.125rem]"><span class="font-symbol font-normal mr-2">🛈</span>關於</h3>
+				<h3 class="mx-6 mt-6 mb-4.5"><span class="font-symbol font-normal mr-2">🛈</span>關於</h3>
 				<hr />
 				<div class="overflow-y-auto">
 					<p>歡迎使用<b>香港本土語言文字轉語音（Text-to-Speech）朗讀器</b>！</p>
@@ -70,12 +75,12 @@
 					<p>使用本文字轉語音（<abbr>TTS</abbr>）朗讀器，可以作為學習圍頭話、客家話的資源，亦可以成為與圍村長輩溝通的工具，延續家庭和社區的語言傳承。</p>
 					<hr />
 					<p>只需在程式中輸入文字，程式便會生成自然流暢的圍頭話或客家話語音。使用方法如下：</p>
-					<ol class="list-[circled-decimal] marker:text-slate-400 ml-12">
+					<ol class="list-[circled-decimal] marker:text-slate-400 ml-13">
 						<li>在輸入框輸入文字</li>
 						<li>選擇語言：圍頭話／客家話</li>
 						<li>選擇語體：文言／書面語／口語材料</li>
-						<li>點選<div class="btn btn-accent btn-xs text-lg leading-none mx-1 pointer-events-none">加入句子</div></li>
-						<li>按播放鍵<div class="btn btn-warning btn-xs text-lg leading-none mx-1 pointer-events-none font-symbol">▶︎</div></li>
+						<li>點選<span class="btn btn-accent btn-xs text-lg/none mx-1 pointer-events-none">加入句子</span></li>
+						<li>按播放鍵<span class="btn btn-warning btn-square btn-xs text-sm/none mx-1 pointer-events-none font-symbol">▶︎</span></li>
 					</ol>
 					<hr />
 					<p>

@@ -15,7 +15,7 @@ export default function SentenceCard({ sentence: { language, genre, sentence } }
 				<span className="badge badge-primary join-item">{TERMINOLOGY[language]}</span>
 				<span className="badge badge-secondary join-item">{TERMINOLOGY[genre]}</span>
 			</div>
-			<div className="text-2xl leading-6 sm:text-4xl mt-2 sm:mt-5">
+			<div className="text-2.5xl/none sm:text-4xl mt-2 sm:mt-5">
 				{sentence.map(([char, pronNoteArray], i) => (
 					<Char
 						key={i}
