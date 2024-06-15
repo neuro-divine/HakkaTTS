@@ -18,6 +18,8 @@ if (visualViewport !== null) {
 	});
 }
 
+document.addEventListener("gesturestart", event => event.preventDefault());
+
 const aboutDialog = document.getElementById("about-dialog") as HTMLDialogElement;
 document.getElementById("btn-show")!.addEventListener("click", () => {
 	// https://stackoverflow.com/a/76158858
