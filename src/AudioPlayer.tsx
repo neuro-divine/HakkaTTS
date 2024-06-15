@@ -18,8 +18,9 @@ export default function AudioPlayer({ syllables, language }: { syllables: string
 
 	const playAudio = useCallback(async () => {
 		await audio.current.play();
+		audio.current.currentTime = progress * audio.current.duration;
 		setIsPlaying(true);
-	}, []);
+	}, [progress]);
 
 	const pauseAudio = useCallback(() => {
 		audio.current.pause();
@@ -52,12 +53,9 @@ export default function AudioPlayer({ syllables, language }: { syllables: string
 			}
 			if (url) {
 				audio.current.src = url;
-				audio.current.addEventListener("canplay", async () => {
-					audio.current.currentTime = progress * audio.current.duration;
-					setIsReady(true);
-					if (_isPlaying) await audio.current.play();
-					setIsPlaying(_isPlaying);
-				}, { once: true });
+				setIsReady(true);
+				if (_isPlaying) await playAudio();
+				else setIsPlaying(false);
 			}
 		}
 		audio.current.pause();
