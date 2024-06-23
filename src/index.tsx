@@ -28,4 +28,14 @@ document.getElementById("btn-show")!.addEventListener("click", () => {
 	aboutDialog.inert = false;
 });
 
+for (const anchor of document.querySelectorAll("a[href^='#']")) {
+	const target = document.querySelector((anchor as HTMLAnchorElement).hash);
+	if (target) {
+		anchor.addEventListener("click", event => {
+			event.preventDefault();
+			target.scrollIntoView({ behavior: "smooth" });
+		});
+	}
+}
+
 createRoot(document.getElementById("root")!).render(<App />);
