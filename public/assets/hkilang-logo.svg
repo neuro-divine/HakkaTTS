@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+  <rect fill="white" x="0" y="0" width="1000" height="1000"/>
+  <rect fill="#fe0000" x="0" y="0" width="500" height="500"/>
+  <rect fill="white" x="62" y="55" width="394" height="38"/>
+  <rect fill="white" x="87" y="207" width="315" height="38"/>
+  <rect fill="white" x="49" y="424" width="422" height="38"/>
+  <rect fill="white" x="201" y="55" width="38" height="407"/>
+  <rect fill="white" x="364" y="207" width="38" height="255"/>
+  <circle fill="black" cx="740" cy="71" r="50"/>
+  <rect fill="black" x="532" y="145" width="416" height="40"/>
+  <rect fill="black" x="617" y="276" width="246" height="40"/>
+  <rect fill="black" x="617" y="407" width="246" height="40"/>
+  <circle fill="black" cx="250" cy="750" r="200"/>
+  <rect fill="#fe0000" x="500" y="500" width="500" height="500"/>
+  <circle fill="white" cx="750" cy="750" r="200"/>
+</svg>
