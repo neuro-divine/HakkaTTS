@@ -12,8 +12,3 @@ export interface Sentence {
 	genre: Genre;
 	sentence: [string, PronNoteArray][];
 }
-
-export interface ServerError {
-	error: string;
-	message?: string;
-}

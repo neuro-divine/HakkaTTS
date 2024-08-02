@@ -9,3 +9,8 @@ declare module "*words.csv" {
 	const WordsFile: WordsFile;
 	export default WordsFile;
 }
+
+declare module "vega-statistics" {
+	export function setRandom(randFunc: () => number): void;
+	export function sampleNormal(mean?: number, stdev?: number): number;
+}

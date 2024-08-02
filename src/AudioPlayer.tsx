@@ -1,15 +1,19 @@
 import { useCallback, useEffect, useReducer, useRef, useState } from "react";
 
-import { NO_AUTO_FILL } from "./consts";
+import { WaveFile } from "wavefile";
 
-import type { Language, ServerError } from "./types";
+import { NO_AUTO_FILL } from "./consts";
+import * as g2p from "./g2p";
+import infer from "./infer";
+
+import type { Language } from "./types";
 import type { SyntheticEvent } from "react";
 
 const audioCache: Record<Language, Map<string, string>> = { waitau: new Map(), hakka: new Map() };
 
 export default function AudioPlayer({ syllables, language }: { syllables: string[]; language: Language }) {
 	const [isReady, setIsReady] = useState(false);
-	const [serverError, setServerError] = useState<ServerError | undefined>();
+	const [error, setError] = useState<Error | undefined>();
 	const [retryCounter, retry] = useReducer((n: number) => n + 1, 0);
 	const [isPlaying, setIsPlaying] = useState<boolean | null>(false);
 	const [progress, setProgress] = useState(0);
@@ -32,23 +36,21 @@ export default function AudioPlayer({ syllables, language }: { syllables: string
 		setProgress(0);
 	}, [pauseAudio]);
 
-	const text = syllables.join("+");
+	const text = syllables.join(" ");
 	useEffect(() => {
 		const _isPlaying = isPlaying;
-		async function fetchAudio() {
+		async function generateAudio() {
 			let url = audioCache[language].get(text);
 			if (!url) {
 				try {
-					const response = await fetch(`https://Chaak2.pythonanywhere.com/TTS/${language}/${text}`);
-					if (response.ok) {
-						audioCache[language].set(text, url = URL.createObjectURL(await response.blob()));
-					}
-					else {
-						setServerError(await response.json() as ServerError);
-					}
+					// eslint-disable-next-line import/namespace
+					const pronunciation = g2p[language](syllables);
+					const wav = new WaveFile();
+					wav.fromScratch(1, 44100, "32f", await infer(...pronunciation, language));
+					audioCache[language].set(text, url = wav.toDataURI());
 				}
-				catch {
-					setServerError({ error: "載入失敗" });
+				catch (error) {
+					setError(error as Error);
 				}
 			}
 			if (url) {
@@ -59,9 +61,9 @@ export default function AudioPlayer({ syllables, language }: { syllables: string
 			}
 		}
 		audio.current.pause();
-		setServerError(undefined);
+		setError(undefined);
 		setIsReady(false);
-		void fetchAudio();
+		void generateAudio();
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [language, text, retryCounter]);
 
@@ -130,14 +132,14 @@ export default function AudioPlayer({ syllables, language }: { syllables: string
 			tabIndex={isReady ? 0 : -1}>
 			⏹︎
 		</button>
-		{!isReady && <div className={`absolute inset-0 flex items-center justify-center ${serverError ? "bg-gray-300 bg-opacity-50" : "bg-gray-500 bg-opacity-20"} rounded-lg text-xl`}>
-			{serverError
+		{!isReady && <div className={`absolute inset-0 flex items-center justify-center ${error ? "bg-gray-300 bg-opacity-50" : "bg-gray-500 bg-opacity-20"} rounded-lg text-xl`}>
+			{error
 				? <div>
 					<span className="font-bold">錯誤：</span>
-					{serverError.error}
-					{serverError.message && <>
+					{error.name}
+					{error.message && <>
 						{": "}
-						<code>{serverError.message}</code>
+						<code>{error.message}</code>
 					</>}
 					<button type="button" className="btn btn-info btn-sm text-lg text-neutral-content ml-2 gap-1" onClick={retry}>
 						<span className="font-symbol rotate-90">⭮</span>重試
