@@ -12,3 +12,16 @@ export interface Sentence {
 	genre: Genre;
 	sentence: [string, PronNoteArray][];
 }
+
+export interface Actions {
+	infer(language: Language, syllables: string[]): Promise<Float32Array>;
+}
+
+interface NamedMessage<K extends keyof Actions> {
+	name: K;
+	args: Parameters<Actions[K]>;
+	resolve: (value: ReturnType<Actions[K]>) => void;
+	reject: (reason: unknown) => void;
+}
+
+export type Message = NamedMessage<keyof Actions>;

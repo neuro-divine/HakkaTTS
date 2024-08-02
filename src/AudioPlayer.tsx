@@ -3,8 +3,7 @@ import { useCallback, useEffect, useReducer, useRef, useState } from "react";
 import { WaveFile } from "wavefile";
 
 import { NO_AUTO_FILL } from "./consts";
-import * as g2p from "./g2p";
-import infer from "./infer";
+import API from "./inference/api";
 
 import type { Language } from "./types";
 import type { SyntheticEvent } from "react";
@@ -43,10 +42,8 @@ export default function AudioPlayer({ syllables, language }: { syllables: string
 			let url = audioCache[language].get(text);
 			if (!url) {
 				try {
-					// eslint-disable-next-line import/namespace
-					const pronunciation = g2p[language](syllables);
 					const wav = new WaveFile();
-					wav.fromScratch(1, 44100, "32f", await infer(...pronunciation, language));
+					wav.fromScratch(1, 44100, "32f", await API.infer(language, syllables));
 					audioCache[language].set(text, url = wav.toDataURI());
 				}
 				catch (error) {
