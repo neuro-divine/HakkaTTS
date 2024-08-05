@@ -1,18 +1,19 @@
 import { useCallback, useEffect, useReducer, useRef, useState } from "react";
 
+import { MdPause, MdPlayArrow, MdRefresh, MdStop } from "react-icons/md";
 import { WaveFile } from "wavefile";
 
 import { NO_AUTO_FILL } from "./consts";
 import API from "./inference/api";
 
-import type { Language } from "./types";
+import type { Language, Voice } from "./types";
 import type { SyntheticEvent } from "react";
 
 const audioCache: Record<Language, Map<string, string>> = { waitau: new Map(), hakka: new Map() };
 
-export default function AudioPlayer({ syllables, language }: { syllables: string[]; language: Language }) {
+export default function AudioPlayer({ language, voice, syllables }: { language: Language; voice: Voice; syllables: string[] }) {
 	const [isReady, setIsReady] = useState(false);
-	const [error, setError] = useState<Error | undefined>();
+	const [error, setError] = useState<Error>();
 	const [retryCounter, retry] = useReducer((n: number) => n + 1, 0);
 	const [isPlaying, setIsPlaying] = useState<boolean | null>(false);
 	const [progress, setProgress] = useState(0);
@@ -43,7 +44,7 @@ export default function AudioPlayer({ syllables, language }: { syllables: string
 			if (!url) {
 				try {
 					const wav = new WaveFile();
-					wav.fromScratch(1, 44100, "32f", await API.infer(language, syllables));
+					wav.fromScratch(1, 44100, "32f", await API.infer(language, voice, syllables));
 					audioCache[language].set(text, url = wav.toDataURI());
 				}
 				catch (error) {
@@ -100,11 +101,11 @@ export default function AudioPlayer({ syllables, language }: { syllables: string
 	return <div className="flex items-center mt-2 relative">
 		<button
 			type="button"
-			className="btn btn-warning btn-square text-xl max-sm:size-10 max-sm:min-h-10 font-symbol"
+			className="btn btn-warning btn-square text-xl max-sm:size-10 max-sm:min-h-10"
 			onClick={isPlaying === false ? playAudio : pauseAudio}
 			aria-label={isPlaying === false ? "播放" : "暫停"}
 			tabIndex={isReady ? 0 : -1}>
-			{isPlaying === false ? "▶︎" : "⏸︎"}
+			{isPlaying === false ? <MdPlayArrow /> : <MdPause />}
 		</button>
 		<input
 			type="range"
@@ -123,11 +124,11 @@ export default function AudioPlayer({ syllables, language }: { syllables: string
 			tabIndex={isReady ? 0 : -1} />
 		<button
 			type="button"
-			className="btn btn-warning btn-square text-xl max-sm:size-10 max-sm:min-h-10 font-symbol"
+			className="btn btn-warning btn-square text-xl max-sm:size-10 max-sm:min-h-10"
 			onClick={stopAudio}
 			aria-label="停止"
 			tabIndex={isReady ? 0 : -1}>
-			⏹︎
+			<MdStop />
 		</button>
 		{!isReady && <div className={`absolute inset-0 flex items-center justify-center ${error ? "bg-gray-300 bg-opacity-50" : "bg-gray-500 bg-opacity-20"} rounded-lg text-xl`}>
 			{error
@@ -139,7 +140,7 @@ export default function AudioPlayer({ syllables, language }: { syllables: string
 						<code>{error.message}</code>
 					</>}
 					<button type="button" className="btn btn-info btn-sm text-lg text-neutral-content ml-2 gap-1" onClick={retry}>
-						<span className="font-symbol rotate-90">⭮</span>重試
+						<MdRefresh />重試
 					</button>
 				</div>
 				: <span className="loading loading-spinner max-sm:w-8 sm:loading-lg" />}

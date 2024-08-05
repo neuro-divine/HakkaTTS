@@ -5,11 +5,11 @@ import parse from "./parse";
 import Radio from "./Radio";
 import SentenceCard from "./SentenceCard";
 
-import type { Genre, Language, Sentence } from "./types";
+import type { Voice, Language, Sentence } from "./types";
 
 export default function App() {
 	const [language, setLanguage] = useState<Language>("waitau");
-	const [genre, setGenre] = useState<Genre>("lit");
+	const [voice, setVoice] = useState<Voice>("male");
 	const [sentences, setSentences] = useState<Sentence[]>([]);
 
 	const textArea = useRef<HTMLTextAreaElement>(null);
@@ -31,12 +31,12 @@ export default function App() {
 	const addSentence = useCallback(() => {
 		if (!textArea.current) return;
 		setSentences([
-			...textArea.current.value.split("\n").flatMap(line => (line.trim() ? [{ language, genre, sentence: parse(language, line) }] : [])),
+			...textArea.current.value.split("\n").flatMap(line => (line.trim() ? [{ language, voice, sentence: parse(language, line) }] : [])),
 			...sentences,
 		]);
 		textArea.current.value = "";
 		resizeElements();
-	}, [textArea, genre, language, sentences, resizeElements]);
+	}, [textArea, voice, language, sentences, resizeElements]);
 
 	useEffect(() => {
 		if (!textArea.current) return;
@@ -57,11 +57,10 @@ export default function App() {
 					</div>
 				</div>
 				<div>
-					<div className="text-secondary text-lg font-semibold ms-0.5 mb-0.5 tracking-widest">語體</div>
-					<div className="join bg-base-100" role="group" aria-label="選擇語體">
-						<Radio name="btngenre" className="btn-secondary" state={genre} setState={setGenre} value="lit" />
-						<Radio name="btngenre" className="btn-secondary" state={genre} setState={setGenre} value="swc" />
-						<Radio name="btngenre" className="btn-secondary" state={genre} setState={setGenre} value="col" />
+					<div className="text-secondary text-lg font-semibold ms-0.5 mb-0.5 tracking-widest">聲線</div>
+					<div className="join bg-base-100" role="group" aria-label="選擇聲線">
+						<Radio name="btnvoice" className="btn-secondary" state={voice} setState={setVoice} value="male" />
+						<Radio name="btnvoice" className="btn-secondary" state={voice} setState={setVoice} value="female" />
 					</div>
 				</div>
 			</div>

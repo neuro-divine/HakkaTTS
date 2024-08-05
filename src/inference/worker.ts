@@ -4,9 +4,9 @@ import infer from "./infer";
 import type { Actions, Message } from "../types";
 
 const actions: Actions = {
-	infer(language, syllables) {
+	infer(language, voice, syllables) {
 		// eslint-disable-next-line import/namespace
-		return infer(...g2p[language](syllables), language);
+		return infer(`${language}_${voice}`, ...g2p[language](syllables));
 	},
 };
 

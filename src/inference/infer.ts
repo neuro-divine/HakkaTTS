@@ -4,6 +4,7 @@ import { setRandom, sampleNormal } from "vega-statistics";
 
 import NDArray from "./NDArray";
 import { fromLength } from "./utils";
+import { ALL_MODEL_COMPONENTS } from "../consts";
 
 import type { TypedTensor } from "onnxruntime-web";
 
@@ -13,18 +14,14 @@ type Session = [enc: InferenceSession, sdp: InferenceSession, flow: InferenceSes
 
 const sessions = new Map<string, Session>();
 
-export async function loadSession(language: string): Promise<Session> {
-	let session = sessions.get(language);
+export async function loadSession(model: string): Promise<Session> {
+	let session = sessions.get(model);
 	if (session) return session;
-	const [enc, emb_g, sdp, flow, dec] = await Promise.all([
-		InferenceSession.create(`models/${language}_enc_p.onnx`),
-		InferenceSession.create(`models/${language}_emb.onnx`),
-		InferenceSession.create(`models/${language}_sdp.onnx`),
-		InferenceSession.create(`models/${language}_flow.onnx`),
-		InferenceSession.create(`models/${language}_dec.onnx`),
-	]);
+	const [enc, emb_g, sdp, flow, dec] = await Promise.all(
+		ALL_MODEL_COMPONENTS.map(file => InferenceSession.create(`models/${model}_${file}.onnx`)),
+	);
 	const { g } = await emb_g.run({ sid: new Tensor("int64", [0]) });
-	sessions.set(language, session = [enc, sdp, flow, dec, g.reshape([...g.dims, 1]) as FloatTensor]);
+	sessions.set(model, session = [enc, sdp, flow, dec, g.reshape([...g.dims, 1]) as FloatTensor]);
 	return session;
 }
 
@@ -76,9 +73,9 @@ function generatePath(duration: FloatTensorArray<[Batch, 1, Tx]>, mask: FloatTen
 	return path.map((value, _batch, _tx, _ty) => value ^ (_tx ? path.get(_batch, _tx - 1, _ty) : 0));
 }
 
-export default async function infer(seq: number[], tone: number[], language: string) {
+export default async function infer(model: string, seq: number[], tone: number[]) {
 	setRandom(seedrandom("42"));
-	const [enc, sdp, flow, dec, g] = await loadSession(language);
+	const [enc, sdp, flow, dec, g] = await loadSession(model);
 	const { xout: x, m_p, logs_p, x_mask } = await enc.run({
 		x: new Tensor("int64", seq, [1, seq.length]),
 		t: new Tensor("int64", tone, [1, tone.length]),

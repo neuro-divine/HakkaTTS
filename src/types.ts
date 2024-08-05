@@ -1,21 +1,59 @@
+import type { DBSchema } from "idb";
+
 export type CharsFile = { [P in "char" | "waitau" | "hakka" | "notes"]: string }[];
 export type WordsFile = { [P in "char" | "pron"]: string }[];
 
 export type Language = "waitau" | "hakka";
-export type Genre = "lit" | "swc" | "col";
-export type Terminology = Language | Genre;
+export type Voice = "male" | "female";
+export type Terminology = Language | Voice;
 
 export type PronToNoteMap = Map<string, string>;
 export type PronNoteArray = [string, string][];
 export interface Sentence {
 	language: Language;
-	genre: Genre;
+	voice: Voice;
 	sentence: [string, PronNoteArray][];
 }
 
 export interface Actions {
-	infer(language: Language, syllables: string[]): Promise<Float32Array>;
+	infer(language: Language, voice: Voice, syllables: string[]): Promise<Float32Array>;
 }
+
+export type ModelComponent = "enc_p" | "emb" | "sdp" | "flow" | "dec";
+
+export interface ModelFile {
+	path: `${Language}/${Voice}/${ModelComponent}.onnx`;
+	language: Language;
+	voice: Voice;
+	component: ModelComponent;
+	version: number;
+	file: ArrayBuffer;
+}
+
+export interface TTSDB extends DBSchema {
+	models: {
+		key: ModelFile["path"];
+		value: ModelFile;
+		indexes: {
+			language_voice: [Language, Voice];
+		};
+	};
+}
+
+export type ModelStatus =
+	| "gathering_info"
+	| "gather_failed"
+	| "available_for_download"
+	| "new_version_available"
+	| "incomplete"
+	| "downloading"
+	| "download_failed"
+	| "download_incomplete"
+	| "cancelled_not_downloaded"
+	| "cancelled_incomplete"
+	| "save_failed"
+	| "save_incomplete"
+	| "latest";
 
 interface NamedMessage<K extends keyof Actions> {
 	name: K;
