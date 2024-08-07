@@ -1,4 +1,5 @@
 import { createRoot } from "react-dom/client";
+import { MdClose, MdInfoOutline, MdPlayArrow } from "react-icons/md";
 
 import App from "./App";
 import "./index.css";
@@ -39,3 +40,15 @@ for (const anchor of document.querySelectorAll("a[href^='#']")) {
 }
 
 createRoot(document.getElementById("root")!).render(<App />);
+
+const CLASS_NAME_TO_ICON: Record<string, JSX.Element> = {
+	"icon-info": <MdInfoOutline size="1.125em" />,
+	"icon-close": <MdClose />,
+	"icon-play": <MdPlayArrow />,
+};
+
+for (const [className, icon] of Object.entries(CLASS_NAME_TO_ICON)) {
+	for (const element of document.getElementsByClassName(className)) {
+		createRoot(element).render(icon);
+	}
+}

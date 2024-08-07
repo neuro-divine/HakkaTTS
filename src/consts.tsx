@@ -1,7 +1,6 @@
-import { GrResume } from "react-icons/gr";
-import { MdCancel, MdFileDownload, MdFileDownloadDone, MdMan, MdOutlinePending, MdRefresh, MdWoman } from "react-icons/md";
+import { MdCancel, MdEject, MdFileDownload, MdFileDownloadDone, MdHourglassBottom, MdMan, MdRefresh, MdWoman } from "react-icons/md";
 
-import type { Language, ModelComponent, ModelStatus, Terminology, Voice } from "./types";
+import type { Language, ModelStatus, Terminology, Voice } from "./types";
 
 export const TERMINOLOGY: Record<Terminology, string> = {
 	waitau: "圍頭話",
@@ -11,19 +10,19 @@ export const TERMINOLOGY: Record<Terminology, string> = {
 };
 
 export const VOICE_TO_ICON: Record<Voice, JSX.Element> = {
-	male: <MdMan />,
-	female: <MdWoman />,
+	male: <MdMan size="1.375em" className="-mx-1" />,
+	female: <MdWoman size="1.375em" className="-mx-1" />,
 };
 
 export const ALL_LANGUAGES: readonly Language[] = ["waitau", "hakka"];
 export const ALL_VOICES: readonly Voice[] = ["male", "female"];
-export const ALL_MODEL_COMPONENTS: readonly ModelComponent[] = ["enc_p", "emb", "sdp", "flow", "dec"];
+export { ALL_MODEL_COMPONENTS } from "./inference/infer";
 
 export const CURRENT_MODEL_VERSION = 20240801;
 
 export const MODEL_STATUS_LABEL: Record<ModelStatus, string> = {
-	gathering_info: "正在收集檔案狀態……",
-	gather_failed: "檔案狀態收集失敗：資料庫出錯",
+	gathering_info: "正在取得模型檔案狀態……",
+	gather_failed: "無法取得模型檔案狀態：資料庫出錯",
 	available_for_download: "可供下載",
 	new_version_available: "有新版本可供下載",
 	incomplete: "模型不完整",
@@ -54,16 +53,16 @@ export const MODEL_STATUS_CLASS: Record<ModelStatus, string> = {
 };
 
 export const MODEL_STATUS_ICON: Record<ModelStatus, JSX.Element> = {
-	gathering_info: <MdOutlinePending />,
+	gathering_info: <MdHourglassBottom />,
 	gather_failed: <MdRefresh />,
 	available_for_download: <MdFileDownload />,
 	new_version_available: <MdFileDownload />,
-	incomplete: <GrResume />,
+	incomplete: <MdEject className="rotate-90" />,
 	downloading: <MdCancel />,
 	download_failed: <MdRefresh />,
 	download_incomplete: <MdRefresh />,
 	cancelled_not_downloaded: <MdFileDownload />,
-	cancelled_incomplete: <GrResume />,
+	cancelled_incomplete: <MdEject className="rotate-90" />,
 	save_failed: <MdRefresh />,
 	save_incomplete: <MdRefresh />,
 	latest: <MdFileDownloadDone />,
@@ -96,6 +95,9 @@ export class DatabaseError extends Error {
 	override name = "DatabaseError";
 }
 
-export class AbortError extends Error {
-	override name = "AbortError";
+export class ModelNotDownloadedError extends Error {
+	override name = "ModelNotDownloadedError";
+	constructor(language: Language, voice: Voice, isComplete?: boolean, options?: ErrorOptions) {
+		super(`${TERMINOLOGY[language]}（${TERMINOLOGY[voice]}）模型尚未下載${isComplete ? "" : "完成"}`, options);
+	}
 }

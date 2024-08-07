@@ -1,13 +1,13 @@
 import { useState, useRef, useReducer, useEffect } from "react";
 
-import { AbortError, ALL_MODEL_COMPONENTS, CURRENT_MODEL_VERSION, DatabaseError, MODEL_STATUS_LABEL, MODEL_STATUS_ACTION_LABEL, MODEL_STATUS_CLASS, MODEL_STATUS_ICON, TERMINOLOGY, VOICE_TO_ICON } from "./consts";
+import { ALL_MODEL_COMPONENTS, CURRENT_MODEL_VERSION, DatabaseError, MODEL_STATUS_LABEL, MODEL_STATUS_ACTION_LABEL, MODEL_STATUS_CLASS, MODEL_STATUS_ICON, TERMINOLOGY, VOICE_TO_ICON } from "../consts";
 
-import type { ModelStatus, TTSDB, Language, ModelComponent, ModelFile, Voice } from "./types";
+import type { ModelStatus, TTSDB, Language, ModelComponent, ModelFile, Voice, ModelComponentToFile } from "../types";
 import type { IDBPDatabase } from "idb";
 
 // This method is bounded per the spec
 // eslint-disable-next-line @typescript-eslint/unbound-method
-const formatPercentage = Intl.NumberFormat("zh-HK", { style: "percent", maximumFractionDigits: 2 }).format;
+const formatPercentage = Intl.NumberFormat("zh-HK", { style: "percent", minimumFractionDigits: 2, maximumFractionDigits: 2 }).format;
 
 export default function ModelRow({ db, language, voice }: { db: IDBPDatabase<TTSDB>; language: Language; voice: Voice }) {
 	const [status, setStatus] = useState<ModelStatus>("gathering_info");
@@ -21,7 +21,7 @@ export default function ModelRow({ db, language, voice }: { db: IDBPDatabase<TTS
 		async function getMissingComponents() {
 			try {
 				const availableFiles = await db.getAllFromIndex("models", "language_voice", [language, voice]);
-				const components: Partial<Record<ModelComponent, ModelFile>> = {};
+				const components: Partial<ModelComponentToFile> = {};
 				for (const file of availableFiles) {
 					components[file.component] = file;
 				}
@@ -67,7 +67,7 @@ export default function ModelRow({ db, language, voice }: { db: IDBPDatabase<TTS
 
 		const fetchResults = await Promise.allSettled(missingComponents.map(async (component): Promise<FetchResult> => {
 			// eslint-disable-next-line @typescript-eslint/no-unnecessary-type-assertion
-			const path = `${language}/${voice}/${component}.onnx` as ModelFile["path"];
+			const path = `models/${language}/${voice}/${component}.onnx` as ModelFile["path"];
 			const { ok, headers, body } = await fetch(path, { signal });
 			if (!ok || !body) throw new Error("Network response was not OK");
 			const reader = body.getReader();
@@ -98,7 +98,6 @@ export default function ModelRow({ db, language, voice }: { db: IDBPDatabase<TTS
 			const chunks: Uint8Array[] = [];
 			for (;;) {
 				const { done, value } = await reader.read();
-				// if (signal.aborted) throw signal.reason;
 				if (done) break;
 				chunks.push(value);
 				totalReceivedLength += value.length;
@@ -140,7 +139,7 @@ export default function ModelRow({ db, language, voice }: { db: IDBPDatabase<TTS
 		const hasDownloadedComponent = newMissingComponents.size !== ALL_MODEL_COMPONENTS.length;
 		setStatus(
 			errors.length
-				? errors.some(error => error instanceof AbortError)
+				? signal.aborted
 					? (hasDownloadedComponent ? "cancelled_incomplete" : "cancelled_not_downloaded")
 					: errors.some(error => error instanceof DatabaseError)
 					? (hasDownloadedComponent ? "save_incomplete" : "save_failed")
@@ -152,7 +151,7 @@ export default function ModelRow({ db, language, voice }: { db: IDBPDatabase<TTS
 	}
 
 	function cancelDownload() {
-		abortController.current?.abort(new AbortError("The download was cancelled by the user"));
+		abortController.current?.abort(new Error("The download was cancelled by the user"));
 	}
 
 	const MODEL_STATUS_ACTION: Record<ModelStatus, (() => void) | undefined> = {
@@ -172,22 +171,30 @@ export default function ModelRow({ db, language, voice }: { db: IDBPDatabase<TTS
 	};
 
 	useEffect(() => {
-		console.error(error);
+		if (error) {
+			if (error instanceof AggregateError) {
+				console.error(...error.errors as Error[]);
+			}
+			else {
+				console.error(error);
+			}
+		}
 	}, [error]);
 
-	return <li>
-		<button type="button" className={`flex text-slate-700 border-b border-b-slate-500 ${MODEL_STATUS_ACTION[status] ? "btn btn-ghost" : ""}`} onClick={MODEL_STATUS_ACTION[status]}>
-			{VOICE_TO_ICON[voice]}
-			<div>
-				<div className="text-xl">{TERMINOLOGY[language]} – {TERMINOLOGY[voice]}</div>
+	// Items are stretched and paddings are intentionally moved to the icon for larger tooltip bounding box
+	return <li className="contents">
+		<button type="button" className={`btn btn-ghost gap-0 items-stretch rounded-none text-left font-normal px-0 py-4 h-auto min-h-0 border-0 border-b border-b-slate-300 text-slate-700 hover:border-b hover:bg-opacity-10${MODEL_STATUS_ACTION[status] ? "" : " pointer-events-none"}`} onClick={MODEL_STATUS_ACTION[status]}>
+			<div className="text-2xl flex items-center pl-4 pr-2">{VOICE_TO_ICON[voice]}</div>
+			<div className="flex-1 flex flex-col gap-1">
+				<div className="text-xl font-medium">{TERMINOLOGY[language]} – {TERMINOLOGY[voice]}</div>
 				{status === "downloading"
-					? <div>
+					? <div className="flex items-center gap-2">
 						<progress className="progress progress-info" value={progress} />
 						{formatPercentage(progress)}
 					</div>
 					: <div className={MODEL_STATUS_CLASS[status]}>{MODEL_STATUS_LABEL[status]}</div>}
 			</div>
-			<div className="tooltip" data-tip={MODEL_STATUS_ACTION_LABEL[status]}>{MODEL_STATUS_ICON[status]}</div>
+			<div className="text-2xl flex items-center pl-2 pr-4 tooltip tooltip-left tooltip-primary before:text-lg before" data-tip={MODEL_STATUS_ACTION_LABEL[status]}>{MODEL_STATUS_ICON[status]}</div>
 		</button>
 	</li>;
 }

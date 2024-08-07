@@ -53,28 +53,27 @@
 				<header class="grid items-center justify-center grid-cols-1 xs:grid-cols-[auto_1fr_auto] max-sm:max-w-fit">
 					<img class="row-span-2 w-16 mr-4 mb-2 max-xs:hidden" srcset="./assets/favicon-64x64.png, ./assets/favicon-128x128.png 2x, ./assets/favicon-192x192.png 3x" alt="應用程式標誌" />
 					<h1 class="max-sm:col-span-2">香港本土語言文字轉語音朗讀器</h1>
-					<div class="my-2">
+					<div class="flex my-2">
 						<a class="text-slate-500 inline-flex items-center group" href="https://hkilang.org" target="_blank">
 							<img class="w-8 rounded-sm border border-slate-500 border-opacity-50 mr-2 group-hover:brightness-[0.96875] transition-[filter]" src="./assets/hkilang-logo.svg" alt="香港本土語言保育協會標誌" />
 							<h2 class="group-hover:text-slate-700 group-hover:text-opacity-90 transition-[color]">香港<span class="text-[#d80818] group-hover:text-[#900612] group-hover:text-opacity-90 transition-[color]">本土語言</span>保育協會</h2>
 						</a>
 					</div>
-					<button id="btn-show" type="button" class="btn btn-ghost hover:bg-opacity-10 max-sm:text-xl max-sm:font-normal max-sm:relative max-sm:left-4 sm:btn-lg sm:text-1.5xl sm:text-slate-500 sm:col-start-3 sm:row-start-1 sm:row-end-3">
-						<span><span class="font-symbol font-normal mr-2">🛈</span>關於</span>
+					<button id="btn-show" type="button" class="btn btn-ghost gap-1.5 hover:bg-opacity-10 max-sm:text-xl max-sm:font-normal max-sm:relative max-sm:left-4 sm:btn-lg sm:text-1.5xl sm:text-slate-500 sm:col-start-3 sm:row-start-1 sm:row-end-3">
+						<span class="icon-info"></span>關於
 					</button>
 				</header>
 				<main id="root"></main>
 			</div>
 		</div>
 		<dialog id="about-dialog" class="modal modal-bottom sm:modal-middle">
-			<div class="modal-box p-0 flex flex-col sm:max-w-3xl max-h-[calc(100%-5rem)]">
+			<div class="modal-box p-0 flex flex-col sm:max-w-3xl h-[calc(100%-5rem)]">
 				<form method="dialog">
-					<!-- TODO: Should use 🗙 U+1F5D9 CANCELLATION X instead, but its font metrics and weight are different from other characters -->
-					<button type="submit" class="btn btn-ghost w-14 h-14 min-h-14 text-4.5xl font-symbol font-normal absolute right-3 top-3 text-slate-500 hover:bg-opacity-10" aria-label="關閉"><span class="relative bottom-1">✕</span></button>
+					<button type="submit" class="btn btn-ghost w-14 h-14 min-h-14 text-4.5xl absolute right-3 top-3 text-slate-500 hover:bg-opacity-10" aria-label="關閉"><span class="icon-close"></span></button>
 				</form>
-				<h3 class="mx-6 mt-6 mb-4.5"><span class="font-symbol font-normal mr-2">🛈</span>關於</h3>
+				<h3 class="flex items-center gap-2 mx-6 mt-6 mb-4.5"><span class="icon-info"></span>關於</h3>
 				<hr />
-				<div class="overflow-y-auto">
+				<div class="flex-1 overflow-x-hidden overflow-y-auto">
 					<p>歡迎使用<b>香港本土語言文字轉語音（Text-to-Speech）朗讀器</b>！</p>
 					<p><b>圍頭話</b>及<b>客家話</b>皆是香港的非物質文化遺產，然而這些本土語言傳承因城市化出現了斷層。圍村新一代接觸圍頭話、客家話的機會甚少，或「曉聽唔曉講」。</p>
 					<p>使用本文字轉語音（<abbr>TTS</abbr>）朗讀器，可以作為學習圍頭話、客家話的資源，亦可以成為與圍村長輩溝通的工具，延續家庭和社區的語言傳承。</p>
@@ -83,9 +82,9 @@
 					<ol class="list-[circled-decimal] marker:text-slate-400 ml-13">
 						<li>在輸入框輸入文字</li>
 						<li>選擇語言：圍頭話／客家話</li>
-						<li>選擇語體：文言／書面語／口語材料</li>
-						<li>點選<span class="btn btn-accent btn-xs text-lg/none mx-1 pointer-events-none">加入句子</span></li>
-						<li>按播放鍵<span class="btn btn-warning btn-square btn-xs text-sm/none mx-1 pointer-events-none font-symbol">▶︎</span></li>
+						<li>選擇聲線：男聲／女聲</li>
+						<li><span class="inline-flex items-center gap-1">點選<span class="btn btn-accent btn-xs text-lg/none pointer-events-none">加入句子</span></span></li>
+						<li><span class="inline-flex items-center gap-1">按播放鍵<span class="btn btn-warning btn-square btn-xs text-2xl pointer-events-none icon-play"></span></span></li>
 					</ol>
 					<hr />
 					<p>本程式由<a href="https://hkilang.org" target="_blank">香港本土語言保育協會</a>開發，特此鳴謝康樂及文化事務署<a href="https://www.icho.hk/tc/web/icho/home.html" target="_blank">非物質文化遺產辦事處</a>對本計劃的資助，以及<a href="https://crlls.eduhk.hk" target="_blank">香港教育大學語言學及語言研究中心</a>提供場地租借的協助。</p>

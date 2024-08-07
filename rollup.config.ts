@@ -4,7 +4,7 @@ import esbuild from "rollup-plugin-esbuild";
 
 import type { RollupOptions } from "rollup";
 
-const isProduction = process.env.NODE_ENV === "production";
+const isProduction = process.env["NODE_ENV"] === "production";
 
 export default {
 	input: "src/inference/worker.ts",

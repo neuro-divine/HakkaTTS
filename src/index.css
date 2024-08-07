@@ -4,7 +4,7 @@
 
 @layer base {
 	html {
-		font-size: 3.25vw;
+		font-size: 3.125vw;
 		@screen xs {
 			font-size: 12px;
 		}
@@ -14,12 +14,6 @@
 		@media (min-width: 768px) {
 			font-size: 16px;
 		}
-	}
-	@font-face {
-		font-family: "Noto Sans Symbols 2";
-		font-display: swap;
-		src: url("https://fonts.gstatic.com/l/font?kit=I_uyMoGduATTei9eI8daxVHDyfisHr71ypbyapR7WOGXo6nZf1WIKC3yrmtU6gc&skey=5cf84917987cc637&v=v23") format("woff2");
-		descent-override: 25%;
 	}
 	:root {
 		--btn-text-case: none;
@@ -38,6 +32,9 @@
 	h3 {
 		@apply text-2.5xl font-bold whitespace-nowrap;
 	}
+	h4 {
+		@apply text-1.5xl font-semibold whitespace-nowrap;
+	}
 	a {
 		@apply link link-primary no-underline;
 	}
@@ -47,27 +44,29 @@
 }
 
 @layer components {
+	.tooltip {
+		--tooltip-tail: 0.5rem;
+		--tooltip-offset: calc(100% + var(--tooltip-tail));
+	}
 	.dropdown-content:not(:hover):focus-within {
 		@apply invisible opacity-0;
 	}
-	.modal {
-		&:not([open]) * {
-			/* https://stackoverflow.com/a/66951594 */
-			visibility: hidden;
-			/* Follows DaisyUI */
-			transition: all 200ms cubic-bezier(0, 0, 0.2, 1);
+	.modal:not([open]) * {
+		/* https://stackoverflow.com/a/66951594 */
+		visibility: hidden;
+		/* Follows DaisyUI */
+		transition: all 200ms cubic-bezier(0, 0, 0.2, 1);
+	}
+	#about-dialog :where(p, ul, ol) {
+		@apply text-xl md:text-lg mx-6 my-3;
+		&:first-child,
+		hr + &,
+		& + hr {
+			/* must be transformed by transpiler conforming the web standard (postcss-nesting, not postcss-nested) for this to work */
+			@apply mt-4.5;
 		}
-		:where(p, ul, ol) {
-			@apply text-xl md:text-lg mx-6 my-3;
-			&:first-child,
-			hr + &,
-			& + hr {
-				/* must be transformed by transpiler conforming the web standard (postcss-nesting, not postcss-nested) for this to work */
-				@apply mt-4.5;
-			}
-			&:last-child {
-				@apply mb-6;
-			}
+		&:last-child {
+			@apply mb-6;
 		}
 	}
 	label.btn:has(input:focus-visible) {

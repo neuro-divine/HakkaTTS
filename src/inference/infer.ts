@@ -4,25 +4,33 @@ import { setRandom, sampleNormal } from "vega-statistics";
 
 import NDArray from "./NDArray";
 import { fromLength } from "./utils";
-import { ALL_MODEL_COMPONENTS } from "../consts";
 
+import type { ModelComponent, ModelComponentToFile } from "../types";
 import type { TypedTensor } from "onnxruntime-web";
+
+export const ALL_MODEL_COMPONENTS: readonly ModelComponent[] = ["enc_p", "emb", "sdp", "flow", "dec"];
 
 type FloatTensor = TypedTensor<"float32">;
 
-type Session = [enc: InferenceSession, sdp: InferenceSession, flow: InferenceSession, dec: InferenceSession, g: FloatTensor];
+const sessionCache = new Map<string, InferenceSession | FloatTensor>();
 
-const sessions = new Map<string, Session>();
-
-export async function loadSession(model: string): Promise<Session> {
-	let session = sessions.get(model);
-	if (session) return session;
-	const [enc, emb_g, sdp, flow, dec] = await Promise.all(
-		ALL_MODEL_COMPONENTS.map(file => InferenceSession.create(`models/${model}_${file}.onnx`)),
-	);
-	const { g } = await emb_g.run({ sid: new Tensor("int64", [0]) });
-	sessions.set(model, session = [enc, sdp, flow, dec, g.reshape([...g.dims, 1]) as FloatTensor]);
-	return session;
+function loadSession(model: ModelComponentToFile) {
+	return Promise.all(
+		ALL_MODEL_COMPONENTS.map(async component => {
+			const currComponent = model[component];
+			const key = `${currComponent.path}/${currComponent.version}`;
+			let session = sessionCache.get(key);
+			if (!session) {
+				session = await InferenceSession.create(currComponent.file);
+				if (component === "emb") {
+					const { g } = await session.run({ sid: new Tensor("int64", [0]) });
+					session = g.reshape([...g.dims, 1]) as FloatTensor;
+				}
+				sessionCache.set(key, session);
+			}
+			return session;
+		}),
+	) as Promise<[enc: InferenceSession, g: FloatTensor, sdp: InferenceSession, flow: InferenceSession, dec: InferenceSession]>;
 }
 
 type FloatTensorArray<Shape extends readonly number[]> = NDArray<Float32Array, Readonly<Shape>>;
@@ -73,9 +81,9 @@ function generatePath(duration: FloatTensorArray<[Batch, 1, Tx]>, mask: FloatTen
 	return path.map((value, _batch, _tx, _ty) => value ^ (_tx ? path.get(_batch, _tx - 1, _ty) : 0));
 }
 
-export default async function infer(model: string, seq: number[], tone: number[]) {
+export default async function infer(model: ModelComponentToFile, seq: number[], tone: number[]) {
 	setRandom(seedrandom("42"));
-	const [enc, sdp, flow, dec, g] = await loadSession(model);
+	const [enc, g, sdp, flow, dec] = await loadSession(model);
 	const { xout: x, m_p, logs_p, x_mask } = await enc.run({
 		x: new Tensor("int64", seq, [1, seq.length]),
 		t: new Tensor("int64", tone, [1, tone.length]),

@@ -15,8 +15,10 @@ export interface Sentence {
 	sentence: [string, PronNoteArray][];
 }
 
+export type ModelComponentToFile = Record<ModelComponent, ModelFile>;
+
 export interface Actions {
-	infer(language: Language, voice: Voice, syllables: string[]): Promise<Float32Array>;
+	infer(language: Language, model: ModelComponentToFile, syllables: string[]): Promise<Float32Array>;
 }
 
 export type ModelComponent = "enc_p" | "emb" | "sdp" | "flow" | "dec";
