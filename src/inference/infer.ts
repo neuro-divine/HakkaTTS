@@ -3,12 +3,12 @@ import seedrandom from "seedrandom";
 import { setRandom, sampleNormal } from "vega-statistics";
 
 import NDArray from "./NDArray";
-import { fromLength } from "./utils";
+import { fromLength } from "../utils";
 
 import type { ModelComponent, ModelComponentToFile } from "../types";
 import type { TypedTensor } from "onnxruntime-web";
 
-export const ALL_MODEL_COMPONENTS: readonly ModelComponent[] = ["enc_p", "emb", "sdp", "flow", "dec"];
+export const ALL_MODEL_COMPONENTS: readonly ModelComponent[] = ["enc", "emb", "sdp", "flow", "dec"];
 
 type FloatTensor = TypedTensor<"float32">;
 
@@ -17,11 +17,11 @@ const sessionCache = new Map<string, InferenceSession | FloatTensor>();
 function loadSession(model: ModelComponentToFile) {
 	return Promise.all(
 		ALL_MODEL_COMPONENTS.map(async component => {
-			const currComponent = model[component];
-			const key = `${currComponent.path}/${currComponent.version}`;
+			const { version, path, file } = model[component];
+			const key = `${version}/${path}`;
 			let session = sessionCache.get(key);
 			if (!session) {
-				session = await InferenceSession.create(currComponent.file);
+				session = await InferenceSession.create(file);
 				if (component === "emb") {
 					const { g } = await session.run({ sid: new Tensor("int64", [0]) });
 					session = g.reshape([...g.dims, 1]) as FloatTensor;
