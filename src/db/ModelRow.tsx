@@ -22,25 +22,31 @@ export default function ModelRow({ db, language, voice }: { db: IDBPDatabase<TTS
 			try {
 				const availableFiles = await db.getAllFromIndex("models", "language_voice", [language, voice]);
 				const components: Partial<ModelComponentToFile> = {};
+				const versions = new Set<number>();
 				for (const file of availableFiles) {
 					components[file.component] = file;
+					versions.add(file.version);
 				}
 				const newMissingComponents: ModelComponent[] = [];
-				let newStatus: ModelStatus = "latest";
+				let isIncomplete = versions.size !== 1;
+				let hasNewVersion = false;
 				for (const component of ALL_MODEL_COMPONENTS) {
 					if (!components[component]) {
-						newStatus = "incomplete";
+						isIncomplete = true;
 						newMissingComponents.push(component);
 					}
 					else if (components[component].version < CURRENT_MODEL_VERSION) {
-						newStatus = "new_version_available";
+						hasNewVersion = true;
 						newMissingComponents.push(component);
 					}
 				}
-				if (newStatus === "incomplete" && newMissingComponents.length === ALL_MODEL_COMPONENTS.length) {
-					newStatus = "available_for_download";
-				}
-				setStatus(newStatus);
+				setStatus(
+					isIncomplete
+						? newMissingComponents.length === ALL_MODEL_COMPONENTS.length ? "available_for_download" : "incomplete"
+						: hasNewVersion
+						? "new_version_available"
+						: "latest",
+				);
 				setMissingComponents(newMissingComponents);
 			}
 			catch (error) {
