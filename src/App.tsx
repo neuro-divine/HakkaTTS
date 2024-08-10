@@ -1,15 +1,20 @@
 import { useCallback, useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
+
+import { MdOutlineDownloadForOffline } from "react-icons/md";
 
 import { NO_AUTO_FILL } from "./consts";
+import { DBProvider } from "./db/DBContext";
+import ModelManager from "./db/ModelManager";
 import parse from "./parse";
 import Radio from "./Radio";
 import SentenceCard from "./SentenceCard";
 
-import type { Genre, Language, Sentence } from "./types";
+import type { Voice, Language, Sentence } from "./types";
 
 export default function App() {
 	const [language, setLanguage] = useState<Language>("waitau");
-	const [genre, setGenre] = useState<Genre>("lit");
+	const [voice, setVoice] = useState<Voice>("male");
 	const [sentences, setSentences] = useState<Sentence[]>([]);
 
 	const textArea = useRef<HTMLTextAreaElement>(null);
@@ -31,12 +36,12 @@ export default function App() {
 	const addSentence = useCallback(() => {
 		if (!textArea.current) return;
 		setSentences([
-			...textArea.current.value.split("\n").flatMap(line => (line.trim() ? [{ language, genre, sentence: parse(language, line) }] : [])),
+			...textArea.current.value.split("\n").flatMap(line => (line.trim() ? [{ language, voice, sentence: parse(language, line) }] : [])),
 			...sentences,
 		]);
 		textArea.current.value = "";
 		resizeElements();
-	}, [textArea, genre, language, sentences, resizeElements]);
+	}, [textArea, voice, language, sentences, resizeElements]);
 
 	useEffect(() => {
 		if (!textArea.current) return;
@@ -46,46 +51,76 @@ export default function App() {
 		return () => observer.unobserve(currTextArea);
 	}, [textArea, resizeElements]);
 
-	return <div>
+	const [isModelManagerVisible, setIsModelManagerVisible] = useState(false);
+	const modelManager = useRef<HTMLDialogElement>();
+
+	const openModelManager = useCallback(() => {
+		setIsModelManagerVisible(true);
+		if (!modelManager.current) return Promise.resolve();
+		modelManager.current.inert = true;
+		modelManager.current.showModal();
+		modelManager.current.inert = false;
+		return new Promise<void>(resolve => {
+			modelManager.current!.addEventListener("close", () => {
+				setIsModelManagerVisible(false);
+				resolve();
+			}, { once: true });
+		});
+	}, [setIsModelManagerVisible]);
+
+	const onModelManagerReady = useCallback((newModelManager: HTMLDialogElement | null) => {
+		if (!newModelManager) return;
+		modelManager.current = newModelManager;
+		void openModelManager();
+	}, [openModelManager]);
+
+	return <DBProvider>
 		<div>
-			<div className="flex gap-3 mb-4">
-				<div>
-					<div className="text-primary text-lg font-semibold ms-0.5 mb-0.5 tracking-widest">語言</div>
-					<div className="join bg-base-100" role="group" aria-label="選擇語言">
-						<Radio name="btnlanguage" className="btn-primary" state={language} setState={setLanguage} value="waitau" />
-						<Radio name="btnlanguage" className="btn-primary" state={language} setState={setLanguage} value="hakka" />
+			<div>
+				<div className="flex items-end gap-3 mb-4">
+					<div>
+						<div className="text-primary text-lg font-semibold ms-0.5 mb-0.5 tracking-widest">語言</div>
+						<div className="join bg-base-100" role="group" aria-label="選擇語言">
+							<Radio name="btnlanguage" className="btn-primary" state={language} setState={setLanguage} value="waitau" />
+							<Radio name="btnlanguage" className="btn-primary" state={language} setState={setLanguage} value="hakka" />
+						</div>
+					</div>
+					<div>
+						<div className="text-secondary text-lg font-semibold ms-0.5 mb-0.5 tracking-widest">聲線</div>
+						<div className="join bg-base-100" role="group" aria-label="選擇聲線">
+							<Radio name="btnvoice" className="btn-secondary" state={voice} setState={setVoice} value="male" />
+							<Radio name="btnvoice" className="btn-secondary" state={voice} setState={setVoice} value="female" />
+						</div>
+					</div>
+					<div>
+						<button type="button" className="btn btn-ghost max-sm:btn-sm flex-col flex-nowrap gap-0 text-base text-nowrap h-20 min-h-20 hover:bg-opacity-10 text-slate-500" onClick={openModelManager}>
+							<MdOutlineDownloadForOffline size="2em" />模型下載
+							{isModelManagerVisible && createPortal(<ModelManager ref={onModelManagerReady} />, document.body)}
+						</button>
 					</div>
 				</div>
-				<div>
-					<div className="text-secondary text-lg font-semibold ms-0.5 mb-0.5 tracking-widest">語體</div>
-					<div className="join bg-base-100" role="group" aria-label="選擇語體">
-						<Radio name="btngenre" className="btn-secondary" state={genre} setState={setGenre} value="lit" />
-						<Radio name="btngenre" className="btn-secondary" state={genre} setState={setGenre} value="swc" />
-						<Radio name="btngenre" className="btn-secondary" state={genre} setState={setGenre} value="col" />
-					</div>
+				<div className="join w-full">
+					<textarea
+						className="textarea textarea-accent text-lg h-0 min-h-0 max-sm:py-2.5 sm:textarea-lg sm:text-xl flex-grow join-item overflow-hidden"
+						placeholder="輸入文字……"
+						rows={1}
+						{...NO_AUTO_FILL}
+						ref={textArea}
+						onChange={resizeElements} />
+					<button
+						type="button"
+						className="btn btn-accent h-0 min-h-0 max-sm:text-base sm:btn-lg join-item"
+						ref={btnAddSentence}
+						onClick={addSentence}>
+						加入句子
+					</button>
 				</div>
 			</div>
-			<div className="join w-full">
-				<textarea
-					className="textarea textarea-accent text-lg h-0 min-h-0 max-sm:py-2.5 sm:textarea-lg sm:text-xl flex-grow join-item overflow-hidden"
-					placeholder="輸入文字……"
-					rows={1}
-					{...NO_AUTO_FILL}
-					ref={textArea}
-					onChange={resizeElements} />
-				<button
-					type="button"
-					className="btn btn-accent h-0 min-h-0 max-sm:text-base sm:btn-lg join-item"
-					ref={btnAddSentence}
-					onClick={addSentence}>
-					加入句子
-				</button>
+			<div className="mt-5">
+				{sentences.map((sentence, i) => (
+					<SentenceCard key={sentences.length - i} sentence={sentence} openModelManager={openModelManager} />
+				))}
 			</div>
 		</div>
-		<div className="mt-5">
-			{sentences.map((sentence, i) => (
-				<SentenceCard key={sentences.length - i} sentence={sentence} />
-			))}
-		</div>
-	</div>;
+	</DBProvider>;
 }

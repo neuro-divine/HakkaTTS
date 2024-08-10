@@ -1,6 +1,6 @@
-import { NO_AUTO_FILL, TERMINOLOGY } from "./consts";
+import { NO_AUTO_FILL, TERMINOLOGY, VOICE_TO_ICON } from "./consts";
 
-import type { Terminology } from "./types";
+import type { Terminology, Voice } from "./types";
 import type { Dispatch, SetStateAction } from "react";
 
 export default function Radio<T extends Terminology>({
@@ -25,6 +25,7 @@ export default function Radio<T extends Terminology>({
 			{...NO_AUTO_FILL}
 			checked={state === value}
 			onChange={() => setState(value)} />
+		{VOICE_TO_ICON[value as Voice]}
 		{TERMINOLOGY[value]}
 	</label>;
 }

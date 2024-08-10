@@ -31,13 +31,6 @@ export default {
 					"Segoe UI Symbol",
 					"Noto Color Emoji",
 				],
-				symbol: [
-					"-apple-system",
-					"BlinkMacSystemFont",
-					'"Noto Sans Symbols 2"',
-					"Segoe UI Symbol",
-					"sans-serif",
-				],
 			},
 			screens: {
 				xs: "440px",
