@@ -16,6 +16,11 @@ export interface Sentence {
 	sentence: [string, PronNoteArray][];
 }
 
+export interface ServerError {
+	error: string;
+	message?: string;
+}
+
 export type ModelComponent = "enc" | "emb" | "sdp" | "flow" | "dec";
 
 export type ModelComponentToFile = Record<ModelComponent, ModelFile>;
@@ -62,6 +67,10 @@ export type ModelStatus =
 	| "cancelled_incomplete"
 	| "save_failed"
 	| "save_incomplete";
+
+export interface UseOfflineModel {
+	useOfflineModel: boolean;
+}
 
 export type ModelLanguageAndVoice = `${Language}_${Voice}`;
 

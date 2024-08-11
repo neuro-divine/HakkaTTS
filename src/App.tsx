@@ -52,6 +52,8 @@ export default function App() {
 		return () => observer.unobserve(currTextArea);
 	}, [textArea, resizeElements]);
 
+	const [useOfflineModel /* , setUseOfflineModel */] = useState(() => new URLSearchParams(location.search).has("offline"));
+
 	const [isModelManagerVisible, setIsModelManagerVisible] = useState(false);
 	const modelManager = useRef<HTMLDialogElement>();
 
@@ -90,13 +92,14 @@ export default function App() {
 							<Radio name="btnvoice" className="btn-secondary" state={voice} setState={setVoice} value="female" />
 						</div>
 					</div>
-					<div>
-						<button type="button" className="btn btn-ghost max-sm:btn-sm max-sm:px-2.5 relative flex-col flex-nowrap gap-0 text-base whitespace-nowrap h-20 min-h-20 text-slate-500 hover:bg-opacity-10" onClick={openModelManager}>
-							{modelsStatus !== "latest" && <MdError size="1.5em" className={`absolute top-1 right-1 ${MODEL_STATUS_INDICATOR_CLASS[modelsStatus]}`} />}
-							<MdOutlineDownloadForOffline size="2em" />模型下載
-							{isModelManagerVisible && createPortal(<ModelManager ref={onModelManagerReady} setModelsStatus={setModelsStatus} />, document.body)}
-						</button>
-					</div>
+					{useOfflineModel
+						&& <div>
+							<button type="button" className="btn btn-ghost max-sm:btn-sm max-sm:px-2.5 relative flex-col flex-nowrap gap-0 text-base whitespace-nowrap h-20 min-h-20 text-slate-500 hover:bg-opacity-10" onClick={openModelManager}>
+								{modelsStatus !== "latest" && <MdError size="1.5em" className={`absolute top-1 right-1 ${MODEL_STATUS_INDICATOR_CLASS[modelsStatus]}`} />}
+								<MdOutlineDownloadForOffline size="2em" />模型下載
+								{isModelManagerVisible && createPortal(<ModelManager ref={onModelManagerReady} setModelsStatus={setModelsStatus} />, document.body)}
+							</button>
+						</div>}
 				</div>
 				<div className="join w-full">
 					<textarea
@@ -120,6 +123,7 @@ export default function App() {
 					<SentenceCard
 						key={sentences.length - i}
 						sentence={sentence}
+						useOfflineModel={useOfflineModel}
 						setModelsStatus={setModelsStatus}
 						isModelManagerVisible={isModelManagerVisible}
 						openModelManager={openModelManager} />

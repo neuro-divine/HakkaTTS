@@ -1,19 +1,20 @@
 import { useState } from "react";
 
-import AudioPlayer from "./AudioPlayer";
 import Char from "./Char";
 import { TERMINOLOGY } from "./consts";
+import OfflineAudioPlayer from "./OfflineAudioPlayer";
+import OnlineAudioPlayer from "./OnlineAudioPlayer";
 import { normalizePauses } from "./parse";
 
-import type { ModelManagerState, Sentence, SetModelStatus } from "./types";
+import type { ModelManagerState, Sentence, SetModelStatus, UseOfflineModel } from "./types";
 
-interface SentenceCardProps extends SetModelStatus, ModelManagerState {
+interface SentenceCardProps extends UseOfflineModel, SetModelStatus, ModelManagerState {
 	sentence: Sentence;
 	isModelManagerVisible: boolean;
 	openModelManager: () => void;
 }
 
-export default function SentenceCard({ sentence: { language, voice, sentence }, setModelsStatus, isModelManagerVisible, openModelManager }: SentenceCardProps) {
+export default function SentenceCard({ sentence: { language, voice, sentence }, useOfflineModel, setModelsStatus, isModelManagerVisible, openModelManager }: SentenceCardProps) {
 	const [syllables, setSyllables] = useState(() => sentence.map(([char, pronNoteArray]) => pronNoteArray[0]?.[0] || normalizePauses(char)));
 	return <div className="card card-bordered border-base-300 bg-base-100 rounded-xl shadow-lg mb-3">
 		<div className="card-body max-sm:[--padding-card:1.5rem]">
@@ -34,13 +35,18 @@ export default function SentenceCard({ sentence: { language, voice, sentence }, 
 						}} />
 				))}
 			</div>
-			<AudioPlayer
-				language={language}
-				voice={voice}
-				syllables={syllables}
-				setModelsStatus={setModelsStatus}
-				isModelManagerVisible={isModelManagerVisible}
-				openModelManager={openModelManager} />
+			{useOfflineModel
+				? <OfflineAudioPlayer
+					language={language}
+					voice={voice}
+					syllables={syllables}
+					setModelsStatus={setModelsStatus}
+					isModelManagerVisible={isModelManagerVisible}
+					openModelManager={openModelManager} />
+				: <OnlineAudioPlayer
+					language={language}
+					voice={voice}
+					syllables={syllables} />}
 		</div>
 	</div>;
 }

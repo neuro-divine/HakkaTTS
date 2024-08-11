@@ -19,7 +19,7 @@ interface AudioPlayerProps extends SetModelStatus, ModelManagerState {
 	syllables: string[];
 }
 
-export default function AudioPlayer({ language, voice, syllables, setModelsStatus, isModelManagerVisible, openModelManager }: AudioPlayerProps) {
+export default function OfflineAudioPlayer({ language, voice, syllables, setModelsStatus, isModelManagerVisible, openModelManager }: AudioPlayerProps) {
 	const [isReady, setIsReady] = useState(false);
 	const [isPlaying, setIsPlaying] = useState<boolean | null>(false);
 	const [progress, setProgress] = useState(0);
