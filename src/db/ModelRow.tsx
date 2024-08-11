@@ -4,14 +4,20 @@ import { CURRENT_MODEL_VERSION } from "./version";
 import { ALL_MODEL_COMPONENTS, DatabaseError, MODEL_STATUS_LABEL, MODEL_STATUS_ACTION_LABEL, MODEL_STATUS_CLASS, MODEL_STATUS_ICON, TERMINOLOGY, VOICE_TO_ICON, MODEL_PATH_PREFIX, MODEL_COMPONENT_TO_N_CHUNKS } from "../consts";
 import { fromLength } from "../utils";
 
-import type { ModelStatus, TTSDB, Language, ModelComponent, Voice, ModelComponentToFile, Version } from "../types";
+import type { ModelStatus, TTSDB, Language, ModelComponent, Voice, ModelComponentToFile, Version, SetModelStatus } from "../types";
 import type { IDBPDatabase } from "idb";
 
 // This method is bounded per the spec
 // eslint-disable-next-line @typescript-eslint/unbound-method
 const formatPercentage = Intl.NumberFormat("zh-HK", { style: "percent", minimumFractionDigits: 2, maximumFractionDigits: 2 }).format;
 
-export default function ModelRow({ db, language, voice }: { db: IDBPDatabase<TTSDB>; language: Language; voice: Voice }) {
+interface ModelRowProps extends SetModelStatus {
+	db: IDBPDatabase<TTSDB>;
+	language: Language;
+	voice: Voice;
+}
+
+export default function ModelRow({ db, language, voice, setModelsStatus }: ModelRowProps) {
 	const [status, setStatus] = useState<ModelStatus>("gathering_info");
 	const [missingComponents, setMissingComponents] = useState<ModelComponent[]>([]);
 	const [progress, setProgress] = useState(0);
@@ -42,13 +48,13 @@ export default function ModelRow({ db, language, voice }: { db: IDBPDatabase<TTS
 						newMissingComponents.push(component);
 					}
 				}
-				setStatus(
-					isIncomplete
-						? newMissingComponents.length === ALL_MODEL_COMPONENTS.length ? "available_for_download" : "incomplete"
-						: hasNewVersion
-						? "new_version_available"
-						: "latest",
-				);
+				const status = isIncomplete
+					? newMissingComponents.length === ALL_MODEL_COMPONENTS.length ? "available_for_download" : "incomplete"
+					: hasNewVersion
+					? "new_version_available"
+					: "latest";
+				setStatus(status);
+				setModelsStatus({ model: `${language}_${voice}`, status });
 				setMissingComponents(newMissingComponents);
 			}
 			catch (error) {
@@ -57,7 +63,7 @@ export default function ModelRow({ db, language, voice }: { db: IDBPDatabase<TTS
 		}
 		setError(undefined);
 		void getMissingComponents();
-	}, [db, language, voice, retryCounter]);
+	}, [db, language, voice, setModelsStatus, retryCounter]);
 
 	async function downloadModel() {
 		if (!missingComponents.length) return;
@@ -159,6 +165,9 @@ export default function ModelRow({ db, language, voice }: { db: IDBPDatabase<TTS
 					: (hasDownloadedComponent ? "download_incomplete" : "download_failed")
 				: "latest",
 		);
+		if (hasDownloadedComponent) {
+			setModelsStatus({ model: `${language}_${voice}`, status: errors.length ? "incomplete" : "latest" });
+		}
 		setError(errors.length ? errors.length === 1 ? errors[0] : new AggregateError(errors) : undefined);
 		setMissingComponents([...newMissingComponents]);
 	}

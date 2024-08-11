@@ -1,11 +1,12 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 
-import { MdOutlineDownloadForOffline } from "react-icons/md";
+import { MdError, MdOutlineDownloadForOffline } from "react-icons/md";
 
-import { NO_AUTO_FILL } from "./consts";
+import { MODEL_STATUS_INDICATOR_CLASS, NO_AUTO_FILL } from "./consts";
 import { DBProvider } from "./db/DBContext";
 import ModelManager from "./db/ModelManager";
+import { useModelsStatus } from "./hooks";
 import parse from "./parse";
 import Radio from "./Radio";
 import SentenceCard from "./SentenceCard";
@@ -69,6 +70,8 @@ export default function App() {
 		openModelManager();
 	}, [openModelManager]);
 
+	const [modelsStatus, setModelsStatus] = useModelsStatus();
+
 	return <DBProvider>
 		<div>
 			<div>
@@ -88,9 +91,10 @@ export default function App() {
 						</div>
 					</div>
 					<div>
-						<button type="button" className="btn btn-ghost max-sm:btn-sm flex-col flex-nowrap gap-0 text-base text-nowrap h-20 min-h-20 hover:bg-opacity-10 text-slate-500" onClick={openModelManager}>
+						<button type="button" className="btn btn-ghost max-sm:btn-sm relative flex-col flex-nowrap gap-0 text-base text-nowrap h-20 min-h-20 text-slate-500 hover:bg-opacity-10" onClick={openModelManager}>
+							{modelsStatus !== "latest" && <MdError size="1.5em" className={`absolute top-1 right-1 ${MODEL_STATUS_INDICATOR_CLASS[modelsStatus]}`} />}
 							<MdOutlineDownloadForOffline size="2em" />模型下載
-							{isModelManagerVisible && createPortal(<ModelManager ref={onModelManagerReady} />, document.body)}
+							{isModelManagerVisible && createPortal(<ModelManager ref={onModelManagerReady} setModelsStatus={setModelsStatus} />, document.body)}
 						</button>
 					</div>
 				</div>
@@ -113,7 +117,12 @@ export default function App() {
 			</div>
 			<div className="mt-5">
 				{sentences.map((sentence, i) => (
-					<SentenceCard key={sentences.length - i} sentence={sentence} isModelManagerVisible={isModelManagerVisible} openModelManager={openModelManager} />
+					<SentenceCard
+						key={sentences.length - i}
+						sentence={sentence}
+						setModelsStatus={setModelsStatus}
+						isModelManagerVisible={isModelManagerVisible}
+						openModelManager={openModelManager} />
 				))}
 			</div>
 		</div>

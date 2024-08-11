@@ -5,13 +5,15 @@ import Char from "./Char";
 import { TERMINOLOGY } from "./consts";
 import { normalizePauses } from "./parse";
 
-import type { Sentence } from "./types";
+import type { ModelManagerState, Sentence, SetModelStatus } from "./types";
 
-export default function SentenceCard({ sentence: { language, voice, sentence }, isModelManagerVisible, openModelManager }: {
+interface SentenceCardProps extends SetModelStatus, ModelManagerState {
 	sentence: Sentence;
 	isModelManagerVisible: boolean;
 	openModelManager: () => void;
-}) {
+}
+
+export default function SentenceCard({ sentence: { language, voice, sentence }, setModelsStatus, isModelManagerVisible, openModelManager }: SentenceCardProps) {
 	const [syllables, setSyllables] = useState(() => sentence.map(([char, pronNoteArray]) => pronNoteArray[0]?.[0] || normalizePauses(char)));
 	return <div className="card card-bordered border-base-300 bg-base-100 rounded-xl shadow-lg mb-3">
 		<div className="card-body max-sm:[--padding-card:1.5rem]">
@@ -36,6 +38,7 @@ export default function SentenceCard({ sentence: { language, voice, sentence }, 
 				language={language}
 				voice={voice}
 				syllables={syllables}
+				setModelsStatus={setModelsStatus}
 				isModelManagerVisible={isModelManagerVisible}
 				openModelManager={openModelManager} />
 		</div>

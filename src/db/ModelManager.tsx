@@ -6,7 +6,9 @@ import { useDB } from "./DBContext";
 import ModelRow from "./ModelRow";
 import { ALL_LANGUAGES, ALL_VOICES } from "../consts";
 
-const ModelManager = forwardRef<HTMLDialogElement>(function ModelManager(_, ref) {
+import type { SetModelStatus } from "../types";
+
+const ModelManager = forwardRef<HTMLDialogElement, SetModelStatus>(function ModelManager({ setModelsStatus }, ref) {
 	const { db, error, retry } = useDB();
 	useEffect(() => {
 		if (error) console.error(error);
@@ -42,7 +44,16 @@ const ModelManager = forwardRef<HTMLDialogElement>(function ModelManager(_, ref)
 					</div>
 					: db
 					? <ul className="flex flex-col">
-						{ALL_LANGUAGES.flatMap(language => ALL_VOICES.map(voice => <ModelRow key={`${language}_${voice}`} db={db} language={language} voice={voice} />))}
+						{ALL_LANGUAGES.flatMap(language =>
+							ALL_VOICES.map(voice =>
+								<ModelRow
+									key={`${language}_${voice}`}
+									db={db}
+									language={language}
+									voice={voice}
+									setModelsStatus={setModelsStatus} />
+							)
+						)}
 					</ul>
 					: <h4>資料庫載入中……</h4>}
 			</div>

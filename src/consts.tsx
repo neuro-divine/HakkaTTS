@@ -1,6 +1,6 @@
 import { MdCancel, MdEject, MdFileDownload, MdFileDownloadDone, MdHourglassBottom, MdMan, MdRefresh, MdWoman } from "react-icons/md";
 
-import type { Language, ModelComponent, ModelStatus, Terminology, Voice } from "./types";
+import type { ActualModelStatus, Language, ModelComponent, ModelStatus, Terminology, Voice } from "./types";
 
 export const TERMINOLOGY: Record<Terminology, string> = {
 	waitau: "圍頭話",
@@ -90,6 +90,14 @@ export const MODEL_STATUS_ACTION_LABEL: Record<ModelStatus, string | null> = {
 	save_failed: "重試",
 	save_incomplete: "重試",
 	latest: null,
+};
+
+export const MODEL_STATUS_PRIORITY: readonly ActualModelStatus[] = ["incomplete", "available_for_download", "new_version_available", "latest"];
+
+export const MODEL_STATUS_INDICATOR_CLASS: Record<Exclude<ActualModelStatus, "latest">, string> = {
+	available_for_download: "text-info",
+	new_version_available: "text-warning",
+	incomplete: "text-error",
 };
 
 export const NO_AUTO_FILL = {

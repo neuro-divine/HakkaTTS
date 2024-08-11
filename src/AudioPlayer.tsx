@@ -5,20 +5,21 @@ import { WaveFile } from "wavefile";
 
 import { ALL_MODEL_COMPONENTS, DatabaseError, ModelNotDownloadedError, NO_AUTO_FILL } from "./consts";
 import { useDB } from "./db/DBContext";
+import { CURRENT_MODEL_VERSION } from "./db/version";
 import API from "./inference/api";
 
-import type { Language, ModelComponentToFile, Version, Voice } from "./types";
+import type { Language, ModelComponentToFile, ModelManagerState, SetModelStatus, Version, Voice } from "./types";
 import type { SyntheticEvent } from "react";
 
 const audioCache = new Map<string, Map<string, string>>();
 
-export default function AudioPlayer({ language, voice, syllables, isModelManagerVisible, openModelManager }: {
+interface AudioPlayerProps extends SetModelStatus, ModelManagerState {
 	language: Language;
 	voice: Voice;
 	syllables: string[];
-	isModelManagerVisible: boolean;
-	openModelManager: () => void;
-}) {
+}
+
+export default function AudioPlayer({ language, voice, syllables, setModelsStatus, isModelManagerVisible, openModelManager }: AudioPlayerProps) {
 	const [isReady, setIsReady] = useState(false);
 	const [isPlaying, setIsPlaying] = useState<boolean | null>(false);
 	const [progress, setProgress] = useState(0);
@@ -52,6 +53,7 @@ export default function AudioPlayer({ language, voice, syllables, isModelManager
 				const availableFiles = await db!.getAllFromIndex("models", "language_voice", [language, voice]);
 				if (availableFiles.length !== ALL_MODEL_COMPONENTS.length) {
 					setModelError(new ModelNotDownloadedError(language, voice, !availableFiles.length));
+					setModelsStatus({ model: `${language}_${voice}`, status: availableFiles.length ? "incomplete" : "available_for_download" });
 					return;
 				}
 				const components = {} as ModelComponentToFile;
@@ -62,9 +64,11 @@ export default function AudioPlayer({ language, voice, syllables, isModelManager
 				}
 				if (versions.size !== 1) {
 					setModelError(new ModelNotDownloadedError(language, voice));
+					setModelsStatus({ model: `${language}_${voice}`, status: "incomplete" });
 					return;
 				}
 				setModel(components);
+				setModelsStatus({ model: `${language}_${voice}`, status: versions.values().next().value === CURRENT_MODEL_VERSION ? "latest" : "new_version_available" });
 			}
 			catch (error) {
 				setModelError(new DatabaseError("無法存取語音模型：資料庫出錯", { cause: error }));
@@ -73,16 +77,17 @@ export default function AudioPlayer({ language, voice, syllables, isModelManager
 		setModelError(undefined);
 		setIsReady(false);
 		void getModelComponents();
-	}, [db, model, language, voice, isModelManagerVisible, modelRetryCounter]);
+	}, [db, model, language, voice, setModelsStatus, isModelManagerVisible, modelRetryCounter]);
 
 	const [generationError, setGenerationError] = useState<Error>();
 	const [generationRetryCounter, generationRetry] = useReducer((n: number) => n + 1, 0);
 	const text = syllables.join(" ");
 	useEffect(() => {
 		if (!model) return;
+		const [{ version }] = Object.values(model);
 		const _isPlaying = isPlaying;
 		async function generateAudio() {
-			const key = `${Object.entries(model!)[0][1].version}/${language}/${voice}`;
+			const key = `${version}/${language}/${voice}`;
 			let textToURL = audioCache.get(key);
 			if (!textToURL) audioCache.set(key, textToURL = new Map<string, string>());
 			let url = textToURL.get(text);

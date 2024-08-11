@@ -1,4 +1,5 @@
 import type { DBSchema } from "idb";
+import type { Dispatch } from "react";
 
 export type CharsFile = { [P in "char" | "waitau" | "hakka" | "notes"]: string }[];
 export type WordsFile = { [P in "char" | "pron"]: string }[];
@@ -44,20 +45,39 @@ export interface TTSDB extends DBSchema {
 	};
 }
 
-export type ModelStatus =
-	| "gathering_info"
-	| "gather_failed"
+export type ActualModelStatus =
 	| "available_for_download"
 	| "new_version_available"
 	| "incomplete"
+	| "latest";
+
+export type ModelStatus =
+	| ActualModelStatus
+	| "gathering_info"
+	| "gather_failed"
 	| "downloading"
 	| "download_failed"
 	| "download_incomplete"
 	| "cancelled_not_downloaded"
 	| "cancelled_incomplete"
 	| "save_failed"
-	| "save_incomplete"
-	| "latest";
+	| "save_incomplete";
+
+export type ModelLanguageAndVoice = `${Language}_${Voice}`;
+
+export interface ModelWithStatus {
+	model: ModelLanguageAndVoice;
+	status: ActualModelStatus;
+}
+
+export interface SetModelStatus {
+	setModelsStatus: Dispatch<ModelWithStatus>;
+}
+
+export interface ModelManagerState {
+	isModelManagerVisible: boolean;
+	openModelManager: () => void;
+}
 
 interface NamedMessage<K extends keyof Actions> {
 	name: K;
