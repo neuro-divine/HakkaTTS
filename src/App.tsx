@@ -56,22 +56,17 @@ export default function App() {
 
 	const openModelManager = useCallback(() => {
 		setIsModelManagerVisible(true);
-		if (!modelManager.current) return Promise.resolve();
+		if (!modelManager.current) return;
 		modelManager.current.inert = true;
 		modelManager.current.showModal();
 		modelManager.current.inert = false;
-		return new Promise<void>(resolve => {
-			modelManager.current!.addEventListener("close", () => {
-				setIsModelManagerVisible(false);
-				resolve();
-			}, { once: true });
-		});
+		modelManager.current.addEventListener("close", () => setIsModelManagerVisible(false), { once: true });
 	}, [setIsModelManagerVisible]);
 
 	const onModelManagerReady = useCallback((newModelManager: HTMLDialogElement | null) => {
 		if (!newModelManager) return;
 		modelManager.current = newModelManager;
-		void openModelManager();
+		openModelManager();
 	}, [openModelManager]);
 
 	return <DBProvider>
@@ -118,7 +113,7 @@ export default function App() {
 			</div>
 			<div className="mt-5">
 				{sentences.map((sentence, i) => (
-					<SentenceCard key={sentences.length - i} sentence={sentence} openModelManager={openModelManager} />
+					<SentenceCard key={sentences.length - i} sentence={sentence} isModelManagerVisible={isModelManagerVisible} openModelManager={openModelManager} />
 				))}
 			</div>
 		</div>

@@ -12,7 +12,13 @@ import type { SyntheticEvent } from "react";
 
 const audioCache = new Map<string, Map<string, string>>();
 
-export default function AudioPlayer({ language, voice, syllables, openModelManager }: { language: Language; voice: Voice; syllables: string[]; openModelManager: () => Promise<void> }) {
+export default function AudioPlayer({ language, voice, syllables, isModelManagerVisible, openModelManager }: {
+	language: Language;
+	voice: Voice;
+	syllables: string[];
+	isModelManagerVisible: boolean;
+	openModelManager: () => void;
+}) {
 	const [isReady, setIsReady] = useState(false);
 	const [isPlaying, setIsPlaying] = useState<boolean | null>(false);
 	const [progress, setProgress] = useState(0);
@@ -40,7 +46,7 @@ export default function AudioPlayer({ language, voice, syllables, openModelManag
 	const [modelRetryCounter, modelRetry] = useReducer((n: number) => n + 1, 0);
 	const [model, setModel] = useState<ModelComponentToFile>();
 	useEffect(() => {
-		if (!db || model) return;
+		if (!db || model || isModelManagerVisible) return;
 		async function getModelComponents() {
 			try {
 				const availableFiles = await db!.getAllFromIndex("models", "language_voice", [language, voice]);
@@ -67,7 +73,7 @@ export default function AudioPlayer({ language, voice, syllables, openModelManag
 		setModelError(undefined);
 		setIsReady(false);
 		void getModelComponents();
-	}, [db, model, language, voice, modelRetryCounter]);
+	}, [db, model, language, voice, isModelManagerVisible, modelRetryCounter]);
 
 	const [generationError, setGenerationError] = useState<Error>();
 	const [generationRetryCounter, generationRetry] = useReducer((n: number) => n + 1, 0);
@@ -194,7 +200,7 @@ export default function AudioPlayer({ language, voice, syllables, openModelManag
 						onClick={dbInitError
 							? dbInitRetry
 							: modelError
-							? (modelError instanceof ModelNotDownloadedError ? () => openModelManager().then(modelRetry) : modelRetry)
+							? (modelError instanceof ModelNotDownloadedError ? openModelManager : modelRetry)
 							: generationError
 							? generationRetry
 							: undefined}>

@@ -7,7 +7,11 @@ import { normalizePauses } from "./parse";
 
 import type { Sentence } from "./types";
 
-export default function SentenceCard({ sentence: { language, voice, sentence }, openModelManager }: { sentence: Sentence; openModelManager: () => Promise<void> }) {
+export default function SentenceCard({ sentence: { language, voice, sentence }, isModelManagerVisible, openModelManager }: {
+	sentence: Sentence;
+	isModelManagerVisible: boolean;
+	openModelManager: () => void;
+}) {
 	const [syllables, setSyllables] = useState(() => sentence.map(([char, pronNoteArray]) => pronNoteArray[0]?.[0] || normalizePauses(char)));
 	return <div className="card card-bordered border-base-300 bg-base-100 rounded-xl shadow-lg mb-3">
 		<div className="card-body max-sm:[--padding-card:1.5rem]">
@@ -28,7 +32,12 @@ export default function SentenceCard({ sentence: { language, voice, sentence }, 
 						}} />
 				))}
 			</div>
-			<AudioPlayer language={language} voice={voice} syllables={syllables} openModelManager={openModelManager} />
+			<AudioPlayer
+				language={language}
+				voice={voice}
+				syllables={syllables}
+				isModelManagerVisible={isModelManagerVisible}
+				openModelManager={openModelManager} />
 		</div>
 	</div>;
 }
