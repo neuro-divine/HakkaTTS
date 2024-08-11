@@ -91,7 +91,7 @@ export default function App() {
 						</div>
 					</div>
 					<div>
-						<button type="button" className="btn btn-ghost max-sm:btn-sm relative flex-col flex-nowrap gap-0 text-base text-nowrap h-20 min-h-20 text-slate-500 hover:bg-opacity-10" onClick={openModelManager}>
+						<button type="button" className="btn btn-ghost max-sm:btn-sm max-sm:px-2.5 relative flex-col flex-nowrap gap-0 text-base whitespace-nowrap h-20 min-h-20 text-slate-500 hover:bg-opacity-10" onClick={openModelManager}>
 							{modelsStatus !== "latest" && <MdError size="1.5em" className={`absolute top-1 right-1 ${MODEL_STATUS_INDICATOR_CLASS[modelsStatus]}`} />}
 							<MdOutlineDownloadForOffline size="2em" />模型下載
 							{isModelManagerVisible && createPortal(<ModelManager ref={onModelManagerReady} setModelsStatus={setModelsStatus} />, document.body)}
