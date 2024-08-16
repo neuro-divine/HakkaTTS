@@ -2063,14 +2063,12 @@ OK,fat5 fo3
 便宜,pien2 li2
 個性,go4 sin4
 倒垃圾,dau3 lap5 sap5
-倒後,dau4 heu4
 倭寇,vo1 keu4
 倭遲,vui1 ci2
 做完,zo4 yen2
 做禡,zo4 nga2
 傀儡,kui3 lui3
 傀奇,gui1 ki2
-傍晚,pong4 man1
 傍酒,bong3 ziu3
 傍飯,bong3 fan4
 傳播,con2 bo4
@@ -2079,7 +2077,6 @@ OK,fat5 fo3
 像素,siong4 su4
 僕射,puk6 ya4
 僮族,cong4 cuk6
-先後,sien1 heu4
 先生,sin1 sang1
 兩個,liong1 go4
 冠軍,gon4 giun1
@@ -2108,6 +2105,7 @@ OK,fat5 fo3
 勝利,sin4 li4
 半鹹淡,ban4 ham2 tam1
 即使,zit5 si3
+卵棍,lin3 gun4
 原告,ngien2 gau4
 厭惡,yam4 vu4
 參加,cam1 ga1
@@ -2195,6 +2193,7 @@ OK,fat5 fo3
 工程,gung1 cin2
 差別,ca1 piet6
 幅員廣闊,fuk5 yen2 gong3 fat5
+幅婆,pit6 po2
 平常,pin2 song2
 平貨,piang2 fo4
 幽靈,yiu1 lin2
@@ -2216,6 +2215,7 @@ OK,fat5 fo3
 心性,sim1 siang4
 忠告,zung1 guk5
 快樂,kai4 lok6
+怕係,fa4 he4
 性格,sin4 gak5
 惜別,sit5 piet6
 惡人,ok5 ngin2
@@ -2231,13 +2231,13 @@ OK,fat5 fo3
 扶穩,pu2 vun3
 批准,pi1 zun3
 投降,teu2 hong2
+拼辮,pin1 bien1
 拿來,la1 loi2
 挖掘,vat5 kiut6
 挖鼻屎,vet5 pi4 si3
 捉蝴蝶,zuk5 fu2 tiap6
 捩琵琶,lui4 pi2 pa2
 排毒,pai2 tuk6
-掣後腳,cit5 heu4 giok5
 掣肘,zi4 ziu3
 推懶,toi1 lan1
 掩映,yam3 yong3
@@ -2262,6 +2262,7 @@ OK,fat5 fo3
 斷章取義,ton4 zong1 ci3 ngi4
 日暈,ngit5 yun4
 旺盛,vong4 sang4
+昝晚日,cam4 min1 ngit5
 星球,sin1 kiu2
 映照,yang3 zau4
 晦暝,fui4 men2
@@ -2343,7 +2344,7 @@ OK,fat5 fo3
 犯犯,fam4 fam4
 狗仔,geu3 zai3
 狼藉,long2 cit6
-玩耍,ngan2 sa3
+玩耍,van2 sa3
 玫瑰,moi2 gui4
 瑰奇,gui1 ki2
 甌窶,iu1 leu2
@@ -2415,6 +2416,7 @@ OK,fat5 fo3
 胍肫,gu1 zun1
 脊椎,zit5 zui1
 腥風血雨,sen1 fung1 hiet5 yi3
+腳瓤肚,giok5 lang2 du3
 膴仕,vu3 su4
 自由行,cu4 yiu2 hang2
 舖位,pu4 vui4
@@ -2487,7 +2489,7 @@ OK,fat5 fo3
 迭逿,diet5 tong2
 途徑,tu2 gin4
 遇上,ngi4 song1
-遊玩,yiu2 ngan4
+遊玩,yiu2 van4
 道路,tau4 lu4
 還有,han2 yiu1
 還錢,van2 cien2
@@ -2551,13 +2553,16 @@ OK,fat5 fo3
 鴻鵠,fung2 fuk5
 鶬鶊,cong1 gang1
 鶴藪,hok6 deu4
+黃蚻,vong2 cat6
 點滴,diam3 tit6
 龍蝦,lung2 ha1
 因為,yin1 vui4
 已經,yi3 gin1
 中國,zung1 get5
+之後,zu1 heu4
 時間,si2 gan4
 好似,hau3 su4
+最後,zui4 heu4
 好多,hau3 do1
 機會,gi1 fui4
 一定,yit5 tin4
@@ -2568,6 +2573,7 @@ OK,fat5 fo3
 點解,diam3 gai3
 決定,giet5 tin4
 只係,zit5 he4
+然後,yen2 heu4
 以為,yi1 vui2
 電話,tien4 va4
 成為,sin2 vui2
@@ -2619,6 +2625,7 @@ OK,fat5 fo3
 成員,sin2 yen2
 平時,pin2 si2
 至少,zi4 sau3
+今晚,gim1 man1
 遊行,yiu2 hang2
 中央,zung1 yong1
 當地,dong1 ti4
@@ -2649,6 +2656,7 @@ OK,fat5 fo3
 穩定,vun3 tin4
 質素,zit5 su4
 近日,kiun4 ngit5
+泛民,fam4 min2
 被捕,pi4 pu3
 減少,gam3 sau3
 上升,song4 sin1
@@ -2661,6 +2669,7 @@ OK,fat5 fo3
 旅行,li3 hang2
 曾經,cen2 gin1
 食物,sit6 vut6
+以後,yi1 heu4
 諗住,lem3 cu4
 上面,song4 mien4
 只能,zit5 len2
@@ -2674,6 +2683,7 @@ OK,fat5 fo3
 打算,da3 son4
 質疑,zit5 ngi2
 印度,yin4 tu4
+後來,heu4 loi2
 冇得,mau2 det5
 上海,song4 hoi3
 好彩,hau3 cai3
@@ -2681,6 +2691,7 @@ OK,fat5 fo3
 會議,fui4 ngi4
 否則,feu3 zet5
 中環,zung1 van2
+事後,su4 heu4
 經歷,gin1 lit6
 態度,tai4 tu4
 冇乜,mau2 mak5
@@ -2691,10 +2702,12 @@ OK,fat5 fo3
 上次,song4 cu4
 近期,kiun4 ki2
 巴塞,ba1 soi4
+其後,ki2 heu4
 平台,pin2 toi2
 調整,tiau2 zin3
 最少,zui4 sau3
 嘅話,e4 va4
+日後,ngit5 heu4
 娛樂,ngu2 lok6
 家長,ga1 zong3
 為主,vui2 zu3
@@ -2729,6 +2742,7 @@ OK,fat5 fo3
 難以,lan2 yi1
 靚仔,liang4 zai3
 打擊,da3 git5
+後備,heu4 pi4
 將軍澳,ziong1 giun1 au4
 背景,boi4 gin3
 背後,boi4 heu4
@@ -2753,11 +2767,13 @@ OK,fat5 fo3
 難度,lan2 tu4
 早上,zau3 song4
 手上,siu3 song4
+落後,lok6 heu4
 地上,ti4 song4
 之中,zu1 zung1
 平衡,pin2 fen2
 觀塘,gon1 tong2
-玩具,ngan4 ki3
+後面,heu4 mien4
+玩具,van4 ki3
 自從,cu4 cung2
 擔任,dam1 ngim4
 中堅,zung1 gien1
@@ -2789,6 +2805,8 @@ OK,fat5 fo3
 參選,cam1 sien3
 聽過,tang4 go4
 從來,cung2 loi2
+後者,heu4 za3
+後悔,heu4 fui4
 護士,fu4 su4
 只可,zit5 ko3
 成熟,sin2 suk6
@@ -2800,6 +2818,7 @@ OK,fat5 fo3
 各種,gok5 zung3
 應付,yin4 fu4
 年度,ngien2 tu4
+夜晚,ya4 man1
 必要,bit5 yau4
 公仔,gung1 zai3
 正如,zin4 yi2
@@ -2821,10 +2840,13 @@ OK,fat5 fo3
 傳出,con2 cut5
 對上,dui4 song4
 身為,sin1 vui2
+後果,heu4 go3
 相比,siong1 bi3
+前晚,cien2 man1
 正是,zin4 si4
 數量,su4 liong4
 只得,zit5 det5
+前後,cien2 heu4
 用户,yung4 fu4
 提名,ti2 min2
 車路士,ca1 lu4 su4
@@ -2835,6 +2857,7 @@ OK,fat5 fo3
 良好,liong2 hau3
 同行,tung2 hang2
 同行,tung2 hong2
+係咩,he4 me1
 會同,fui4 tung2
 指定,zi3 tin4
 瑞士,sui4 su4
@@ -2862,6 +2885,7 @@ OK,fat5 fo3
 心中,sim1 zung1
 都要,du1 yau4
 成人,sin2 ngin2
+邏輯,lo3 cip5
 難怪,lan2 gai4
 相處,siong1 cu4
 射手,sa4 siu3
@@ -2870,10 +2894,13 @@ OK,fat5 fo3
 簽名,ciam1 miang2
 民間,min2 gan1
 齊齊,ce2 ce2
+過後,go4 heu4
 高度,gau1 tu4
 大户,tai4 fu4
+後防,heu4 fong2
 只需,zit5 si1
 當選,dong1 sien3
+有咩,yiu1 me1
 轉頭,zon4 teu2
 名人,min2 ngin2
 組成,zu3 sin2
@@ -2972,6 +2999,7 @@ OK,fat5 fo3
 傳真,con2 zin1
 成年,sin2 ngien2
 中產,zung1 san3
+隨後,sui2 heu4
 能量,len2 liong4
 金屬,gim1 suk6
 參賽,cam1 soi4
@@ -2989,6 +3017,8 @@ OK,fat5 fo3
 效應,hau4 yin4
 行李,hang2 li3
 進度,zin4 tu4
+稍後,sau1 heu4
+咩事,me1 su4
 難道,lan2 tau4
 罪名,cui4 min2
 行人,hang2 ngin2
@@ -3013,6 +3043,7 @@ OK,fat5 fo3
 上午,song4 ng3
 重返,cung2 fan3
 中東,zung1 dung1
+做咩,zo4 me1
 從事,cung2 su4
 樂壇,ngok6 tan2
 只好,zit5 hau3
@@ -3025,6 +3056,7 @@ OK,fat5 fo3
 強大,kiong2 tai4
 份量,fun4 liong4
 高質,gau1 zit5
+裏面,li1 mien4
 戰士,zien4 su4
 極端,kit6 don1
 成都,sin2 du1
@@ -3040,6 +3072,7 @@ OK,fat5 fo3
 小弟,siau3 ti4
 司長,su1 zong3
 定價,tin4 ga4
+後期,heu4 ki2
 店舖,diam4 pu4
 神經,sin2 gin1
 平手,pin2 siu3
@@ -3073,6 +3106,8 @@ OK,fat5 fo3
 解放,gai3 fong4
 打出,da3 cut5
 要是,yau4 si4
+揸車,za1 ca1
+幕後,mok5 heu4
 友好,yiu1 hau3
 可否,ko3 feu3
 錯過,co4 go4
@@ -3106,6 +3141,7 @@ OK,fat5 fo3
 過度,go4 tu4
 中出,zung1 cut5
 限定,han4 tin4
+踏入,tap6 ngip6
 車牌,ca1 pai2
 體重,ti3 cung1
 青少年,ciang1 sau4 ngien2
@@ -3122,12 +3158,14 @@ OK,fat5 fo3
 少有,sau3 yiu1
 災難,zai1 lan4
 商户,song1 fu4
+害怕,hoi4 pa4
 正當,zin4 dong4
 輕易,kiang1 yi4
 推進,tui1 zin4
 好轉,hau3 zon3
 第一時間,ti4 yit5 si2 gan4
 約定,yok5 tin4
+押後,ap5 heu4
 強勁,kiong2 gin4
 防暴,fong2 pau4
 山頂,san1 dang3
@@ -3159,6 +3197,7 @@ OK,fat5 fo3
 上帝,song4 di4
 上天,song4 tien1
 不禁,but5 gim4
+恐怕,kiung3 pa4
 強行,kiong3 hang2
 理會,li1 fui4
 成果,sin2 go3
@@ -3202,6 +3241,7 @@ OK,fat5 fo3
 美好,mui1 hau3
 士兵,su4 bin1
 跑車,pau1 ca1
+廣泛,gong3 fam4
 麥當勞,mak6 dong1 lau2
 剛好,gong1 hau3
 解散,gai3 san4
@@ -3241,6 +3281,7 @@ OK,fat5 fo3
 不成,but5 sin2
 傳送,con2 sung4
 名叫,min2 giau4
+差啲,ca1 tit6
 落成,lok6 sin2
 救命,giu4 miang4
 塞車,set5 ca1
@@ -3344,6 +3385,7 @@ OK,fat5 fo3
 邊間,bien1 gan1
 一會,yit5 fui4
 至上,zi4 song4
+後人,heu4 ngin2
 氣質,hi4 zit5
 法定,fap5 tin4
 炒車,cau3 ca1
@@ -3353,6 +3395,7 @@ OK,fat5 fo3
 好比,hau3 bi3
 歡樂,fon1 lok6
 孖展,ma1 zien3
+往後,vong1 heu4
 背囊,boi4 long2
 連登仔,lien2 den1 zai3
 傳中,con2 zung1
@@ -3371,6 +3414,7 @@ OK,fat5 fo3
 變種,bien4 zung3
 漂亮,piau4 liong4
 更衣室,gang1 yi1 sit5
+身後,sin1 heu4
 姓名,siang4 min2
 進食,zin4 sit6
 勝負,sin4 fu4
@@ -3392,6 +3436,7 @@ OK,fat5 fo3
 供款,giung1 kan3
 點名,diam3 miang2
 長達,cong2 tat6
+季後賽,gui4 heu4 soi4
 好意思,hau3 yi4 su1
 有名,yiu1 miang2
 馬體會,ma1 ti3 fui4
@@ -3407,6 +3452,7 @@ OK,fat5 fo3
 首名,siu3 min2
 少許,sau3 hi3
 近乎,kiun4 fu2
+可怕,ko3 pa4
 車身,ca1 sin1
 升降機,sin1 gong4 gi1
 侍應,si4 yin4
@@ -3428,6 +3474,7 @@ OK,fat5 fo3
 易手,yit6 siu3
 轉投,zon3 teu2
 本質,bun3 zit5
+月後,ngiet6 heu4
 從不,cung2 but5
 中路,zung1 lu4
 擔憂,dam1 yiu1
@@ -3455,6 +3502,7 @@ OK,fat5 fo3
 極為,kit6 vui2
 旅行社,li3 hang2 sa1
 深刻,cim1 ket5
+心裏,sim1 li1
 撞車,cong4 ca1
 冇問,mau2 mun4
 户外,fu4 ngoi4
@@ -3493,6 +3541,7 @@ OK,fat5 fo3
 處境,cu3 gin3
 中華民國,zung1 fa2 min2 get5
 鎖定,so3 tin4
+巡邏,sun2 lo3
 既定,gi4 tin4
 經濟學,gin1 zi4 hok6
 暴露,pau4 lu4
@@ -3526,6 +3575,7 @@ OK,fat5 fo3
 轉換,zon3 von4
 唔係好,m1 he4 hau3
 警長,gin3 zong3
+後市,heu4 si1
 作供,zok5 giung1
 食客,sit6 hak5
 復仇,fuk6 siu2
@@ -3555,6 +3605,7 @@ OK,fat5 fo3
 打爆,da3 bau4
 士多,su4 do1
 難聽,lan2 tang4
+後台,heu4 toi2
 你要,li3 yau4
 聆聽,lin2 tin4
 匿名,lit6 min2
@@ -3652,6 +3703,7 @@ OK,fat5 fo3
 重重,cung2 cung2
 正氣,zin4 hi4
 升降,sin1 gong4
+後衞,heu4 vui4
 傳單,con2 dan1
 差點,ca1 diam3
 打邊爐,da3 bien1 lu2
@@ -3666,6 +3718,7 @@ OK,fat5 fo3
 禁令,gim4 lin4
 射擊,sa4 git5
 搞錯,gau3 co4
+今後,gim1 heu4
 轉工,zon4 gung1
 重創,cung1 cong3
 強度,kiong2 tu4
@@ -3676,6 +3729,7 @@ OK,fat5 fo3
 乜人,mak5 ngin2
 相隔,siong1 gak5
 冷淡,lang1 tam4
+吖嘛,a1 ma1
 度假,tu4 ga3
 上址,song4 zi3
 便衣,pien4 yi1
@@ -3728,6 +3782,7 @@ OK,fat5 fo3
 未定,vui4 tin4
 相近,siong1 kiun4
 電話號碼,tien4 va4 hau4 ma1
+好啲,hau3 tit6
 畫質,fa4 zit5
 惡魔,ok5 mo2
 前度,cien2 tu4
@@ -3746,6 +3801,7 @@ OK,fat5 fo3
 真係要,zin1 he4 yau4
 中槍,zung4 ciong1
 樂意,lok6 yi4
+晚飯,man1 fan4
 點都好,diam3 du1 hau3
 定居,tin4 gi1
 打風,da3 fung1
@@ -3775,6 +3831,7 @@ OK,fat5 fo3
 鮮血,sien1 hiet5
 新鮮感,sin1 sien1 gam3
 途經,tu2 gin1
+後遺症,heu4 vui2 zin4
 童話,tung2 va4
 已經唔,yi3 gin1 m1
 正值,zin4 cit6
@@ -3796,6 +3853,7 @@ OK,fat5 fo3
 新興,sin1 hin1
 洗手間,se3 siu3 gan1
 平方米,pin2 fong1 mi3
+後方,heu4 fong1
 上調,song4 tiau2
 推算,tui1 son4
 坐低,co1 dai1
@@ -3806,6 +3864,7 @@ OK,fat5 fo3
 跌倒,diet5 dau3
 着數,cok6 su4
 好用,hau3 yung4
+怕醜,pa4 ciu3
 應該都,yin1 goi1 du1
 日間,ngit5 gan1
 撞正,cong4 zang4
@@ -3833,6 +3892,7 @@ OK,fat5 fo3
 中國人,zung1 get5 ngin2
 中式,zung1 sit5
 中小企,zung1 siau3 ki1
+講咩,gong3 me1
 遊樂場,yiu2 lok6 cong2
 剩係,sin4 he4
 密度,mit6 tu4
@@ -3913,6 +3973,8 @@ OK,fat5 fo3
 道出,tau4 cut5
 絕食,ciet6 sit6
 不行,but5 hang2
+後續,heu4 suk6
+那裏,la3 li1
 一間,yit5 gan1
 倒戈,dau3 go1
 耳仔,ngi3 zai3
@@ -3932,11 +3994,13 @@ OK,fat5 fo3
 射波,sa4 bo1
 將要,ziong1 yau4
 審核,sim3 het6
+腳踏,giok5 tap6
 糾正,giu3 zin4
 醒覺,siang3 gok5
 參戰,cam1 zien4
 打錯,da3 co4
 禁錮,gim4 gu4
+後天,heu4 tien1
 大部分,tai4 pu4 fun4
 煮食,zu3 sit6
 打救,da3 giu4
@@ -3955,20 +4019,25 @@ OK,fat5 fo3
 個仔,go4 zai3
 中興,zung1 hin1
 重整,cung2 zin3
+後退,heu4 tui4
 三文治,sam1 vun2 ci4
 關卡,gan1 ka1
+埋伏,mai2 fuk6
 即食,zit5 sit6
 不平,but5 pin2
 咩好,me1 hau3
 要去,yau4 hi4
+後代,heu4 toi4
 驅散,ki1 san4
 有平,yiu1 piang2
+之後就,zu1 heu4 ciu4
 坐車,co1 ca1
 消防處,siau1 fong2 cu4
 屈服,kiut5 fuk6
 校董,gau3 dung3
 有少少,yiu1 sau3 sau3
 正版,zin4 ban3
+後繼,heu4 gi4
 親屬,cin1 suk6
 促成,cuk5 sin2
 中型,zung1 hin2
@@ -3980,6 +4049,7 @@ OK,fat5 fo3
 透明度,teu4 min2 tu4
 復興,fuk6 hin1
 相撞,siong1 cong4
+咩人,me1 ngin2
 無從,vu2 cung2
 最緊要,zui4 gin3 yau4
 烈士,liet6 su4
@@ -4030,7 +4100,7 @@ OK,fat5 fo3
 為食,vui4 sit6
 正評,zin4 pin2
 要你,yau4 li3
-玩意,ngan4 yi4
+玩意,van4 yi4
 近視,kiun4 si4
 正中,zin4 zung1
 轉讓,zon3 ngiong4
@@ -4060,7 +4130,7 @@ OK,fat5 fo3
 須要,si1 yau4
 飲食業,yim3 sit6 ngiap6
 一名,yit5 min2
-玩笑,ngan2 siau4
+玩笑,van2 siau4
 打底,da3 dai3
 負荷,fu4 ho4
 逼近,bit5 kiun4
@@ -4100,6 +4170,7 @@ OK,fat5 fo3
 火車頭,fo3 ca1 teu2
 濃度,ngiung2 tu4
 些少,sia1 sau3
+晚宴,man1 yen4
 要等,yau4 den3
 連番,lien2 fan1
 年少,ngien2 sau4
@@ -4135,6 +4206,7 @@ OK,fat5 fo3
 食譜,sit6 pu3
 時差,si2 ca1
 唔差,m1 ca1
+咩問題,me1 mun4 ti2
 被人,pi4 ngin2
 賽道,soi4 tau4
 車速,ca1 suk5
@@ -4175,6 +4247,7 @@ OK,fat5 fo3
 供電,giung1 tien4
 靜坐,cin4 co4
 打你,da3 li3
+後輩,heu4 bui4
 要不是,yau4 but5 si4
 當打,dong1 da3
 中部,zung1 pu4
@@ -4185,6 +4258,7 @@ OK,fat5 fo3
 險勝,hiam3 sin4
 罪惡,cui4 ok5
 好多都,hau3 do1 du1
+拼音,pin4 yim1
 上揚,song4 yong2
 管道,gon3 tau4
 兩邊,liong1 bien1
@@ -4211,6 +4285,7 @@ OK,fat5 fo3
 行蹤,hang2 zung1
 中等,zung1 den3
 安定,on1 tin4
+長揸,cong2 za1
 專屬,zon1 suk6
 應急,yin4 gip5
 震盪,zin3 tong4
@@ -4235,13 +4310,15 @@ OK,fat5 fo3
 傳召,con2 cau4
 當街,dong1 gai1
 打起,da3 hi3
+後勤,heu4 kiun2
 打通,da3 tung1
-玩弄,ngan4 lung4
+玩弄,van4 lung4
 爭相,zang1 siong1
 處男,cu3 lam2
 熱量,ngiet6 liong4
 因為你,yin1 vui4 li3
 重災區,cung1 zai1 ki1
+泛民主派,fam4 min2 zu3 pai4
 國度,get5 tu4
 霸道,ba4 tau4
 親近,cin1 kiun4
@@ -4261,6 +4338,7 @@ OK,fat5 fo3
 應酬,yin4 ciu2
 解畫,gai3 fa4
 聽取,tang4 ci3
+用咩,yung4 me1
 驚險,gin1 hiam3
 略為,liok6 vui2
 晚間,man1 gan1
@@ -4304,9 +4382,11 @@ OK,fat5 fo3
 鮮花,sien1 fa1
 出車,cut5 ca1
 遊樂,yiu2 lok6
+潛伏,ciam2 fuk6
 好鍾意,hau3 zung1 yi4
 強人,kiong2 ngin2
 好嘅,hau3 e4
+唔怕,m1 pa4
 唔食,m1 sit6
 轉交,zon3 gau1
 鮮明,sien1 min2
@@ -4320,6 +4400,7 @@ OK,fat5 fo3
 好明顯,hau3 min2 hien3
 種票,zung4 piau4
 充分,cung1 fun4
+此後,cu3 heu4
 食正,sit6 zang4
 迴旋處,fui2 sien2 cu3
 阻塞,zo3 set5
@@ -4340,11 +4421,13 @@ OK,fat5 fo3
 成數,sin2 su4
 長假,cong2 ga3
 水炮車,sui3 pau4 ca1
+後記,heu4 gi4
 宵禁,siau1 gim4
 轉左,zon4 zo3
 好高,hau3 gau1
 中史,zung1 su3
 唔明點解,m1 min2 diam3 gai3
+踏實,tap6 sit6
 王朝,vong2 cau2
 應當,yin1 dong1
 道別,tau4 piet6
@@ -4355,8 +4438,9 @@ OK,fat5 fo3
 月經,ngiet6 gin1
 皇上,fong2 song4
 極品,kit6 pin3
+起伏,hi3 fuk6
 成全,sin2 cien2
-吃喝玩樂,ket5 hot5 ngan4 lok6
+吃喝玩樂,ket5 hot5 van4 lok6
 主婦,zu3 fu4
 點解我,diam3 gai3 ngo1
 村長,cun1 zong3
@@ -4397,6 +4481,7 @@ OK,fat5 fo3
 養成,yong1 sin2
 安樂死,on1 lok6 si3
 小強,siau3 kiong2
+咩叫,me1 giau4
 要講,yau4 gong3
 中西區,zung1 si1 ki1
 實名,sit6 min2
@@ -4416,6 +4501,7 @@ OK,fat5 fo3
 華僑,fa2 kiau2
 嗜好,si4 hau4
 正規,zin4 gui1
+到最後,dau4 zui4 heu4
 南極,lam2 kit6
 唔緊要,m1 gin3 yau4
 打埋,da3 mai2
@@ -4423,6 +4509,7 @@ OK,fat5 fo3
 呼應,fu1 yin4
 轉眼,zon3 ngan3
 色調,set5 tiau4
+有咩問題,yiu1 me1 mun4 ti2
 店長,diam4 zong3
 即興,zit5 hin4
 坐正,co1 zang4
@@ -4438,6 +4525,7 @@ OK,fat5 fo3
 間公司,gan1 gung1 su1
 使得,si3 det5
 用量,yung4 liong4
+晚年,man1 ngien2
 政治正確,zin4 ci4 zin4 kok5
 三年,sam1 ngien2
 推撞,tui1 cong4
@@ -4446,11 +4534,13 @@ OK,fat5 fo3
 正統,zin4 tung3
 兩條,liong1 tiau2
 聽人講,tang4 ngin2 gong3
+要俾,yau4 bi1
 將近,ziong1 kiun4
 纜車,lam4 ca1
 尺度,cak5 tu4
 仲有冇,cung4 yiu1 mau2
 繪畫,kui4 fa4
+後腦,heu4 lau3
 食到,sit6 dau4
 播映,bo4 yang3
 傳銷,con2 siau1
@@ -4460,6 +4550,7 @@ OK,fat5 fo3
 乾脆,gon1 cioi4
 更好,gang1 hau3
 善長,sen4 zong3
+早晚,zau3 man1
 似冇,su4 mau2
 大食,tai4 sit6
 相提並論,siong1 ti2 bin4 lun4
@@ -4467,6 +4558,7 @@ OK,fat5 fo3
 覺悟,gok5 ngu4
 冇機,mau2 gi1
 追打,zui1 da3
+後事,heu4 su4
 射出,sa4 cut5
 兄長,hiung1 zong3
 現成,hien4 sin2
@@ -4476,6 +4568,7 @@ OK,fat5 fo3
 冇巴打,mau2 ba1 da3
 華南,fa2 lam2
 譯名,yit6 miang2
+踐踏,cien4 tap6
 應屆,yin4 gai4
 盲撐,mang2 cang4
 其中一個,ki2 zung1 yit5 go4
@@ -4513,14 +4606,17 @@ OK,fat5 fo3
 就覺得,ciu4 gok5 det5
 知識產權,zi4 sit5 san3 kien2
 以為係,yi1 vui2 he4
+踏足,tap6 zuk5
 係好難,he4 hau3 lan2
 驚覺,gin1 gok5
 便當,pien4 dong4
 好遠,hau3 yen3
+臉色,liam3 set5
 受驚,siu4 gin1
 中級,zung1 kip5
 華夏,fa2 ha4
 兩個月,liong1 go4 ngiet6
+後路,heu4 lu4
 一年一度,yit5 ngien2 yit5 tu4
 做下,zo4 ha4
 薄荷,pok6 ho2
@@ -4537,6 +4633,7 @@ OK,fat5 fo3
 車頂,ca1 dang3
 顯示卡,hien3 si4 kat6
 隸屬,li4 suk6
+最後都,zui4 heu4 du1
 幾度,gi1 tu4
 樂團,ngok6 ton2
 轉個頭,zon3 go4 teu2
@@ -4581,6 +4678,7 @@ OK,fat5 fo3
 調理,tiau2 li1
 成品,sin2 pin3
 想食,siong3 sit6
+後塵,heu4 cin4
 外間,ngoi4 gan1
 刻薄,ket5 pok6
 重手,cung1 siu3
@@ -4589,6 +4687,7 @@ OK,fat5 fo3
 兩場,liong1 cong2
 頂唔順,din3 m1 sun4
 應聲,yin4 sang1
+叻仔,liak6 zai3
 冇諗過,mau2 lem3 go4
 你有冇,li3 yiu1 mau2
 毒男,tuk6 lam2
@@ -4641,18 +4740,21 @@ OK,fat5 fo3
 散工,san3 gung1
 暴走,pau4 zeu3
 就應該,ciu4 yin1 goi1
+產後,san3 heu4
 長時,cong2 si2
 稱之為,cin1 zu1 vui2
 車公,ca1 gung1
 食指,sit6 zi3
 財仔,coi2 zai3
 鮮味,sien1 mui4
+臉書,liam3 su1
 旁觀,pong2 gon1
 五行,ng3 hang2
 上邊,song4 bien1
 遵從,zun1 cung2
 輾轉,zien3 zon3
 轉乘,zon3 sin2
+後樓梯,heu4 leu2 toi1
 英中,yin1 zung1
 倒卧,dau3 ngo4
 光明正大,gong1 min2 zin4 tai4
@@ -4700,8 +4802,10 @@ OK,fat5 fo3
 偏差,pien1 ca1
 素質,su4 zit5
 喇沙,la2 sa1
+退後,tui4 heu4
 修行,siu1 hang2
 佢應該,gi2 yin1 goi1
+晚市,man1 si1
 被譽為,pi4 yi4 vui2
 講乜,gong3 mak5
 反差,fan3 ca1
@@ -4777,6 +4881,7 @@ OK,fat5 fo3
 中計,zung4 ge4
 怨婦,yen4 fu4
 巴士司機,ba1 si3 su1 gi1
+臉頰,liam3 giap5
 解剖,gai3 peu3
 靈異,lin2 yi4
 變質,bien4 zit5
@@ -4805,10 +4910,12 @@ OK,fat5 fo3
 奉行,fung4 hang2
 家當,ga1 dong4
 人種,ngin2 zung3
+咩係,me1 he4
 捱打,ngai2 da3
 重點係,cung1 diam3 he4
 要諗,yau4 lem3
 磨練,mo2 lien4
+仲有咩,cung4 yiu1 me1
 記錯,gi4 co4
 毒素,tuk6 su4
 兩個人,liong1 go4 ngin2
@@ -4830,6 +4937,7 @@ OK,fat5 fo3
 舉重,gi3 cung1
 講好,gong3 hau3
 係好正,he4 hau3 zang4
+一晚,yit5 man1
 四散,si4 san4
 成件事,sin2 kien4 su4
 正牌,zin4 pai2
@@ -4885,6 +4993,7 @@ OK,fat5 fo3
 漂白水,piau4 pak6 sui3
 斷絕,ton1 ciet6
 度數,tu4 su4
+後補,heu4 bu3
 貨櫃車,fo4 kui4 ca1
 聽從,tang4 cung2
 名堂,min2 tong2
@@ -4914,6 +5023,7 @@ OK,fat5 fo3
 轉而,zon4 yi2
 調解,tiau2 gai3
 乞食,ket5 sit6
+攞命,lo3 miang4
 上文,song4 vun2
 最強,zui4 kiong2
 學車,hok6 ca1
@@ -4925,6 +5035,7 @@ OK,fat5 fo3
 有朝一日,yiu1 zau1 yit5 ngit5
 轉角,zon4 gok5
 正直,zin4 cit6
+晚裝,man1 zong1
 鬼仔,gui3 zai3
 貴金屬,gui4 gim1 suk6
 矮仔,ai3 zai3
@@ -4979,8 +5090,10 @@ OK,fat5 fo3
 兩張,liong1 zong1
 打我,da3 ngo1
 番去,fan1 hi4
+善後,sen4 heu4
 風褸,fung1 leu1
 唱反調,cong4 fan3 tiau4
+臉孔,liam3 kung3
 通頂,tung1 dang3
 差好遠,ca1 hau3 yen3
 中轉,zung1 zon3
@@ -4990,6 +5103,7 @@ OK,fat5 fo3
 我應該,ngo1 yin1 goi1
 捲土重來,gien3 tu3 cung2 loi2
 便衣警,pien4 yi1 gin3
+明晚,min2 man1
 解碼,gai3 ma1
 好貴,hau3 gui4
 武打,vu1 da3
@@ -5022,6 +5136,7 @@ OK,fat5 fo3
 解密,gai3 mit6
 微不足道,mi2 but5 zuk5 tau4
 都食,du1 sit6
+有咩用,yiu1 me1 yung4
 服食,fuk6 sit6
 着想,cok6 siong3
 大致上,tai4 zi4 song4
@@ -5034,6 +5149,7 @@ OK,fat5 fo3
 都冇得,du1 mau2 det5
 好多次,hau3 do1 cu4
 斯里蘭卡,su1 li1 lan2 ka1
+原地踏步,ngien2 ti4 tap6 pu4
 通行證,tung1 hang2 zin4
 朋友仔,pen2 yiu1 zai3
 中看,zung1 kon4
@@ -5059,6 +5175,7 @@ OK,fat5 fo3
 從來都,cung2 loi2 du1
 供不應求,giung1 but5 yin4 kiu2
 論調,lun4 tiau4
+晚報,man1 bau4
 其實呢,ki2 sit6 le1
 地質,ti4 zit5
 守行為,siu3 hang2 vui2
@@ -5110,6 +5227,7 @@ OK,fat5 fo3
 應該點,yin1 goi1 diam3
 柔道,yiu2 tau4
 你聽,li3 tang4
+潛伏期,ciam2 fuk6 ki2
 惡果,ok5 go3
 奢華,ca1 fa2
 斷斷續續,ton1 ton1 suk6 suk6
@@ -5120,8 +5238,11 @@ OK,fat5 fo3
 考核,kau3 het6
 要問,yau4 mun4
 假定,ga3 tin4
+後宮,heu4 giung1
 正印,zin4 yin4
 走難,zeu3 lan4
+伏線,fuk6 sien4
+之後都,zu1 heu4 du1
 平方,pin2 fong1
 爛仔,lan4 zai3
 聽電話,tang4 tien4 va4
@@ -5149,17 +5270,21 @@ OK,fat5 fo3
 打火機,da3 fo3 gi1
 封頂,fung1 dang3
 食慾,sit6 yuk6
+之後再,zu1 heu4 zai4
 好諗,hau3 lem3
 如果要,yi2 go3 yau4
+拼圖,pin4 tu2
 係難,he4 lan2
 係難,he4 lan4
 好好笑,hau3 hau3 siau4
 所以要,so3 yi1 yau4
 啱聽,ngam1 tang4
 直屬,cit6 suk6
+伏筆,fuk6 bit5
 膳食,sien4 sit6
 重讀,cung2 tuk6
 聽佢,tang4 gi2
+秋後算賬,ciu1 heu4 son4 zong4
 三個月,sam1 go4 ngiet6
 成敗,sin2 pai4
 他朝,ta1 zau1
@@ -5234,6 +5359,7 @@ OK,fat5 fo3
 真係好好,zin1 he4 hau3 hau3
 志同道合,zi4 tung2 tau4 hap6
 點打,diam3 da3
+之後我,zu1 heu4 ngo1
 參拜,cam1 bai4
 重擊,cung2 git5
 應考,yin4 kau3
@@ -5244,6 +5370,7 @@ OK,fat5 fo3
 邊度有,bien1 tu4 yiu1
 冇理,mau2 li1
 曲解,kiuk5 gai3
+晚晚,man1 man1
 除名,cu2 min2
 奠定,tien4 tin4
 定向,tin4 hiong4
@@ -5251,6 +5378,7 @@ OK,fat5 fo3
 我一定,ngo1 yit5 tin4
 外相,ngoi4 siong4
 一瞬間,yit5 sun4 gan1
+拼搏,pin4 bok5
 只准,zit5 zun3
 可能要,ko3 len2 yau4
 腸道,cong2 tau4
@@ -5267,7 +5395,7 @@ OK,fat5 fo3
 講兩句,gong3 liong1 gi4
 利淡,li4 tam4
 行出,hang2 cut5
-玩味,ngan4 mui4
+玩味,van4 mui4
 好大機會,hau3 tai4 gi1 fui4
 諗諗,lem3 lem3
 就近,ciu4 kiun4
@@ -5295,9 +5423,11 @@ OK,fat5 fo3
 取經,ci3 gin1
 係讀,he4 tuk6
 散心,san4 sim1
+怕怕,pa4 pa4
 點解可以,diam3 gai3 ko3 yi1
 強心針,kiong2 sim1 zim1
 較好,gau4 hau3
+少啲,sau3 tit6
 相等,siong1 den3
 勝地,sin4 ti4
 對質,dui4 zit5
@@ -5311,6 +5441,7 @@ OK,fat5 fo3
 傍身,pong2 sin1
 中傷,zung4 song1
 好客,hau4 hak5
+身後事,sin1 heu4 su4
 感應器,gam3 yin4 hi4
 當政,dong1 zin4
 好小,hau3 siau3
@@ -5328,12 +5459,14 @@ OK,fat5 fo3
 三圍,sam1 vui2
 暴斃,pau4 bi4
 三峽,sam1 hiap6
+之後又,zu1 heu4 yiu4
 好耐冇,hau3 lai4 mau2
 兩件,liong1 kien4
 大家唔好,tai4 ga1 m1 hau3
 冇見,mau2 gien4
 必經,bit5 gin1
 係最好,he4 zui4 hau3
+幕後黑手,mok5 heu4 het5 siu3
 冰毒,ben1 tuk6
 平方公里,pin2 fong1 gung1 li1
 要唔要,yau4 m1 yau4
@@ -5352,6 +5485,7 @@ OK,fat5 fo3
 行去,hang2 hi4
 想聽,siong3 tang4
 冇啦,mau2 la1
+咩意思,me1 yi4 su1
 跟從,gen1 cung2
 冇所謂,mau2 so3 vui4
 隆重,lung2 cung4
@@ -5371,6 +5505,7 @@ OK,fat5 fo3
 路經,lu4 gin1
 轉嫁,zon3 ga4
 唔好諗,m1 hau3 lem3
+最後都係,zui4 heu4 du1 he4
 大個仔,tai4 go4 zai3
 好廢,hau3 fui4
 太好,tai4 hau3
@@ -5390,6 +5525,7 @@ OK,fat5 fo3
 遠勝,yen3 sin4
 討回公道,tau3 fui2 gung1 tau4
 慰安婦,vui3 on1 fu4
+後裔,heu4 yi3
 指使,zi3 si3
 場上,cong2 song4
 衣食,yi1 sit6
@@ -5444,10 +5580,12 @@ OK,fat5 fo3
 好痛,hau3 tung4
 意食,yi4 sit6
 應該可以,yin1 goi1 ko3 yi1
+生怕,sang1 pa4
 實好多,sit6 hau3 do1
 倒車,dau4 ca1
 好眼,hau3 ngan3
 人呢,ngin2 le1
+後盾,heu4 tun3
 仲諗住,cung4 lem3 cu4
 好似仲,hau3 su4 cung4
 佢兩個,gi2 liong1 go4
@@ -5516,6 +5654,7 @@ OK,fat5 fo3
 膽量,dam3 liong4
 平原,pin2 ngien2
 不以為然,but5 yi1 vui2 yen2
+叫咩,giau4 me1
 苛刻,ko1 ket5
 轉折,zon3 ziet5
 蛇頭,sa2 teu2
@@ -5529,6 +5668,7 @@ OK,fat5 fo3
 要跟,yau4 gen1
 一齊去,yit5 ce2 hi4
 食白果,sit6 pak6 go3
+之後佢,zu1 heu4 gi2
 煲仔飯,bau1 zai3 fan4
 間唔中,gan4 m1 zung1
 改正,goi3 zin4
@@ -5547,6 +5687,7 @@ OK,fat5 fo3
 差天共地,ca1 tien1 kiung4 ti4
 有機可乘,yiu1 gi1 ko3 sin2
 不屈,but5 kiut5
+比拼,bi3 pin4
 今鋪,gim1 pu1
 我真係好,ngo1 zin1 he4 hau3
 都係因為,du1 he4 yin1 vui4
@@ -5557,6 +5698,7 @@ OK,fat5 fo3
 係成日,he4 sin2 ngit5
 少婦,sau4 fu4
 當差,dong1 cai1
+倒後,dau4 heu4
 繁華,fan2 fa2
 為他,vui4 ta1
 好靜,hau3 cin4
@@ -5577,6 +5719,7 @@ OK,fat5 fo3
 暴君,pau4 giun1
 好憎,hau3 zen1
 斷交,ton1 gau1
+之後有,zu1 heu4 yiu1
 是為,si4 vui4
 為所欲為,vui2 so3 yuk6 vui2
 一路上,yit5 lu4 song4
@@ -5584,6 +5727,7 @@ OK,fat5 fo3
 站長,zam4 zong3
 入定,ngip6 tin4
 再會,zai4 fui4
+腳踏實地,giok5 tap6 sit6 ti4
 冇好,mau2 hau3
 咩名,me1 min2
 無解,vu2 gai3
@@ -5609,9 +5753,12 @@ OK,fat5 fo3
 只怪,zit5 gai4
 見家長,gien4 ga1 zong3
 一轉,yit5 zon4
+買咩,mai1 me1
 喪命,song4 min4
+唔好俾,m1 hau3 bi1
 漂流,piau1 liu2
 使唔使,si3 m1 si3
+尋晚,cim2 man1
 更有,gang1 yiu1
 一時三刻,yit5 si2 sam1 ket5
 經文,gin1 vun2
@@ -5633,6 +5780,8 @@ OK,fat5 fo3
 阻差辦公,zo3 cai1 pan4 gung1
 沉降,cim2 gong4
 長氣,cong2 hi4
+後手,heu4 siu3
+以後唔,yi1 heu4 m1
 接二連三,ziap5 ngi4 lien2 sam1
 腎臟,sin4 cong4
 行文,hang2 vun2
@@ -5648,8 +5797,10 @@ OK,fat5 fo3
 應援,yin4 yen1
 戇居,ngong4 gi1
 最平,zui4 pin2
+後數,heu4 su4
 勞力士,lau2 lit6 su4
 屬意,suk6 yi4
+伏擊,fuk6 git5
 又覺,yiu4 gok5
 意會,yi4 fui4
 錯愕,co4 ngok6
@@ -5668,16 +5819,20 @@ OK,fat5 fo3
 成本效益,sin2 bun3 hau4 yit5
 興旺,hin1 vong4
 背住,boi4 cu4
+吹咩,cui1 me1
 交差,gau1 cai1
 死頂,si3 din3
 着緊,cok6 gin3
 點相,diam3 siong4
 時光倒流,si2 gong1 dau3 liu2
+打俾,da3 bi1
 行行企企,hang2 hang2 ki1 ki1
 全長,cien2 cong2
 突然之間,tut6 yen2 zu1 gan1
 金卡,gim1 kat6
 隨行,sui2 hang2
+後頭,heu4 teu2
+懼怕,ki3 pa4
 台仔,toi2 zai3
 耳塞,ngi3 set5
 兩間,liong1 gan1
@@ -5707,6 +5862,7 @@ OK,fat5 fo3
 又打,yiu4 da3
 嗅覺,ciu4 gok5
 周轉,ziu1 zon3
+馬後炮,ma1 heu4 pau4
 精靈,zin1 lin2
 觀眾緣,gon1 zung4 yen2
 雪上加霜,siet5 song4 ga1 song1
@@ -5742,6 +5898,7 @@ OK,fat5 fo3
 使到,su3 dau4
 覺得個,gok5 det5 go4
 如果冇,yi2 go3 mau2
+耕耘,gang1 yun2
 愛惜,oi4 sit5
 都成日,du1 sin2 ngit5
 食量,sit6 liong4
@@ -5750,6 +5907,7 @@ OK,fat5 fo3
 上菜,song4 coi4
 校監,gau3 gam1
 定力,tin4 lit6
+唔係咩,m1 he4 me1
 失散,sit5 san4
 戰將,zien4 ziong4
 巴打係,ba1 da3 he4
@@ -5787,6 +5945,7 @@ OK,fat5 fo3
 車線,ca1 sien4
 應份,yin1 fun4
 青梅竹馬,ciang1 moi2 zuk5 ma1
+啲時間,tit6 si2 gan4
 重災,cung1 zai1
 自己打,cu4 gi3 da3
 重振,cung2 zin3
@@ -5830,6 +5989,7 @@ OK,fat5 fo3
 打後,da3 heu4
 有諗過,yiu1 lem3 go4
 長成,zong3 sin2
+有咩事,yiu1 me1 su4
 我都冇,ngo1 du1 mau2
 好似得,hau3 su4 det5
 震怒,zin3 lu4
@@ -5837,11 +5997,13 @@ OK,fat5 fo3
 天經地義,tien1 gin1 ti4 ngi4
 荼毒,tu2 tuk6
 波打,bo1 da3
+係最後,he4 zui4 heu4
 因為係,yin1 vui4 he4
 食下,sit6 ha4
 以此為,yi1 cu3 vui2
 橫傳,vang2 con2
 智能電話,zi4 len2 tien4 va4
+啲打,tit6 da3
 學長,hok6 cong2
 有打,yiu1 da1
 相會,siong1 fui4
@@ -5895,6 +6057,7 @@ OK,fat5 fo3
 佢成日,gi2 sin2 ngit5
 上校,song4 gau4
 自己冇,cu4 gi3 mau2
+草蜢,cau3 mang1
 健力士,kien4 lit6 su4
 強暴,kiong2 pau4
 冇品,mau2 pin3
@@ -5916,19 +6079,23 @@ OK,fat5 fo3
 唔係因為,m1 he4 yin1 vui4
 跆拳道,toi2 kien2 tau4
 打本,da3 bun3
+得咩,det5 me1
 本身已經,bun3 sin1 yi3 gin1
+然後就,yen2 heu4 ciu4
 唔易,m1 yi4
 冇人理,mau2 ngin2 li1
 河道,ho2 tau4
 從天而降,cung2 tien1 yi2 gong4
 行軍,hang2 giun1
 命脈,min4 mak5
+憑咩,pin2 me1
 倒後鏡,dau4 heu4 giang4
 向上,hiong4 song4
 上半場,song4 ban4 cong2
 大陸仔,tai4 luk6 zai3
 好賺,hau3 can4
 自命,cu4 min4
+俾人打,bi1 ngin2 da3
 上官,song4 gon1
 唔少人,m1 sau3 ngin2
 定影,tin4 yang3
@@ -5953,11 +6120,13 @@ OK,fat5 fo3
 酋長,yiu2 zong3
 斷食,ton4 sit6
 相通,siong1 tung1
+怕事,pa4 su4
 為伍,vui2 ng3
 食糧,sit6 liong2
 榜上有名,bong3 song4 yiu1 min2
 重審,cung2 sim3
 從商,cung2 song1
+攞正牌,lo3 zin4 pai2
 少過,sau3 go4
 番話,fan1 va4
 凝聚力,ngien2 ci4 lit6
@@ -6076,6 +6245,7 @@ OK,fat5 fo3
 鐵道,tiet5 tau4
 當住,dong1 cu4
 上進心,song4 zin4 sim1
+晚安,man1 on1
 成婚,sin2 fun1
 核數,het6 su4
 高難,gau1 lan2
@@ -6115,6 +6285,7 @@ OK,fat5 fo3
 好熱,hau3 ngiet6
 正方,zin4 fong1
 錯配,co4 pui4
+滯後,ce4 heu4
 三條,sam1 tiau2
 泥頭車,lai2 teu2 ca1
 度假村,tu4 ga3 cun1
@@ -6163,6 +6334,7 @@ OK,fat5 fo3
 好長,hau3 cong2
 咩話,me1 va4
 見步行步,gien4 pu4 hang2 pu4
+即晚,zit5 man1
 好奇怪,hau3 ki2 gai4
 配種,pui4 zung3
 獨當一面,tuk6 dong1 yit5 mien4
@@ -6198,15 +6370,20 @@ OK,fat5 fo3
 昏倒,fun1 dau3
 毛公仔,mau1 gung1 zai3
 山長水遠,san1 cong2 sui3 yen3
+秋後算帳,ciu1 heu4 son4 zong4
 袋袋平安,toi4 toi4 pin2 on1
 感覺到,gam3 gok5 dau4
+臉紅,liam3 fung2
 十三,sip6 sam1
+前後腳,cien2 heu4 giok5
 打撈,da3 leu2
 點解冇,diam3 gai3 mau2
 中台,zung1 toi2
 暴利,pau4 li4
 冇解,mau2 gai3
+臉龐,liam3 pong2
 評定,pin2 tin4
+暗地裏,am4 ti4 li1
 袖手旁觀,ciu4 siu3 pong2 gon1
 淡忘,tam4 mong4
 包車,bau1 ca1
@@ -6240,6 +6417,7 @@ OK,fat5 fo3
 三角戀,sam1 gok5 lien4
 堂堂正正,tong2 tong2 zin4 zin4
 季經,gui4 gin1
+平啲,piang2 tit6
 正義感,zin4 ngi4 gam3
 逼使,bit5 si3
 便是,pien4 si4
@@ -6271,6 +6449,7 @@ OK,fat5 fo3
 享樂,hiong3 lok6
 中階,zung1 gai1
 查核,ca2 het6
+前前後後,cien2 cien2 heu4 heu4
 混凝土,fun3 ngien2 tu3
 門户,mun2 fu4
 誘使,yiu3 si3
@@ -6278,6 +6457,7 @@ OK,fat5 fo3
 黃種人,vong2 zung3 ngin2
 兩萬,liong1 man4
 食道,sit6 tau4
+賽後,soi4 heu4
 搭巴士,dap5 ba1 si3
 驚魂,gin1 fun2
 名份,min2 fun4
@@ -6312,10 +6492,12 @@ OK,fat5 fo3
 核能,het6 len2
 圍威喂,vui2 vui1 vui3
 防不勝防,fong2 but5 sin1 fong2
+後母,heu4 mu1
 娛樂版,ngu2 lok6 ban3
 水滴,sui3 tit6
 做好心,zo4 hau3 sim1
 省份,sen3 fun4
+最怕,zui4 pa4
 打真軍,da3 zin1 giun1
 食自己,sit6 cu4 gi3
 上繳,song4 giau3
@@ -6326,6 +6508,7 @@ OK,fat5 fo3
 熟讀,suk6 tuk6
 不人道,but5 ngin2 tau4
 小吃,siau3 ket5
+咩關係,me1 gan1 he4
 只想,zit5 siong3
 公車,gung1 ca1
 藝名,ngi4 miang2
@@ -6419,9 +6602,11 @@ OK,fat5 fo3
 不歡而散,but5 fon1 yi2 san4
 想讀,siong3 tuk6
 生活態度,sang1 fat6 tai4 tu4
+前因後果,cien2 yin1 heu4 go3
 坐到,co4 dau4
 怪獸家長,gai4 ciu4 ga1 zong3
 諗係,lem3 he4
+氹仔,tem2 zai3
 定當,tin4 dong4
 轉到,zon3 dau4
 定息,tin4 sit5
@@ -6476,6 +6661,7 @@ OK,fat5 fo3
 不失為,but5 sit5 vui2
 應景,yin4 gin3
 家常便飯,ga1 song2 pien4 fan4
+卵巢,lon3 cau2
 冇你,mau2 li3
 那種,la3 zung3
 台上,toi2 song4
@@ -6503,15 +6689,19 @@ OK,fat5 fo3
 溶解,yung2 gai3
 見好就收,gien4 hau3 ciu4 siu1
 病重,piang4 cung4
+臉容,liam3 yung2
 食草,sit6 cau3
 長俸,cong2 fung4
 舉足輕重,gi3 zuk5 kiang1 cung1
+後患,heu4 fam4
 名存實亡,min2 sun2 sit6 mong2
 冇膽,mau2 dam3
 背景音樂,boi4 gin3 yim1 ngok6
 經銷,gin1 siau1
+後場,heu4 cong2
 古典音樂,gu3 dien3 yim1 ngok6
 一成不變,yit5 sin2 but5 bien4
+晚期,man1 ki2
 扁平,bien3 pin2
 係咪你,he4 mai4 li3
 好麻煩,hau3 ma2 fan2
@@ -6561,6 +6751,7 @@ OK,fat5 fo3
 恰好,kap5 hau3
 少少錢,sau3 sau3 cien2
 啤啤,bi1 bi1
+踏步,tap6 pu4
 相加,siong1 ga1
 推波助瀾,tui1 bo1 co4 lan2
 好難講,hau3 lan2 gong3
@@ -6604,6 +6795,7 @@ OK,fat5 fo3
 印度洋,yin4 tu4 yong2
 兩大,liong1 tai4
 無所適從,vu2 so3 sit5 cung2
+每晚,mui1 man1
 唔係好明,m1 he4 hau3 min2
 諗返起,lem3 fan3 hi3
 食電,sit6 tien4
@@ -6625,6 +6817,7 @@ OK,fat5 fo3
 聲名,sang1 min2
 中三,zung1 sam1
 長做長有,cong2 zo4 cong2 yiu1
+怕咩,pa4 me1
 拗柴,au3 cai2
 太重,tai4 cung1
 頂盡,din3 cin4
@@ -6650,9 +6843,11 @@ OK,fat5 fo3
 中非,zung1 fui1
 吃虧,ket5 kui1
 坐館,co1 gon3
+丟臉,diu1 liam3
 中日韓,zung1 ngit5 hon2
 監護,gam1 fu4
 有經驗,yiu1 gin1 ngiam4
+最後一次,zui4 heu4 yit5 cu4
 有齊,yiu1 ce2
 哭喪,kuk5 song1
 打賭,da3 du3
@@ -6663,6 +6858,7 @@ OK,fat5 fo3
 讀得,tuk6 det5
 會館,fui4 gon3
 行屍走肉,hang2 si1 zeu3 ngiuk5
+咩心態,me1 sim1 tai4
 生疏,sang1 so1
 極速,kit6 suk5
 係好少,he4 hau3 sau3
@@ -6727,6 +6923,7 @@ OK,fat5 fo3
 推住,tui1 cu4
 推敲,tui1 kau1
 好戰,hau4 zien4
+做緊咩,zo4 gin3 me1
 舉中指,gi3 zung1 zi3
 極少,kit6 sau3
 暴風雪,pau4 fung1 siet5
@@ -6746,6 +6943,7 @@ OK,fat5 fo3
 威士,vui1 si3
 引人入勝,yin3 ngin2 ngip6 sin4
 讀物,tuk6 vut6
+後顧之憂,heu4 gu4 zu1 yiu1
 有番,yiu1 fan1
 生啤,sang1 bia1
 少甜,sau3 tiam2
@@ -6794,6 +6992,8 @@ OK,fat5 fo3
 射住,sa4 cu4
 三五七,sam1 ng3 cit5
 接駁巴士,ziap5 bok5 ba1 su4
+踏腳石,tap6 giok5 sak6
+裏頭,li1 teu2
 排山倒海,pai2 san1 dau3 hoi3
 出街食,cut5 gai1 sit6
 打游擊,da3 yiu2 git5
@@ -6888,6 +7088,7 @@ OK,fat5 fo3
 要留意,yau4 liu2 yi4
 靜觀,cin4 gon1
 大解,tai4 gai3
+後援,heu4 yen1
 載體,zoi4 ti3
 初中生,co1 zung1 sang1
 降格,gong4 gak5
@@ -6904,6 +7105,7 @@ OK,fat5 fo3
 安士,on1 si3
 打側,da3 zet5
 頂唔住,din3 m1 cu4
+墮後,to4 heu4
 有仔,yiu1 zai3
 錯了,co4 liau3
 去邊度,hi4 bien1 tu4
@@ -6939,12 +7141,14 @@ OK,fat5 fo3
 內射,lui4 sa4
 三番四次,sam1 fan1 si4 cu4
 反話,fan3 va4
+又怕,yiu4 pa4
 少陣,sau3 cin4
 上便,song4 pien4
 只許,zit5 hi3
 經濟師,gin1 zi4 su1
 武斷,vu1 ton4
 承載,sin2 zoi4
+為佢哋,vui4 gi2 ti4
 忍辱負重,ngiun1 yuk6 fu4 cung4
 罪惡感,cui4 ok5 gam3
 後背,heu4 boi4
@@ -6986,6 +7190,7 @@ OK,fat5 fo3
 轉速,zon4 suk5
 押解,ap5 gai4
 打鼓嶺,da3 gu3 liang1
+後波,heu4 bo1
 省略,sen3 liok6
 神經質,sin2 gin1 zit5
 添食,tiam1 sit6
@@ -6997,6 +7202,7 @@ OK,fat5 fo3
 中國產,zung1 get5 san3
 記事簿,gi4 su4 pu1
 午間,ng3 gan1
+課後,ko4 heu4
 交更,gau1 gang1
 窮追猛打,kiung2 zui1 mang1 da3
 神經刀,sin2 gin1 dau1
@@ -7024,7 +7230,7 @@ OK,fat5 fo3
 荷官,ho2 gon1
 明文規定,min2 vun2 gui1 tin4
 拖時間,to1 si2 gan4
-只玩,zit5 ngan2
+只玩,zit5 van2
 青銅,ciang1 tung2
 逆差,ngiak6 ca1
 朝氣,zau1 hi4
@@ -7071,10 +7277,12 @@ OK,fat5 fo3
 快靚正,kai4 liang4 zang4
 惡習,ok5 sip6
 逞強,cin3 kiong2
+事後孔明,su4 heu4 kung3 min2
 正中間,zin4 zung1 gan1
 大正,tai4 zin4
 監考,gam1 kau3
 三部,sam1 pu4
+拋諸腦後,pau1 zu1 lau3 heu4
 八成,bat5 sin2
 頂爛市,din3 lan4 si1
 鬼話,gui3 va4
@@ -7089,6 +7297,7 @@ OK,fat5 fo3
 求勝,kiu2 sin4
 三讀,sam1 tuk6
 右上,yiu4 song4
+前後左右,cien2 heu4 zo3 yiu4
 好去處,hau3 hi4 cu4
 另一種,lang4 yit5 zung3
 正意,zin4 yi4
@@ -7103,6 +7312,7 @@ OK,fat5 fo3
 風涼話,fung1 liong2 va4
 上古,song4 gu3
 不足為奇,but5 zuk5 vui2 ki2
+後晚,heu4 man1
 改下,goi3 ha4
 回鄉卡,fui2 hiong1 kat6
 百度,bak5 tu4
@@ -7133,6 +7343,7 @@ OK,fat5 fo3
 端正,don1 zin4
 單單打打,dan1 dan1 da3 da3
 半載,ban4 zai3
+不怕,but5 pa4
 更替,gang1 tai4
 乾旱,gon1 hon1
 鋪設,pu1 siet5
@@ -7140,6 +7351,7 @@ OK,fat5 fo3
 將士,ziong4 su4
 大孖,tai4 ma1
 買錯,mai1 co4
+死後,si3 heu4
 容錯,yung2 co4
 長輩圖,zong3 bui4 tu2
 幹道,gon4 tau4
@@ -7200,6 +7412,7 @@ OK,fat5 fo3
 一拍兩散,yit5 pok5 liong1 san4
 禁果,gim4 go3
 校車,gau3 ca1
+後父,heu4 fu4
 遠近,yen3 kiun1
 神靈,sin2 lin2
 遠近,yen3 kiun4
@@ -7256,6 +7469,7 @@ OK,fat5 fo3
 潑婦,pat5 fu4
 探長,tam4 zong3
 可以冇,ko3 yi1 mau2
+因為佢哋,yin1 vui4 gi2 ti4
 推一推,tui1 yit5 tui1
 更可,gang1 ko3
 兩倍,liong1 pui4
@@ -7298,6 +7512,7 @@ OK,fat5 fo3
 津津樂道,zin1 zin1 lok6 tau4
 三言兩語,sam1 ngien2 liong1 ngi1
 會客,fui4 hak5
+我哋要,ngo1 ti4 yau4
 成行成市,sin2 hong2 sin2 si1
 上算,song4 son4
 莊重,zong1 cung4
@@ -7324,6 +7539,7 @@ OK,fat5 fo3
 流流長,liu2 liu2 cong2
 疏通,so1 tung1
 唔靚仔,m1 liang4 zai3
+佢哋好,gi2 ti4 hau3
 水靈,sui3 lin2
 筆記簿,bit5 gi4 pu1
 失重,sit5 cung1
@@ -7333,6 +7549,7 @@ OK,fat5 fo3
 健將,kien4 ziong4
 有識之士,yiu1 sit5 zu1 su4
 悶悶不樂,mun4 mun4 but5 lok6
+茶餘飯後,ca2 yi2 fan4 heu4
 第三季,ti4 sam1 gui4
 度住,tok6 cu4
 量力,liong4 lit6
@@ -7344,7 +7561,8 @@ OK,fat5 fo3
 聲樂,sang1 ngok6
 從軍,cung2 giun1
 喱士,li1 si3
-遊山玩水,yiu2 san1 ngan4 sui3
+遊山玩水,yiu2 san1 van4 sui3
+拼湊,pin4 ceu4
 本命,bun3 miang4
 差錯,ca1 co4
 至高無上,zi4 gau1 vu2 song4
@@ -7367,6 +7585,7 @@ OK,fat5 fo3
 助聽器,co4 tin4 hi4
 代打,toi4 da3
 觀察力,gon1 cat5 lit6
+殿後,tien4 heu4
 頂得住,din3 det5 cu4
 封咪,fung1 mai4
 各自為政,gok5 cu4 vui2 zin4
@@ -7377,6 +7596,7 @@ OK,fat5 fo3
 汰弱留強,tai4 ngiok6 liu2 kiong2
 種族清洗,zung3 cuk6 cin1 se3
 三尖八角,sam1 ziam1 bat5 gok5
+思前想後,su1 cien2 siong3 heu4
 士人,su4 ngin2
 自相殘殺,cu4 siong1 can2 sat5
 七成,cit5 sin2
@@ -7387,6 +7607,7 @@ OK,fat5 fo3
 抽調,ciu1 tiau4
 頃刻,ken3 ket5
 骨質,gut5 zit5
+後尾枕,heu4 mui1 zim3
 死難,si3 lan4
 中層,zung1 cen2
 中四,zung1 si4
@@ -7401,11 +7622,12 @@ OK,fat5 fo3
 草食,cau3 sit6
 居士,gi1 su4
 警務處,gin3 vu4 cu3
-玩唔玩,ngan4 m1 ngan4
+玩唔玩,van4 m1 van4
 靜觀其變,cin4 gon1 ki2 bien4
 清道夫,cin1 tau4 fu1
 錯別字,co4 piet6 su4
 較難,gau4 lan2
+安享晚年,on1 hiong3 man1 ngien2
 坐享其成,co4 hiong3 ki2 sin2
 打圓場,da3 yen2 cong2
 三間,sam1 gan1
@@ -7432,11 +7654,13 @@ OK,fat5 fo3
 賣豬仔,mai4 zu1 zai3
 三更半夜,sam1 gang1 ban4 ya4
 各散東西,gok5 san3 dung1 si1
+產卵,san3 lon3
 德行,det5 hang2
 光頭仔,gong1 teu2 zai3
 要聞,yau4 vun2
 中工,zung1 gung1
 必經之路,bit5 gin1 zu1 lu4
+問咩,mun4 me1
 食塵,sit6 cin4
 震央,zin3 yong1
 傍住,pong4 cu4
@@ -7444,6 +7668,7 @@ OK,fat5 fo3
 車轆,ca1 luk6
 第二間,ti4 ngi4 gan1
 瑰寶,gui4 bau3
+後現代,heu4 hien4 toi4
 嫌三嫌四,hiam2 sam1 hiam2 si4
 平整,pin2 zin3
 倒楣,dau3 mi2
@@ -7467,6 +7692,7 @@ OK,fat5 fo3
 勁呀,gin4 a1
 喊打喊殺,ham4 da3 ham4 sat5
 好凍,hau3 dung4
+及後,kip6 heu4
 兩三日,liong1 sam1 ngit5
 左轉,zo3 zon4
 暴瀉,pau4 sia4
@@ -7495,6 +7721,7 @@ OK,fat5 fo3
 第二度,ti4 ngi4 tu4
 惡死,ok5 si3
 三房,sam1 fong2
+畢業後,bit5 ngiap6 heu4
 到喇,dau4 la2
 名列前茅,min2 liet6 cien2 mau2
 安樂窩,on1 lok6 vo1
@@ -7553,6 +7780,7 @@ OK,fat5 fo3
 歐冠,iu1 gon4
 亦要,yit6 yau4
 兩天,liong1 tien1
+咩歌,me1 go1
 看着,kon4 cok6
 盧卡古,lu2 ka1 gu3
 扁平足,bien3 pin2 zuk5
@@ -7560,6 +7788,7 @@ OK,fat5 fo3
 簽卡,ciam1 kat6
 校裙,gau3 kiun2
 不應該,but5 yin4 goi1
+後浪,heu4 long4
 吃不消,ket5 but5 siau1
 要生要死,yau4 sang1 yau4 si3
 代議士,toi4 ngi4 su4
@@ -7604,6 +7833,7 @@ OK,fat5 fo3
 正皮,zin4 pi2
 摺被,zap5 pi1
 長過,cong2 go4
+伏屍,fuk6 si1
 一兩句,yit5 liong1 gi4
 武士道,vu1 su4 tau4
 不一會,but5 yit5 fui4
@@ -7634,6 +7864,7 @@ OK,fat5 fo3
 洗太平地,se3 tai4 pin2 ti4
 腳掣,giok5 zi4
 斷然,ton4 yen2
+怕且,pa4 cia3
 乾衣機,gon1 yi1 gi1
 便器,pien4 hi4
 冠冕,gon1 men1
@@ -7661,9 +7892,11 @@ OK,fat5 fo3
 打蠟,da3 lap6
 荷葉,ho2 yap6
 兩面,liong1 mien4
+殺一儆百,sat5 yit5 gin3 bak5
 隨傳隨到,sui2 con2 sui2 dau4
 穿梭巴士,con1 so1 ba1 si3
 三姑六婆,sam1 gu1 luk5 po2
+歲晚,soi4 man1
 正太,zin4 tai4
 中庸,zung1 yung2
 白金卡,pak6 gim1 ka1
@@ -7676,6 +7909,7 @@ OK,fat5 fo3
 微觀,mi2 gon1
 每間,mui1 gan1
 樂評,ngok6 pin2
+殺雞儆猴,sat5 gai1 gin3 heu2
 燒着,sau1 cok6
 打下機,da3 ha4 gi1
 向好,hiong4 hau3
@@ -7701,6 +7935,7 @@ OK,fat5 fo3
 桌上,zok5 song4
 大咪,tai4 mai4
 難逢,lan2 fung2
+講緊咩,gong3 gin3 me1
 要擊,yau4 git5
 太極拳,tai4 kit6 kien2
 着草,zok5 cau3
@@ -7726,6 +7961,7 @@ OK,fat5 fo3
 凡士林,fam2 su4 lim2
 現正,hien4 zin4
 兩班,liong1 ban1
+心裏有數,sim1 li1 yiu1 su4
 聖靈,sin4 lin2
 轉為,zon3 vui2
 第一名,ti4 yit5 min2
@@ -7735,6 +7971,7 @@ OK,fat5 fo3
 很少,hen3 sau3
 差事,cai1 su4
 當更,dong1 gang1
+蚊怕水,mun1 pa4 sui3
 手震,siu3 zin3
 轉插,zon4 cap5
 背熟,poi4 suk6
@@ -7774,6 +8011,7 @@ OK,fat5 fo3
 后冠,heu4 gon1
 難辭其咎,lan2 cu2 ki2 giu4
 銀兩,ngiun2 liong3
+排卵,pai2 lon3
 霎時間,sap5 si2 gan1
 投其所好,teu2 ki2 so3 hau3
 鬼打,gui3 da3
@@ -7803,6 +8041,7 @@ OK,fat5 fo3
 水平線,sui3 pin2 sien4
 傳真機,con2 zin1 gi1
 打電腦,da3 tien4 lau3
+然之後,yen2 zu1 heu4
 乾咳,gon1 ket5
 替天行道,tai4 tien1 hang2 tau4
 轉捩,zon3 liet6
@@ -7828,10 +8067,12 @@ OK,fat5 fo3
 如釋重負,yi2 sit5 cung1 fu4
 喇咩,la2 me1
 兩全其美,liong1 cien2 ki2 mui1
+咩衫,me1 sam1
 急功近利,gip5 gung1 kiun4 li4
 樂章,ngok6 zong1
 代行,toi4 hang2
 變為,bien4 vui2
+嬉皮笑臉,hi1 pi2 siau4 liam3
 一地兩檢,yit5 ti4 liong1 giam3
 三家,sam1 ga1
 散買,san3 mai1
@@ -7849,6 +8090,7 @@ OK,fat5 fo3
 頂我,din3 ngo1
 估估下,gu3 gu3 ha4
 兇惡,hiung1 ok5
+鬼臉,gui3 liam3
 怨聲載道,yen4 sang1 zoi4 tau4
 臨危受命,lim2 ngui2 siu4 min4
 五成,ng3 sin2
@@ -7872,6 +8114,7 @@ OK,fat5 fo3
 相比起,siong1 bi3 hi3
 中國經濟,zung1 get5 gin1 zi4
 弟婦,ti4 fu4
+結束後,giet5 suk5 heu4
 剛強,gong1 kiong2
 食硬,sit6 ngang4
 乘數,sin2 su4
@@ -7961,6 +8204,7 @@ OK,fat5 fo3
 便溺,pien4 lit6
 當局者迷,dong1 kiuk6 za3 mi2
 咬耳仔,ngau1 ngi3 zai3
+伏兵,fuk6 bin1
 卡死,ka1 si3
 頂更,din3 gang1
 經手人,gin1 siu3 ngin2
@@ -7972,7 +8216,9 @@ OK,fat5 fo3
 打躉,da3 dun3
 打擂台,da3 lui2 toi2
 衣食無憂,yi1 sit6 vu2 yiu1
+羊咩,yong2 me1
 命硬,miang4 ngang4
+揸正,za1 zang4
 打光,da3 gong1
 景嶺,gin3 liang1
 電解,tien4 gai3
@@ -8012,6 +8258,7 @@ OK,fat5 fo3
 趕頭趕命,gon3 teu2 gon3 miang4
 強力部門,kiong2 lit6 pu4 mun2
 娓娓道來,mui3 mui3 tau4 loi2
+怕唔怕,pa4 m1 pa4
 碰碰車,pung4 pung4 ca1
 大惑不解,tai4 fet6 but5 gai3
 當風,dong1 fung1
@@ -8044,6 +8291,7 @@ OK,fat5 fo3
 卑躬屈膝,bi1 giung1 kiut5 cit5
 歡度,fon1 tu4
 隨機應變,sui2 gi1 yin4 bien4
+高低起伏,gau1 dai1 hi3 fuk6
 強人所難,kiong3 ngin2 so3 lan2
 揀飲擇食,gan3 yim3 cak6 sit6
 泣不成聲,kip5 but5 sin2 sang1
@@ -8073,7 +8321,9 @@ OK,fat5 fo3
 心甘命抵,sim1 gam1 miang4 dai3
 用得着,yung4 det5 cok6
 糟質,zau1 zit5
+後起之秀,heu4 hi3 zu1 siu4
 搖擺不定,yau2 bai3 but5 tin4
+裏邊,li1 bien1
 從一而終,cung2 yit5 yi2 zung1
 很容易,hen3 yung2 yi4
 易潔鑊,yi4 giet5 vok6
@@ -8085,6 +8335,7 @@ OK,fat5 fo3
 壽仔,siu4 zai3
 設身處地,siet5 sin1 cu3 ti4
 點着,diam3 cok6
+小白臉,siau3 pak6 liam3
 喂呀,vui3 a2
 就地正法,ciu4 ti4 zin4 fap5
 迎難而上,ngiang2 lan2 yi2 song4
@@ -8120,6 +8371,7 @@ OK,fat5 fo3
 不見不散,but5 gien4 but5 san4
 重陽節,cung2 yong2 ziet5
 救車,giu4 ca1
+晚黑,man1 het5
 濕平,sip5 pin2
 持卡人,ci2 kat6 ngin2
 依從,yi1 cung2
@@ -8133,8 +8385,10 @@ OK,fat5 fo3
 版畫,ban3 fa4
 打響頭炮,da3 hiong3 teu2 pau4
 得個名,det5 go4 miang2
+諗掂,lem3 tiam4
 吞吐量,tun1 tu4 liong4
 中彩,zung4 cai3
+後患無窮,heu4 fam4 vu2 kiung2
 兩聲,liong1 sang1
 執下,zip5 ha4
 三頭,sam1 teu2
@@ -8166,6 +8420,7 @@ OK,fat5 fo3
 旗鼓相當,ki2 gu3 siong1 dong1
 平民化,pin2 min2 fa4
 中碼,zung1 ma1
+飯後,fan4 heu4
 眷屬,gien4 suk6
 哩數,li1 su4
 字正腔圓,su4 zin4 kiong1 yen2
@@ -8208,12 +8463,14 @@ OK,fat5 fo3
 太興,tai4 hin1
 長襪,cong2 mat5
 約為,yok5 vui2
+晚輩,man1 bui4
 慢磨,man4 mo2
 電解質,tien4 gai3 zit5
 黑吃黑,het5 ket5 het5
 着落,cok6 lok6
 便要,pien4 yau4
 汗流浹背,hon4 liu2 hiap6 boi4
+落後緊,lok6 heu4 gin3
 少年人,sau4 ngien2 ngin2
 正花,zang4 fa1
 鄭中基,cang4 zung1 gi1
@@ -8301,6 +8558,7 @@ OK,fat5 fo3
 漂染,piau4 ngiam4
 三億,sam1 yi4
 散漫,san3 man4
+劏車,tong1 ca1
 屈尾十,kiut5 mui1 sip6
 會議展覽,fui4 ngi4 zien3 lam4
 打攪,da3 gau3
@@ -8314,6 +8572,7 @@ OK,fat5 fo3
 專有名詞,zon1 yiu1 min2 cu2
 三百萬,sam1 bak5 man4
 暴富,pau4 fu4
+危機四伏,ngui2 gi1 si4 fuk6
 使橫手,su3 vang2 siu3
 打書釘,da3 su1 dang1
 好唔好食,hau3 m1 hau3 sit6
@@ -8362,6 +8621,7 @@ OK,fat5 fo3
 食下飯,sit6 ha4 fan4
 茶道,ca2 tau4
 檢定,giam3 tin4
+後庭,heu4 tin2
 三格,sam1 gak5
 薪火相傳,sin1 fo3 siong1 con2
 堂弟,tong2 ti4
@@ -8377,6 +8637,7 @@ OK,fat5 fo3
 相若,siong1 yok6
 迴轉壽司,fui2 zon3 siu4 su1
 朝政,cau2 zin4
+殺雞取卵,sat5 gai1 ci3 lon3
 姐弟戀,zia3 ti4 lien4
 青雲,ciang1 yun2
 錯怪,co4 gai4
@@ -8384,6 +8645,7 @@ OK,fat5 fo3
 一言難盡,yit5 ngien2 lan2 cin4
 凝膠,ngien2 gau1
 馬上風,ma1 song4 fung1
+咩水,me1 sui3
 食緊飯,sit6 gin3 fan4
 旋轉木馬,sien2 zon3 muk5 ma1
 嗚咽,vu1 yen1
@@ -8417,6 +8679,7 @@ OK,fat5 fo3
 無為意,vu2 vui2 yi4
 聖誕快樂,sin4 dan4 kai4 lok6
 差強人意,ca1 kiong3 ngin2 yi4
+前仆後繼,cien2 fu4 heu4 gi4
 請命,ciang3 min4
 黑白兩道,het5 pak6 liong1 tau4
 行宮,hang2 giung1
@@ -8451,6 +8714,7 @@ OK,fat5 fo3
 毒辣,tuk6 lat6
 孝道,hau4 tau4
 引經據典,yin3 gin1 gi4 dien3
+兩餸飯,liong1 sung4 fan4
 偽文青,ngui4 vun2 ciang1
 煞食,sat5 sit6
 傻更更,so2 gang1 gang1
@@ -8545,6 +8809,7 @@ OK,fat5 fo3
 丟淡,diu1 tam1
 驚惶失措,gin1 fong2 sit5 cu4
 行雷閃電,hang2 lui2 sam3 tien4
+夜裏,ya4 li1
 着急,cok6 gip5
 變調,bien4 tiau4
 應召,yin4 cau4
@@ -8563,6 +8828,7 @@ OK,fat5 fo3
 中巴士,zung1 ba1 su4
 打罵,da3 ma4
 冠心病,gon1 sim1 piang4
+撈得掂,lau1 det5 tiam4
 為民請命,vui4 min2 ciang3 min4
 自命不凡,cu4 min4 but5 fam2
 啞仔,a3 zai3
@@ -8576,6 +8842,7 @@ OK,fat5 fo3
 頂罪,din3 cui4
 解夢,gai3 mung4
 量入為出,liong4 ngip6 vui2 cut5
+年晚,ngien2 man1
 平易,pin2 yi4
 十間,sip6 gan1
 吊臂車,diau4 bi4 ca1
@@ -8638,6 +8905,7 @@ OK,fat5 fo3
 氣頂,hi4 din3
 穴道,hiet6 tau4
 兩道,liong1 tau4
+惡啲,ok5 tit6
 視覺藝術,si4 gok5 ngi4 sut6
 聽下歌,tang4 ha4 go1
 晏覺,an4 gau4
@@ -8655,6 +8923,7 @@ OK,fat5 fo3
 坐緊監,co1 gin3 gam1
 阿華田,o1 fa2 tien2
 十下,sip6 ha4
+伏唔伏,fuk6 m1 fuk6
 倚重,yi3 cung4
 三番,sam1 fan1
 蛇鼠一窩,sa2 cu3 yit5 vo1
@@ -8679,6 +8948,7 @@ OK,fat5 fo3
 打草,da3 cau3
 食人族,sit6 ngin2 cuk6
 打鐘,da3 zung1
+撳錯,kim4 co4
 近住,kiun4 cu4
 磨拳擦掌,mo2 kien2 cat5 zong3
 推跌,tui1 diet5
@@ -8699,6 +8969,8 @@ OK,fat5 fo3
 讀死書,tuk6 si3 su1
 一兩首,yit5 liong1 siu3
 打唔打得,da3 m1 da3 det5
+攞着數,lo3 cok6 su4
+咩戲,me1 hi4
 有度,yiu1 tu4
 遠道,yen3 tau4
 磨豆腐,mo2 teu4 fu4
@@ -8755,6 +9027,7 @@ OK,fat5 fo3
 敢為,gam3 vui2
 可唔可行,ko3 m1 ko3 hang2
 咪頭,mai4 teu2
+受精卵,siu4 zin1 lon3
 成日播,sang2 ngit5 bo4
 相士,siong4 su4
 題解,ti2 gai3
@@ -8762,6 +9035,7 @@ OK,fat5 fo3
 咩冇,me1 mau2
 三架,sam1 ga4
 着迷,cok6 mi2
+踏板,tap6 ban3
 龜仔,gui1 zai3
 湧上,yung3 song4
 冇害,mau2 hoi4
@@ -8784,6 +9058,7 @@ OK,fat5 fo3
 華倫西亞,fa2 lun2 si1 a1
 校徽,gau3 fui1
 夜長夢多,ya4 cong2 mung4 do1
+幕後主腦,mok5 heu4 zu3 lau3
 深仇大恨,cim1 siu2 tai4 hen4
 生死有命,sang1 si3 yiu1 min4
 相送,siong1 sung4
@@ -8811,6 +9086,7 @@ OK,fat5 fo3
 輾轉反側,zien3 zon3 fan3 zet5
 大卡士,tai4 ka1 si3
 人命關天,ngin2 miang4 gan1 tien1
+心裏面,sim1 li1 mien4
 成唔成功,sin2 m1 sin2 gung1
 志趣相投,zi4 ci4 siong1 teu2
 傳呼,con2 fu1
@@ -8869,6 +9145,7 @@ OK,fat5 fo3
 長遮,cong2 za1
 打個突,da3 go4 tut6
 打政府工,da3 zin4 fu3 gung1
+掂行掂過,tiam4 hang2 tiam4 go4
 解唔解,gai3 m1 gai3
 泡飯,pau4 fan4
 頂真,din3 zin1
@@ -8971,6 +9248,7 @@ OK,fat5 fo3
 獨斷,tuk6 ton4
 更生人士,gang1 sang1 ngin2 su4
 久別重逢,giu3 piet6 cung2 fung2
+易啲,yi4 tit6
 色士風,set5 su4 fung1
 車埋去,ca1 mai2 hi4
 大陸話,tai4 luk6 va4
@@ -8992,6 +9270,7 @@ OK,fat5 fo3
 不得要領,but5 det5 yau4 liang1
 重婚,cung2 fun1
 非命,fui1 min4
+以卵擊石,yi1 lon3 git5 sak6
 應運而生,yin4 yun4 yi2 sang1
 相減,siong1 gam3
 坐波監,co1 bo1 gam1
@@ -9056,6 +9335,7 @@ OK,fat5 fo3
 第一種,ti4 yit5 zung3
 格仔舖,gak5 zai3 pu4
 合而為一,hap6 yi2 vui2 yit5
+咩吖,me1 a1
 生態平衡,sang1 tai4 pin2 fen2
 小食亭,siau3 sit6 tin2
 華而不實,fa2 yi2 but5 sit6
@@ -9144,6 +9424,7 @@ OK,fat5 fo3
 臭味相投,ciu4 mui4 siong1 teu2
 喊驚,ham4 giang1
 源遠流長,ngien2 yen3 liu2 cong2
+每一晚,mui1 yit5 man1
 泡沫經濟,pau1 mat6 gin1 zi4
 曾祖父,zen1 zu3 fu4
 眾生相,zung4 sang1 siong4
@@ -9152,6 +9433,7 @@ OK,fat5 fo3
 跑下步,pau1 ha4 pu4
 三打,sam1 da1
 長面,cong2 mien4
+後繼無人,heu4 gi4 vu2 ngin2
 十月革命,sip6 ngiet6 gak5 min4
 自毀長城,cu4 fui3 cong2 sang2
 打數,da3 su4
@@ -9175,6 +9457,7 @@ OK,fat5 fo3
 風吹雨打,fung1 cui1 yi3 da3
 驚異,gin1 yi4
 決選名單,giet5 sien3 min2 dan1
+諗真啲,lem3 zin1 tit6
 外強中乾,ngoi4 kiong2 zung1 gon1
 惡運,ok5 yun4
 斷掌,ton1 zong3
@@ -9197,6 +9480,7 @@ OK,fat5 fo3
 有户,yiu1 fu4
 意料中,yi4 liau4 zung1
 兩三場,liong1 sam1 cong2
+晚霞,man1 ha2
 滿載而歸,man1 zai3 yi2 gui1
 便宜仔,pien2 li2 zai3
 三面,sam1 mien4
@@ -9209,6 +9493,7 @@ OK,fat5 fo3
 魯蛇,lu1 sa2
 懵仔針,mung3 zai3 zim1
 治喪,ci4 song1
+絕後,ciet6 heu4
 傳呼機,con2 fu1 gi1
 打家劫舍,da3 ga1 giap5 sa4
 定然,tin4 yen2
@@ -9223,6 +9508,7 @@ OK,fat5 fo3
 狗仔粉,geu3 zai3 fun3
 乾爭爭,gon1 zang1 zang1
 降服,hong2 fuk6
+攞下,lo3 ha4
 婆仔鞋,po2 zai3 hai2
 三年抱兩,sam1 ngien2 pau1 liong1
 上肢,song4 zi1
@@ -9254,6 +9540,7 @@ OK,fat5 fo3
 每下,mui1 ha4
 三十五,sam1 sip6 ng3
 茶舖,ca2 pu4
+粵拼,yet6 pin4
 冒險樂園,mau4 hiam3 lok6 yen2
 五下,ng3 ha4
 培正,pui2 zin4
@@ -9360,6 +9647,7 @@ OK,fat5 fo3
 扭虧為盈,ngiu3 kui1 vui2 yin2
 乘數表,sin2 su4 biau3
 上雜,song4 cap6
+輸卵管,su1 lon3 gon3
 打喊露,da3 ham4 lu4
 閣仔,gok5 zai3
 好嫩,hau3 lun4
@@ -9406,6 +9694,7 @@ OK,fat5 fo3
 單刀橫傳,dan1 dau1 vang2 con2
 驚駭,gin1 hai4
 幸會,hen4 fui4
+有前有後,yiu1 cien2 yiu1 heu4
 李強,li3 kiong2
 靈灰,lin2 foi1
 兩三下,liong1 sam1 ha4
@@ -9428,6 +9717,7 @@ OK,fat5 fo3
 起下底,hi3 ha4 dai3
 柳應廷,liu3 yin4 tin2
 拍下拖,pok5 ha4 to1
+劏舖,tong1 pu4
 逼車,bit5 ca1
 打炮,da3 pau4
 恩平,en1 pin2
@@ -9449,7 +9739,9 @@ OK,fat5 fo3
 五金鋪,ng3 gim1 pu4
 食住條水,sit6 cu4 tiau2 sui3
 丹青,dan1 ciang1
+火拼,fo3 pin4
 兩股,liong1 gu3
+冇吖,mau2 a1
 陶器,tau2 hi4
 七名,cit5 min2
 打種,da3 zung3
@@ -9532,6 +9824,7 @@ OK,fat5 fo3
 駛車,su3 ca1
 獸行,ciu4 hang2
 太平門,tai4 pin2 mun2
+做咩事,zo4 me1 su4
 坐過監,co1 go4 gam1
 獨力難支,tuk6 lit6 lan2 zi1
 量詞,liong4 cu2
@@ -9543,6 +9836,7 @@ OK,fat5 fo3
 月經杯,ngiet6 gin1 bui1
 其利斷金,ki2 li4 don4 gim1
 三篇,sam1 pien1
+收伏,siu1 fuk6
 食奶,sit6 lai1
 梳打餅,so1 da3 biang3
 調理農務,tiau2 li1 lung2 vu4
@@ -9554,6 +9848,7 @@ OK,fat5 fo3
 應棍,yin4 gun4
 魚翅撈飯,ng2 ci4 lau1 fan4
 論功行賞,lun4 gung1 hang2 song3
+晚禮服,man1 li1 fuk6
 卧推,ngo4 tui1
 勝瓜,sin4 ga1
 策士,cak5 su4
@@ -9632,6 +9927,7 @@ OK,fat5 fo3
 着眼於,cok6 ngan3 yi1
 反守為攻,fan3 siu3 vui2 gung1
 放下手,fong4 ha4 siu3
+後底,heu4 dai3
 兩副,liong1 fu4
 拍卡,pok5 kat6
 新冠病毒,sin1 gon1 piang4 tuk6
@@ -9751,6 +10047,7 @@ OK,fat5 fo3
 興亡,hin1 mong2
 日偏食,ngit5 pien1 sit6
 強有力,kiong2 yiu1 lit6
+咩班,me1 ban1
 外來物種,ngoi4 loi2 vut6 zung3
 三塊,sam1 kai4
 深省,cim1 sin3
@@ -9777,6 +10074,7 @@ OK,fat5 fo3
 失覺,sit5 gok5
 士族,su4 cuk6
 活道,fat6 tau4
+瞻前顧後,zam1 cien2 gu4 heu4
 鑽窿,zon4 lung1
 並駕齊驅,bin4 ga4 ce2 ki1
 循道,sun2 tau4
@@ -9795,16 +10093,19 @@ OK,fat5 fo3
 化敵為友,fa4 tit6 vui2 yiu1
 警暴,gin3 pau4
 倚仗,yi3 cong4
+買餸車,mai1 sung4 ca1
 磨刀石,mo2 dau1 sak6
 無所作為,vu2 so3 zok5 vui2
 三串,sam1 con4
 三宗,sam1 zung1
 拖下手,to1 ha4 siu3
+真咩,zin1 me1
 張保仔洞,zong1 bau3 zai3 tung4
 黐孖筋,ci1 ma1 gin1
 忿忿不平,fun3 fun3 but5 pin2
 故技重施,gu4 ki3 cung2 si1
 兩三粒,liong1 sam1 lip5
+拼寫,pin4 sia3
 生而平等,sang1 yi2 pin2 den3
 次名,cu4 min2
 打回原形,da3 fui2 ngien2 hin2
@@ -9854,11 +10155,13 @@ OK,fat5 fo3
 打下波,da3 ha4 bo1
 家傳之寶,ga1 con2 zu1 bau3
 隔山打牛,gak5 san1 da3 ngiu2
+後媽,heu4 ma1
 好眉好貌,hau3 mi2 hau3 mau4
 異相,yi4 siong4
 兩家茶禮,liong1 ga1 ca2 li1
 兩艘,liong1 seu3
 兩袖清風,liong1 ciu4 cin1 fung1
+孭仔燈,ba2 zai3 den1
 三五成羣,sam1 ng3 sin2 kiun2
 陀仔,to2 zai3
 斷句,ton1 gi4
@@ -9941,20 +10244,24 @@ OK,fat5 fo3
 旺角道,vong4 gok5 tau4
 鑽木取火,zon4 muk5 ci3 fo3
 不中用,but5 zung1 yung4
+幫咩,bong1 me1
 戴着,dai4 cok6
 頂爺,din3 ya2
+裏海,li1 hoi3
 平光鏡,pin2 gong1 giang4
 山林道,san1 lim2 tau4
 神學士,sin2 hok6 su4
 鮮乳,sien1 yui3
 塞外,soi4 ngoi4
 枯乾,ku1 gon1
+伏虎,fuk6 fu3
 解元,gai3 ngien2
 隔夜仇,gak5 ya4 siu2
 核裂變,het6 liet6 bien4
 印度神油,yin4 tu4 sin2 yiu2
 人靚聲甜,ngin2 liang4 sang1 tiam2
 衣冠禽獸,yi1 gon1 kim2 ciu4
+冚被,kiem2 pi1
 強鹼,kiong2 gan3
 劉業強,liu2 ngiap6 kiong2
 連道,lien2 tau4
@@ -10013,6 +10320,7 @@ OK,fat5 fo3
 廢話少講,fui4 va4 sau3 gong3
 一體兩面,yit5 ti3 liong1 mien4
 饒命,ngiau2 miang4
+孭仔,ba2 zai3
 平方公尺,pin2 fong1 gung1 cak5
 十三點,sip6 sam1 diam3
 捨己為人,sa3 gi3 vui4 ngin2
@@ -10020,7 +10328,7 @@ OK,fat5 fo3
 上水廣場,song4 sui3 gong3 cong2
 終生伴侶,zung1 sang1 pan4 li1
 參看,cam1 kon4
-清玩,cin1 ngan4
+清玩,cin1 van4
 當仁不讓,dong1 yin2 but5 ngiong4
 火鑽,fo3 zon4
 金鐘道,gim1 zung1 tau4
@@ -10041,6 +10349,7 @@ OK,fat5 fo3
 工業學校,gung1 ngiap6 hok6 gau3
 喜樂,hi3 lok6
 一闊三大,yit5 fat5 sam1 tai4
+臉皮厚,liam3 pi2 heu4
 兩三句,liong1 sam1 gi4
 兩箱,liong1 siong1
 盲仔,mang2 zai3
@@ -10174,6 +10483,7 @@ OK,fat5 fo3
 沙嶺,sa1 liang1
 歎下,tan4 ha4
 黃定光,vong2 tin4 gong1
+揸緊車,za1 gin3 ca1
 早上好,zau3 song4 hau3
 差一皮,ca1 yit5 pi2
 大小通吃,tai4 siau3 tung1 ket5
@@ -10183,6 +10493,7 @@ OK,fat5 fo3
 京士柏,gin1 su4 pak5
 經緯度,gin1 vui3 tu4
 鞋鋪,hai2 pu4
+咩款,me1 kan3
 名廠,min2 cong3
 無以為報,vu2 yi1 vui2 bau4
 三十七,sam1 sip6 cit5
@@ -10192,6 +10503,7 @@ OK,fat5 fo3
 勝哥,sin4 go1
 畫圓,vak6 yen2
 運命,yun4 min4
+蚱蜢,zak5 mang3
 仔爺,zai3 ya2
 濁親,cuk6 cin1
 超經驗,cau1 gin1 ngiam4
@@ -10247,6 +10559,7 @@ OK,fat5 fo3
 燕尾蝶,yen4 mui1 tiap6
 聊勝於無,liau2 sin4 yi1 vu2
 兩碟,liong1 tiap6
+咩姐,me1 zia3
 尾禡,mui1 nga2
 名不副實,min2 but5 fu4 sit6
 四度,si4 tu4
@@ -10315,10 +10628,12 @@ OK,fat5 fo3
 青洲,ciang1 ziu1
 花旗銀行,fa1 ki2 ngiun2 hong2
 夫唱婦隨,fu1 cong4 fu4 sui2
+伏味,fuk6 mui4
 解唔解決,gai3 m1 gai3 giet5
 甘道,gam1 tau4
 鹹淡水,ham2 tam1 sui3
 刻寫,ket5 sia3
+恒生銀行,hen2 sang1 ngiun2 hong2
 恰如其分,kap5 yi2 ki2 fun4
 吃重,ket5 cung1
 可以唔使,ko3 yi1 m1 su3
@@ -10357,6 +10672,7 @@ OK,fat5 fo3
 少間,sau3 gan1
 聽出耳油,tang4 cut5 ngi3 yiu2
 倭人,vo1 ngin2
+揸大膽車,za1 tai4 dam3 ca1
 剩落,yin4 lok6
 中旅社,zung1 li3 sa1
 轉聲,zon4 sang1
@@ -10388,6 +10704,7 @@ OK,fat5 fo3
 正化,zin4 fa4
 揠苗助長,yet5 miau2 co4 zong3
 打春,da3 cun1
+泛泛之輩,fam4 fam4 zu1 bui4
 解送,gai4 sung4
 舊相好,kiu4 siong1 hau3
 勸解,kien4 gai3
@@ -10400,6 +10717,7 @@ OK,fat5 fo3
 三支香,sam1 zi1 hiong1
 思覺,su1 gok5
 紹興酒,sau2 hin4 ziu3
+太晚,tai4 man1
 聽講過,tang4 gong3 go4
 八仙嶺,bat5 sien1 liang1
 啤一啤,bia1 yit5 bia1
@@ -10417,6 +10735,7 @@ OK,fat5 fo3
 三段論,sam1 ton4 lun4
 社區中心,sa1 ki1 zung1 sim1
 爭凳仔,zang1 den4 zai3
+撞臉,cong4 liam3
 轉譯,zon3 yit6
 呀爸,a2 ba1
 打鑊甘,da3 vok6 gam1
@@ -10429,6 +10748,7 @@ OK,fat5 fo3
 棉褸,mien2 leu1
 平行宇宙,pin2 hang2 yi3 ciu4
 十六強,sip6 luk5 kiong2
+死裏逃生,si3 li1 tau2 sang1
 黃成智,vong2 sin2 zi4
 走調,zeu3 tiau4
 差役,cai1 yit6
@@ -10437,10 +10757,12 @@ OK,fat5 fo3
 地頭蛇,ti4 teu2 sa2
 讀熟,tuk6 suk6
 悔不當初,fui4 but5 dong1 co1
+繼後香燈,gi4 heu4 hiong1 den1
 驚西,giang1 si1
 講就易,gong3 ciu4 yi4
 冠病,gon1 piang4
 限時限刻,han4 si2 han4 ket5
+後味,heu4 mui4
 好唔好笑,hau3 m1 hau3 siau4
 日經平均,ngit5 gin1 pin2 giun1
 樂瞳,lok6 tung2
@@ -10466,6 +10788,7 @@ OK,fat5 fo3
 現場觀眾,hien4 cong2 gon1 zung4
 肉便器,ngiuk5 pien4 hi4
 如非必要,yi2 fui1 bit5 yau4
+雨後春筍,yi3 heu4 cun1 sun3
 奇人異士,ki2 ngin2 yi4 su4
 靈風,lin2 fung1
 樂湖,lok6 fu2
@@ -10504,6 +10827,8 @@ OK,fat5 fo3
 緩急輕重,fon4 gip5 kiang1 cung1
 仔隧,zai3 sui4
 精華素,zin1 fa2 su4
+左後方,zo3 heu4 fong1
+俾着,bi1 cok6
 曾經滄海,cen2 gin1 cong1 hoi3
 坐冷板凳,co1 lang1 ban3 den4
 打胎,da3 toi1
@@ -10517,6 +10842,7 @@ OK,fat5 fo3
 一舉成名,yit5 gi3 sin2 min2
 二重奏,ngi4 cung2 zeu4
 搖下搖下,yau2 ha4 yau2 ha4
+卵生,lon3 sang1
 孖蒸,ma1 zin1
 鋪仔,pu4 zai3
 沙煲兄弟,sa1 bau1 hiung1 ti4
@@ -10547,6 +10873,7 @@ OK,fat5 fo3
 飽讀詩書,bau3 tuk6 si1 su1
 比時間,bi3 si2 gan4
 車蓋,ca1 goi4
+此起彼伏,cu3 hi3 bi3 fuk6
 青竹蛇,ciang1 zuk5 sa2
 大阪燒,tai4 ban3 sau1
 大馬士革,tai4 ma1 su4 gak5
@@ -10562,7 +10889,7 @@ OK,fat5 fo3
 十字車,sip6 su4 ca1
 四川省,si4 con1 sen3
 成棚人,sang2 pang2 ngin2
-小玩意,siau3 ngan4 yi4
+小玩意,siau3 van4 yi4
 天打雷劈,tien1 da3 lui2 piak5
 聽死,tin4 si3
 台山話,toi2 san1 va4
@@ -10590,6 +10917,7 @@ OK,fat5 fo3
 三尾,sam1 mui1
 垂涎欲滴,sui2 yen2 yuk6 tit6
 瑞士人,sui4 su4 ngin2
+屎蜢,si3 mang3
 鬆泡泡,sung1 pau1 pau1
 圍讀,vui2 tuk6
 紫河車,zu3 ho2 ca1
@@ -10612,6 +10940,7 @@ OK,fat5 fo3
 逆命,ngiak6 min4
 廖長江,liau4 cong2 gong1
 唔塞,m1 set5
+晚頭,man1 teu2
 咪書,mai4 su1
 五雷轟頂,ng3 lui2 gen1 dang3
 安華,on1 fa2
@@ -10650,13 +10979,14 @@ OK,fat5 fo3
 放射源,fong4 sa4 ngien2
 更之,gen4 zu1
 剛度,gong1 tu4
-高瘦平,gau1 siu4 pin2
+高瘦平,gau1 seu4 pin2
 以少勝多,yi1 sau3 sin4 do1
 應接不暇,yin4 ziap5 but5 ha4
 要唔要好,yau4 m1 yau4 hau3
 吸經,kip5 gin1
 兩手準備,liong1 siu3 zun3 pi4
 勞碌命,lau2 luk5 miang4
+孟晚舟,men4 man1 ziu1
 眉間,mi2 gan1
 滅種,miet6 zung3
 惡兆,ok5 cau4
@@ -10688,6 +11018,7 @@ OK,fat5 fo3
 弄下,lung4 ha4
 萬象更新,man4 siong4 gang1 sin1
 無記名,vu2 gi4 min2
+怕醜草,pa4 ciu3 cau3
 三陪,sam1 pui2
 山地車,san1 ti4 ca1
 山東省,san1 dung1 sen3
@@ -10719,6 +11050,7 @@ OK,fat5 fo3
 一兩格,yit5 liong1 gak5
 企得正,ki1 det5 zang4
 林定國,lim2 tin4 get5
+忙裏偷閒,mong2 li1 teu1 han2
 難捨難離,lan2 sa3 lan2 li2
 心驚膽戰,sim1 giang1 dam3 zien4
 聖荷西,sin4 ho2 si1
@@ -10727,6 +11059,7 @@ OK,fat5 fo3
 彈指之間,tan2 zi3 zu1 gan1
 通靈板,tung1 lin2 ban3
 環保大道,van2 bau3 tai4 tau4
+黃臉婆,vong2 liam3 po2
 湖南省,fu2 lam2 sen3
 震騰騰,zin3 ten2 ten2
 走為上,zeu3 vui2 song4
@@ -10787,7 +11120,9 @@ OK,fat5 fo3
 應用物理,yin4 yung4 vut6 li1
 靚爆鏡,liang4 bau4 giang4
 量角器,liong2 gok5 hi4
+咩嘅,me1 e4
 難彈,lan2 tan2
+拼裝,pin4 zong1
 三百六十,sam1 bak5 luk5 sip6
 三顆,sam1 ko3
 三五成群,sam1 ng3 sin2 kiun2
@@ -10829,6 +11164,7 @@ OK,fat5 fo3
 為時未晚,vui2 si2 vui4 man1
 王國興,vong2 get5 hin1
 雜差,cap6 cai1
+最後審判,zui4 heu4 sim3 pan4
 裝備齊全,zong1 pi4 ce2 cien2
 保管好,bau3 gon3 hau3
 湊仔公,ceu4 zai3 gung1
@@ -10860,7 +11196,7 @@ OK,fat5 fo3
 少雲,sau3 yun2
 喪葬,song1 zong4
 歎為觀止,tan4 vui2 gon1 zi3
-玩遍,ngan2 bien4
+玩遍,van2 bien4
 殞命,yun3 min4
 執仔,zip5 zai3
 轉門,zon4 mun2
@@ -10887,6 +11223,7 @@ OK,fat5 fo3
 公共電話,gung1 kiung4 tien4 va4
 校褲,gau3 fu4
 校醫,gau3 yi1
+後枕,heu4 zim3
 漢華,hon4 fa2
 印刷量,yin4 sot5 liong4
 印度薄餅,yin4 tu4 pok6 biang3
@@ -10957,6 +11294,7 @@ OK,fat5 fo3
 易彎,yi4 van1
 賢士,hien2 su4
 漁夫褸,ng2 fu1 leu1
+卡冚卡,kat6 kiem2 kat6
 強加於人,kiong2 ga1 yi1 ngin2
 兩宋,liong1 sung4
 撈過界,lau1 go4 gai4
@@ -10974,6 +11312,7 @@ OK,fat5 fo3
 推磨,tui1 mo2
 推三推四,tui1 sam1 tui1 si4
 百冇,bak5 mau2
+不甘後人,but5 gam1 heu4 ngin2
 不勝枚舉,but5 sin1 moi2 gi3
 便盆,pien4 pun2
 差估署,ca1 gu3 su4
@@ -10993,6 +11332,7 @@ OK,fat5 fo3
 閨中密友,gui1 zung1 mit6 yiu1
 行淫,hang2 yim2
 紅顏薄命,fung2 ngan2 pok6 min4
+右後方,yiu4 heu4 fong1
 異質,yi4 zit5
 乳臭未乾,yui3 ciu4 vui4 gon1
 林士街,lim2 su4 gai1
@@ -11037,6 +11377,7 @@ OK,fat5 fo3
 經幡,gin1 fan1
 港灣道,gong3 van1 tau4
 行色匆匆,hang2 set5 cung1 cung1
+後燈,heu4 den1
 稀土金屬,hi1 tu3 gim1 suk6
 去乜,hi4 mak5
 好好飲,hau3 hau3 yim3
@@ -11045,8 +11386,10 @@ OK,fat5 fo3
 雍容華貴,yung1 yung2 fa2 gui4
 礦卡,kang3 kat6
 拉掣,lai1 zi4
+臉兒,liam3 yi2
 連名帶姓,lien2 min2 dai4 siang4
 露兩點,lu4 liong1 diam3
+默默耕耘,met6 met6 gang1 yun2
 文學士,vun2 hok6 su4
 問下人,mun4 ha4 ngin2
 未成年者,vui4 sin2 ngien2 za3
@@ -11065,6 +11408,7 @@ OK,fat5 fo3
 正朔,zin4 sok5
 濁音,cuk6 yim1
 敗絮其中,pai4 si4 ki2 zung1
+俾卡,bi1 kat6
 叉車,ca1 ca1
 炒孖展,cau3 ma1 zien3
 長袖善舞,cong2 ciu4 sen4 mu3
@@ -11083,6 +11427,7 @@ OK,fat5 fo3
 古道熱腸,gu3 tau4 ngiet6 cong2
 巧婦,kiau3 fu4
 候補名單,heu4 bu3 min2 dan1
+後秋,heu4 ciu1
 去打機,hi4 da3 gi1
 一大部分,yit5 tai4 pu4 fun4
 有礙觀瞻,yiu1 ngoi4 gon1 zam1
@@ -11123,6 +11468,7 @@ OK,fat5 fo3
 鄧竟成,ten4 gin3 sin2
 倒序,dau3 si4
 反應器,fan3 yin4 hi4
+伏地魔,fuk6 ti4 mo2
 服務質量,fuk6 vu4 zit5 liong4
 加冠,ga1 gon1
 更次,gang1 cu4
@@ -11140,6 +11486,7 @@ OK,fat5 fo3
 兩三張,liong1 sam1 zong1
 咯吱,gok6 zi1
 亂打亂撞,lon4 da3 lon4 cong4
+晚秋,man1 ciu1
 文人相輕,vun2 ngin2 siong1 kiang1
 問候下,mun4 heu4 ha4
 偶然間,ngeu3 yen2 gan1
@@ -11164,9 +11511,11 @@ OK,fat5 fo3
 中堅力量,zung1 gien1 lit6 liong4
 中聖,zung1 sin4
 不三不四,but5 sam1 but5 si4
+表裏不一,biau3 li1 but5 yit5
 博士班,bok5 su4 ban1
 七種,cit5 zung3
 車鈴,ca1 lang2
+扯後腿,ca3 heu4 tui3
 赤道儀,cak5 tau4 ngi2
 前車主,cien2 ca1 zu3
 青山灣,ciang1 san1 van1
@@ -11206,8 +11555,10 @@ OK,fat5 fo3
 偷腥,teu1 siang1
 天華路,tien1 fa2 lu4
 走讀,zeu3 tuk6
+做鬼臉,zo4 gui3 liam3
 中意人,zung1 yi4 ngin2
 鑽牆,zon4 siong2
+白裏透紅,pak6 li1 teu4 fung2
 八種,bat5 zung3
 薄荷油,pok6 ho2 yiu2
 賊過興兵,cet6 go4 hin1 bin1
@@ -11224,6 +11575,7 @@ OK,fat5 fo3
 金馬倫道,gim1 ma1 lun2 tau4
 糾錯,giu3 co4
 驚鴻,gin1 fung2
+後生可畏,heu4 sang1 ko3 vui4
 後會無期,heu4 fui4 vu2 ki2
 康寧道,kong1 len2 tau4
 好命水,hau3 miang4 sui3
@@ -11236,6 +11588,7 @@ OK,fat5 fo3
 兩門,liong1 mun2
 兩雙,liong1 sung1
 馬到成功,ma1 dau4 sin2 gung1
+晚禱,man1 dau3
 木頭公仔,muk5 teu2 gung1 zai3
 凹凸有致,ngiap5 tut6 yiu1 zi4
 安徽省,on1 fui1 sen3
@@ -11250,6 +11603,7 @@ OK,fat5 fo3
 陝西省,sam3 si1 sen3
 上合組織,song4 hap6 zu3 zit5
 上智,song4 zi4
+頭伏,teu2 fuk6
 餞行,zien4 hang2
 整食,zin3 sit6
 朝露,zau1 lu4
@@ -11257,6 +11611,7 @@ OK,fat5 fo3
 中蛇,zung4 sa2
 拗氣,au4 hi4
 不錯不錯,but5 co4 but5 co4
+俾電話,bi1 tien4 va4
 弁言,pien4 ngien2
 冰風暴,ben1 fung1 pau4
 背黑鍋,boi4 het5 vo1
@@ -11275,7 +11630,8 @@ OK,fat5 fo3
 過三爆四,go4 sam1 bau4 si4
 客務中心,hak5 vu4 zung1 sim1
 行政署,hang2 zin4 su4
-好少玩,hau3 sau3 ngan2
+後勤區,heu4 kiun2 ki1
+好少玩,hau3 sau3 van2
 現磨,hien4 mo2
 傾乜,kin1 mak5
 鯉魚門道,li1 ng2 mun2 tau4
@@ -11295,7 +11651,7 @@ OK,fat5 fo3
 拖下拖下,to1 ha4 to1 ha4
 華人置業,fa2 ngin2 zi4 ngiap6
 畫餅充飢,vak6 biang3 cung1 gi1
-玩陣,ngan2 cin4
+玩陣,van2 cin4
 為時過早,vui2 si2 go4 zau3
 護長,fu4 zong3
 曾慶紅,zen1 kin4 fung2
@@ -11369,6 +11725,7 @@ OK,fat5 fo3
 轉引,zon3 yin3
 差派,cai1 pai4
 陳家強,cin2 ga1 kiong2
+前仰後合,cien2 ngiong1 heu4 hap6
 坐無影凳,co1 vu2 yang3 den4
 重秤,cung1 cin4
 傳道人,con2 tau4 ngin2
@@ -11415,6 +11772,7 @@ OK,fat5 fo3
 洗盡鉛華,se3 cin4 yen2 fa2
 生長素,sang1 zong3 su4
 實況轉播,sit6 kong3 zon3 bo4
+羞羞臉,siu1 siu1 liam3
 守車,siu3 ca1
 手鑽,siu3 zon4
 上映期間,song4 yang3 ki2 gan1
@@ -11452,6 +11810,7 @@ OK,fat5 fo3
 鼓起泡腮,gu3 hi3 pau1 soi1
 觀瞻,gon1 zam1
 怪相,gai4 siong4
+後視鏡,heu4 si4 giang4
 汽車維修,ki4 ca1 vui2 siu1
 海上鮮,hoi3 song4 sien1
 漢坦病毒,hon4 tan3 piang4 tuk6
@@ -11519,6 +11878,8 @@ OK,fat5 fo3
 江西省,gong1 si1 sen3
 官差,gon1 cai1
 觀音坐蓮,gon1 yim1 co1 lien2
+後唔後悔,heu4 m1 heu4 fui4
+後嗣,heu4 su4
 海平線,hoi3 pin2 sien4
 一技傍身,yit5 ki3 pong2 sin1
 有卡士,yiu1 ka1 si3
@@ -11552,6 +11913,7 @@ OK,fat5 fo3
 侍衞長,si4 vui4 zong3
 識轉彎,sit5 zon3 van1
 相見恨晚,siong1 gien4 hen4 man1
+褪後,tun4 heu4
 艇仔粥,tiang3 zai3 zuk5
 推牆,tui1 siong2
 塘尾道,tong2 mui1 tau4
@@ -11578,9 +11940,11 @@ OK,fat5 fo3
 從左到右,cung2 zo3 dau4 yiu4
 打呼嚕,da3 fu1 lu1
 大坑道,tai4 hang1 tau4
+掂當,tiam4 dong4
 電氣道,tien4 hi4 tau4
 佃户,tien4 fu4
 讀研,tuk6 ngan3
+東拼西湊,dung1 pin4 si1 ceu4
 復讀,fuk6 tuk6
 今日好凍,gim1 ngit5 hau3 dung4
 極值,kit6 cit6
@@ -11623,7 +11987,7 @@ OK,fat5 fo3
 攢錢,zon1 cien2
 就中意,ciu4 zung1 yi4
 謝斐道,cia4 fui3 tau4
-褶皺,zap5 ziu4
+褶皺,zap5 zeu4
 做場好戲,zo4 cong2 hau3 hi4
 尊唔尊重,zun1 m1 zun1 cung4
 品質管理,pin3 zit5 gon3 li1
@@ -11657,6 +12021,7 @@ OK,fat5 fo3
 卡美洛,ka1 mui1 lok6
 兩具,liong1 ki3
 密質質,mit6 zit5 zit5
+咩毛,me1 mau1
 磨鏡,mo2 giang4
 無以為生,vu2 yi1 vui2 sang1
 每道,mui1 tau4
@@ -11673,6 +12038,7 @@ OK,fat5 fo3
 心律不正,sim1 lut6 but5 zin4
 神經外科,sin2 gin1 ngoi4 ko1
 十行,sip6 hong2
+瘦蜢蜢,seu4 mang3 mang3
 禪林,sam2 lim2
 爽呢,song3 le1
 素昧平生,su4 mui3 pin2 sang1
@@ -11683,7 +12049,7 @@ OK,fat5 fo3
 斷水斷糧,ton1 sui3 ton1 liong2
 華國鋒,fa4 get5 fung1
 緩降,fon4 gong4
-玩弄感情,ngan4 lung4 gam3 cin2
+玩弄感情,van4 lung4 gam3 cin2
 側重點,zet5 cung4 diam3
 正歌,zin4 go1
 正義黨,zin4 ngi4 dong3
@@ -11709,9 +12075,10 @@ OK,fat5 fo3
 斷代,ton4 toi4
 科技成果,ko1 ki3 sin2 go3
 房祖名,fong2 zu3 min2
+伏地挺身,fuk6 ti4 tin3 sin1
 急呀,gip5 a2
 結為夫妻,giet5 vui2 fu1 ci1
-乾瘦,gon1 siu4
+乾瘦,gon1 seu4
 孝經,hau4 gin1
 好高難度,hau3 gau1 lan2 tu4
 一人少句,yit5 ngin2 sau3 gi4
@@ -11754,6 +12121,7 @@ OK,fat5 fo3
 習非成是,sip6 fui1 sin2 si4
 真好吃,zin1 hau3 ket5
 汁都撈埋,zip5 du1 lau1 mai2
+就裏,ciu4 li1
 滋油淡定,zu1 yiu2 tam4 tin4
 正經八百,zin4 gin1 bat5 bak5
 着名牌,zok5 min2 pai2
@@ -11787,6 +12155,7 @@ OK,fat5 fo3
 道德品質,tau4 det5 pin3 zit5
 道號,tau4 hau4
 繁榮富強,fan2 yin2 fu4 kiong2
+泛泛之交,fam4 fam4 zu1 gau1
 複讀,fuk5 tuk6
 監測器,gam1 cet5 hi4
 交通車,gau1 tung1 ca1
@@ -11833,7 +12202,9 @@ OK,fat5 fo3
 三公消費,sam1 gung1 siau1 fui4
 三合土,sam1 hap6 tu3
 西頂,si1 din3
+洗臉盆,se3 liam3 pun2
 生物質能,sang1 vut6 zit5 len2
+思潮起伏,su1 cau2 hi3 fuk6
 食用鹽,sit6 yung4 yam2
 鮮竹卷,sien1 zuk5 gien3
 成人班,sin2 ngin2 ban1
@@ -11845,6 +12216,7 @@ OK,fat5 fo3
 躺倒,tong3 dau3
 討吃,tau3 ket5
 通訊協定,tung1 sin4 hiap6 tin4
+同卵雙生,tung2 lon3 sung1 sang1
 同撈同煲,tung2 lau1 tung2 bau1
 斷水斷電,ton1 sui3 ton1 tien4
 遺傳學家,vui2 con2 hok6 ga1
@@ -11853,6 +12225,7 @@ OK,fat5 fo3
 胡春華,fu2 cun1 fa2
 集體強姦,sip6 ti3 kiong2 gan1
 只欠東風,zit5 kiam4 dung1 fung1
+嗣後,su4 heu4
 戰略要點,zien4 liok6 yau4 diam3
 專業户,zon1 ngiap6 fu4
 爆陰毒,bau4 yim1 tuk6
@@ -11915,6 +12288,8 @@ OK,fat5 fo3
 兩碼事,liong1 ma1 su4
 兩面三刀,liong1 mien4 sam1 dau1
 落簿,lok6 pu1
+綿裏藏針,mien2 li1 cong2 zim1
+霧裏看花,vu4 li1 kon4 fa1
 牛仔衫,ngiu2 zai3 sam1
 三百五十,sam1 bak5 ng3 sip6
 三不五時,sam1 but5 ng3 si2
@@ -11949,7 +12324,7 @@ OK,fat5 fo3
 環保鬥士,van2 bau3 deu4 su4
 鑊仔,vok6 zai3
 互為因果,fu4 vui2 yin1 go3
-玩忽,ngan4 fut5
+玩忽,van4 fut5
 爭番啖氣,zang1 fan1 tam4 hi4
 震天價響,zin3 tien1 ga4 hiong3
 爭風吃醋,zang1 fung1 ket5 cu4
@@ -11967,6 +12342,7 @@ OK,fat5 fo3
 敗興而歸,pai4 hin4 yi2 gui1
 不打自招,but5 da3 cu4 zau1
 不可名狀,but5 ko3 min2 cong4
+不明就裏,but5 min2 ciu4 li1
 邊際成本,bien1 zi4 sin2 bun3
 扑瓜,bok6 ga1
 炒更,cau3 gang1
@@ -12017,6 +12393,7 @@ OK,fat5 fo3
 呷乾醋,hap5 gon1 cu4
 黑色金屬,het5 set5 gim1 suk6
 刻舟求劍,ket5 ziu1 kiu2 giam4
+後壁,heu4 biak5
 氣塞,hi4 set5
 吃不上,ket5 but5 song4
 吃軟飯,ket5 ngion1 fan4
@@ -12047,11 +12424,12 @@ OK,fat5 fo3
 民主監督,min2 zu3 gam1 duk5
 未便,vui4 pien4
 無從談起,vu2 cung2 tam2 hi3
-毛絨玩具,mau1 yung2 ngan4 ki3
+毛絨玩具,mau1 yung2 van4 ki3
 玫瑰崗,moi2 gui4 gong1
 男中音,lam2 zung1 yim1
 啱唔啱聽,ngam1 m1 ngam1 tang4
 奧陶紀,au4 tau2 gi3
+拼鬥,pin4 deu4
 碰倒,pung4 dau3
 沙丁胺醇,sa1 den1 on1 sun2
 三角巾,sam1 gok5 gin1
@@ -12069,6 +12447,7 @@ OK,fat5 fo3
 水磨石,sui3 mo4 sak6
 水上芭蕾,sui3 song4 ba1 lui2
 瑞士刀,sui4 su4 dau1
+善後事宜,sen4 heu4 su4 li2
 成都市,sin2 du1 si1
 傻話,so2 va4
 相差不多,siong1 ca1 but5 do1
@@ -12076,6 +12455,7 @@ OK,fat5 fo3
 上呼吸,song4 fu1 kip5
 上頜骨,song4 hap6 gut5
 上諭,song4 yi4
+雪裏紅,siet5 li1 fung2
 陶瓷器,tau2 cu2 hi4
 華苑,fa2 yen4
 威靈頓街,vui1 lin2 un4 gai1
@@ -12091,6 +12471,7 @@ OK,fat5 fo3
 早死早着,zau3 si3 zau3 cok6
 中換,zung1 von4
 白吃白喝,pak6 ket5 pak6 hot5
+辦身後事,pan4 sin1 heu4 su4
 不可勝數,but5 ko3 sin1 su4
 不吭一聲,but5 hong2 yit5 sang1
 不明覺厲,but5 min2 gok5 li4
@@ -12099,6 +12480,7 @@ OK,fat5 fo3
 邊度得,bien1 tu4 det5
 邊度讀,bien1 tu4 tuk6
 邊番,bien1 fan1
+表裏如一,biau3 li1 yi2 yit5
 博覽道,bok5 lam4 tau4
 寶覺,bau3 gok5
 暴熱,pau4 ngiet6
@@ -12141,9 +12523,11 @@ OK,fat5 fo3
 降罪,gong4 cui4
 顧客至上,gu4 hak5 zi4 song4
 顧命,gu4 miang4
+鬼都怕,gui3 du1 pa4
 國家興亡,get5 ga1 hin1 mong2
 涓滴,gien1 tit6
 核糖,het6 tong2
+後輟,heu4 dot5
 吃大虧,ket5 tai4 kui1
 輕重緩急,kiang1 cung1 fon4 gip5
 可道,ko3 tau4
@@ -12175,6 +12559,7 @@ OK,fat5 fo3
 落腳處,lok6 giok5 cu4
 六行,luk5 hong2
 孖芝,ma1 zi1
+晚香玉,man1 hiong1 ngiuk6
 明十三陵,min2 sip6 sam1 lin2
 難辦,lan2 pan4
 危重病人,ngui2 cung4 piang4 ngin2
@@ -12194,19 +12579,23 @@ OK,fat5 fo3
 手疏,siu3 so1
 蛇車,sa2 ca1
 腥氣,siang1 hi4
+撕破臉皮,su1 po4 liam3 pi2
 蕭乾,siau1 kien2
 相斥,siong1 cit5
 商業應用,song1 ngiap6 yin4 yung4
 相生相剋,siong1 sang1 siong1 ket5
+賞臉,song3 liam3
 常樂街,song2 lok6 gai1
 上級領導,song4 kip5 liang1 tau3
 貪吃,tam1 ket5
 貪着數,tam1 cok6 su4
 聽之任之,tin4 zu1 ngim4 zu1
 挑燈夜讀,tiau1 den1 ya4 tuk6
+劏蛇,tong1 sa2
 燙平,tong4 pin2
 圖畫書,tu2 fa4 su1
 黃狗射尿,vong2 geu3 sa4 ngiau4
+揸頸就命,za1 giang3 ciu4 miang4
 曾咀,zen1 zu3
 質量管理,zit5 liong4 gon3 li1
 縐褶,ziu4 zap5
@@ -12231,6 +12620,7 @@ OK,fat5 fo3
 飽學之士,bau3 hok6 zu1 su4
 跛手,bai1 siu3
 不解風情,but5 gai3 fung1 cin2
+俾咩,bi1 me1
 並行不悖,bin4 hang2 but5 poi4
 暴力法,pau4 lit6 fap5
 踩錯腳,cai3 co4 giok5
@@ -12238,6 +12628,7 @@ OK,fat5 fo3
 撐杆,cang1 gon1
 出喪,cut5 song1
 千家萬户,cien1 ga1 man4 fu4
+前赴後繼,cien2 fu4 heu4 gi4
 青春不再,ciang1 cun1 but5 zai4
 青瓷,ciang1 cu2
 唱高調,cong4 gau1 tiau4
@@ -12314,6 +12705,7 @@ OK,fat5 fo3
 樂呵呵,lok6 ho1 ho1
 撈汁,lau1 zip5
 祿命,luk5 min4
+晚期癌症,man1 ki2 ngam2 zin4
 萬應靈丹,man4 yin4 lin2 dan1
 萬元户,man4 ngien2 fu4
 民間習俗,min2 gan1 sip6 suk6
@@ -12329,6 +12721,7 @@ OK,fat5 fo3
 眼乾症,ngan3 gon1 zin4
 惱恨,lau3 hen4
 被頭,pi1 teu2
+拼搶,pin4 ciong3
 拼命三郎,pin4 min4 sam1 long2
 平淡無奇,pin2 tam4 vu2 ki2
 平庸之輩,pin2 yung2 zu1 bui4
@@ -12364,6 +12757,7 @@ OK,fat5 fo3
 相貌堂堂,siong4 mau4 tong2 tong2
 上低音號,song4 dai1 yim1 hau4
 上上之策,song4 song4 zu1 cak5
+踢踏舞,tiak5 tap6 mu3
 推進機,tui1 zin4 gi1
 天花病毒,tien1 fa1 piang4 tuk6
 同樂街,tung2 lok6 gai1
@@ -12420,8 +12814,11 @@ OK,fat5 fo3
 傳送服務,con2 sung4 fuk6 vu4
 打爛齋缽,da3 lan4 zai1 bat5
 打撲克,da3 pok5 ket5
+打踭,da3 zang1
 打側身,da3 zet5 sin1
+大後天,tai4 heu4 tien1
 淡泊名利,tam4 pok6 min2 li4
+踏歌,tap6 go1
 底朝天,dai3 cau2 tien1
 地震預報,ti4 zin3 yi4 bau4
 笛卡爾,tak6 ka1 li3
@@ -12438,6 +12835,7 @@ OK,fat5 fo3
 翻江倒海,fan1 gong1 dau3 hoi3
 蕃茄仔,fan1 kio2 zai3
 反射作用,fan3 sa4 zok5 yung4
+悔之已晚,fui4 zu1 yi3 man1
 鳳德道,fung4 det5 tau4
 家長制,ga1 zong3 zi4
 解毒藥,gai3 tuk6 yok6
@@ -12455,16 +12853,19 @@ OK,fat5 fo3
 久病成醫,giu3 piang4 sin2 yi1
 經歷風雨,gin1 lit6 fung1 yi3
 驚歎不已,gin1 tan4 but5 yi3
+腳後跟,giok5 heu4 gen1
 乾薑,gon1 giong1
 乾一杯,gon1 yit5 bui1
 高村正彥,gau1 cun1 zin4 ngien4
 固定點,gu4 tin4 diam3
 功成名就,gung1 sin2 min2 ciu4
 鬼使神差,gui3 si3 sin2 cai1
+跪伏,kui3 fuk6
 敲山震虎,kau1 san1 zin3 fu3
 刻意為之,ket5 yi4 vui2 zu1
 核大國,het6 tai4 get5
 核桃仁,het6 tau2 yin2
+後賬,heu4 zong4
 輕食,kiang1 sit6
 好牽強,hau3 kien1 kiong3
 好相與,hau3 siong1 yi1
@@ -12491,6 +12892,7 @@ OK,fat5 fo3
 卻為,kiok5 vui2
 爛好人,lan4 hau3 ngin2
 留言簿,liu2 ngien2 pu1
+臉皮薄,liam3 pi2 pok6
 羅定邦,lo2 tin4 bong1
 兩三層,liong1 sam1 cen2
 兩頭走,liong1 teu2 zeu3
@@ -12518,6 +12920,7 @@ OK,fat5 fo3
 膿泡,lung2 pau1
 安步當車,on1 pu4 dong4 gi1
 安安樂樂,on1 on1 lok6 lok6
+拼圖遊戲,pin4 tu2 yiu2 hi4
 旁遮普省,pong2 za1 pu1 sen3
 鋪板,pu1 ban3
 三鞭酒,sam1 bien1 ziu3
@@ -12529,6 +12932,7 @@ OK,fat5 fo3
 三十億,sam1 sip6 yi4
 三手辮,sam1 siu3 bien1
 山村道,san1 cun1 tau4
+山巒起伏,san1 lan2 hi3 fuk6
 深更半夜,cim1 gang1 ban4 ya4
 腎盂,sin4 yi2
 生命徵象,sang1 min4 zin1 siong4
@@ -12536,6 +12940,7 @@ OK,fat5 fo3
 水車館,sui3 ca1 gon3
 水蛇腰,sui3 sa2 yau1
 廝打,su1 da3
+撕破臉,su1 po4 liam3
 食飽未,sit6 bau3 vui4
 食到應,sit6 dau4 yin4
 食狗屎,sit6 geu3 si3
@@ -12573,6 +12978,7 @@ OK,fat5 fo3
 正中要害,zin4 zung4 yau4 hoi4
 張量,zong1 liong4
 贓車,zong1 ca1
+做臉,zo4 liam3
 縱隔,zung1 gak5
 中古車,zung1 gu3 ca1
 中式英語,zung1 sit5 yin1 ngi1
@@ -12598,6 +13004,7 @@ OK,fat5 fo3
 出難題,cut5 lan2 ti2
 黐飲黐食,ci1 yim3 ci1 sit6
 磁卡,cu2 kat6
+暹邏,siam1 lo3
 千差萬別,cien1 ca1 man4 piet6
 淺水灣道,cien3 sui3 van1 tau4
 前途無量,cien2 tu2 vu2 liong4
@@ -12634,6 +13041,7 @@ OK,fat5 fo3
 監管體制,gam1 gon3 ti3 zi4
 簡單明瞭,gan3 dan1 min2 liau3
 狡兔三窟,gau3 tu4 sam1 fut5
+今晚黑,gim1 man1 het5
 禁止停車,gim4 zi3 tin2 ca1
 近廚得食,kiun4 cu2 det5 sit6
 舉案齊眉,gi3 on4 ce2 mi2
@@ -12670,6 +13078,7 @@ OK,fat5 fo3
 一字不差,yit5 su4 but5 ca1
 溢出效應,yit5 cut5 hau4 yin4
 邱士縉,hiu1 su4 zin4
+有咩功能,yiu1 me1 gung1 len2
 有載,yiu1 zai3
 依山傍水,yi1 san1 pong4 sui3
 意氣相投,yi4 hi4 siong1 teu2
@@ -12688,6 +13097,7 @@ OK,fat5 fo3
 領取行李,liang1 ci3 hang2 li3
 量地官,liong2 ti4 gon1
 兩頂,liong1 dang3
+兩手揈揈,liong1 siu3 vin4 vin4
 兩梳蕉,liong1 so1 ziau1
 龍兄虎弟,lung2 hiung1 fu3 ti4
 麥齊光,mak6 ce2 gong1
@@ -12702,6 +13112,7 @@ OK,fat5 fo3
 牛背鷺,ngiu2 boi4 lu4
 耐中,lai4 zung1
 惡德,ok5 det5
+拼到底,pin4 dau4 dai3
 平板手機,pin2 ban3 siu3 gi1
 鋪展,pu1 zien3
 三百一十,sam1 bak5 yit5 sip6
@@ -12788,6 +13199,8 @@ OK,fat5 fo3
 隨時待命,sui2 si2 toi4 min4
 黐仔,ci1 zai3
 淺源地震,cien3 ngien2 ti4 zin3
+前倨後恭,cien2 gi4 heu4 giung1
+前四後六,cien2 si4 heu4 luk5
 青釉,ciang1 yiu4
 切中要害,ciet5 zung4 yau4 hoi4
 切中時弊,ciet5 zung4 si2 bi4
@@ -12819,6 +13232,7 @@ OK,fat5 fo3
 葷腥,fun1 siang1
 訓讀,hiun4 tuk6
 荒淫無度,fong1 yim2 vu2 tu4
+慌怕,fong1 pa4
 放射病,fong4 sa4 piang4
 放射療法,fong4 sa4 liau2 fap5
 防衞過當,fong2 vui4 go4 dong4
@@ -12839,6 +13253,7 @@ OK,fat5 fo3
 驚怖,gin1 bu4
 驚悸,gin1 gui4
 經濟前途,gin1 zi4 cien2 tu2
+腳踏板,giok5 tap6 ban3
 乾娘,gon1 ngiong2
 觀風,gon1 fung1
 觀音山,gon1 yim1 san1
@@ -12850,6 +13265,7 @@ OK,fat5 fo3
 黑種人,het5 zung3 ngin2
 行獵,hang2 liap6
 行政區劃,hang2 zin4 ki1 vak6
+後翅,heu4 ci4
 汽水車,ki4 sui3 ca1
 吃香喝辣,ket5 hiong1 hot5 lat6
 輕車簡從,kiang1 ca1 gan3 cung2
@@ -12868,6 +13284,7 @@ OK,fat5 fo3
 一時半會,yit5 si2 ban4 fui4
 優質鋼,yiu2 zit5 gong4
 遊伴,yiu2 pan4
+有架咩,yiu1 ga4 me1
 誘供,yiu3 giung1
 友好訪問,yiu1 hau3 fong3 mun4
 夜幕降臨,ya4 mok5 gong4 lim2
@@ -12899,6 +13316,7 @@ OK,fat5 fo3
 煤儲量,moi2 su2 liong4
 末梢神經,mat6 sau1 sin2 gin1
 雅淡,nga3 tam4
+扲荷包,lem2 ho2 bau1
 奀挑鬼命,ngan1 tiau1 gui3 miang4
 尿泡,ngiau4 pau1
 囊中羞澀,long2 zung1 siu1 sep5
@@ -12906,6 +13324,7 @@ OK,fat5 fo3
 扒艇仔,pa2 tiang3 zai3
 朋比為奸,pen2 bi3 vui2 gan1
 平又靚,piang2 yiu4 liang4
+拼爭,pin4 zang1
 平方英尺,pin2 fong1 yin1 cak5
 平裝本,pin2 zong1 bun3
 漂流者,piau1 liu2 za3
@@ -12970,12 +13389,14 @@ OK,fat5 fo3
 歪打正着,vai1 da3 zin4 cok6
 壞種,fai4 zung3
 位極人臣,vui4 kit6 ngin2 sin2
+雲裏霧裏,yun2 li1 vu4 li1
 屈膝禮,kiut5 cit5 li1
 永隆銀行,yun1 lung2 ngiun2 hong2
 黃道吉日,vong2 tau4 git5 ngit5
 王馨平,vong2 hin1 pin2
 黃嶺,vong2 liang1
 會澤,fui4 cak6
+揸住支咪,za1 cu4 zi1 mai4
 真好彩,zin1 hau3 cai3
 真名實姓,zin1 min2 sit6 siang4
 爭名奪利,zang1 min2 tot6 li4
@@ -12984,6 +13405,7 @@ OK,fat5 fo3
 疾惡如仇,cit6 ok5 yi2 siu2
 姪媳婦,cit6 sit5 fu4
 周打魚湯,ziu1 da3 ng2 tong1
+酒後失言,ziu3 heu4 sit5 ngien2
 酒興,ziu3 hin4
 謝絕參觀,cia4 ciet6 cam1 gon1
 紫質症,zu3 zit5 zin4

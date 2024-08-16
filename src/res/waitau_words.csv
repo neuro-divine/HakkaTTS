@@ -347,7 +347,7 @@ char,pron
 菜根,cöi1 gäng2
 苗,miu4
 浮仔,fäu4 zäi2
-浮薸,pou4 piau4
+浮薸,pou4 piu4
 生果,sæng1 gwo2
 杏,häng6
 李仔,li2 zäi2
@@ -407,7 +407,7 @@ char,pron
 茅草,mau4 cäu2
 榔箕,long4 gi1
 青苔,ceng1 töi4
-蘆葦,lu4 väi1
+蘆葦,lu4 wäi1
 艾,ngai6
 樹枝,sü6 zi1
 樹尾,sü6 mi2
@@ -545,7 +545,7 @@ char,pron
 屋,uk2
 起屋,hi2 uk2
 打地腳,da2 di6 gök2
-起籬牆,hi2 nläi4 cöng4
+起籬牆,hi2 läi4 cöng4
 磚,züng2
 斷磚,tüng1 züng1
 生磚,sæng1 züng1
@@ -856,7 +856,7 @@ char,pron
 擤鼻膿,säng1 bi6 nung4
 鼻屎,bi6 si2
 耳仔,ngi1 zäi2
-耳梗,ngyi1 gäk2
+耳梗,ngi1 gäk2
 耳屎,ngi1 si2
 嘴,zöi2
 嘴唇,zöi2 säng4
@@ -1108,7 +1108,7 @@ char,pron
 擺酒,bäi2 zäu2
 去飲,hü1 yäm2
 外家,wui6 ga1
-番頭嫁,faeng1 täu4 ga3
+番頭嫁,fæng1 täu4 ga3
 續弦,zuk6 yüng4
 大肚,dai6 du2
 漚仔,äu1 zäi2
@@ -1227,7 +1227,7 @@ char,pron
 洗身,säi2 säng1
 抹身,mæk2 säng1
 敨涼,täu2 löng4
-稍涼,säu2 liong4
+稍涼,säu2 löng4
 曬,sai1
 熱頭烘,ngik6 täu4 hung1
 打牙交,da2 nga4 gau1
@@ -1381,7 +1381,7 @@ char,pron
 唔准,m4 zäng2
 唆擺,so1 bai2
 頂嘴,däng2 zöi2
-駁嘴,bok2 zsöi2
+駁嘴,bok2 zöi2
 撩,liu4
 佮,gap2
 就,zäu6
@@ -2110,12 +2110,14 @@ char,pron
 咁多錢,gäm1 do1 cing4
 咁樣,gäm2 yöng6
 和尚,wo4 söng6
+咯咯叫,lok2 lok2 giu1
 咽喉,ying1 häu4
 品行,bäng2 häng6
 品質,bäng2 zäk2
 哪吒,na4 za1
 哪裏,na1 li1
 唔使客氣,m4 säi2 hæk2 hi1
+唔曾,m4 ceng4
 唱和,cöng1 wo6
 商賈,söng1 gwu2
 商量,söng1 löng4
@@ -2318,7 +2320,6 @@ char,pron
 粉嶺,fäng2 leng1
 粘米,zim1 mai1
 粘貼,nim4 tip2
-精湛,zäng1 zam1
 經濟,gäng1 zäi1
 綢繆,cäu4 mäu4
 縫紉,fung4 yäng6
@@ -2375,6 +2376,7 @@ char,pron
 買斷,mai1 tüng1
 賁臨,bi1 läm4
 賁門,bäng1 mung4
+賴伏雞嫲,lai6 bu6 gäi1 ma4
 贛江,gäm1 gong1
 跛子,bo2 zi2
 跛腳,bäi1 gök2
@@ -2458,6 +2460,7 @@ char,pron
 生活,säng1 wuk6
 加上,ga1 söng1
 人士,yäng4 si6
+我哋,ngo1 di1
 申請,säng1 cäng2
 最近,zöi1 gäng6
 進行,zäng1 häng4
@@ -2490,6 +2493,7 @@ char,pron
 成員,säng4 yüng4
 平時,päng4 si4
 至少,zi1 siu2
+精神,zäng1 säng4
 遊行,yäu4 häng4
 舉行,gü2 häng4
 就好,zäu6 häu2
@@ -2587,10 +2591,12 @@ char,pron
 和平,wo4 päng4
 單車,dæng1 ce1
 青年,cäng1 ning4
+人哋,yäng4 di1
 晚上,mæng1 söng6
 事實上,si6 säk6 söng6
 屬於,suk6 yü1
 理解,li1 gai2
+你哋,ni1 di1
 隊長,döi6 zöng2
 行業,hong4 yip6
 動畫,dung6 wa6
@@ -2621,6 +2627,7 @@ char,pron
 貿易,mäu6 yäk6
 執行,zäp2 häng4
 盡量,zäng6 löng6
+喺度,häi2 du6
 難度,næng4 du6
 早上,zäu2 söng6
 手上,säu2 söng6
@@ -2632,6 +2639,7 @@ char,pron
 自從,zi6 cung4
 產生,cæng2 säng1
 局長,guk6 zöng2
+乜嘢,mäk2 ya1
 道理,däu6 li1
 經典,gäng1 ding2
 好少,häu2 siu2
@@ -2755,6 +2763,7 @@ char,pron
 珍惜,zäng1 säk2
 好人,häu2 yäng4
 會考,wui6 hau2
+俾人,bi2 yäng4
 重大,zung6 dai6
 打電話,da2 ding6 wa2
 出道,cäk2 däu6
@@ -2791,6 +2800,7 @@ char,pron
 打扮,da2 bæng6
 可以話,ho2 yi1 wa6
 散户,sæng2 wu6
+精英,zäng1 yäng1
 時刻,si4 häk2
 上司,söng6 si1
 財經,cöi4 gäng1
@@ -2921,9 +2931,11 @@ char,pron
 延長,ying4 cöng4
 解放,gai2 fong1
 打出,da2 cäk2
+揸車,za1 ce1
 友好,yäu1 häu2
 可否,ho2 fäu2
 錯過,co1 gwo1
+精神病,zäng1 säng4 beng6
 下一個,ha6 yäk2 go1
 共和黨,gung6 wo4 dong2
 渣打,za1 da2
@@ -2964,6 +2976,7 @@ char,pron
 行使,häng4 säi2
 少有,siu2 yäu1
 災難,zöi1 næng6
+酒精,zäu2 zäng1
 全數,cüng4 su1
 輕易,häng1 yi6
 唱片,cöng1 ping2
@@ -3021,6 +3034,7 @@ char,pron
 先行,sing1 häng4
 就讀,zäu6 duk6
 轉型,züng2 yäng4
+嗰度,go2 du6
 好想,häu2 söng2
 倒數,däu1 su2
 成交價,säng4 gau1 ga1
@@ -3106,6 +3120,7 @@ char,pron
 買下,mai1 ha6
 好波,häu2 bo1
 會話,wui6 wa2
+精彩,zäng1 cöi2
 射門,se6 mung4
 從中,cung4 zung1
 優質,yäu1 zäk2
@@ -3148,6 +3163,7 @@ char,pron
 食水,säk6 söi2
 太平洋,tai1 päng4 yöng4
 講解,gong2 gai2
+精選,zäng1 süng2
 討好,täu2 häu2
 畢業生,bäk2 yip6 säng1
 便利店,bing6 li6 dim1
@@ -3217,6 +3233,7 @@ char,pron
 長達,cöng4 dæk6
 好意思,häu2 yi1 si1
 馬體會,ma1 täi2 wui6
+精神科,zäng1 säng4 fo1
 後便,häu6 bing6
 不便,bäk2 bing6
 主客和,zü2 hæk2 wo4
@@ -3258,6 +3275,7 @@ char,pron
 鄰近,läng4 gäng6
 巴士站,ba1 si2 zam6
 容量,yung4 löng6
+中伏,zung1 fuk6
 交易所,gau1 yäk6 so2
 重生,cung4 säng1
 同上,tung4 söng6
@@ -3275,8 +3293,8 @@ char,pron
 士的,si6 däk2
 爭奪,zäng1 dük6
 庭上,täng4 söng6
-話佢,wa6 kü1
 擅長,sing6 cöng4
+瞓覺,fäng1 gau1
 難忘,næng4 mong4
 打鬥,da2 däu1
 有機會,yäu1 gi1 wui6
@@ -3288,7 +3306,6 @@ char,pron
 生性,sæng1 säng1
 校服,hau6 fuk6
 和諧,wo4 hai4
-為佢,wäi6 kü1
 重用,zung6 yung6
 係話,häi6 wa6
 放生,fong1 sæng1
@@ -3361,6 +3378,7 @@ char,pron
 長江,cöng4 gong1
 平倉,päng4 cong1
 少於,siu2 yü1
+俾你,bi2 ni1
 堅強,ging1 köng4
 喜好,hi2 häu1
 打爆,da2 bau1
@@ -3376,6 +3394,7 @@ char,pron
 縱使,zung1 si2
 品種,bäng2 zung2
 校友,hau6 yäu1
+好嘢,häu2 ya1
 貼近,tip2 gäng6
 手下,säu2 ha6
 重拾,cung4 säp6
@@ -3387,11 +3406,9 @@ char,pron
 安樂,wung1 lok6
 平穩,päng4 wäng2
 傳染病,cüng4 yim1 beng6
-覺得佢,gok2 däk2 kü1
 表面上,biu2 ming6 söng6
 艱難,gæng1 næng4
 碩士,sek6 si6
-佢話,kü1 wa6
 車門,ce1 mung4
 最為,zöi1 wäi4
 畫畫,wæk6 wa6
@@ -3419,6 +3436,7 @@ char,pron
 反轉,fæng2 züng1
 含量,häm4 löng6
 時分,si4 fäng6
+食嘢,säk6 ya1
 解僱,gai2 gwu1
 華麗,wa4 läi6
 下游,ha6 yäu4
@@ -3472,6 +3490,7 @@ char,pron
 署長,cü1 zöng2
 頭頂,täu4 deng2
 射擊,se6 gäk2
+精品,zäng1 bäng2
 搞錯,gau2 co1
 咁快,gäm1 fai1
 轉工,züng1 gung1
@@ -3545,6 +3564,7 @@ char,pron
 因為我,yäng1 wäi6 ngo1
 日食,yäk6 säk6
 性行為,säng1 häng4 wäi4
+精力,zäng1 läk6
 車房,ce1 fong4
 爭拗,zäng1 au1
 診斷,cäng2 düng6
@@ -3562,12 +3582,12 @@ char,pron
 諗過,näm2 gwo1
 外傳,wui6 cüng4
 感覺上,gäm2 gok2 söng6
-因為佢,yäng1 wäi6 kü1
 出沒,cäk2 muk6
 打交,da2 gau1
 有乜,yäu1 mäk2
 不覺,bäk2 gok2
 行走,häng4 zäu2
+俾我,bi2 ngo1
 爭住,zæng1 zü6
 從小,cung4 siu2
 兩日,löng1 yäk6
@@ -3696,6 +3716,7 @@ char,pron
 上頭,söng6 täu4
 波經,bo1 gäng1
 長久,cöng4 gäu2
+唔俾,m4 bi2
 招數,ziu1 su1
 開咪,fui1 mäi1
 小便,siu2 bing6
@@ -3760,6 +3781,7 @@ char,pron
 個仔,go1 zäi2
 重整,cung4 zäng2
 關卡,gwæng1 ka1
+埋伏,mai4 fuk6
 即食,zik2 säk6
 不平,bäk2 päng4
 咩好,me1 häu2
@@ -3779,6 +3801,7 @@ char,pron
 工種,gung1 zung2
 成日都,säng4 yäk6 du1
 透明度,täu1 mäng4 du6
+爛尾,læng6 mi1
 無從,mu4 cung4
 烈士,lik6 si6
 促使,cuk2 si2
@@ -3794,6 +3817,7 @@ char,pron
 推倒,töi1 däu2
 講下,gong2 ha1
 旁聽,pong4 täng1
+精準,zäng1 zäng2
 轉車,züng1 ce1
 流量,läu4 löng6
 轉數,züng1 su1
@@ -3849,11 +3873,13 @@ char,pron
 放映,fong1 yäng2
 堵塞,du2 säk2
 飲食業,yäm2 säk6 yip6
+嘢食,ya1 säk6
 玩笑,wæng4 siu1
 打底,da2 däi2
 負荷,fu6 ho6
 生產力,säng1 cæng2 läk6
 逼近,bäk2 gäng6
+精緻,zäng1 zi1
 轉移視線,züng2 yi4 si6 sing1
 軌道,gwäi2 däu6
 幻覺,wæng6 gok2
@@ -3867,6 +3893,7 @@ char,pron
 卡路里,ka1 lu6 li1
 時下,si4 ha6
 為意,wäi4 yi1
+精采,zäng1 cöi2
 日本仔,yäk6 bung2 zäi2
 錯覺,co1 gok2
 服從,fuk6 cung4
@@ -3974,6 +4001,7 @@ char,pron
 咁易,gäm1 yi6
 好吃,häu2 hek2
 生產線,säng1 cæng2 sing1
+精子,zäng1 zi2
 倒轉,däu1 züng1
 爭勝,zäng1 säng1
 以為自己,yi1 wäi4 zi6 gi2
@@ -3982,10 +4010,12 @@ char,pron
 接載,zip2 zöi1
 荷包,ho4 bau1
 談話,tam4 wa6
+燦爛,cæng1 læng6
 話齋,wa6 zai1
 我話,ngo1 wa6
 新仔,säng1 zäi2
 行蹤,häng4 zung1
+長揸,cöng4 za1
 專屬,züng1 suk6
 磨合,mo4 häp6
 經濟體,gäng1 zäi1 täi2
@@ -4060,6 +4090,7 @@ char,pron
 轉職,züng1 zäk2
 例行,läi6 häng4
 紳士,säng1 si2
+瞓醒,fäng1 seng2
 咁多年,gäm1 do1 ning4
 長出,zöng2 cäk2
 全盛,cüng4 säng6
@@ -4068,6 +4099,7 @@ char,pron
 鮮花,sing1 fa1
 出車,cäk2 ce1
 遊樂,yäu4 lok6
+潛伏,cim4 fuk6
 好鍾意,häu2 zung1 yi1
 強人,köng4 yäng4
 好嘅,häu2 ge1
@@ -4113,12 +4145,15 @@ char,pron
 下風,ha6 fung1
 道別,däu6 bik6
 使乜,säi2 mäk2
+味精,mi6 zäng1
 輕判,häng1 pung1
 釀成,yöng6 säng4
 月經,ngük6 gäng1
 皇上,wong4 söng6
+起伏,hi2 fuk6
 成全,säng4 cüng4
 吃喝玩樂,hek2 fuk2 wung6 lok6
+精液,zäng1 yäk6
 點解我,dim2 gai2 ngo1
 村長,cüng1 zöng2
 難以置信,næng4 yi1 zi1 säng1
@@ -4205,10 +4240,12 @@ char,pron
 沒甚麼,muk6 säm6 mo1
 上連登,söng1 ling4 däng1
 聽人講,teng1 yäng4 gong2
+要俾,yiu1 bi2
 將近,zöng1 gäng6
 纜車,lam6 ce1
 尺度,cek2 du6
 繪畫,kwui2 wa6
+精明,zäng1 mäng4
 食到,säk6 däu1
 播映,bo1 yäng2
 傳銷,cüng4 siu1
@@ -4222,6 +4259,7 @@ char,pron
 賭仔,du2 zäi2
 覺悟,gok2 ng6
 追打,zöi1 da2
+喺邊度,häi2 bing1 du6
 射出,se6 cäk2
 有人話,yäu1 yäng4 wa6
 兄長,häng1 zöng2
@@ -4382,6 +4420,7 @@ char,pron
 順道,säng6 däu6
 自強,zi6 köng4
 為香港,wäi6 höng1 gong2
+精心,zäng1 säm1
 哪怕,na1 pa1
 平庸,päng4 yung4
 上圍,söng6 wäi4
@@ -4511,6 +4550,7 @@ char,pron
 切斷,cik2 tüng1
 咁少,gäm1 siu2
 好氣,häu2 hi1
+精通,zäng1 tung1
 醒起,säng2 hi2
 覺得我,gok2 däk2 ngo1
 假裝,ga2 zong1
@@ -4574,9 +4614,10 @@ char,pron
 工仔,gung1 zäi2
 用卡,yung6 ka1
 思覺失調,si1 gok2 säk2 tiu4
+俾個,bi2 go1
 卡通片,ka1 tung1 ping2
 所作所為,so2 zok2 so2 wäi4
-佢好似,kü1 häu2 ci1
+腐爛,fu6 læng6
 氣泡,hi1 pau1
 有生之年,yäu1 säng1 zi1 ning4
 詞彙,ci4 wui6
@@ -4612,7 +4653,6 @@ char,pron
 打過,da2 gwo1
 兩樣,löng1 yöng6
 速成,cuk2 säng4
-我覺得佢,ngo1 gok2 däk2 kü1
 做得好,zu6 däk2 häu2
 成行,säng4 häng4
 好飲,häu2 yäm2
@@ -4650,7 +4690,6 @@ char,pron
 少男,siu1 nam4
 好地地,häu2 di6 di6
 衰仔,söi1 zäi2
-以為佢,yi1 wäi4 kü1
 歲數,söi1 su1
 核爆,häk6 bau1
 轉而,züng1 yi4
@@ -4698,6 +4737,7 @@ char,pron
 心理醫生,säm1 li1 yi1 säng1
 頂替,däng2 täi1
 省市,sæng2 si1
+嗰種,go2 zung2
 節食,zik2 säk6
 味覺,mi6 gok2
 和音,wo6 yäm1
@@ -4779,7 +4819,6 @@ char,pron
 朋友仔,päng4 yäu1 zäi2
 驚奇,gäng1 ki4
 請勿,cäng2 mäk6
-佢食,kü1 säk6
 好日,häu2 yäk6
 水質,söi2 zäk2
 上唔到,söng6 m4 däu1
@@ -4792,13 +4831,13 @@ char,pron
 習近平,zap6 gäng6 päng4
 防毒,fong4 duk6
 真係唔好,zäng1 häi6 m4 häu2
-點解佢,dim2 gai2 kü1
 富士山,fu1 si6 sæng1
 微調,mi4 tiu4
 從來都,cung4 löi4 du1
 論調,läng6 diu6
 打發,da2 fæk2
 其實呢,ki4 säk6 ne1
+爛賭,læng6 du2
 多數都,do1 su1 du1
 地質,di6 zäk2
 守行為,säu2 häng4 wäi4
@@ -4823,6 +4862,7 @@ char,pron
 打掃,da2 säu1
 誤差,ng6 ca1
 也沒,ya1 muk6
+精簡,zäng1 gæng2
 核對,häk6 döi1
 毒打,duk6 da2
 張卡,zöng1 ka1
@@ -4840,7 +4880,6 @@ char,pron
 一會兒,yäk2 wui6 yi4
 直通車,zäk6 tung1 ce1
 彈弓,dæng6 gung1
-驚佢,geng1 kü1
 成形,säng4 yäng4
 升讀,säng1 duk6
 正數,zäng1 su1
@@ -4851,6 +4890,7 @@ char,pron
 長安,cöng4 wung1
 柔道,yäu4 däu6
 你聽,ni1 teng1
+潛伏期,cim4 fuk6 ki4
 鎖上,so2 söng1
 惡果,ok2 gwo2
 奢華,ce1 wa4
@@ -4864,6 +4904,7 @@ char,pron
 考核,hau2 häk6
 假定,ga2 däng6
 走難,zäu2 næng6
+伏線,fuk6 sing1
 平方,päng4 fong1
 爛仔,læng6 zäi2
 聽電話,teng1 ding6 wa2
@@ -4873,6 +4914,7 @@ char,pron
 自以為是,zi6 yi1 wäi4 si6
 好死,häu2 si2
 讀緊,duk6 gäng2
+精密,zäng1 mäk6
 傳教,cüng4 gäu1
 女伴,nü1 bung6
 下列,ha6 lik6
@@ -4880,7 +4922,6 @@ char,pron
 手推車,säu2 töi1 ce1
 平成,päng4 säng4
 雜種,zap6 zung2
-佢已經,kü1 yi1 gäng1
 重臨,cung4 läm4
 聽下,teng1 ha1
 集齊,zap6 cäi4
@@ -4888,6 +4929,7 @@ char,pron
 打消,da2 siu1
 打火機,da2 fo2 gi1
 封頂,fung1 deng2
+精髓,zäng1 söi1
 食慾,säk6 yuk6
 好諗,häu2 näm2
 係難,häi6 næng4
@@ -4895,9 +4937,9 @@ char,pron
 好好笑,häu2 häu2 siu1
 啱聽,ngam1 teng1
 直屬,zäk6 suk6
+伏筆,fuk6 bäk2
 膳食,sing6 säk6
 重讀,cung4 duk6
-聽佢,teng1 kü1
 條數,tiu4 su1
 成敗,säng4 bai6
 他朝,ta1 ziu1
@@ -4989,6 +5031,7 @@ char,pron
 玩味,wung6 mi6
 好大機會,häu2 dai6 gi1 wui6
 諗諗,näm2 näm2
+精美,zäng1 mi1
 就近,zäu6 gäng6
 都冇乜,du1 mäu1 mäk2
 準備好,zäng2 bi6 häu2
@@ -5076,6 +5119,7 @@ char,pron
 行去,hæng4 hü1
 微生物,mi4 säng1 mäk6
 想聽,söng2 teng1
+話俾,wa6 bi2
 跟從,gäng1 cung4
 隆重,lung4 zung6
 保平安,bäu2 päng4 wung1
@@ -5110,6 +5154,7 @@ char,pron
 間斷,gæng1 düng6
 成材,säng4 cöi4
 天馬行空,ting1 ma1 häng4 hung1
+精細,zäng1 säi1
 係好事,häi6 häu2 si6
 先上,sing1 söng1
 好型,häu2 yäng4
@@ -5196,11 +5241,11 @@ char,pron
 仲諗住,zung6 näm2 zü6
 好似仲,häu2 ci1 zung6
 爭霸,zäng1 ba1
-佢兩個,kü1 löng1 go1
 食油,säk6 yäu4
 重兵,cung1 bäng1
 心中有數,säm1 zung1 yäu1 su1
 有冇諗過,yäu1 mäu1 näm2 gwo1
+可以俾,ho2 yi1 bi2
 消散,siu1 sæng1
 格調,gæk2 diu6
 道教,däu6 gäu1
@@ -5221,7 +5266,6 @@ char,pron
 停車,täng4 ce1
 係錯,häi6 co1
 有錯,yäu1 co1
-係因為佢,häi6 yäng1 wäi6 kü1
 唔好搞,m4 häu2 gau2
 乜事,mäk2 si6
 上面有,söng6 ming6 yäu1
@@ -5275,6 +5319,7 @@ char,pron
 食個,säk6 go1
 好後,häu2 häu6
 沖淡,cung1 tam1
+好瞓,häu2 fäng1
 頑強,wæng4 köng4
 招生,ziu1 säng1
 好似我,häu2 ci1 ngo1
@@ -5312,6 +5357,7 @@ char,pron
 暴君,bäu6 gwäng1
 好憎,häu2 zäng1
 斷交,tüng1 gau1
+妖精,yiu2 zäng1
 你試下,ni1 si1 ha1
 是為,si6 wäi6
 為所欲為,wäi4 so2 yuk6 wäi4
@@ -5328,6 +5374,7 @@ char,pron
 兩邊都,löng1 bing1 du1
 解救,gai2 gäu1
 少不了,siu2 bäk2 liu1
+精神健康,zäng1 säng4 ging6 hong1
 度度,du6 du6
 比較好,bi2 gau1 häu2
 行刑,häng4 yäng4
@@ -5339,6 +5386,8 @@ char,pron
 修好,säu1 häu2
 見家長,ging1 ga1 zöng2
 一轉,yäk2 züng1
+又俾,yäu6 bi2
+唔好俾,m4 häu2 bi2
 使唔使,si2 m4 si2
 更有,gäng1 yäu1
 一時三刻,yäk2 si4 sam1 häk2
@@ -5350,6 +5399,7 @@ char,pron
 穩重,wäng2 zung6
 真係覺,zäng1 häi6 gok2
 就即刻,zäu6 zik2 häk2
+想俾,söng2 bi2
 的士佬,däk2 si2 läu2
 頂得順,däng2 däk2 säng6
 讀過,duk6 gwo1
@@ -5380,6 +5430,7 @@ char,pron
 後數,häu6 su1
 勞力士,läu4 läk6 si6
 屬意,suk6 yi1
+伏擊,fuk6 gäk2
 又覺,yäu6 gok2
 意會,yi1 wui6
 錯愕,co1 ngok6
@@ -5404,10 +5455,12 @@ char,pron
 背住,bui1 zü6
 交差,gau1 cai1
 下等,ha6 däng2
+你俾,ni1 bi2
 死頂,si2 däng2
 着緊,zök6 gäng2
 時光倒流,si4 gwong1 däu2 läu4
 傳話,cüng4 wa6
+打俾,da2 bi2
 行行企企,hæng4 hæng4 ki1 ki1
 全長,cüng4 cöng4
 金卡,gäm1 kæk2
@@ -5418,7 +5471,6 @@ char,pron
 耳塞,yi1 säk2
 兩間,löng1 gæng1
 下一代,ha6 yäk2 döi6
-打佢,da2 kü1
 有好多人,yäu1 häu2 do1 yäng4
 你已經,ni1 yi1 gäng1
 四驅車,si1 kü1 ce1
@@ -5483,6 +5535,7 @@ char,pron
 覺得個,gok2 däk2 go1
 輕聲,häng1 säng1
 生字,sæng1 zi6
+好多嘢,häu2 do1 ya1
 耕耘,gæng1 wäng4
 愛惜,wui1 säk2
 都成日,du1 säng4 yäk6
@@ -5493,11 +5546,11 @@ char,pron
 滋生,zi1 säng1
 失散,säk2 sæng1
 刺痛,ci1 tung1
+扑嘢,bok2 ya1
 巴打係,ba1 da2 häi6
 講得好,gong2 däk2 häu2
 核試,häk6 si1
 下沉,ha6 cäm4
-佢覺得,kü1 gok2 däk2
 滑行,wæk6 häng4
 拜會,bai1 wui6
 多好多,do1 häu2 do1
@@ -5559,6 +5612,7 @@ char,pron
 好慢,häu2 mæng6
 年紀輕輕,ning4 gi2 heng1 heng1
 出生地,cäk2 säng1 di6
+嗰下,go2 ha1
 更大,gäng1 dai6
 下路,ha6 lu6
 係諗住,häi6 näm2 zü6
@@ -5628,9 +5682,9 @@ char,pron
 覺得冇,gok2 däk2 mäu1
 平時都,päng4 si4 du1
 幫下,bong1 ha1
-佢成日,kü1 säng4 yäk6
 上校,söng6 gau1
 長和系,cöng4 wo4 häi6
+草蜢,cäu2 mang1
 咁似,gäm1 ci1
 健力士,ging6 läk6 si6
 強暴,köng4 bäu6
@@ -5663,6 +5717,7 @@ char,pron
 大陸仔,dai6 luk6 zäi2
 好感動,häu2 gäm2 dung6
 好賺,häu2 zæng6
+俾人打,bi2 yäng4 da2
 上官,söng6 gwung1
 彈跳,dæng6 tiu1
 唔少人,m4 siu2 yäng4
@@ -5703,6 +5758,7 @@ char,pron
 冇行,mäu1 hong4
 花車,fa1 ce1
 唔好亂,m4 häu2 lüng6
+俾狗,bi2 gäu2
 不好,bäk2 häu2
 經手,gäng1 säu2
 少可,siu2 ho2
@@ -5811,6 +5867,7 @@ char,pron
 核數,häk6 su1
 對數,döi1 su1
 高難,gäu1 næng4
+呢樣嘢,ni4 yöng6 ya1
 敬重,gäng1 zung6
 得來不易,däk2 löi4 bäk2 yi6
 通靈,tung1 läng4
@@ -5852,10 +5909,12 @@ char,pron
 毒癮,duk6 yäng1
 落毒,lok6 duk6
 私生子,si1 säng1 zi2
+精確,zäng1 kok2
 兩種,löng1 zung2
 外省,wui6 sæng2
 訓話,fäng1 wa6
 藍精靈,lam4 zäng1 läng4
+我俾,ngo1 bi2
 全軍覆沒,cüng4 gwäng1 fuk2 muk6
 頂癮,däng2 yäng1
 上壓,söng6 æk2
@@ -5906,6 +5965,7 @@ char,pron
 會社,wui6 se1
 長命百歲,cöng4 mäng6 bæk2 söi1
 架生,ga1 sæng1
+破爛,po1 læng6
 差少少,ca1 siu2 siu2
 巴打們,ba1 da2 mung4
 海難,fui2 næng6
@@ -5970,6 +6030,8 @@ char,pron
 響度,höng2 du6
 考慮下,hau2 lü6 ha6
 相伴,söng1 bung6
+俾心機,bi2 säm1 gi1
+俾人話,bi2 yäng4 wa6
 被子,pi1 zi2
 季經,gwäi1 gäng1
 逼使,bäk2 si2
@@ -6024,6 +6086,7 @@ char,pron
 支持下,zi1 ci4 ha6
 斷背,düng6 bui1
 話雖如此,wa6 söi1 yü4 ci2
+抵到爛,däi2 däu1 læng6
 轉做,züng2 zu6
 唔請,m4 ceng2
 成身,säng4 säng1
@@ -6051,6 +6114,7 @@ char,pron
 跟車太貼,gäng1 ce1 tai1 tip2
 熟讀,suk6 duk6
 不人道,bäk2 yäng4 däu6
+人精,yäng4 zäng1
 小吃,siu2 hek2
 大丈夫,dai6 zöng6 fu1
 調和,tiu4 wo4
@@ -6077,7 +6141,6 @@ char,pron
 盛產,säng6 cæng2
 部下,bu6 ha6
 參透,cam1 täu1
-好過佢,häu2 gwo1 kü1
 兩三個,löng1 sam1 go1
 垂青,söi4 cäng1
 校務,hau6 mu6
@@ -6106,6 +6169,7 @@ char,pron
 稀少,hi1 siu2
 好喇,häu2 la1
 好舒服,häu2 sü1 fuk6
+洗潔精,säi2 gik2 zäng1
 上釣,söng1 diu1
 好緊張,häu2 gäng2 zöng1
 諗得,säm2 däk2
@@ -6122,11 +6186,14 @@ char,pron
 發生過,fæk2 säng1 gwo1
 一路好走,yäk2 lu6 häu2 zäu2
 討論下,täu2 läng6 ha6
+俾自己,bi2 zi6 gi2
 難民營,næng6 mäng4 yäng4
 重挫,cung1 co1
 計數機,gäi1 su1 gi1
+精湛,zäng1 zam1
 工業行動,gung1 yip6 häng4 dung6
 遣散費,hing2 sæng2 fäi1
+爛泥,læng6 näi4
 磅重,bong6 cung1
 打趣,da2 cü1
 咁開心,gäm1 fui1 säm1
@@ -6146,6 +6213,7 @@ char,pron
 坐到,zo6 däu1
 怪獸家長,gwai1 säu1 ga1 zöng2
 諗係,näm2 häi6
+氹仔,täm1 zäi2
 轉到,züng2 däu1
 動彈,dung6 dæng6
 暴風雨,bäu6 fung1 yü1
@@ -6175,6 +6243,7 @@ char,pron
 好唔開心,häu2 m4 fui1 säm1
 食相,säk6 söng1
 向下,höng1 ha6
+爛攤子,læng6 tæng1 zi2
 拍住上,pæk2 zü6 söng1
 佔上風,zim1 söng6 fung1
 有幾難,yäu1 gi2 næng4
@@ -6192,6 +6261,7 @@ char,pron
 車卡,ce1 ka1
 私校,si1 hau6
 重鎮,zung6 zäng1
+俾人拉,bi2 yäng4 lai1
 長倉,cöng4 cong1
 重開,cung4 fui1
 風平浪靜,fung1 päng4 long6 zäng6
@@ -6200,6 +6270,7 @@ char,pron
 偏重,ping1 zung6
 好極,häu2 gik6
 不失為,bäk2 säk2 wäi4
+俾大家,bi2 dai6 ga1
 家常便飯,ga1 söng4 bing6 fæng6
 那種,na1 zung2
 台上,töi4 söng6
@@ -6249,6 +6320,7 @@ char,pron
 好少人,häu2 siu2 yäng4
 擔驚受怕,dam1 geng1 säu6 pa1
 錯處,co1 cü1
+撕爛,si1 læng6
 傳神,cüng4 säng4
 官話,gwung1 wa2
 險惡,him2 ok2
@@ -6295,6 +6367,7 @@ char,pron
 調戲,tiu4 hi1
 生不如死,säng1 bäk2 yü4 si2
 交惡,gau1 wu1
+雞精,gäi1 zäng1
 沒有人,muk6 yäu1 yäng4
 重寫,cung4 se2
 了斷,liu1 düng6
@@ -6310,6 +6383,7 @@ char,pron
 蛋散,dæng6 sæng2
 調情,tiu4 cäng4
 為錢,wäi4 cing4
+受精,säu6 zäng1
 醒目仔,säng2 muk6 zäi2
 團長,tüng4 cöng4
 較少,gau1 siu2
@@ -6368,6 +6442,7 @@ char,pron
 熊仔,hung4 zäi2
 隨和,cöi4 wo4
 降頭,gong1 täu4
+係我哋,häi6 ngo1 di1
 佛經,fäk6 gäng1
 多多少少,do1 do1 siu2 siu2
 好想要,häu2 söng2 yiu1
@@ -6375,6 +6450,7 @@ char,pron
 養車,yöng1 ce1
 車厘子,ce1 li4 zi2
 的士站,däk2 si2 zam6
+爛鬼,læng6 gwäi2
 生了,säng1 liu1
 越好,yük6 häu2
 留難,läu4 næng4
@@ -6409,6 +6485,7 @@ char,pron
 細蚊仔,säi1 mäng1 zäi2
 術數,säk6 su1
 數之不盡,su2 zi1 bäk2 zäng6
+咁多嘢,gäm2 do1 ya1
 角仔,gok2 zäi2
 兩棲,löng1 cäi1
 長做,cöng4 zu6
@@ -6438,6 +6515,7 @@ char,pron
 奉子成婚,fung6 zi2 säng4 fäng1
 亡靈,mong4 läng4
 會意,wui6 yi1
+精油,zäng1 yäu4
 弧度,wu4 du6
 長官,cöng4 gwung1
 長篇大論,cöng4 ping1 dai6 läng6
@@ -6484,6 +6562,7 @@ char,pron
 罹難,li4 næng6
 男仔頭,nam4 zäi2 täu4
 神打,säng4 da2
+瞓着,fäng1 zök6
 神經病,säng4 gäng1 beng6
 威士,wäi1 si2
 走上,zäu2 söng1
@@ -6517,6 +6596,7 @@ char,pron
 做緊乜,zu6 gäng2 mäk2
 打生打死,da2 sæng1 da2 si2
 背肌,bui1 gi1
+伏特,fuk6 däk6
 愛上,wui1 söng1
 大平賣,dai6 peng4 mai6
 經年,gäng1 ning4
@@ -6601,6 +6681,7 @@ char,pron
 重中之重,zung6 zung1 zi1 zung6
 長衫,cöng4 sam1
 刻板,häk2 bæng2
+狐狸精,wu4 li4 zäng1
 假想敵,ga2 söng2 däk6
 兜兜轉轉,däu1 däu1 züng1 züng1
 光鮮,gwong1 sing1
@@ -6626,6 +6707,7 @@ char,pron
 用電話,yung6 ding6 wa6
 下壓,ha6 æk2
 色差,säk2 ca1
+損手爛腳,süng2 säu2 læng6 gök2
 主題樂園,zü2 täi4 lok6 yüng4
 篤數,duk2 su1
 已成定局,yi1 säng4 däng6 guk6
@@ -6637,6 +6719,7 @@ char,pron
 降格,gong1 gæk2
 好過你,häu2 gwo1 ni1
 機會成本,gi1 wui6 säng4 bung2
+我哋都,ngo1 di1 du1
 淡靜,dam6 zäng6
 好搞笑,häu2 gau2 siu1
 研究下,ying4 gäu1 ha6
@@ -6673,6 +6756,7 @@ char,pron
 歷史上,läk6 si2 söng6
 作樂,zok2 lok6
 生態環境,säng1 tai1 wæng4 gäng2
+精神失常,zäng1 säng4 säk2 söng4
 黯淡,äm1 dam6
 識食,säk2 säk6
 毒梟,duk6 hiu1
@@ -6712,6 +6796,7 @@ char,pron
 坐以待斃,zo6 yi1 döi6 bäi6
 打橫行,da2 wæng4 hæng4
 聽書,teng1 sü1
+爛市,læng6 si1
 新車,säng1 ce1
 孖辮,ma1 bing1
 面青,ming6 ceng1
@@ -6798,6 +6883,7 @@ char,pron
 新牌仔,säng1 pai4 zäi2
 雙管齊下,söng1 gwung2 cäi4 ha6
 到此為止,däu1 ci2 wäi4 zi2
+我哋唔,ngo1 di1 m4
 盛夏,säng6 ha6
 十惡不赦,säp6 ok2 bäk2 se1
 甩難,läk2 næng6
@@ -6844,6 +6930,7 @@ char,pron
 此消彼長,ci2 siu1 bi2 zöng2
 而成,yi4 säng4
 三讀,sam1 duk6
+伏特加,fuk6 däk6 ga1
 右上,yäu6 söng6
 好去處,häu2 hü1 cü1
 另一種,läng6 yäk2 zung2
@@ -6862,6 +6949,7 @@ char,pron
 回鄉卡,wui4 höng1 kæk2
 百度,bæk2 du6
 客車,hæk2 ce1
+爛口,læng6 häu2
 試下用,si1 ha1 yung6
 上家,söng6 ga1
 不省人事,bäk2 säng2 yäng4 si6
@@ -6936,6 +7024,7 @@ char,pron
 海鮮價,fui2 sing1 ga1
 坐廁,zo6 ci1
 靈巧,läng4 hau2
+我哋係,ngo1 di1 häi6
 天生一對,ting1 sæng1 yäk2 döi1
 便可,bing6 ho2
 長途電話,cöng4 tu4 ding6 wa2
@@ -7061,6 +7150,7 @@ char,pron
 會客,wui6 hæk2
 性玩具,säng1 wung6 gü6
 下墜,ha6 zöi6
+我哋要,ngo1 di1 yiu1
 成行成市,säng4 hong4 säng4 si1
 上算,söng6 süng1
 莊重,zong1 zung6
@@ -7094,6 +7184,7 @@ char,pron
 水靈,söi2 läng4
 聽講話,teng1 gong2 wa6
 筆記簿,bäk2 gi1 bu2
+潰爛,kwui2 læng6
 失重,säk2 cung1
 刺蝟,ci1 wäi6
 假以時日,ga2 yi1 si4 yäk6
@@ -7136,7 +7227,9 @@ char,pron
 不少人,bäk2 siu2 yäng4
 打嘴,da2 zöi2
 笨重,bäng6 zung6
+精裝,zäng1 zong1
 長袖衫,cöng4 zäu6 sam1
+我哋一,ngo1 di1 yäk2
 拖數,to1 su1
 山下,sæng1 ha6
 生擒,sæng1 käm4
@@ -7149,6 +7242,7 @@ char,pron
 請飲,ceng2 yäm2
 生力軍,säng1 läk6 gwäng1
 話實,wa6 säk6
+不鏽鋼,bäk2 säu1 gong1
 汰弱留強,tai1 yök6 läu4 köng4
 種族清洗,zung2 zuk6 cäng1 säi2
 士人,si6 yäng4
@@ -7185,6 +7279,7 @@ char,pron
 樂理,ngok6 li1
 沙塵暴,sa1 cäng4 bäu6
 轉口風,züng1 häu2 fung1
+恒生,häng4 säng1
 覺眼,gok2 ngæng1
 下肢,ha6 zi1
 青出於藍,cäng1 cäk2 yü1 lam4
@@ -7205,6 +7300,7 @@ char,pron
 兩把,löng1 ba2
 賣豬仔,mai6 zü1 zäi2
 三更半夜,sam1 gæng1 bung1 ye6
+諗嘢,säm2 ya1
 各散東西,gok2 sæng2 dung1 säi1
 德行,däk2 häng6
 光頭仔,gwong1 täu4 zäi2
@@ -7286,6 +7382,7 @@ char,pron
 散沙,sæng2 sa1
 化為烏有,fa1 wäi4 wu1 yäu1
 一盤散沙,yäk2 pung4 sæng2 sa1
+精算師,zäng1 süng1 si1
 百毒不侵,bæk2 duk6 bäk2 cäm1
 出生入死,cäk2 säng1 yäp6 si2
 靚靚,leng1 leng1
@@ -7306,17 +7403,20 @@ char,pron
 格食格,gæk2 säk6 gæk2
 食風,säk6 fung1
 話落,wa6 lok6
+精進,zäng1 zäng1
 包青天,bau1 cäng1 ting1
 易容,yäk6 yung4
 撥打,buk6 da2
 前車可鑑,cing4 gü1 ho2 gam1
 十二生肖,säp6 yi6 säng1 ciu1
 真毒,zäng1 duk6
+拍爛手掌,pæk2 læng6 säu2 zöng2
 刷卡,cak2 kæk2
 車迷,ce1 mäi4
 印度人,yäng1 du6 yäng4
 兩架,löng1 ga1
 打打殺殺,da2 da2 sæk2 sæk2
+我哋就,ngo1 di1 zäu6
 絕頂,zük6 däng2
 行大運,hæng4 dai6 wäng6
 謠傳,yiu4 cüng4
@@ -7333,6 +7433,7 @@ char,pron
 修道,säu1 däu6
 更名,gäng1 mäng4
 食蟹,säk6 hai1
+精警,zäng1 gäng2
 愛華頓,wui1 wa4 däng6
 懷疑人生,wai4 yi4 yäng4 säng1
 不懷好意,bäk2 wai4 häu2 yi1
@@ -7372,6 +7473,7 @@ char,pron
 摺被,zip2 pi1
 頁數,yip6 su1
 長過,cöng4 gwo1
+伏屍,fuk6 si1
 一兩句,yäk2 löng1 gü1
 武士道,mu1 si6 däu6
 不一會,bäk2 yäk2 wui6
@@ -7433,8 +7535,10 @@ char,pron
 打蠟,da2 lap6
 荷葉,ho4 yip6
 兩面,löng1 ming6
+精良,zäng1 löng4
 彈槍,dæng6 cöng1
 街數,gai1 su1
+殺一儆百,sæk2 yäk2 gäng2 bæk2
 上市公司,söng1 si1 gung1 si1
 隨傳隨到,cöi4 cüng4 cöi4 däu1
 穿梭巴士,cüng1 so1 ba1 si2
@@ -7447,6 +7551,7 @@ char,pron
 長糧,cöng4 löng4
 校慶,hau6 häng1
 樂評,ngok6 päng4
+殺雞儆猴,sæk2 gäi1 gäng2 häu4
 燒着,siu1 zök6
 數次,su1 ci1
 整數,zäng2 su1
@@ -7458,11 +7563,13 @@ char,pron
 肺結核,fäi1 gik2 häk6
 下底,ha6 däi2
 潦倒,läu1 däu2
+呢單嘢,ni4 dæng1 ya1
 排解,pai4 gai2
 生鏽,sæng1 säu1
 靈界,läng4 gai1
 手下敗將,säu2 ha6 bai6 zöng1
 兩頭,löng1 täu4
+你哋唔,ni1 di1 m4
 生招牌,sæng1 ziu1 pai4
 被選為,bi6 süng2 wäi4
 縫合,fung4 häp6
@@ -7483,6 +7590,7 @@ char,pron
 難逢,næng4 fung4
 下半年,ha6 bung1 ning4
 好好先生,häu2 häu2 sing1 sæng1
+精於,zäng1 yü1
 着草,zök2 cäu2
 不良於行,bäk2 löng4 yü1 häng4
 赴會,fu6 wui6
@@ -7498,6 +7606,7 @@ char,pron
 不置可否,bäk2 zi1 ho2 fäu2
 難兄難弟,næng4 häng1 næng4 däi6
 天公地道,ting1 gung1 di6 däu6
+係你哋,häi6 ni1 di1
 功德無量,gung1 däk2 mu4 löng4
 目不轉睛,muk6 bäk2 züng2 zäng1
 生定,sæng1 däng6
@@ -7527,6 +7636,7 @@ char,pron
 見習生,ging1 zap6 säng1
 平房,päng4 fong4
 天長地久,ting1 cöng4 di6 gäu2
+精妙,zäng1 miu6
 旁門左道,pong4 mung4 zo2 däu6
 幾種,gi2 zung2
 卡關,ka1 gwæng1
@@ -7534,6 +7644,7 @@ char,pron
 誦經,zung6 gäng1
 花仔,fa1 zäi2
 輕心,häng1 säm1
+人哋唔,yäng4 di1 m4
 兩三個鐘,löng1 sam1 go1 zung1
 凹凸不平,näp2 däk6 bäk2 päng4
 自行車,zi6 häng4 ce1
@@ -7558,6 +7669,7 @@ char,pron
 鬼打,gwäi2 da2
 上契,söng1 käi1
 上列,söng6 lik6
+係人哋,häi6 yäng4 di1
 傾兩句,käng1 löng1 gü1
 生面口,sæng1 ming6 häu2
 為時已晚,wäi4 si4 yi1 mæng1
@@ -7600,10 +7712,12 @@ char,pron
 栓塞,sæng1 säk2
 不成文,bäk2 säng4 mäng4
 捕食,bu6 säk6
+人哋都,yäng4 di1 du1
 老鼠仔,läu1 sü2 zäi2
 爬上,pa4 söng1
 聽教聽話,teng1 gäu1 teng1 wa6
 正話,zäng1 wa6
+精煉,zäng1 ling6
 祖傳,zu2 cüng4
 不得其解,bäk2 däk2 ki4 gai2
 便攜,bing6 kwäi4
@@ -7657,6 +7771,7 @@ char,pron
 識話,säk2 wa6
 駝背,to4 bui1
 讀本,duk6 bung2
+香精,höng1 zäng1
 中國經濟,zung1 gwok2 gäng1 zäi1
 剛強,gong1 köng4
 食硬,säk6 ngæng6
@@ -7667,6 +7782,7 @@ char,pron
 上億,söng1 yäk2
 槍林彈雨,cöng1 läm4 dæng6 yü1
 耕作,gæng1 zok2
+人哋係,yäng4 di1 häi6
 稱兄道弟,cäng1 häng1 däu6 däi6
 行街紙,hæng4 gai1 zi2
 食價,säk6 ga1
@@ -7731,6 +7847,7 @@ char,pron
 舊好,gäu6 häu2
 器重,hi1 zung6
 四重奏,si1 cung4 zäu1
+博大精深,bok2 dai6 zäng1 säm1
 行雲流水,hæng4 wäng4 läu4 söi2
 農耕,nung4 gæng1
 天衣無縫,ting1 yi1 mu4 fung4
@@ -7751,6 +7868,8 @@ char,pron
 咬耳仔,ngau1 yi1 zäi2
 太平盛世,tai1 päng4 säng6 säi1
 爭逐,zäng1 zuk6
+伏兵,fuk6 bäng1
+人哋有,yäng4 di1 yäu1
 卡死,ka1 si2
 換上,wung6 söng1
 頂更,däng2 gæng1
@@ -7772,6 +7891,7 @@ char,pron
 吉普車,gäk2 pu2 ce1
 一兩隻,yäk2 löng1 zek2
 紐卡素,näu2 ka1 su1
+你哋係,ni1 di1 häi6
 少東,siu1 dung1
 生忌,sæng1 gi6
 度縮,dok6 suk2
@@ -7810,6 +7930,7 @@ char,pron
 卡利,ka1 li6
 散亂,sæng2 lüng6
 手作仔,säu2 zok2 zäi2
+做爛市,zu6 læng6 si1
 斷了,düng6 liu1
 暖和,nüng1 wo4
 責成,zæk2 säng4
@@ -7835,6 +7956,7 @@ char,pron
 數年,su1 ning4
 歡度,fung1 du6
 與世無爭,yü1 säi1 mu4 zäng1
+高低起伏,gäu1 däi1 hi2 fuk6
 去片,hü1 ping2
 強人所難,köng1 yäng4 so2 næng4
 揀飲擇食,gæng2 yäm2 zæk6 säk6
@@ -7877,6 +7999,7 @@ char,pron
 很容易,häng2 yung4 yi6
 椰青,ye4 ceng1
 易潔鑊,yi6 gik2 wok6
+精製,zäng1 zäi1
 廣州話,gwong2 zäu1 wa2
 老爺車,läu1 ye4 ce1
 生鐵,sæng1 tik2
@@ -7900,6 +8023,7 @@ char,pron
 青頭仔,ceng1 täu4 zäi2
 瞭如指掌,liu4 yü4 zi2 zöng2
 生人勿近,sæng1 yäng4 mäk6 gäng6
+絢爛,hüng1 læng6
 庭外和解,täng4 wui6 wo4 gai2
 海平面,fui2 päng4 ming6
 難為情,næng4 wäi4 cäng4
@@ -7932,8 +8056,10 @@ char,pron
 右下角,yäu6 ha6 gok2
 磨爛蓆,mo4 læng6 zek6
 生辰,säng1 säng4
+賤精,zing6 zäng1
 版畫,bæng2 wa6
 打響頭炮,da2 höng2 täu4 pau1
+諗掂,näm2 dim6
 生色,säng1 säk2
 吞吐量,täng1 tu1 löng6
 兩聲,löng1 säng1
@@ -7943,6 +8069,7 @@ char,pron
 一頂,yäk2 deng2
 咬文嚼字,ngau1 mäng4 zök2 zi6
 挨近,ai1 käng1
+俾唔俾,bi2 m4 bi2
 長實,cöng4 säk6
 發泡,fæk2 päu1
 肥仔水,fi4 zäi2 söi2
@@ -7951,12 +8078,14 @@ char,pron
 迄今為止,ngäk6 gäm1 wäi4 zi2
 即日鮮,zik2 yäk6 sing1
 煮食爐,zü2 säk6 lu4
+牛精,ngäu4 zäng1
 巴士佬,ba1 si2 läu2
 打落水狗,da2 lok6 söi2 gäu2
 養和,yöng1 wo4
 量地,löng4 di6
 省卻,sæng2 kök2
 榮華富貴,wäng4 wa4 fu1 gwäi1
+專精,züng1 zäng1
 伊士,yi1 si2
 腎虛,säng6 hü1
 打字機,da2 zi6 gi1
@@ -8013,6 +8142,7 @@ char,pron
 慢磨,mæng6 mo4
 電解質,ding6 gai2 zäk2
 黑吃黑,häk2 hek2 häk2
+爛頭卒,læng6 täu4 zäk2
 兩枝,löng1 zi1
 着落,zök6 lok6
 便要,bing6 yiu1
@@ -8031,6 +8161,7 @@ char,pron
 一刀兩斷,yäk2 däu1 löng1 düng6
 遇刺,yü6 ci1
 寸步難行,cüng1 bu6 næng4 häng4
+精工,zäng1 gung1
 青草,cäng1 cäu2
 計量,gäi1 löng6
 校訓,hau6 fäng1
@@ -8085,6 +8216,7 @@ char,pron
 凝神,yäng4 säng4
 安分,wung1 fäng6
 屈打成招,wäk2 da2 säng4 ziu1
+精神奕奕,zäng1 säng4 yäk6 yäk6
 坐骨神經,zo6 gwäk2 säng4 gäng1
 腔調,hong1 diu6
 粟米片,suk2 mai1 ping2
@@ -8102,6 +8234,7 @@ char,pron
 機靈,gi1 läng4
 公轉,gung1 züng1
 散漫,sæng2 mæng6
+劏車,tong1 ce1
 會議展覽,wui6 yi1 zing2 lam1
 打攪,da2 gau2
 鮮果,sing1 gwo2
@@ -8110,13 +8243,16 @@ char,pron
 食力,säk6 läk6
 數名,su1 mäng4
 眾志成城,zung1 zi1 säng4 säng4
+焦頭爛額,ziu1 täu4 læng6 ngæk6
 暴富,bäu6 fu1
+危機四伏,ngäi4 gi1 si1 fuk6
 使橫手,säi2 wæng4 säu2
 打書釘,da2 sü1 deng1
 好唔好食,häu2 m4 häu2 säk6
 樂於助人,lok6 yü1 zo6 yäng4
 山道,sæng1 däu6
 散水餅,sæng1 söi2 beng2
+精益求精,zäng1 yäk2 käu4 zäng1
 解款車,gai1 fung2 ce1
 姣好,gau2 häu2
 惡棍,ok2 gwäng1
@@ -8219,6 +8355,7 @@ char,pron
 請命,cäng2 mäng6
 黑白兩道,häk2 bæk6 löng1 däu6
 行宮,häng4 gung1
+好眼瞓,häu2 ngæng1 fäng1
 打江山,da2 gong1 sæng1
 以物易物,yi1 mäk6 yäk6 mäk6
 老公仔,läu1 gung1 zäi2
@@ -8246,9 +8383,11 @@ char,pron
 才使,cöi4 säi2
 獨行,duk6 häng4
 卡板,ka1 bæng2
+精壯,zäng1 zong1
 毒辣,duk6 læk6
 孝道,hau1 däu6
 引經據典,yäng1 gäng1 gü1 ding2
+兩餸飯,löng1 sung1 fæng6
 偽文青,ngäi6 mäng4 cäng1
 煞食,sæk2 säk6
 傻更更,so4 gæng1 gæng1
@@ -8259,6 +8398,7 @@ char,pron
 叢生,cung4 säng1
 苟且偷生,gäu2 ce2 täu1 säng1
 經濟論壇,gäng1 zäi1 läng6 tæng4
+精闢,zäng1 päk2
 便條,bing6 tiu4
 傳送門,cüng4 sung1 mung4
 釘子,deng1 zi2
@@ -8267,6 +8407,7 @@ char,pron
 迎刃而解,yäng4 yäng6 yi4 gai2
 識撈,säk2 läu1
 上舖,söng1 pu1
+中過伏,zung1 gwo1 fuk6
 轉寄,züng2 gi1
 質證,zäk2 zäng1
 黑啤,häk2 be1
@@ -8344,6 +8485,7 @@ char,pron
 強差人意,köng1 ca1 yäng4 yi1
 死都話,si2 du1 wa2
 不事生產,bäk2 si6 säng1 cæng2
+瞓下,fäng1 ha1
 為民除害,wäi6 mäng4 cü4 fui6
 魂飛魄散,wäng4 fi1 pæk2 sæng1
 杯水車薪,bui1 söi2 ce1 säng1
@@ -8354,6 +8496,7 @@ char,pron
 中巴士,zung1 ba1 si6
 打罵,da2 ma6
 領港,läng1 gong2
+撈得掂,läu1 däk2 dim6
 為民請命,wäi6 mäng4 cäng2 mäng6
 啞仔,a2 zäi2
 右轉,yäu6 züng2
@@ -8367,10 +8510,12 @@ char,pron
 解夢,gai2 mung6
 量入為出,löng6 yäp6 wäi4 cäk2
 平易,päng4 yi6
+精盡人亡,zäng1 zäng6 yäng4 mong4
 吊臂車,diu1 bi1 ce1
 乾淨企理,gung1 zäng6 ki1 li1
 險象環生,him2 zöng6 wæng4 säng1
 有口難言,yäu1 häu2 næng4 ying4
+爛命,læng6 mäng6
 十度,säp6 du6
 處變不驚,cü1 bing1 bäk2 gäng1
 上訴法庭,söng6 su1 fæk2 täng4
@@ -8382,6 +8527,7 @@ char,pron
 第二種,däi6 yi6 zung2
 啱使,ngam1 säi2
 心領神會,säm1 läng1 säng4 wui6
+俾人屌,bi2 yäng4 diu2
 必不可少,bik2 bäk2 ho2 siu2
 刺刀,ci1 däu1
 代數,döi6 su1
@@ -8398,6 +8544,7 @@ char,pron
 粵語殘片,yük6 yü1 cæng4 ping2
 衞生巾,wäi6 säng1 gäng1
 從長計議,cung4 cöng4 gäi1 yi1
+精深,zäng1 säm1
 便意,bing6 yi1
 二手車,yi6 säu2 ce1
 靈柩,läng4 gäu1
@@ -8421,14 +8568,17 @@ char,pron
 刀背,däu1 bui1
 龜背,gwäi1 bui1
 吃完,hek2 yüng4
+糜爛,mi4 læng6
 牛仔布,ngäu4 zäi2 bu1
 周打,zäu1 da2
+精神抖擻,zäng1 säng4 däu2 säu2
 氣頂,hi1 däng2
 穴道,yük6 däu6
 兩道,löng1 däu6
 視覺藝術,si6 gok2 ngäi6 säk6
 聽下歌,teng1 ha1 go1
 晏覺,æng1 gau1
+嗰行,go2 hong4
 好頭好尾,häu2 täu4 häu2 mi1
 妄為,mong1 wäi4
 解款員,gai1 fung2 yüng4
@@ -8437,16 +8587,19 @@ char,pron
 從簡,cung4 gæng2
 重修舊好,cung4 säu1 gäu6 häu2
 起重機,hi2 cung1 gi1
+精舍,zäng1 se1
 坐緊監,co1 gäng2 gam1
 付諸行動,fu6 zü1 häng4 dung6
 阿華田,o1 wa4 ting4
 十下,säp6 ha1
+伏唔伏,fuk6 m4 fuk6
 倚重,yi2 zung6
 三番,sam1 fæng1
 蛇鼠一窩,se4 sü2 yäk2 wo1
 少壯,siu2 zong1
 第一行,däi6 yäk2 hong4
 家道中落,ga1 däu6 zung1 lok6
+爛醉,læng6 zöi1
 同仇敵愾,tung4 säu4 däk6 kwui1
 精讀,zäng1 duk6
 謹言慎行,gäng2 ying4 säng6 häng4
@@ -8465,6 +8618,7 @@ char,pron
 食人族,säk6 yäng4 zuk6
 傳世,cüng4 säi1
 打鐘,da2 zung1
+撳錯,gäm6 co1
 近住,gäng6 zü6
 磨拳擦掌,mo4 küng4 cæk2 zöng2
 華富,wa4 fu1
@@ -8488,6 +8642,7 @@ char,pron
 一兩首,yäk2 löng1 säu2
 審時度勢,säm2 si4 dok6 säi1
 打唔打得,da2 m4 da2 däk2
+攞着數,lo2 zök6 su1
 發人深省,fæk2 yäng4 säm1 säng2
 有度,yäu1 du6
 遠道,yüng1 däu6
@@ -8540,6 +8695,7 @@ char,pron
 學下人,hok6 ha1 yäng4
 奇難雜症,ki4 næng4 zap6 zäng1
 爛仔交,læng6 zäi2 gau1
+未瞓醒,mi6 fäng1 seng2
 名不經傳,mäng4 bäk2 gäng1 cüng4
 誤中副車,ng6 zung1 fu1 gü1
 排排坐,pai4 pai4 co1
@@ -8548,6 +8704,7 @@ char,pron
 敢為,gäm2 wäi4
 可唔可行,ho2 m4 ho2 häng4
 咪頭,mäi1 täu4
+受精卵,säu6 zäng1 läng2
 成日播,seng4 yäk6 bo1
 相士,söng1 si6
 縮數,suk2 su1
@@ -8559,11 +8716,14 @@ char,pron
 駕輕就熟,ga1 heng1 zäu6 suk6
 龜仔,gwäi1 zäi2
 湧上,yung2 söng6
+生劏,sæng1 tong1
 上過去,söng1 gwo1 hü1
 數打,su1 da1
 他調,ta1 tiu4
 傳揚,cüng4 yöng4
+科學精神,fo1 hok6 zäng1 säng4
 扶靈,fu4 läng4
+嫁俾,ga1 bi2
 幾滴,gi2 däk6
 好人卡,häu2 yäng4 kæk2
 和氣生財,wo4 hi1 säng1 cöi4
@@ -8578,6 +8738,7 @@ char,pron
 邱騰華,yäu1 täng4 wa4
 形而上,yäng4 yi4 söng6
 軟皮蛇,yüng1 pi4 se4
+攞假,lo2 ga1
 水墨畫,söi2 mäk6 wa6
 相映,söng1 yäng2
 上賓,söng6 bäng1
@@ -8585,6 +8746,7 @@ char,pron
 狐假虎威,wu4 ga2 fu2 wäi1
 校徽,hau6 fäi1
 夜長夢多,ye6 cöng4 mung6 do1
+爛漫,læng6 mæng6
 深仇大恨,säm1 säu4 dai6 häng6
 生死有命,säng1 si2 yäu1 mäng6
 穿着,cüng1 zök6
@@ -8666,7 +8828,6 @@ char,pron
 打石膏,da2 sek6 gäu1
 好得過,häu2 däk2 gwo1
 一兩件,yäk2 löng1 ging6
-佢咁,kü1 gäm1
 曲終人散,kuk2 zung1 yäng4 sæng1
 投生,täu4 säng1
 華山,wa4 sæng1
@@ -8678,6 +8839,7 @@ char,pron
 打個突,da2 go1 däk6
 打嘴巴,da2 zöi2 ba1
 打政府工,da2 zäng1 fu2 gung1
+掂行掂過,dim6 hæng4 dim6 gwo1
 解唔解,gai2 m4 gai2
 泡飯,pau1 fæng6
 頂真,däng2 zäng1
@@ -8686,6 +8848,7 @@ char,pron
 十成十,säp6 säng4 säp6
 長生津,zöng2 sæng1 zäng1
 一兩粒,yäk2 löng1 näp2
+爛命一條,læng6 mäng6 yäk2 tiu4
 傳家,cüng4 ga1
 久經,gäu2 gäng1
 輕工業,häng1 gung1 yip6
@@ -8704,6 +8867,7 @@ char,pron
 禮崩樂壞,läi1 bäng1 ngok6 wai6
 命數,mäng6 su1
 食屎啦,säk6 si2 la1
+精氣神,zäng1 hi1 säng4
 繁盛,fæng4 säng6
 核桃,häk6 täu4
 飛機仔,fi1 gi1 zäi2
@@ -8750,6 +8914,7 @@ char,pron
 侍仔,si6 zäi2
 邊個靚,bing1 go1 leng1
 初生,co1 säng1
+瞓唔着,fäng1 m4 zök6
 卡爾文,ka1 yi1 mäng4
 釘蓋,deng1 gwui1
 腳踏車,gök2 dap6 ce1
@@ -8797,8 +8962,10 @@ char,pron
 不得要領,bäk2 däk2 yiu1 läng1
 重婚,cung4 fäng1
 應運而生,yäng1 wäng6 yi4 säng1
+蒲精,pu4 zäng1
 專上教育,züng1 söng6 gäu1 yuk6
 坐波監,co1 bo1 gam1
+瞓晏覺,fäng1 æng1 gau1
 驚慌失措,gäng1 fong1 säk2 cu1
 韓國仔,fung4 gwok2 zäi2
 稽查,käi1 ca4
@@ -8853,6 +9020,7 @@ char,pron
 拼車,päng1 ce1
 上班一族,söng1 bæng1 yäk2 zuk6
 華潤,wa4 yäng6
+集中精神,zap6 zung1 zäng1 säng4
 轉過身,züng1 gwo1 säng1
 大力士,dai6 läk6 si6
 第一種,däi6 yäk2 zung2
@@ -8908,6 +9076,7 @@ char,pron
 抱着,päu1 zök6
 水耕,söi2 gæng1
 爭食,zæng1 säk6
+精神爽利,zäng1 säng4 song2 li6
 重唔重要,zung6 m4 zung6 yiu1
 打天才波,da2 ting1 cöi4 bo1
 的士狗,däk2 si2 gäu2
@@ -8936,6 +9105,7 @@ char,pron
 以暴制暴,yi1 bäu6 zäi1 bäu6
 孖咇,ma1 bik2
 食咖喱,säk6 ga1 li1
+精奇,zäng1 ki4
 鏟青,cæng2 ceng1
 呼和浩特,fu1 wo4 häu6 däk6
 恆生指數,häng4 säng1 zi2 su1
@@ -8947,6 +9117,7 @@ char,pron
 生靈塗炭,säng1 läng4 tu4 tæng1
 上下水,söng6 ha1 söi2
 着時,zök6 si4
+俾次,bi2 ci1
 點理解,dim2 li1 gai2
 倒汗水,däu1 fung6 söi2
 兩口,löng1 häu2
@@ -9020,6 +9191,7 @@ char,pron
 打得通,da2 däk2 tung1
 公報私仇,gung1 bäu1 si1 säu4
 魯蛇,lu1 se4
+麥精,mæk6 zäng1
 懵仔針,mung2 zäi2 zäm1
 運數,wäng6 su1
 傳呼機,cüng4 fu1 gi1
@@ -9037,6 +9209,7 @@ char,pron
 狗仔粉,gäu2 zäi2 fäng2
 乾爭爭,gung1 zäng1 zäng1
 降服,hong4 fuk6
+攞下,lo2 ha1
 聯和墟,lüng4 wo4 hü1
 婆仔鞋,po4 zäi2 hai4
 三年抱兩,sam1 ning4 päu1 löng1
@@ -9072,6 +9245,8 @@ char,pron
 兩節,löng1 zik2
 唔數,m4 su2
 每下,mui1 ha1
+生嘢,sæng1 ya1
+爛佬,læng6 läu2
 冒險樂園,mäu6 him2 lok6 yüng4
 五下,ng1 ha1
 散失,sæng1 säk2
@@ -9085,6 +9260,8 @@ char,pron
 好膽,häu2 dam2
 飲飽食醉,yäm2 bau2 säk6 zöi1
 有泡,yäu1 pau1
+爛滾,læng6 gwäng2
+龍馬精神,lung4 ma1 zäng1 säng4
 衰仔紙,söi1 zäi2 zi2
 識行識走,säk2 hæng4 säk2 zäu2
 大乘,dai6 säng4
@@ -9382,6 +9559,7 @@ char,pron
 月經杯,ngük6 gäng1 bui1
 其利斷金,ki4 li6 düng1 gäm1
 老坐,läu1 co1
+收伏,säu1 fuk6
 食奶,säk6 nai1
 梳打餅,so1 da2 beng2
 上下堂,söng1 ha1 tong4
@@ -9409,6 +9587,7 @@ char,pron
 襟撈,käm1 läu1
 惡念,ok2 nim6
 睡醒,söi6 seng2
+揸上手,za1 söng1 säu2
 青靚,ceng1 leng1
 打混,da2 wäng6
 門仔,mung4 zäi2
@@ -9419,6 +9598,7 @@ char,pron
 打敗仗,da2 bai6 zöng1
 無下限,mu4 ha1 hæng6
 腎上腺素,säng6 söng6 sing1 su1
+死做爛做,si2 zu6 læng6 zu6
 消解,siu1 gai2
 自治領,zi6 zi6 läng1
 取樂,cü2 lok6
@@ -9471,6 +9651,7 @@ char,pron
 反守為攻,fæng2 säu2 wäi4 gung1
 放下手,fong1 ha1 säu2
 兩副,löng1 fu1
+屙爛屎,o1 læng6 si2
 拍卡,pæk2 kæk2
 新冠病毒,säng1 gwung1 beng6 duk6
 時刻表,si4 häk2 biu2
@@ -9482,6 +9663,8 @@ char,pron
 校本,hau6 bung2
 刻版,häk2 bæng2
 輕熟女,häng1 suk6 nü1
+嘢少,ya1 siu2
+溶溶爛爛,yung4 yung4 læng6 læng6
 省城,sæng2 säng4
 世風日下,säi1 fung1 yäk6 ha6
 洲仔,zäu1 zäi2
@@ -9509,6 +9692,7 @@ char,pron
 屏息靜氣,bäng2 säk2 zäng6 hi1
 坐移民監,co1 yi4 mäng4 gam1
 乾枯,gung1 fu1
+喺唔喺度,häi2 m4 häi2 du6
 海鮮醬,fui2 sing1 zöng1
 嚴唔嚴重,yim4 m4 yim4 zung6
 燕麥片,ying1 mæk6 ping2
@@ -9518,6 +9702,7 @@ char,pron
 散手,sæng2 säu2
 射龜,se6 gwäi1
 霜降,söng1 gong1
+精巧,zäng1 hau2
 朝思暮想,ziu1 si1 mu6 söng2
 巴士飛,ba1 si2 fi1
 擦背,cæk2 bui1
@@ -9568,6 +9753,7 @@ char,pron
 易守難攻,yi6 säu2 næng4 gung1
 兩台,löng1 töi4
 平年,päng4 ning4
+食完嘢,säk6 yüng4 ya1
 數服,su1 fuk6
 數根,su1 gäng1
 數據機,su1 gü1 gi1
@@ -9603,6 +9789,7 @@ char,pron
 化險為夷,fa1 him2 wäi4 yi4
 豪強,häu4 köng4
 人強馬壯,yäng4 köng4 ma1 zong1
+爛地,læng6 di6
 凹凹凸凸,näp2 näp2 däk6 däk6
 平輩,päng4 bui1
 散架,sæng2 ga1
@@ -9641,6 +9828,7 @@ char,pron
 化敵為友,fa1 däk6 wäi4 yäu1
 警暴,gäng2 bäu6
 倚仗,yi2 zöng6
+買餸車,mai1 sung1 ce1
 磨刀石,mo4 däu1 sek6
 無所作為,mu4 so2 zok2 wäi4
 譬如話,pi1 yü4 wa6
@@ -9658,6 +9846,7 @@ char,pron
 靈符,läng4 fu4
 落過仔,lok6 gwo1 zäi2
 請飲茶,ceng2 yäm2 ca4
+除笨有精,cü4 bäng6 yäu1 zeng1
 彈道飛彈,dæng6 däu6 fi1 dæng6
 減下肥,gam2 ha1 fi4
 兩題,löng1 täi4
@@ -9666,9 +9855,11 @@ char,pron
 省鏡,sæng2 geng1
 水牛芝士,söi2 ngäu4 zi1 si2
 上輩,söng6 bui1
+精忠報國,zäng1 zung1 bäu1 gwok2
 整整下,zäng2 zäng2 ha1
 做磨心,zu6 mo4 säm1
 頂酒,däng2 zäu2
+恒生大學,häng4 säng1 dai6 hok6
 響尾蛇,höng2 mi1 se4
 留種,läu4 zung2
 兩三條,löng1 sam1 tiu4
@@ -9676,6 +9867,7 @@ char,pron
 五種,ng1 zung2
 年輕力壯,ning4 häng1 läk6 zong1
 死仔包,si2 zäi2 bau1
+揸開車,za1 fui1 ce1
 坐唔坐,zo6 m4 zo6
 幫下眼,bong1 ha1 ngæng1
 打鼻鼾,da2 bi6 fung4
@@ -9702,6 +9894,7 @@ char,pron
 兩家茶禮,löng1 ga1 ca4 läi1
 兩艘,löng1 säu2
 兩袖清風,löng1 zäu6 cäng1 fung1
+孭仔燈,me1 zäi2 däng1
 三五成羣,sam1 ng1 säng4 kwäng4
 生菜魚肉,sæng1 cöi1 yü4 yuk6
 天下無雙,ting1 ha6 mu4 söng1
@@ -9773,6 +9966,7 @@ char,pron
 私人醒,si1 yäng4 säng2
 調兵遣將,diu6 bäng1 hing2 zöng1
 斷魂,düng1 wäng4
+瞓地下,fäng1 di6 ha6
 呱呱嘈,gwa1 gwa1 cäu4
 有限度,yäu1 hæng6 du6
 野種,ye1 zung2
@@ -9797,11 +9991,13 @@ char,pron
 俗話,zuk6 wa6
 塞外,cöi1 wui6
 枯乾,fu1 gung1
+伏虎,fuk6 fu2
 解元,gai2 yüng4
 隔夜仇,gæk2 ye6 säu4
 核裂變,häk6 lik6 bing1
 印度神油,yäng1 du6 säng4 yäu4
 人靚聲甜,yäng4 leng1 säng1 tim4
+冚被,käm2 pi1
 強鹼,köng4 gæng2
 劉業強,läu4 yip6 köng4
 連道,ling4 däu6
@@ -9809,6 +10005,7 @@ char,pron
 平陰,päng4 yäm1
 神經毒素,säng4 gäng1 duk6 su1
 生命跡象,säng1 mäng6 zäk2 zöng6
+揸數,za1 su1
 擇使,zæk6 säi2
 粘米粉,zim1 mai1 fäng2
 傳播媒介,cüng4 bo1 mui4 gai1
@@ -9853,6 +10050,7 @@ char,pron
 廢話少講,fäi1 wa2 siu2 gong2
 康生,hong1 säng1
 一體兩面,yäk2 täi2 löng1 ming6
+孭仔,me1 zäi2
 平方公尺,päng4 fong1 gung1 cek2
 捨己為人,se2 gi2 wäi6 yäng4
 死賤種,si2 zing6 zung2
@@ -9868,6 +10066,7 @@ char,pron
 一兩樣,yäk2 löng1 yöng6
 耳仔邊,yi1 zäi2 bing1
 兩千萬,löng1 cing1 mæng6
+龍精虎猛,lung4 zäng1 fu2 mæng1
 女體盛,nü1 täi2 säng6
 五度,ng1 du6
 奧斯汀,äu1 si1 däng1
@@ -9912,8 +10111,11 @@ char,pron
 達卡,dæk6 ka1
 毒龍鑽,duk6 lung4 züng1
 富士蘋果,fu1 si6 päng4 gwo2
+嗰頭近,go2 täu4 käng1
+滾瓜爛熟,gwäng2 gwa1 læng6 suk6
 河豚毒素,ho4 tüng4 duk6 su1
 一兩套,yäk2 löng1 täu1
+領嘢,leng1 ya1
 泡澡,pau1 cäu1
 生借,sæng1 ze1
 數股,su1 gwu2
@@ -9959,6 +10161,7 @@ char,pron
 招請,ziu1 cäng2
 蔣經國,zöng2 gäng1 gwok2
 半工讀,bung1 gung1 duk6
+拆爛,cæk2 læng6
 重口,cung1 häu2
 第一道,däi6 yäk2 däu6
 道姑,däu6 gwu1
@@ -9994,6 +10197,7 @@ char,pron
 四靈,si1 läng4
 梳打埠,so1 da2 fäu6
 宣道,süng1 däu6
+精叻,zeng1 lek2
 浙江省,zik2 gong1 sæng2
 啤殼,be1 hok2
 邊便,bing1 bing6
@@ -10027,6 +10231,7 @@ char,pron
 生僻,sæng1 päk2
 盛景,säng6 gäng2
 歎下,tæng1 ha1
+揸緊車,za1 gäng2 ce1
 早上好,zäu2 söng6 häu2
 差一皮,ca1 yäk2 pi4
 大小通吃,dai6 siu2 tung1 hek2
@@ -10042,6 +10247,7 @@ char,pron
 瑞士卷,söi6 si6 güng2
 數發,su1 fæk2
 畫圓,wæk6 yüng4
+蚱蜢,za1 mæng2
 仔爺,zäi2 ye4
 冰片,bäng1 ping1
 超經驗,ciu1 gäng1 yim6
@@ -10086,6 +10292,7 @@ char,pron
 殘暴不仁,cæng4 bäu6 bäk2 yäng4
 青龍頭,cäng1 lung4 täu4
 大中華膠,dai6 zung1 wa4 gau1
+瞓緊覺,fäng1 gäng2 gau1
 腳頭好,gök2 täu4 häu2
 干諾道中,gwung1 nok6 däu6 zung1
 爛生,læng6 sæng1
@@ -10098,6 +10305,7 @@ char,pron
 數本,su1 bung2
 酸鹼度,süng1 gæng2 du6
 太平道,tai1 päng4 däu6
+體育精神,täi2 yuk6 zäng1 säng4
 頭重腳輕,täu4 cung1 gök2 heng1
 拖着,to1 zök6
 衞生紙,wäi6 säng1 zi2
@@ -10106,6 +10314,7 @@ char,pron
 釘官,deng1 gwung1
 瓣數,fæng6 su1
 強檢,köng1 gim2
+爛銅爛鐵,læng6 tung4 læng6 tik2
 散收收,sæng2 säu1 säu1
 塞耳,säk2 yi1
 深度遊,säm1 du6 yäu4
@@ -10122,6 +10331,8 @@ char,pron
 江蘇省,gong1 su1 sæng2
 魚生粥,yü4 sæng1 zuk2
 軟木塞,yüng1 muk6 säk2
+爛賭鬼,læng6 du2 gwäi2
+爛熟,læng6 suk6
 靈恩,läng4 yäng1
 靈魂深處,läng4 wäng4 säm1 cü1
 柯士甸道,o1 si6 ding6 däu6
@@ -10148,10 +10359,12 @@ char,pron
 辭彙,ci4 wui6
 青洲,cäng1 zäu1
 花旗銀行,fa1 ki4 ngäng4 hong4
+伏味,fuk6 mi6
 解唔解決,gai2 m4 gai2 kük2
 甘道,gäm1 däu6
 鹹淡水,ham4 tam1 söi2
 刻寫,häk2 se2
+恒生銀行,häng4 säng1 ngäng4 hong4
 恰如其分,häp2 yü4 ki4 fäng6
 吃重,hek2 cung1
 可以唔使,ho2 yi1 m4 säi2
@@ -10183,6 +10396,7 @@ char,pron
 乾兒子,gung1 yi4 zi2
 下白泥,ha6 bæk6 näi4
 好飲得,häu2 yäm2 däk2
+爛溶溶,læng6 yung4 yung4
 唔乾,m4 gung1
 磨礪,mo4 läi6
 剝花生,mok2 fa1 säng1
@@ -10194,6 +10408,7 @@ char,pron
 聽出耳油,teng1 cäk2 yi1 yäu4
 話頭醒尾,wa6 täu4 säng2 mi1
 倭人,wo1 yäng4
+揸大膽車,za1 dai6 dam2 ce1
 剩落,zäng6 lok6
 轉聲,züng1 säng1
 包被,bau1 pi1
@@ -10276,6 +10491,7 @@ char,pron
 地頭蛇,di6 täu4 se4
 讀熟,duk6 suk6
 驚西,geng1 säi1
+嗰道,go2 däu6
 講就易,gong2 zäu6 yi6
 限時限刻,hæng6 si4 hæng6 häk2
 核子武器,häk6 zi2 mu1 hi1
@@ -10293,13 +10509,13 @@ char,pron
 調笑,tiu4 siu1
 土質,tu2 zäk2
 畫匠,wa6 zöng6
+仔乸,zäi2 na2
 真空上陣,zäng1 hung1 söng1 zäng6
 嫉惡如仇,zäk6 ok2 yü4 säu4
 白菜仔,bæk6 cöi1 zäi2
 邊頂,bing1 deng2
 出生證,cäk2 sæng1 zäng1
 長釘,cöng4 deng1
-打柒佢,da2 cäk2 kü1
 淡藍色,dam6 lam4 säk2
 寬宏大量,fung1 wäng4 dai6 löng6
 縫補,fung4 bu2
@@ -10335,6 +10551,7 @@ char,pron
 學師仔,hok6 si1 zäi2
 行口,hong4 häu2
 兩串,löng1 cüng1
+老人精,läu1 yäng4 zäng1
 孖鋪,ma1 pu1
 難友,næng6 yäu1
 安樂椅,wung1 lok6 yi2
@@ -10345,8 +10562,10 @@ char,pron
 為勢所逼,wäi4 säi1 so2 bäk2
 緩急輕重,wung6 gäp2 häng1 cung1
 仔隧,zäi2 söi6
+精微,zäng1 mi4
 精華素,zäng1 wa4 su1
 不可數,bäk2 ho2 su2
+俾着,bi2 zök6
 曾經滄海,cäng4 gäng1 cong1 fui2
 坐冷板凳,co1 læng1 bæng2 däng1
 打胎,da2 töi1
@@ -10388,6 +10607,7 @@ char,pron
 蛇尾,se4 mi1
 水上樂園,söi2 söng6 lok6 yüng4
 食過夜粥,säk6 gwo1 ye6 zuk2
+燒嘢食,siu1 ya1 säk6
 少見多怪,siu2 ging1 do1 gwai1
 數百年,su1 bæk2 ning4
 話事啤,wa6 si6 pe1
@@ -10395,6 +10615,7 @@ char,pron
 飽讀詩書,bau2 duk6 si1 sü1
 便利性,bing6 li6 säng1
 車蓋,ce1 gwui1
+此起彼伏,ci2 hi2 bi2 fuk6
 青竹蛇,cäng1 zuk2 se4
 長子嫡孫,cöng4 zi2 däk2 süng1
 大阪燒,dai6 bæng2 siu1
@@ -10416,6 +10637,7 @@ char,pron
 天打雷劈,ting1 da2 löi4 pek2
 聽死,täng1 si2
 台山話,töi4 sæng1 wa2
+精挑細選,zäng1 tiu1 säi1 süng2
 整理下,zäng2 li1 ha1
 鏟雪車,cæng2 sük2 ce1
 青嶼幹線,cäng1 zü6 gwung1 sing1
@@ -10433,6 +10655,7 @@ char,pron
 恭請,gung1 cäng2
 公仔紙,gung1 zäi2 zi2
 合數,häp6 su1
+學藝未精,hok6 ngäi6 mi6 zäng1
 好大件,häu2 dai6 ging6
 好聽點,häu2 teng1 dim2
 蛇餅,yi4 beng2
@@ -10440,8 +10663,10 @@ char,pron
 偶數,ngäu1 su1
 垂涎欲滴,söi4 ying4 yuk6 däk6
 瑞士人,söi6 si6 yäng4
+屎蜢,si2 mæng2
 盛情難卻,säng6 cäng4 næng4 kök2
 鬆泡泡,sung1 pau1 pau1
+鐵鏽,tik2 säu1
 唐生菜,tong4 sæng1 cöi1
 圍讀,wäi4 duk6
 黃片,wong4 ping2
@@ -10465,6 +10690,7 @@ char,pron
 廖長江,liu6 cöng4 gong1
 唔塞,m4 säk2
 咪書,mäi1 sü1
+孭上身,me1 söng1 säng1
 五雷轟頂,ng1 löi4 gwäng1 deng2
 安華,wung1 wa4
 生死之交,säng1 si2 zi1 gau1
@@ -10529,6 +10755,7 @@ char,pron
 陶笛,täu4 dek6
 玩住先,wæng4 zü6 sing1
 換句話講,wung6 gü1 wa6 gong2
+酒精性,zäu2 zäng1 säng1
 捶打,cöi4 da2
 切片檢查,cik2 ping2 gim2 ca4
 槍刺,cöng1 ci1
@@ -10561,6 +10788,8 @@ char,pron
 事發經過,si6 fæk2 gäng1 gwo1
 數聲,su1 säng1
 唐話,tong4 wa2
+精仔,zeng1 zäi2
+精衞,zäng1 wäi6
 長幼有序,zöng2 yäu1 yäu1 zü6
 賬簿,zöng1 bu2
 逼良為娼,bäk2 löng4 wäi4 cöng1
@@ -10615,6 +10844,7 @@ char,pron
 拖好,to1 häu2
 爭住食,zæng1 zü6 säk6
 爭妍鬥麗,zäng1 ying4 däu1 läi6
+精甩尾,zeng1 läk2 mi1
 壓驚,æk2 gäng1
 包伙食,bau1 fo2 säk6
 比畫,bi2 wæk6
@@ -10672,6 +10902,7 @@ char,pron
 一時半刻,yäk2 si4 bung1 häk2
 養樂多,yöng1 lok6 do1
 原片,yüng4 ping2
+冚數,käm2 su1
 兩婆孫,löng1 po4 süng1
 六種,luk6 zung2
 孖四,ma1 si1
@@ -10690,6 +10921,7 @@ char,pron
 為口奔馳,wäi6 häu2 bäng1 ci4
 雜差,zap6 cai1
 裝備齊全,zong1 bi6 cäi4 cüng4
+俾人恰,bi2 yäng4 häp2
 保管好,bäu2 gwung2 häu2
 湊仔公,cäu1 zäi2 gung1
 坐月子,co1 ngük6 zi2
@@ -10773,6 +11005,7 @@ char,pron
 出軌行為,cäk2 gwäi2 häng4 wäi4
 青金石,cäng1 gäm1 sek6
 打定主意,da2 däng6 zü2 yi1
+遞俾,däi6 bi2
 點好呢,dim2 häu2 ne1
 發射井,fæk2 se6 zäng2
 粉嶺公路,fäng2 leng1 gung1 lu6
@@ -10787,6 +11020,7 @@ char,pron
 甩車,läk2 ce1
 靈實,läng4 säk6
 六分儀,luk6 fäng6 yi4
+孭重飛,me1 cung1 fi1
 那番,na1 fæng1
 省招牌,sæng2 ziu1 pai4
 生物製品,säng1 mäk6 zäi1 bäng2
@@ -10801,6 +11035,7 @@ char,pron
 陳腎,cäng4 säng1
 長平之戰,cöng4 päng4 zi1 zing1
 搭上搭,dap2 söng6 dap2
+揼爛,däm2 læng6
 頂死,däng2 si2
 倒豎葱,däu2 sü6 cung1
 非核化,fi1 häk6 fa1
@@ -10817,6 +11052,7 @@ char,pron
 有味笑話,yäu1 mi6 siu1 wa2
 易彎,yi6 wæng1
 賢士,ying4 si6
+卡冚卡,kæk2 käm2 kæk2
 強加於人,köng4 ga1 yü1 yäng4
 兩宋,löng1 sung1
 撈過界,läu1 gwo1 gai1
@@ -10828,12 +11064,14 @@ char,pron
 母質,mu1 zäk2
 勾畫,ngäu1 wæk6
 年少有為,ning4 siu1 yäu1 wäi4
+婆乸數,po4 na2 su1
 散毒,sæng1 duk6
 守生寡,säu2 säng1 gwa2
 詩情畫意,si1 cäng4 wa6 yi1
 鮮奶油,sing1 nai1 yäu4
 上頜,söng6 häp6
 推磨,töi1 mo4
+精義,zäng1 yi6
 爆數,bau1 su1
 便盆,bing6 pung4
 差估署,ca1 gwu2 cü1
@@ -10855,6 +11093,7 @@ char,pron
 行淫,häng4 yäm4
 異質,yi6 zäk2
 乳臭未乾,yü1 cäu1 mi6 gung1
+爛賬,læng6 zöng1
 林士街,läm4 si6 gai1
 領命,läng1 mäng6
 兩枚,löng1 mui4
@@ -10896,6 +11135,7 @@ char,pron
 翻番,fæng1 fæng1
 非分之想,fi1 fäng6 zi1 söng2
 監察院長,gam1 cæk2 yüng6 zöng2
+雞精書,gäi1 zäng1 sü1
 頸梗,geng2 gäng2
 經幡,gäng1 fæng1
 乾女兒,gung1 nü1 yi4
@@ -10919,6 +11159,7 @@ char,pron
 未成年者,mi6 säng4 ning4 ze2
 明升暗降,mäng4 säng1 äm1 gong1
 五道,ng1 däu6
+破銅爛鐵,po1 tung4 læng6 tik2
 三從四德,sam1 cung4 si1 däk2
 生神仙,sæng1 säng4 sing1
 四道,si1 däu6
@@ -10928,6 +11169,8 @@ char,pron
 鐵籠車,tik2 lung4 ce1
 調色板,tiu4 säk2 bæng2
 精華版,zäng1 wa4 bæng2
+俾嘢,bi2 ya1
+俾卡,bi2 kæk2
 叉車,ca1 ce1
 差無幾,ca1 mu4 gi2
 炒孖展,cau2 ma1 zing2
@@ -10937,6 +11180,7 @@ char,pron
 打道回府,da2 däu6 wui4 fu2
 滴灌,däk6 gwung1
 頂峰,däng2 fung1
+倒冧,däu2 läm1
 番荔枝,fæng1 läi6 zi1
 峰迴路轉,fung1 wui4 lu6 züng2
 加重語氣,ga1 cung1 yü1 hi1
@@ -10952,6 +11196,7 @@ char,pron
 卡賓槍,ka1 bäng1 cöng1
 卡口,ka1 häu2
 卡窿,ka1 lung1
+爛飯,læng6 fæng6
 靈水,läng4 söi2
 領港員,läng1 gong2 yüng4
 兩德,löng1 däk2
@@ -10992,6 +11237,7 @@ char,pron
 鄧竟成,däng6 gäng2 säng4
 倒序,däu2 zü6
 動覺,dung6 gok2
+伏地魔,fuk6 di6 mo1
 服務質量,fuk6 mu6 zäk2 löng6
 假寐,ga2 mi6
 更次,gæng1 ci1
@@ -11007,6 +11253,7 @@ char,pron
 遠交近攻,yüng1 gau1 gäng6 gung1
 兩錢重,löng1 cing4 cung1
 兩三張,löng1 sam1 zöng1
+咯吱,lok2 zi1
 亂打亂撞,lüng6 da2 lüng6 zong6
 文人相輕,mäng4 yäng4 söng1 häng1
 問候下,mäng6 häu6 ha1
@@ -11028,6 +11275,7 @@ char,pron
 喪假,song1 ga1
 數千年,su1 cing1 ning4
 數番,su1 fæng1
+炭精,tæng1 zäng1
 舔食,tim2 säk6
 甜片,tim4 ping2
 調味劑,tiu4 mi6 zäi1
@@ -11093,6 +11341,7 @@ char,pron
 錯有錯着,co1 yäu1 co1 zök6
 長生果,cöng4 säng1 gwo2
 財經演員,cöi4 gäng1 ying2 yüng4
+大覺瞓,dai6 gau1 fäng1
 得閒咪,däk2 hæng4 mäi1
 豆腐乾,däu6 fu6 gung1
 度頸,dok6 geng2
@@ -11123,6 +11372,7 @@ char,pron
 兩雙,löng1 söng1
 麻生太郎,ma4 säng1 tai1 long4
 馬到成功,ma1 däu1 säng4 gung1
+霉爛,mui4 læng6
 木頭公仔,muk6 täu4 gung1 zäi2
 凹凸有致,näp2 däk6 yäu1 zi1
 安徽省,wung1 fäi1 sæng2
@@ -11136,6 +11386,7 @@ char,pron
 燒青,siu1 ceng1
 上合組織,söng6 häp6 zu2 zäk2
 上智,söng6 zi1
+頭伏,täu4 fuk6
 和安里,wo4 wung1 li1
 餞行,zing1 häng4
 整食,zäng2 säk6
@@ -11143,6 +11394,7 @@ char,pron
 中蛇,zung1 se4
 拗氣,au1 hi1
 不錯不錯,bäk2 co1 bäk2 co1
+俾電話,bi2 ding6 wa2
 被和諧,bi6 wo4 hai4
 病從口入,beng6 cung4 häu2 yäp6
 弁言,bing6 ying4
@@ -11162,12 +11414,14 @@ char,pron
 共和政體,gung6 wo4 zäng1 täi2
 行政署,häng4 zäng1 cü1
 口淡,häu2 tam1
+去嗰度,hü1 go2 du6
 開會地點,fui1 wui6 di6 dim2
 好少玩,häu2 siu2 wæng4
 現磨,ying6 mo4
 英數,yäng1 su1
 傾乜,käng1 mäk2
 鯉魚門道,li1 yü4 mung4 däu6
+練精學懶,ling6 zeng1 hok6 læng1
 零和遊戲,läng4 wo4 yäu4 hi1
 碼仔,ma1 zäi2
 摩頂,mo1 deng2
@@ -11179,6 +11433,7 @@ char,pron
 便宜莫貪,ping4 yi4 mok6 tam1
 莎車,sa1 ce1
 散叫,sæng2 giu1
+醒瞓,seng2 fäng1
 成唔成熟,säng4 m4 säng4 suk6
 拖下拖下,to1 ha1 to1 ha1
 華人置業,wa4 yäng4 zi1 yip6
@@ -11204,6 +11459,7 @@ char,pron
 調倉,diu6 cong1
 都會大學,du1 wui6 dai6 hok6
 獨食難肥,duk6 säk6 næng4 fi4
+瞓好,fäng1 häu2
 貨卡,fo1 ka1
 家鄉話,ga1 höng1 wa2
 加茲尼省,ga1 zi1 ni4 sæng2
@@ -11230,11 +11486,13 @@ char,pron
 惹事生非,ye1 si6 säng1 fi1
 軟片,yüng1 ping2
 卡邦尼,ka1 bong1 ni4
+爛茶渣,læng6 ca4 za1
 餾分,läu6 fäng6
 蕾絲邊,löi4 si1 bing1
 零仔,läng4 zäi2
 浪茄,long6 kö4
 馬到功成,ma1 däu1 gung1 säng4
+眉精眼企,mi4 zäng1 ngæng1 ki1
 沒日沒夜,muk6 yäk6 muk6 ye6
 銀行擔保,ngäng4 hong4 dam1 bäu2
 偶一為之,ngäu1 yäk2 wäi4 zi1
@@ -11310,7 +11568,9 @@ char,pron
 生長素,säng1 zöng2 su1
 實況轉播,säk6 fong1 züng2 bo1
 守車,säu2 ce1
+鏽蝕,säu1 säk6
 賒數,se1 su1
+想俾人,söng2 bi2 yäng4
 上墳,söng1 fäng4
 上映期間,söng6 yäng2 ki4 gæng1
 聽頭,täng1 täu4
@@ -11321,6 +11581,7 @@ char,pron
 往灣仔,wong1 wæng1 zäi2
 積攢,zäk2 zæng2
 戰略伙伴,zing1 lök6 fo2 bung6
+精英主義,zäng1 yäng1 zü2 yi6
 組織領導,zu2 zäk2 läng1 däu6
 轉背,züng2 bui1
 轉遞,züng2 däi6
@@ -11336,6 +11597,7 @@ char,pron
 倒掛金鈎,däu1 gwa1 gäm1 ngäu1
 道唔道德,däu6 m4 däu6 däk2
 篤篤車,duk2 duk2 ce1
+飛來蜢,fi1 löi4 mæng2
 近體詩,gäng6 täi2 si1
 急難,gäp2 næng6
 驚恐症,gäng1 hung2 zäng1
@@ -11424,8 +11686,10 @@ char,pron
 如詩如畫,yü4 si1 yü4 wa6
 與人為善,yü1 yäng4 wäi4 sing6
 規行矩步,kwäi1 häng4 gü2 bu6
+爛瞓,læng6 fäng1
 羅便臣道,lo4 bing6 säng4 däu6
 梁繼平,löng4 gäi1 päng4
+咯咯笑,lok2 lok2 siu1
 萬頭攢動,mæng6 täu4 zæng2 dung6
 磨碌,mo6 luk2
 沒種,muk6 zung2
@@ -11458,11 +11722,13 @@ char,pron
 最塞,zöi1 säk2
 自乾五,zi6 gung1 ng1
 墊片,zing1 ping2
+精瘦,zäng1 säu1
 種畜,zung2 cuk2
 珠被,zü1 pi1
 尊長,züng1 zöng2
 凹頭,au1 täu4
 敗者為寇,bai6 ze2 wäi4 käu1
+俾雷劈,bi2 löi4 pek2
 逼上梁山,bäk2 söng6 löng4 sæng1
 差失,ca1 säk2
 柴灣道,cai4 wæng1 däu6
@@ -11492,6 +11758,7 @@ char,pron
 一兩支,yäk2 löng1 zi1
 卡爾加里,ka1 yi1 ga1 li1
 卡梅倫,ka1 mui4 läng4
+抗精神病,kong1 zäng1 säng4 beng6
 禮頓道,läi1 däng6 däu6
 量器,löng4 hi1
 兩粒花,löng1 näp2 fa1
@@ -11563,10 +11830,12 @@ char,pron
 囊泡,nong4 pau1
 啤啤夫,pe1 pe1 fu1
 披散,pi1 sæng2
+屁精,pi1 zäng1
 拼錯,päng1 co1
 神經外科,säng4 gäng1 wui6 fo1
 生死狀,säng1 si2 zong6
 十行,säp6 hong4
+死兜爛兜,si2 däu1 læng6 däu1
 絮片,sü1 ping1
 禪林,sim4 läm4
 上錯車,söng1 co1 ce1
@@ -11604,6 +11873,7 @@ char,pron
 道唔道歉,däu6 m4 däu6 hip2
 斷代,düng6 döi6
 科技成果,fo1 gi6 säng4 gwo2
+伏地挺身,fuk6 di6 täng1 säng1
 急呀,gäp2 a4
 幾好幾好,gi2 häu2 gi2 häu2
 結為夫妻,gik2 wäi4 fu1 cäi1
@@ -11694,6 +11964,7 @@ char,pron
 校啱,gau1 ngam1
 激打,gäk2 da2
 驚叫聲,gäng1 giu1 säng1
+敬業精神,gäng1 yip6 zäng1 säng4
 乾草堆,gung1 cäu2 döi1
 江湖道義,gong1 wu4 däu6 yi6
 講下講下,gong2 ha1 gong2 ha1
@@ -11706,6 +11977,7 @@ char,pron
 吃裏扒外,hek2 li1 pa4 wui6
 開講有話,fui1 gong2 yäu1 wa6
 血栓形成,hük2 sæng1 yäng4 säng4
+一齊嗰陣,yäk2 cäi4 go2 zäng6
 一兩層,yäk2 löng1 cäng4
 野生生物,ye1 säng1 säng1 mäk6
 潤腸通便,yäng6 cöng4 tung1 bing6
@@ -11718,6 +11990,7 @@ char,pron
 量具,löng4 gü6
 兩岸對話,löng1 wung6 döi1 wa6
 兩頭騰,löng1 täu4 täng4
+老驥伏櫪,läu1 ki1 fuk6 läk2
 馬師道,ma1 si1 däu6
 萬年青,mæng6 ning4 cäng1
 妙趣橫生,miu6 cü1 wæng4 sæng1
@@ -11734,6 +12007,7 @@ char,pron
 勢所難免,säi1 so2 næng4 ming1
 生物質能,säng1 mäk6 zäk2 näng4
 壽數,säu6 su1
+思潮起伏,si1 ciu4 hi2 fuk6
 食用鹽,säk6 yung6 yim4
 鮮竹卷,sing1 zuk2 güng2
 成人班,säng4 yäng4 bæng1
@@ -11755,6 +12029,7 @@ char,pron
 和平鴿,wo4 päng4 gäp2
 胡春華,wu4 cäng1 wa4
 集體強姦,zap6 täi2 köng4 gæng1
+精乖,zeng1 gwai1
 轉入地下,züng2 yäp6 di6 ha6
 拗口,au2 häu2
 百鳥朝鳳,bæk2 niu1 ciu4 fung6
@@ -11812,6 +12087,7 @@ char,pron
 一啤,yäk2 pe1
 郵車,yäu4 ce1
 懸浮列車,yüng4 fäu4 lik6 ce1
+蠄蟧,käm4 läu4
 黎明時分,läi4 mäng4 si4 fäng6
 旅行支票,lü1 häng4 zi1 piu1
 兩碼事,löng1 ma1 si6
@@ -11869,6 +12145,7 @@ char,pron
 轉診,züng2 cäng2
 拗不過,au1 bäk2 gwo1
 不打自招,bäk2 da2 zi6 ziu1
+俾人搞,bi2 yäng4 gau2
 邊際成本,bing1 zäi1 säng4 bung2
 扑瓜,bok2 gwa1
 炒更,cau2 gæng1
@@ -11919,6 +12196,7 @@ char,pron
 氣塞,hi1 säk2
 吃不上,hek2 bäk2 söng6
 吃軟飯,hek2 yüng1 fæng6
+害人精,fui6 yäng4 zäng1
 學業有成,hok6 yip6 yäu1 säng4
 汗如雨下,fung6 yü4 yü1 ha6
 好景不長,häu2 gäng2 bäk2 cöng4
@@ -11926,6 +12204,7 @@ char,pron
 哭喪着臉,huk2 song1 zök6 lim1
 槲寄生,huk6 gi1 säng1
 音樂團體,yäm1 ngok6 tüng4 täi2
+人工受精,yäng4 gung1 säu6 zäng1
 一齊時,yäk2 cäi4 si4
 一番苦心,yäk2 fæng1 fu2 säm1
 一哄而上,yäk2 hung1 yi4 söng1
@@ -11942,6 +12221,7 @@ char,pron
 遠渡重洋,yüng1 du6 cung4 yöng4
 強忍悲痛,köng1 yäng1 bi1 tung1
 窮書生,kung4 sü1 säng1
+勵精圖治,läi6 zäng1 tu4 zi6
 甩上,läk2 söng1
 雷打不動,löi4 da2 bäk2 dung6
 零舍醒神,läng4 se1 säng2 säng4
@@ -11951,6 +12231,7 @@ char,pron
 妙筆生花,miu6 bäk2 säng1 fa1
 無從談起,mu4 cung4 tam4 hi2
 毛絨玩具,mäu4 yung4 wung6 gü6
+無精症,mu4 zäng1 zäng1
 啱唔啱聽,ngam1 m4 ngam1 teng1
 愛普生,wui1 pu2 säng1
 奧陶紀,äu1 täu4 gi2
@@ -11971,6 +12252,7 @@ char,pron
 水上芭蕾,söi2 söng6 ba1 löi4
 睡眠失調,söi6 ming4 säk2 tiu4
 瑞士刀,söi6 si6 däu1
+食得瞓得,säk6 däk2 fäng1 däk2
 成都市,säng4 du1 si1
 傻話,so4 wa2
 相差不多,söng1 ca1 bäk2 do1
@@ -11979,6 +12261,7 @@ char,pron
 上諭,söng6 yü6
 數班,su1 bæng1
 數十隻,su1 säp6 zek2
+體外受精,täi2 wui6 säu6 zäng1
 陶瓷器,täu4 ci4 hi1
 華苑,wa4 yüng2
 威靈頓街,wäi1 läng4 däng6 gai1
@@ -11987,6 +12270,9 @@ char,pron
 志士仁人,zi1 si6 yäng4 yäng4
 知識庫,zi1 säk2 fu1
 輾平,zing2 päng4
+精密儀器,zäng1 mäk6 yi4 hi1
+精囊,zäng1 nong4
+精疲力盡,zäng1 pi4 läk6 zäng6
 助人為樂,zo6 yäng4 wäi4 lok6
 坐像,zo6 zöng6
 長尾巴,zöng2 mi1 ba1
@@ -12071,6 +12357,7 @@ char,pron
 語音合成,yü1 yäm1 häp6 säng4
 原平,yüng4 päng4
 強心劑,köng4 säm1 zäi1
+爛炸,læng6 za1
 例行工作,läi6 häng4 gung1 zok2
 厲行節約,läi6 häng4 zik2 yök2
 靚到暈,leng1 däu1 wäng4
@@ -12079,9 +12366,11 @@ char,pron
 略讀,lök6 duk6
 糧食作物,löng4 säk6 zok2 mäk6
 朗朗上口,long1 long1 söng1 häu2
+撈嘢,läu1 ya1
 老相好,läu1 söng1 häu2
 六行,luk6 hong4
 孖芝,ma1 zi1
+孭數,me1 su1
 未吃完,mi6 hek2 yüng4
 無可爭辯,mu4 ho2 zäng1 bing6
 難辦,næng4 bæng6
@@ -12112,6 +12401,7 @@ char,pron
 聽之任之,täng1 zi1 yäm6 zi1
 挑燈夜讀,tiu1 däng1 ye6 duk6
 跳下跳下,tiu1 ha1 tiu1 ha1
+劏蛇,tong1 se4
 燙平,tong1 päng4
 圖畫書,tu4 wa6 sü1
 通便劑,tung1 bing6 zäi1
@@ -12120,11 +12410,14 @@ char,pron
 換屎片,wung6 si2 ping2
 曾咀,zäng1 zöi2
 質量管理,zäk2 löng6 gwung2 li1
+酒精燈,zäu2 zäng1 däng1
 縐褶,zäu1 zip2
 鄭經翰,zäng6 gäng1 fung6
 准生證,zäng2 säng1 zäng1
 直通火車,zäk6 tung1 fo2 ce1
 佔為己有,zim1 wäi4 gi2 yäu1
+精疲力竭,zäng1 pi4 läk6 kik2
+精神衰弱,zäng1 säng4 söi1 yök6
 將藍隧道,zöng1 lam4 söi6 däu6
 長孫無忌,zöng2 süng1 mu4 gi6
 仗火,zöng1 fo2
@@ -12133,10 +12426,12 @@ char,pron
 觸景生情,zuk2 gäng2 säng1 cäng4
 中途轉機,zung1 tu4 züng1 gi1
 中華煤氣,zung1 wa4 mui4 hi1
+撈嘢,läu4 ya1
 白板車,bæk6 bæng2 ce1
 飽學之士,bau2 hok6 zi1 si6
 跛手,bäi1 säu2
 不解風情,bäk2 gai2 fung1 cäng4
+俾咩,bi2 me1
 並行不悖,bäng6 häng4 bäk2 bui6
 暴力法,bäu6 läk6 fæk2
 踩錯腳,cai2 co1 gök2
@@ -12200,6 +12495,7 @@ char,pron
 好細膽,häu2 säi1 dam2
 豪華型,häu4 wa4 yäng4
 酷刑折磨,häu6 yäng4 zik2 mo4
+人哋先,yäng4 di1 sing1
 一舉成功,yäk2 gü2 säng4 gung1
 一兩篇,yäk2 löng1 ping1
 耳鬢廝磨,yi1 bäng1 si1 mo4
@@ -12214,12 +12510,15 @@ char,pron
 茄瓜,kö4 gwa1
 抗凝血劑,kong1 yäng4 hük2 zäi1
 懶蛇,læng1 se4
+爛瞓豬,læng6 fäng1 zü1
+爛身爛勢,læng6 säng1 læng6 säi1
 濾泡,lü6 pau1
 連翔道,ling4 cöng4 däu6
 另行安排,läng6 häng4 wung1 pai4
 量體重,löng4 täi2 cung1
 兩肋插刀,löng1 läk6 cap2 däu1
 兩列,löng1 lik6
+兩仔乸,löng1 zäi2 na2
 樂呵呵,lok6 ho1 ho1
 撈汁,läu1 zäp2
 老火靚湯,läu1 fo2 leng1 tong1
@@ -12243,6 +12542,7 @@ char,pron
 生搬硬套,sæng1 bung1 ngæng6 täu1
 生辰八字,sæng1 säng4 bæk2 zi6
 撒種,sæk2 zung2
+洗髮精,säi2 fæk2 zäng1
 塞豆窿,säk2 däu6 lung1
 深灣道,säm1 wæng1 däu6
 沈國放,säm2 gwok2 fong1
@@ -12286,6 +12586,7 @@ char,pron
 即刻射,zik2 häk2 se6
 輾轉流傳,zing2 züng2 läu4 cüng4
 蒸生瓜,zäng1 sæng1 gwa1
+精神百倍,zäng1 säng4 bæk2 pui1
 朝行晚拆,ziu1 häng4 mæng1 cæk2
 朝朝暮暮,ziu1 ziu1 mu6 mu6
 竹升仔,zuk2 säng1 zäi2
@@ -12298,6 +12599,7 @@ char,pron
 不可估量,bäk2 ho2 gwu2 löng6
 不吭聲,bäk2 hong4 säng1
 不平常,bäk2 päng4 söng4
+俾人圍,bi2 yäng4 wäi4
 碧海青天,bäk2 fui2 cäng1 ting1
 便池,bing6 ci4
 扑落去,bok2 lok6 hü1
@@ -12320,6 +12622,7 @@ char,pron
 傳送服務,cüng4 sung1 fuk6 mu6
 打爛齋缽,da2 læng6 zai1 buk2
 打撲克,da2 pok2 häk2
+打踭,da2 zang1
 打側身,da2 zäk2 säng1
 淡泊名利,dam6 bok6 mäng4 li6
 底朝天,däi2 ciu4 ting1
@@ -12364,6 +12667,7 @@ char,pron
 官學生,gwung1 hok6 sæng1
 功成名就,gung1 säng4 mäng4 zäu6
 鬼使神差,gwäi2 si2 säng4 cai1
+跪伏,gwäi6 fuk6
 下腹部,ha6 fuk2 bu6
 下咽,ha6 ying1
 行開行埋,hæng4 fui1 hæng4 mai4
@@ -12425,11 +12729,13 @@ char,pron
 安步當車,wung1 bu6 dong1 gü1
 安安樂樂,wung1 wung1 lok6 lok6
 按時完成,wung1 si4 yüng4 säng4
+拍爛手,pæk2 læng6 säu2
 拋生藕,pau1 sæng1 ngäu1
 片彎,ping2 wæng1
 旁遮普省,pong4 ze1 pu2 sæng2
 三寸釘,sam1 cüng1 deng1
 山村道,sæng1 cüng1 däu6
+山巒起伏,sæng1 lüng4 hi2 fuk6
 深更半夜,säm1 gäng1 bung1 ye6
 腎盂,säng6 yü4
 生命徵象,säng1 mäng6 zäng1 zöng6
@@ -12470,6 +12776,7 @@ char,pron
 黃家強,wong4 ga1 köng4
 胡話,wu4 wa6
 隻言片語,zek2 ying4 ping1 yü1
+精乖伶俐,zeng1 gwai1 läng4 li6
 自學成才,zi6 hok6 säng4 cöi4
 尖子生,zim1 zi2 säng1
 煎炸食品,zing1 za1 säk6 bäng2
@@ -12566,6 +12873,7 @@ char,pron
 陰錯陽差,yäm1 co1 yöng4 ca1
 恩重如山,yäng1 cung1 yü4 sæng1
 恩重如山,yäng1 zung6 yü4 sæng1
+人哋可能,yäng4 di1 ho2 näng4
 人地生疏,yäng4 di6 säng1 so1
 人參果,yäng4 säm1 gwo2
 一般貿易,yäk2 bung1 mäu6 yäk6
@@ -12586,6 +12894,7 @@ char,pron
 奇解,ki4 gai2
 其樂融融,ki4 lok6 yung4 yung4
 懶懶散散,læng1 læng1 sæng2 sæng2
+爛頭蟀,læng6 täu4 säk2
 撈一把,läu4 yäk2 ba2
 李少光,li1 siu1 gwong1
 驢打滾,lü4 da2 gwäng2
@@ -12594,6 +12903,7 @@ char,pron
 領角鴞,läng1 gok2 hiu1
 量地官,löng4 di6 gwung1
 兩頂,löng1 deng2
+兩手揈揈,löng1 säu2 fäng6 fäng6
 兩梳蕉,löng1 so1 ziu1
 落花生,lok6 fa1 säng1
 老少皆宜,läu1 siu1 gai1 yi4
@@ -12603,6 +12913,7 @@ char,pron
 蜜月假期,mäk6 ngük6 ga1 ki4
 物華街,mäk6 wa4 gai1
 眠乾睡濕,ming4 gung1 söi6 säp2
+面懵心精,ming6 mung2 säm1 zeng1
 網絡成癮,mong1 lok6 säng4 yäng1
 望女成鳳,mong6 nü1 säng4 fung6
 無心裝載,mu4 säm1 zong1 zöi1
@@ -12664,6 +12975,9 @@ char,pron
 直達車,zäk6 dæk6 ce1
 佔下風,zim1 ha6 fung1
 徵調,zäng1 diu6
+精幹,zäng1 gwung1
+精氨酸,zäng1 ong1 süng1
+精衞填海,zäng1 wäi6 ting4 fui2
 正義道,zäng1 yi6 däu6
 政治避難,zäng1 zi6 bi6 næng6
 朝秦暮楚,ziu1 cäng4 mu6 co2
@@ -12702,10 +13016,12 @@ char,pron
 次生林,ci1 säng1 läm4
 青釉,cäng1 yäu6
 坐失良機,co1 säk2 löng4 gi1
+醋精,cu1 zäng1
 重抄,cung4 cau1
 重荷,cung1 ho6
 傳導性,cüng4 däu6 säng1
 傳動裝置,cüng4 dung6 zong1 zi1
+全副精力,cüng4 fu1 zäng1 läk6
 全內反射,cüng4 nöi6 fæng2 se6
 打衝鋒,da2 cung1 fung1
 打定底,da2 däng6 däi2
@@ -12761,6 +13077,7 @@ char,pron
 輕車簡從,häng1 ce1 gæng2 cung4
 輕輕一笑,häng1 häng1 yäk2 siu1
 輕饒,häng1 yiu4
+香精油,höng1 zäng1 yäu4
 向巴平措,höng1 ba1 päng4 cu1
 開映,fui1 yäng2
 好多蚊,häu2 do1 mäng1
@@ -12788,6 +13105,7 @@ char,pron
 強似,köng4 ci1
 抗爭歌,kong1 zäng1 go1
 窮山惡水,kung4 sæng1 ok2 söi2
+爛酒,læng6 zäu2
 蘿蔔乾,lo4 bæk6 gung1
 兩棲作戰,löng1 cäi1 zok2 zing1
 兩虎相爭,löng1 fu2 söng1 zäng1
@@ -12806,15 +13124,18 @@ char,pron
 末梢神經,muk6 sau1 säng4 gäng1
 沒心沒肺,muk6 säm1 muk6 fäi1
 雅淡,nga1 dam6
+扲荷包,ngäm4 ho4 bau1
 尿泡,niu6 pau1
 扒艇仔,pa4 täng1 zäi2
 派片,pai1 ping2
 拍胸脯,pæk2 hung1 pu2
+拍爛檔,pæk2 læng6 dong1
 朋比為奸,päng4 bi2 wäi4 gæng1
 平又靚,peng4 yäu6 leng1
 拼爭,päng1 zäng1
 平方英尺,päng4 fong1 yäng1 cek2
 平裝本,päng4 zong1 bung2
+蚌精,pong1 zeng1
 灑水車,sa2 söi2 ce1
 三公經費,sam1 gung1 gäng1 fäi1
 散春,sæng1 cäng1
@@ -12874,6 +13195,7 @@ char,pron
 黃嶺,wong4 leng1
 户口制度,wu6 häu2 zäi1 du6
 會澤,wui6 zäk6
+揸住支咪,za1 zü6 zi1 mäi1
 爭秋奪暑,zæng1 cäu1 dük6 sü2
 真好彩,zäng1 häu2 cöi2
 爭秋奪暑,zäng1 cäu1 dük6 sü2
@@ -12885,6 +13207,7 @@ char,pron
 謝絕參觀,ze6 zük6 cam1 gwung1
 紫質症,zi2 zäk2 zäng1
 自行車賽,zi6 häng4 ce1 cöi1
+精神性,zäng1 säng4 säng1
 整齊劃一,zäng2 cäi4 wæk6 yäk2
 招貼畫,ziu1 tip2 wa6
 阻難,zo2 næng6
