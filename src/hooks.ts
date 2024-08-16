@@ -1,17 +1,31 @@
-import { useReducer } from "react";
+import { useEffect, useReducer, useState } from "react";
 
-import { MODEL_STATUS_PRIORITY } from "./consts";
+import { ALL_INFERENCE_MODES, DOWNLOAD_STATUS_PRIORITY } from "./consts";
 
-import type { ActualModelStatus, ModelLanguageAndVoice, ModelWithStatus } from "./types";
+import type { ActualDownloadStatus, InferenceMode, DownloadState } from "./types";
 
-const currentModelsStatus = new Map<ModelLanguageAndVoice, ActualModelStatus>();
+const currentDownloadState = new Map<string, ActualDownloadStatus>();
 
-function modelsStatusReducer(_: ActualModelStatus, { model, status }: ModelWithStatus): ActualModelStatus {
-	currentModelsStatus.set(model, status);
-	const allStatus = new Set(currentModelsStatus.values());
-	return MODEL_STATUS_PRIORITY.find(status => allStatus.has(status)) || "latest";
+function downloadStateReducer(_: ActualDownloadStatus, { inferenceMode, language, voice, status }: DownloadState): ActualDownloadStatus {
+	currentDownloadState.set(`${inferenceMode}_${language}_${voice}`, status);
+	const allStatus = new Set(currentDownloadState.values());
+	return DOWNLOAD_STATUS_PRIORITY.find(status => allStatus.has(status)) || "latest";
 }
 
-export function useModelsStatus() {
-	return useReducer(modelsStatusReducer, "latest");
+export function useDownloadState() {
+	return useReducer(downloadStateReducer, "latest");
+}
+
+export function useInferenceMode() {
+	const [inferenceMode, setInferenceMode] = useState(() => {
+		const searchParams = new URLSearchParams(location.search);
+		const mode_sugar = ALL_INFERENCE_MODES.find(mode => searchParams.has(mode));
+		if (mode_sugar) return mode_sugar;
+		const mode = searchParams.get("mode") as InferenceMode;
+		return ALL_INFERENCE_MODES.includes(mode) ? mode : "online";
+	});
+	useEffect(() => {
+		history.replaceState(null, document.title, `?${String(new URLSearchParams({ mode: inferenceMode }))}`);
+	}, [inferenceMode]);
+	return [inferenceMode, setInferenceMode] as const;
 }

@@ -5,16 +5,18 @@ import { TERMINOLOGY } from "./consts";
 import OfflineAudioPlayer from "./OfflineAudioPlayer";
 import OnlineAudioPlayer from "./OnlineAudioPlayer";
 import { normalizePauses } from "./parse";
+import PlainAudioPlayer from "./PlainAudioPlayer";
 
-import type { ModelManagerState, Sentence, SetModelStatus, UseOfflineModel } from "./types";
+import type { DownloadManagerState, Sentence, SetDownloadStatus, InferenceMode } from "./types";
 
-interface SentenceCardProps extends UseOfflineModel, SetModelStatus, ModelManagerState {
+interface SentenceCardProps extends SetDownloadStatus, DownloadManagerState {
 	sentence: Sentence;
-	isModelManagerVisible: boolean;
-	openModelManager: () => void;
+	inferenceMode: InferenceMode;
+	isDownloadManagerVisible: boolean;
+	openDownloadManager: () => void;
 }
 
-export default function SentenceCard({ sentence: { language, voice, sentence }, useOfflineModel, setModelsStatus, isModelManagerVisible, openModelManager }: SentenceCardProps) {
+export default function SentenceCard({ sentence: { language, voice, sentence }, inferenceMode, setDownloadState, isDownloadManagerVisible, openDownloadManager }: SentenceCardProps) {
 	const [syllables, setSyllables] = useState(() => sentence.map(([char, pronNoteArray]) => pronNoteArray[0]?.[0] || normalizePauses(char)));
 	return <div className="card card-bordered border-base-300 bg-base-100 rounded-xl shadow-lg mb-3">
 		<div className="card-body max-sm:[--padding-card:1.5rem]">
@@ -35,15 +37,21 @@ export default function SentenceCard({ sentence: { language, voice, sentence }, 
 						}} />
 				))}
 			</div>
-			{useOfflineModel
+			{inferenceMode === "online"
+				? <OnlineAudioPlayer
+					language={language}
+					voice={voice}
+					syllables={syllables} />
+				: inferenceMode === "offline"
 				? <OfflineAudioPlayer
+					inferenceMode={inferenceMode}
 					language={language}
 					voice={voice}
 					syllables={syllables}
-					setModelsStatus={setModelsStatus}
-					isModelManagerVisible={isModelManagerVisible}
-					openModelManager={openModelManager} />
-				: <OnlineAudioPlayer
+					setDownloadState={setDownloadState}
+					isDownloadManagerVisible={isDownloadManagerVisible}
+					openDownloadManager={openDownloadManager} />
+				: <PlainAudioPlayer
 					language={language}
 					voice={voice}
 					syllables={syllables} />}

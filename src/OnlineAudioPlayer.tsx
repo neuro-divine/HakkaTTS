@@ -4,10 +4,10 @@ import { MdErrorOutline, MdPause, MdPlayArrow, MdRefresh, MdStop } from "react-i
 
 import { NO_AUTO_FILL } from "./consts";
 
-import type { Language, ModelLanguageAndVoice, ServerError, Voice } from "./types";
+import type { Language, ServerError, Voice } from "./types";
 import type { SyntheticEvent } from "react";
 
-const audioCache = new Map<ModelLanguageAndVoice, Map<string, string>>();
+const audioCache = new Map<string, Map<string, string>>();
 
 export default function OnlineAudioPlayer({ language, voice, syllables }: { language: Language; voice: Voice; syllables: string[] }) {
 	const [isReady, setIsReady] = useState(false);
@@ -38,7 +38,7 @@ export default function OnlineAudioPlayer({ language, voice, syllables }: { lang
 	useEffect(() => {
 		const _isPlaying = isPlaying;
 		async function fetchAudio() {
-			const key: ModelLanguageAndVoice = `${language}_${voice}`;
+			const key = `${language}_${voice}`;
 			let textToURL = audioCache.get(key);
 			if (!textToURL) audioCache.set(key, textToURL = new Map<string, string>());
 			let url = textToURL.get(text);

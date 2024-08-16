@@ -3,10 +3,10 @@ import { createPortal } from "react-dom";
 
 import { MdError, MdOutlineDownloadForOffline } from "react-icons/md";
 
-import { MODEL_STATUS_INDICATOR_CLASS, NO_AUTO_FILL } from "./consts";
+import { DOWNLOAD_STATUS_INDICATOR_CLASS, DOWNLOAD_TYPE_LABEL, NO_AUTO_FILL } from "./consts";
 import { DBProvider } from "./db/DBContext";
-import ModelManager from "./db/ModelManager";
-import { useModelsStatus } from "./hooks";
+import DownloadManager from "./db/DownloadManager";
+import { useInferenceMode, useDownloadState } from "./hooks";
 import parse from "./parse";
 import Radio from "./Radio";
 import SentenceCard from "./SentenceCard";
@@ -52,27 +52,27 @@ export default function App() {
 		return () => observer.unobserve(currTextArea);
 	}, [textArea, resizeElements]);
 
-	const [useOfflineModel /* , setUseOfflineModel */] = useState(() => new URLSearchParams(location.search).has("offline"));
+	const [inferenceMode /* , setInferenceMode */] = useInferenceMode();
 
-	const [isModelManagerVisible, setIsModelManagerVisible] = useState(false);
-	const modelManager = useRef<HTMLDialogElement>();
+	const [isDownloadManagerVisible, setIsDownloadManagerVisible] = useState(false);
+	const downloadManager = useRef<HTMLDialogElement>();
 
-	const openModelManager = useCallback(() => {
-		setIsModelManagerVisible(true);
-		if (!modelManager.current) return;
-		modelManager.current.inert = true;
-		modelManager.current.showModal();
-		modelManager.current.inert = false;
-		modelManager.current.addEventListener("close", () => setIsModelManagerVisible(false), { once: true });
-	}, [setIsModelManagerVisible]);
+	const openDownloadManager = useCallback(() => {
+		setIsDownloadManagerVisible(true);
+		if (!downloadManager.current) return;
+		downloadManager.current.inert = true;
+		downloadManager.current.showModal();
+		downloadManager.current.inert = false;
+		downloadManager.current.addEventListener("close", () => setIsDownloadManagerVisible(false), { once: true });
+	}, [setIsDownloadManagerVisible]);
 
-	const onModelManagerReady = useCallback((newModelManager: HTMLDialogElement | null) => {
-		if (!newModelManager) return;
-		modelManager.current = newModelManager;
-		openModelManager();
-	}, [openModelManager]);
+	const onDownloadManagerReady = useCallback((newDownloadManager: HTMLDialogElement | null) => {
+		if (!newDownloadManager) return;
+		downloadManager.current = newDownloadManager;
+		openDownloadManager();
+	}, [openDownloadManager]);
 
-	const [modelsStatus, setModelsStatus] = useModelsStatus();
+	const [downloadState, setDownloadState] = useDownloadState();
 
 	return <DBProvider>
 		<div>
@@ -92,12 +92,13 @@ export default function App() {
 							<Radio name="btnvoice" className="btn-secondary" state={voice} setState={setVoice} value="female" />
 						</div>
 					</div>
-					{useOfflineModel
+					{inferenceMode !== "online"
 						&& <div>
-							<button type="button" className="btn btn-ghost max-sm:btn-sm max-sm:px-2.5 relative flex-col flex-nowrap gap-0 text-base whitespace-nowrap h-20 min-h-20 text-slate-500 hover:bg-opacity-10" onClick={openModelManager}>
-								{modelsStatus !== "latest" && <MdError size="1.5em" className={`absolute top-1 right-1 ${MODEL_STATUS_INDICATOR_CLASS[modelsStatus]}`} />}
-								<MdOutlineDownloadForOffline size="2em" />模型下載
-								{isModelManagerVisible && createPortal(<ModelManager ref={onModelManagerReady} setModelsStatus={setModelsStatus} />, document.body)}
+							<button type="button" className="btn btn-ghost max-sm:btn-sm max-sm:px-2.5 relative flex-col flex-nowrap gap-0 text-base whitespace-nowrap h-20 min-h-20 text-slate-500 hover:bg-opacity-10" onClick={openDownloadManager}>
+								{downloadState !== "latest" && <MdError size="1.5em" className={`absolute top-1 right-1 ${DOWNLOAD_STATUS_INDICATOR_CLASS[downloadState]}`} />}
+								<MdOutlineDownloadForOffline size="2em" />
+								{DOWNLOAD_TYPE_LABEL[inferenceMode]}下載
+								{isDownloadManagerVisible && createPortal(<DownloadManager ref={onDownloadManagerReady} inferenceMode={inferenceMode} setDownloadState={setDownloadState} />, document.body)}
 							</button>
 						</div>}
 				</div>
@@ -123,10 +124,10 @@ export default function App() {
 					<SentenceCard
 						key={sentences.length - i}
 						sentence={sentence}
-						useOfflineModel={useOfflineModel}
-						setModelsStatus={setModelsStatus}
-						isModelManagerVisible={isModelManagerVisible}
-						openModelManager={openModelManager} />
+						inferenceMode={inferenceMode}
+						setDownloadState={setDownloadState}
+						isDownloadManagerVisible={isDownloadManagerVisible}
+						openDownloadManager={openDownloadManager} />
 				))}
 			</div>
 		</div>

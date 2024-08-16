@@ -3,12 +3,14 @@ import { forwardRef, useEffect } from "react";
 import { MdClose, MdOutlineDownloadForOffline, MdRefresh } from "react-icons/md";
 
 import { useDB } from "./DBContext";
-import ModelRow from "./ModelRow";
-import { ALL_LANGUAGES, ALL_VOICES } from "../consts";
+import DownloadRow from "./DownloadRow";
+import { ALL_LANGUAGES, ALL_VOICES, DOWNLOAD_TYPE_LABEL } from "../consts";
 
-import type { SetModelStatus } from "../types";
+import type { OfflineInferenceModeState, SetDownloadStatus } from "../types";
 
-const ModelManager = forwardRef<HTMLDialogElement, SetModelStatus>(function ModelManager({ setModelsStatus }, ref) {
+interface DownloadManagerProps extends OfflineInferenceModeState, SetDownloadStatus {}
+
+const DownloadManager = forwardRef<HTMLDialogElement, DownloadManagerProps>(function DownloadManager({ inferenceMode, setDownloadState }, ref) {
 	const { db, error, retry } = useDB();
 	useEffect(() => {
 		if (error) console.error(error);
@@ -24,7 +26,8 @@ const ModelManager = forwardRef<HTMLDialogElement, SetModelStatus>(function Mode
 				</button>
 			</form>
 			<h3 className="flex items-center gap-2 mx-6 mt-6 mb-4.5">
-				<MdOutlineDownloadForOffline size="1.125em" />模型下載
+				<MdOutlineDownloadForOffline size="1.125em" />
+				{DOWNLOAD_TYPE_LABEL[inferenceMode]}下載
 			</h3>
 			<hr />
 			<div className={`flex-1 overflow-x-hidden overflow-y-auto${db ? "" : " flex items-center justify-center"}`}>
@@ -46,12 +49,13 @@ const ModelManager = forwardRef<HTMLDialogElement, SetModelStatus>(function Mode
 					? <ul className="flex flex-col">
 						{ALL_LANGUAGES.flatMap(language =>
 							ALL_VOICES.map(voice =>
-								<ModelRow
-									key={`${language}_${voice}`}
+								<DownloadRow
+									key={`${inferenceMode}_${language}_${voice}`}
 									db={db}
+									inferenceMode={inferenceMode}
 									language={language}
 									voice={voice}
-									setModelsStatus={setModelsStatus} />
+									setDownloadState={setDownloadState} />
 							)
 						)}
 					</ul>
@@ -61,4 +65,4 @@ const ModelManager = forwardRef<HTMLDialogElement, SetModelStatus>(function Mode
 	</dialog>;
 });
 
-export default ModelManager;
+export default DownloadManager;

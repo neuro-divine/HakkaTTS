@@ -3,23 +3,23 @@ import { useCallback, useEffect, useReducer, useRef, useState } from "react";
 import { MdErrorOutline, MdFileDownload, MdPause, MdPlayArrow, MdRefresh, MdStop } from "react-icons/md";
 import { WaveFile } from "wavefile";
 
-import { ALL_MODEL_COMPONENTS, DatabaseError, ModelNotDownloadedError, NO_AUTO_FILL } from "./consts";
+import { ALL_AUDIO_COMPONENTS, ALL_MODEL_COMPONENTS, DatabaseError, DOWNLOAD_TYPE_LABEL, FileNotDownloadedError, NO_AUTO_FILL } from "./consts";
 import { useDB } from "./db/DBContext";
-import { CURRENT_MODEL_VERSION } from "./db/version";
+import { CURRENT_AUDIO_VERSION, CURRENT_MODEL_VERSION } from "./db/version";
 import API from "./inference/api";
 
-import type { Language, ModelComponentToFile, ModelManagerState, SetModelStatus, Version, Voice } from "./types";
+import type { Language, DownloadComponentToFile, DownloadManagerState, SetDownloadStatus, DownloadVersion, Voice, OfflineInferenceModeState, ModelComponentToFile } from "./types";
 import type { SyntheticEvent } from "react";
 
 const audioCache = new Map<string, Map<string, string>>();
 
-interface AudioPlayerProps extends SetModelStatus, ModelManagerState {
+interface AudioPlayerProps extends OfflineInferenceModeState, SetDownloadStatus, DownloadManagerState {
 	language: Language;
 	voice: Voice;
 	syllables: string[];
 }
 
-export default function OfflineAudioPlayer({ language, voice, syllables, setModelsStatus, isModelManagerVisible, openModelManager }: AudioPlayerProps) {
+export default function OfflineAudioPlayer({ inferenceMode, language, voice, syllables, setDownloadState, isDownloadManagerVisible, openDownloadManager }: AudioPlayerProps) {
 	const [isReady, setIsReady] = useState(false);
 	const [isPlaying, setIsPlaying] = useState<boolean | null>(false);
 	const [progress, setProgress] = useState(0);
@@ -43,48 +43,54 @@ export default function OfflineAudioPlayer({ language, voice, syllables, setMode
 	}, [pauseAudio]);
 
 	const { db, error: dbInitError, retry: dbInitRetry } = useDB();
-	const [modelError, setModelError] = useState<Error>();
-	const [modelRetryCounter, modelRetry] = useReducer((n: number) => n + 1, 0);
-	const [model, setModel] = useState<ModelComponentToFile>();
+	const [downloadError, setDownloadError] = useState<Error>();
+	const [downloadRetryCounter, downloadRetry] = useReducer((n: number) => n + 1, 0);
+	const [download, setDownload] = useState<DownloadComponentToFile>();
+
+	const store = inferenceMode === "offline" ? "models" : "audios";
+	const CURRENT_VERSION = inferenceMode === "offline" ? CURRENT_MODEL_VERSION : CURRENT_AUDIO_VERSION;
+	const ALL_COMPONENTS = inferenceMode === "offline" ? ALL_MODEL_COMPONENTS : ALL_AUDIO_COMPONENTS;
+
 	useEffect(() => {
-		if (!db || model || isModelManagerVisible) return;
-		async function getModelComponents() {
+		if (!db || download || isDownloadManagerVisible) return;
+		async function getDownloadComponents() {
 			try {
-				const availableFiles = await db!.getAllFromIndex("models", "language_voice", [language, voice]);
-				if (availableFiles.length !== ALL_MODEL_COMPONENTS.length) {
-					setModelError(new ModelNotDownloadedError(language, voice, !availableFiles.length));
-					setModelsStatus({ model: `${language}_${voice}`, status: availableFiles.length ? "incomplete" : "available_for_download" });
+				const availableFiles = await db!.getAllFromIndex(store, "language_voice", [language, voice]);
+				if (availableFiles.length !== ALL_COMPONENTS.length) {
+					setDownloadError(new FileNotDownloadedError(inferenceMode, language, voice, !availableFiles.length));
+					setDownloadState({ inferenceMode, language, voice, status: availableFiles.length ? "incomplete" : "available_for_download" });
 					return;
 				}
-				const components = {} as ModelComponentToFile;
-				const versions = new Set<Version>();
+				const components = {} as DownloadComponentToFile;
+				const versions = new Set<DownloadVersion>();
 				for (const file of availableFiles) {
 					components[file.component] = file;
 					versions.add(file.version);
 				}
 				if (versions.size !== 1) {
-					setModelError(new ModelNotDownloadedError(language, voice));
-					setModelsStatus({ model: `${language}_${voice}`, status: "incomplete" });
+					setDownloadError(new FileNotDownloadedError(inferenceMode, language, voice));
+					setDownloadState({ inferenceMode, language, voice, status: "incomplete" });
 					return;
 				}
-				setModel(components);
-				setModelsStatus({ model: `${language}_${voice}`, status: versions.values().next().value === CURRENT_MODEL_VERSION ? "latest" : "new_version_available" });
+				setDownload(components);
+				setDownloadState({ inferenceMode, language, voice, status: versions.values().next().value === CURRENT_VERSION ? "latest" : "new_version_available" });
 			}
 			catch (error) {
-				setModelError(new DatabaseError("無法存取語音模型：資料庫出錯", { cause: error }));
+				setDownloadError(new DatabaseError(`無法存取語音${DOWNLOAD_TYPE_LABEL[inferenceMode]}：資料庫出錯`, { cause: error }));
 			}
 		}
-		setModelError(undefined);
+		setDownloadError(undefined);
 		setIsReady(false);
-		void getModelComponents();
-	}, [db, model, language, voice, setModelsStatus, isModelManagerVisible, modelRetryCounter]);
+		void getDownloadComponents();
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [db, download, inferenceMode, language, voice, setDownloadState, isDownloadManagerVisible, downloadRetryCounter]);
 
 	const [generationError, setGenerationError] = useState<Error>();
 	const [generationRetryCounter, generationRetry] = useReducer((n: number) => n + 1, 0);
 	const text = syllables.join(" ");
 	useEffect(() => {
-		if (!model) return;
-		const [{ version }] = Object.values(model);
+		if (!download) return;
+		const [{ version }] = Object.values(download);
 		const _isPlaying = isPlaying;
 		async function generateAudio() {
 			const key = `${version}/${language}/${voice}`;
@@ -94,7 +100,7 @@ export default function OfflineAudioPlayer({ language, voice, syllables, setMode
 			if (!url) {
 				try {
 					const wav = new WaveFile();
-					wav.fromScratch(1, 44100, "32f", await API.infer(language, model!, syllables));
+					wav.fromScratch(1, 44100, "32f", await API.infer(language, download as ModelComponentToFile, syllables));
 					textToURL.set(text, url = wav.toDataURI());
 				}
 				catch (error) {
@@ -113,7 +119,7 @@ export default function OfflineAudioPlayer({ language, voice, syllables, setMode
 		setIsReady(false);
 		void generateAudio();
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [language, voice, model, text, generationRetryCounter]);
+	}, [language, voice, download, text, generationRetryCounter]);
 
 	useEffect(() => {
 		if (!isReady || !isPlaying) return;
@@ -148,7 +154,7 @@ export default function OfflineAudioPlayer({ language, voice, syllables, setMode
 		if (isPlaying === null) void playAudio();
 	}, [isPlaying, playAudio]);
 
-	const error = dbInitError || modelError || generationError;
+	const error = dbInitError || downloadError || generationError;
 	useEffect(() => {
 		if (error) console.error(error);
 	}, [error]);
@@ -190,7 +196,7 @@ export default function OfflineAudioPlayer({ language, voice, syllables, setMode
 				? <div>
 					<MdErrorOutline size="1.1875em" className="inline align-middle mt-0.5 mr-1" />
 					<span className="leading-8 align-middle">
-						{error instanceof ModelNotDownloadedError || error instanceof DatabaseError ? <span className="font-medium">{error.message}</span> : <>
+						{error instanceof FileNotDownloadedError || error instanceof DatabaseError ? <span className="font-medium">{error.message}</span> : <>
 							<span className="font-bold">錯誤：</span>
 							{error.name}
 							{error.message && <>
@@ -204,14 +210,14 @@ export default function OfflineAudioPlayer({ language, voice, syllables, setMode
 						className="btn btn-info btn-sm text-lg text-neutral-content ml-2 pl-2 gap-1 align-middle"
 						onClick={dbInitError
 							? dbInitRetry
-							: modelError
-							? (modelError instanceof ModelNotDownloadedError ? openModelManager : modelRetry)
+							: downloadError
+							? (downloadError instanceof FileNotDownloadedError ? openDownloadManager : downloadRetry)
 							: generationError
 							? generationRetry
 							: undefined}>
-						{error instanceof ModelNotDownloadedError
+						{error instanceof FileNotDownloadedError
 							? <>
-								<MdFileDownload size="1.1875em" />下載模型
+								<MdFileDownload size="1.1875em" />下載{DOWNLOAD_TYPE_LABEL[inferenceMode]}
 							</>
 							: <>
 								<MdRefresh size="1.1875em" />重試
@@ -219,7 +225,7 @@ export default function OfflineAudioPlayer({ language, voice, syllables, setMode
 					</button>
 				</div>
 				: <div className="flex items-center gap-3 font-medium">
-					{db ? model ? "正在生成語音，請稍候……" : "正在存取語音模型……" : "資料庫載入中……"}
+					{db ? download ? "正在生成語音，請稍候……" : `正在存取語音${DOWNLOAD_TYPE_LABEL[inferenceMode]}……` : "資料庫載入中……"}
 					<span className="loading loading-spinner max-sm:w-8 sm:loading-lg" />
 				</div>}
 		</div>}
