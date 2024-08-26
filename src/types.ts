@@ -9,11 +9,22 @@ export type Voice = "male" | "female";
 export type Terminology = Language | Voice;
 
 export type PronToNoteMap = Map<string, string>;
-export type PronNoteArray = [string, string][];
+
+export interface Edge {
+	start: number;
+	end: number;
+	pron: string;
+	note: string;
+}
+
+export interface StackedEdge extends Edge {
+	layer: number;
+}
+
 export interface Sentence {
 	language: Language;
 	voice: Voice;
-	sentence: [string, PronNoteArray][];
+	sentence: string[];
 }
 
 export type OfflineInferenceMode = "offline" | "plain";

@@ -7,7 +7,7 @@ import { DOWNLOAD_STATUS_INDICATOR_CLASS, DOWNLOAD_TYPE_LABEL, NO_AUTO_FILL } fr
 import { DBProvider } from "./db/DBContext";
 import DownloadManager from "./db/DownloadManager";
 import { useInferenceMode, useDownloadState } from "./hooks";
-import parse from "./parse";
+import { segment } from "./parse";
 import Radio from "./Radio";
 import SentenceCard from "./SentenceCard";
 
@@ -37,7 +37,7 @@ export default function App() {
 	const addSentence = useCallback(() => {
 		if (!textArea.current) return;
 		setSentences([
-			...textArea.current.value.split("\n").flatMap(line => (line.trim() ? [{ language, voice, sentence: parse(language, line) }] : [])),
+			...textArea.current.value.split("\n").flatMap(text => (text.trim() ? [{ language, voice, sentence: segment(text) }] : [])),
 			...sentences,
 		]);
 		textArea.current.value = "";

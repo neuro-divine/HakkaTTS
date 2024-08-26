@@ -5,7 +5,7 @@ import HakkaWords from "./res/hakka_words.csv";
 import WaitauWords from "./res/waitau_words.csv";
 import Resource from "./Resource";
 
-import type { Language, PronNoteArray } from "./types";
+import type { Edge, Language } from "./types";
 
 const resources: Record<Language, Resource> = {
 	waitau: new Resource(WaitauWords),
@@ -16,7 +16,7 @@ for (const { char, waitau, hakka, notes } of Chars) {
 	if (hakka) resources.hakka.set(char, new Map([[hakka, notes]]));
 }
 
-function segment(text: string) {
+export function segment(text: string) {
 	const result: string[] = [];
 	let curr = "";
 	for (const c of text) {
@@ -40,8 +40,8 @@ function segment(text: string) {
 	return result;
 }
 
-export default function parse(language: Language, text: string): [string, PronNoteArray][] {
-	return resources[language].get(segment(text)).map(([char, pronToNoteMap]) => [char, Array.from(pronToNoteMap)]);
+export function parse(language: Language, sentence: string[]): Edge[] {
+	return resources[language].get(sentence);
 }
 
 const normalizedPunctuations: Record<string, string | undefined> = {
