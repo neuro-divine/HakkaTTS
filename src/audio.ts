@@ -1,47 +1,44 @@
-import type { Language, Voice } from "./types";
+import { cachedFetch } from "./cache";
+import { AUDIO_PATH_PREFIX, ServerError } from "./consts";
 
-async function fetchAudio(audioContext: AudioContext, audioPath: string) {
-	try {
-		const response = await fetch(audioPath);
-		const arrayBuffer = await response.arrayBuffer();
-		const audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
+import type { AudioComponent, AudioVersion, Language, Voice } from "./types";
 
-		const bufferSource = audioContext.createBufferSource();
-		bufferSource.buffer = audioBuffer;
-		return bufferSource;
+type Offset = [start: number, end?: number];
+
+const offsetCache = new Map<string, Map<string, Offset>>();
+
+export async function getOffsetMap(version: AudioVersion, language: Language, voice: Voice, component: AudioComponent) {
+	const path = `${version}/${language}/${voice}/${component}`;
+	let offsetMap = offsetCache.get(path);
+	if (offsetMap) return offsetMap;
+	const response = await cachedFetch(`${AUDIO_PATH_PREFIX}@${path}.csv`);
+	if (!response.ok) throw new ServerError("載入失敗");
+	const iter = (await response.text())[Symbol.iterator]();
+	// Skip header
+	for (const char of iter) {
+		if (char === "\n") break;
 	}
-	catch {
-		return createEmptyBufferSource(audioContext);
+	offsetMap = new Map();
+	let key = "";
+	let value = "";
+	let prev: Offset | undefined;
+	let isKey = true;
+	for (const char of iter) {
+		if (isKey) {
+			if (char === ",") isKey = false;
+			else key += char;
+		}
+		else {
+			if (char === "\n") {
+				prev?.push(+value);
+				offsetMap.set(key, prev = [+value]);
+				key = "";
+				value = "";
+				isKey = true;
+			}
+			else value += char;
+		}
 	}
-}
-
-function createEmptyBufferSource(audioContext: AudioContext) {
-	const bufferSource = audioContext.createBufferSource();
-	bufferSource.buffer = audioContext.createBuffer(1, Math.ceil(audioContext.sampleRate * 0.2), audioContext.sampleRate);
-	return bufferSource;
-}
-
-function concatenateAudioSources(audioContext: AudioContext, sources: AudioBufferSourceNode[]) {
-	const totalLength = sources.reduce((length, { buffer }) => length + buffer!.length, 0);
-	const outputBuffer = audioContext.createBuffer(1, totalLength, audioContext.sampleRate);
-	const outputChannelData = outputBuffer.getChannelData(0);
-
-	let outputOffset = 0;
-	for (const { buffer } of sources) {
-		outputChannelData.set(buffer!.getChannelData(0), outputOffset);
-		outputOffset += buffer!.length;
-	}
-	return outputBuffer;
-}
-
-export default async function getAudio(audioContext: AudioContext, language: Language, voice: Voice, syllables: string[]) {
-	const audioSources = await Promise.all(
-		syllables.map(
-			syllable => syllable.length > 1 ? fetchAudio(audioContext, syllable) : createEmptyBufferSource(audioContext),
-		),
-	);
-	return concatenateAudioSources(
-		audioContext,
-		audioSources.filter(({ buffer }) => buffer),
-	);
+	offsetCache.set(path, offsetMap);
+	return offsetMap;
 }

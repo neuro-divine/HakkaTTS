@@ -1,11 +1,15 @@
 import { useState, useRef, useReducer, useEffect } from "react";
 
 import { CURRENT_AUDIO_VERSION, CURRENT_MODEL_VERSION } from "./version";
-import { ALL_AUDIO_COMPONENTS, ALL_MODEL_COMPONENTS, DatabaseError, DOWNLOAD_STATUS_LABEL, DOWNLOAD_STATUS_ACTION_LABEL, DOWNLOAD_STATUS_CLASS, DOWNLOAD_STATUS_ICON, TERMINOLOGY, VOICE_TO_ICON, MODEL_PATH_PREFIX, MODEL_COMPONENT_TO_N_CHUNKS, DOWNLOAD_TYPE_LABEL, AUDIO_PATH_PREFIX } from "../consts";
+import { ALL_AUDIO_COMPONENTS, ALL_MODEL_COMPONENTS, DatabaseError, DOWNLOAD_STATUS_LABEL, DOWNLOAD_STATUS_ACTION_LABEL, DOWNLOAD_STATUS_CLASS, DOWNLOAD_STATUS_ICON, TERMINOLOGY, VOICE_TO_ICON, MODEL_PATH_PREFIX, MODEL_COMPONENT_TO_N_CHUNKS, DOWNLOAD_TYPE_LABEL, AUDIO_PATH_PREFIX, AUDIO_COMPONENT_TO_N_CHUNKS } from "../consts";
 import { fromLength } from "../utils";
 
-import type { DownloadStatus, TTSDB, Language, DownloadComponent, Voice, DownloadComponentToFile, DownloadVersion, SetDownloadStatus, OfflineInferenceModeState } from "../types";
+import type { DownloadStatus, TTSDB, Language, DownloadComponent, Voice, DownloadComponentToFile, DownloadVersion, SetDownloadStatus, OfflineInferenceModeState, AudioComponent, ModelComponent, OfflineInferenceMode } from "../types";
 import type { IDBPDatabase } from "idb";
+
+function getNumberOfChunks(inferenceMode: OfflineInferenceMode, component: DownloadComponent, language: Language) {
+	return inferenceMode === "offline" ? MODEL_COMPONENT_TO_N_CHUNKS[component as ModelComponent] : AUDIO_COMPONENT_TO_N_CHUNKS[`${language}_${component as AudioComponent}`];
+}
 
 // This method is bounded per the spec
 // eslint-disable-next-line @typescript-eslint/unbound-method
@@ -26,6 +30,7 @@ export default function DownloadRow({ db, inferenceMode, language, voice, setDow
 	const abortController = useRef<AbortController>();
 
 	const store = inferenceMode === "offline" ? "models" : "audios";
+	const extension = inferenceMode === "offline" ? "onnx" : "bin";
 	const CURRENT_VERSION = inferenceMode === "offline" ? CURRENT_MODEL_VERSION : CURRENT_AUDIO_VERSION;
 	const PATH_PREFIX = inferenceMode === "offline" ? MODEL_PATH_PREFIX : AUDIO_PATH_PREFIX;
 	const ALL_COMPONENTS = inferenceMode === "offline" ? ALL_MODEL_COMPONENTS : ALL_AUDIO_COMPONENTS;
@@ -79,13 +84,14 @@ export default function DownloadRow({ db, inferenceMode, language, voice, setDow
 		setProgress(0);
 
 		const { signal } = abortController.current = new AbortController();
-		const fetchFiles = missingComponents.flatMap(component =>
-			MODEL_COMPONENT_TO_N_CHUNKS[component] === 1
+		const fetchFiles = missingComponents.flatMap(component => {
+			const nChunks = getNumberOfChunks(inferenceMode, component, language);
+			return nChunks === 1
 				? [[component, component] as [DownloadComponent, string]]
-				: fromLength(MODEL_COMPONENT_TO_N_CHUNKS[component], i => [component, `${component}_chunk_${i}`] as [DownloadComponent, string])
-		);
+				: fromLength(nChunks, i => [component, `${component}_chunk_${i}`] as [DownloadComponent, string]);
+		});
 		const fetchResults = await Promise.allSettled(fetchFiles.map(async ([component, file]) => {
-			const { ok, headers, body } = await fetch(`${PATH_PREFIX}@${CURRENT_VERSION}/${language}/${voice}/${file}.onnx`, { signal });
+			const { ok, headers, body } = await fetch(`${PATH_PREFIX}@${CURRENT_VERSION}/${language}/${voice}/${file}.${extension}`, { signal });
 			if (!ok || !body) throw new Error("Network response was not OK");
 			const reader = body.getReader();
 			const length = headers.get("Content-Length");
@@ -114,7 +120,7 @@ export default function DownloadRow({ db, inferenceMode, language, voice, setDow
 
 		let totalReceivedLength = 0;
 		const saveResults = await Promise.allSettled(Array.from(successFetches, async ([component, readers]) => {
-			if (readers.length !== MODEL_COMPONENT_TO_N_CHUNKS[component]) {
+			if (readers.length !== getNumberOfChunks(inferenceMode, component, language)) {
 				throw new Error(`Some chunks of "${component}" are missing`);
 			}
 			let receivedLength = 0;

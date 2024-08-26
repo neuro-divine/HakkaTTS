@@ -107,6 +107,13 @@ export const DOWNLOAD_STATUS_INDICATOR_CLASS: Record<Exclude<ActualDownloadStatu
 	incomplete: "text-error",
 };
 
+export const AUDIO_COMPONENT_TO_N_CHUNKS: Record<`${Language}_${AudioComponent}`, number> = {
+	waitau_chars: 1,
+	waitau_words: 3,
+	hakka_chars: 1,
+	hakka_words: 4,
+};
+
 export const AUDIO_PATH_PREFIX = "https://cdn.jsdelivr.net/gh/hkilang/TTS-audios";
 
 export const NO_AUTO_FILL = {
@@ -115,6 +122,13 @@ export const NO_AUTO_FILL = {
 	autoCapitalize: "off",
 	spellCheck: "false",
 } as const;
+
+export class ServerError extends Error {
+	constructor(name: string, ...args: Parameters<ErrorConstructor>) {
+		super(...args);
+		this.name = name;
+	}
+}
 
 export class DatabaseError extends Error {
 	override name = "DatabaseError";

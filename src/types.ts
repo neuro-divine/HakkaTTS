@@ -30,11 +30,6 @@ export interface Sentence {
 export type OfflineInferenceMode = "offline" | "plain";
 export type InferenceMode = "online" | OfflineInferenceMode;
 
-export interface ServerError {
-	error: string;
-	message?: string;
-}
-
 export type ModelComponent = "enc" | "emb" | "sdp" | "flow" | "dec";
 
 export type ModelComponentToFile = Record<ModelComponent, ModelFile>;
@@ -107,6 +102,10 @@ export type DownloadStatus =
 	| "cancelled_incomplete"
 	| "save_failed"
 	| "save_incomplete";
+
+export interface InferenceModeState {
+	inferenceMode: InferenceMode;
+}
 
 export interface OfflineInferenceModeState {
 	inferenceMode: OfflineInferenceMode;

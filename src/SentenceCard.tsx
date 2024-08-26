@@ -1,16 +1,13 @@
 import { useMemo, useState } from "react";
 
+import AudioPlayer from "./AudioPlayer";
 import { TERMINOLOGY } from "./consts";
-import OfflineAudioPlayer from "./OfflineAudioPlayer";
-import OnlineAudioPlayer from "./OnlineAudioPlayer";
 import { normalizePauses, parse } from "./parse";
-import PlainAudioPlayer from "./PlainAudioPlayer";
 
-import type { DownloadManagerState, Sentence, SetDownloadStatus, InferenceMode, Edge, StackedEdge } from "./types";
+import type { DownloadManagerState, Sentence, SetDownloadStatus, Edge, StackedEdge, InferenceModeState } from "./types";
 
-interface SentenceCardProps extends SetDownloadStatus, DownloadManagerState {
+interface SentenceCardProps extends InferenceModeState, SetDownloadStatus, DownloadManagerState {
 	sentence: Sentence;
-	inferenceMode: InferenceMode;
 	isDownloadManagerVisible: boolean;
 	openDownloadManager: () => void;
 }
@@ -215,24 +212,14 @@ export default function SentenceCard({ sentence: { language, voice, sentence }, 
 				<span className="badge badge-secondary join-item">{TERMINOLOGY[voice]}</span>
 			</div>
 			<div className="text-2.5xl/none sm:text-4xl mt-2 sm:mt-5">{tables}</div>
-			{inferenceMode === "online"
-				? <OnlineAudioPlayer
-					language={language}
-					voice={voice}
-					syllables={syllables} />
-				: inferenceMode === "offline"
-				? <OfflineAudioPlayer
-					inferenceMode={inferenceMode}
-					language={language}
-					voice={voice}
-					syllables={syllables}
-					setDownloadState={setDownloadState}
-					isDownloadManagerVisible={isDownloadManagerVisible}
-					openDownloadManager={openDownloadManager} />
-				: <PlainAudioPlayer
-					language={language}
-					voice={voice}
-					syllables={syllables} />}
+			<AudioPlayer
+				inferenceMode={inferenceMode}
+				language={language}
+				voice={voice}
+				syllables={inferenceMode === "plain" ? enabledEdgesProns : flattenedProns}
+				setDownloadState={setDownloadState}
+				isDownloadManagerVisible={isDownloadManagerVisible}
+				openDownloadManager={openDownloadManager} />
 		</div>
 	</div>;
 }
