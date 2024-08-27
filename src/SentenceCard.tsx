@@ -158,23 +158,29 @@ export default function SentenceCard({ sentence: { language, voice, sentence }, 
 	const tables = edgeGroups.map((edgesInGroup, key) => {
 		const start = i;
 
-		const cells: JSX.Element[] = [];
+		const chars: JSX.Element[] = [];
 		while (i < edgesInGroup.end) {
-			cells.push(
-				<td key={i} className="p-1">
-					<ruby className="px-1">
-						{sentence[i]}
-						<rt>{flattenedProns[i].length > 1 ? flattenedProns[i] : "\xa0"}</rt>
-					</ruby>
-				</td>,
+			chars.push(
+				<ruby className="px-2 py-1">
+					{sentence[i]}
+					<rt>{flattenedProns[i].length > 1 ? flattenedProns[i] : "\xa0"}</rt>
+				</ruby>,
 			);
 			i++;
 		}
 
 		const layers: Edge[][] = [];
 		for (const edge of edgesInGroup) (layers[edge.layer] ||= []).push(edge);
+		if (layers.length <= 1) return chars;
 
-		return <table className="inline-table text-center" key={key}>
+		i = start;
+		const cells: JSX.Element[] = [];
+		while (i < edgesInGroup.end) {
+			cells.push(<td key={i} className="text-xl sm:text-2xl text-[#9a190c] px-2 py-1">{sentence[i]}</td>);
+			i++;
+		}
+
+		const dropdown = <table className="text-center min-w-full" key={key}>
 			<tbody>
 				<tr>{cells}</tr>
 				{layers.map((edgesInLayer, key) => {
@@ -183,17 +189,17 @@ export default function SentenceCard({ sentence: { language, voice, sentence }, 
 					for (const edge of edgesInLayer) {
 						if (edge.start > prev) cells.push(<td key={prev} colSpan={edge.start - prev} />);
 						cells.push(
-							<td key={edge.start} className="p-1" colSpan={edge.end - edge.start}>
+							<td key={edge.start} className="p-1 align-top" colSpan={edge.end - edge.start}>
 								<button
 									type="button"
 									className={`w-full cursor-pointer border-t-2 ${
 										enabledEdges.has(edge)
 											? "border-t-yellow-400 text-yellow-700 hover:border-t-yellow-300 hover:text-yellow-600"
 											: "border-slate-200 text-slate-600 hover:border-slate-300 hover:text-slate-800"
-									} transition-colors px-1`}
+									} transition-colors px-1 align-top`}
 									onClick={() => setEnabledEdges(enabledEdges => findOptimalEdges(edges, enabledEdges, edge, !enabledEdges.has(edge)))}>
 									<div className="text-base sm:text-lg">{edge.pron}</div>
-									<div className="text-xs sm:text-sm text-slate-500">{edge.note || "\xa0"}</div>
+									<div className="text-xs sm:text-sm text-slate-500">{edge.note}</div>
 								</button>
 							</td>,
 						);
@@ -204,6 +210,13 @@ export default function SentenceCard({ sentence: { language, voice, sentence }, 
 				})}
 			</tbody>
 		</table>;
+
+		return <div className="dropdown dropdown-hover" key={key}>
+			{/* eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex */}
+			<label tabIndex={0} className="text-[#0a469f]">{chars}</label>
+			{/* eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex */}
+			<ul tabIndex={0} className="dropdown-content left-1/2 -translate-x-1/2 z-10 p-2 min-w-full shadow bg-[#fffefd] border border-base-200 rounded-box whitespace-nowrap">{dropdown}</ul>
+		</div>;
 	});
 
 	return <div className="card card-bordered border-base-300 bg-base-100 rounded-xl shadow-lg mb-3">
