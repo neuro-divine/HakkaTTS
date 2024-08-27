@@ -119,7 +119,7 @@ function groupEdges<T extends Edge>(edges: T[], length: number) {
 		if (edge.start >= currEnd) {
 			if (currEdges.length) edgeGroups.push(Object.assign(currEdges, { end: currEnd }));
 			currEdges = [];
-			if (edge.start > currEnd) edgeGroups.push(Object.assign([], { end: currEnd }));
+			if (edge.start > currEnd) edgeGroups.push(Object.assign([], { end: edge.start }));
 		}
 		currEdges.push(edge);
 		if (edge.end > currEnd) currEnd = edge.end;
