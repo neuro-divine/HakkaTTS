@@ -152,7 +152,7 @@ export default function SentenceCard({ sentence: { language, voice, sentence }, 
 		for (let i = prevEnd; i < sentence.length; i++) prons.push(normalizePauses(sentence[i]));
 		return prons;
 	}, [enabledEdges, sentence]);
-	const flattenedProns = useMemo(() => enabledEdgesProns.flatMap(pron => pron.length > 1 ? pron.split(" ") : [""]), [enabledEdgesProns]);
+	const flattenedProns = useMemo(() => enabledEdgesProns.flatMap(pron => pron.split(" ")), [enabledEdgesProns]);
 
 	let i = 0;
 	const tables = edgeGroups.map((edgesInGroup, key) => {
@@ -164,10 +164,11 @@ export default function SentenceCard({ sentence: { language, voice, sentence }, 
 				<td key={i} className="p-1">
 					<ruby className="px-1">
 						{sentence[i]}
-						<rt>{flattenedProns[i++] || "\xa0"}</rt>
+						<rt>{flattenedProns[i].length > 1 ? flattenedProns[i] : "\xa0"}</rt>
 					</ruby>
 				</td>,
 			);
+			i++;
 		}
 
 		const layers: Edge[][] = [];
