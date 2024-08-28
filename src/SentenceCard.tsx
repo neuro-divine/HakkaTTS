@@ -4,12 +4,10 @@ import AudioPlayer from "./AudioPlayer";
 import { TERMINOLOGY } from "./consts";
 import { normalizePauses, parse } from "./parse";
 
-import type { DownloadManagerState, Sentence, SetDownloadStatus, Edge, StackedEdge, InferenceModeState } from "./types";
+import type { SettingsDialogState, Sentence, SetDownloadStatus, Edge, StackedEdge, QueryOptionsState, HakkaToneModes } from "./types";
 
-interface SentenceCardProps extends InferenceModeState, SetDownloadStatus, DownloadManagerState {
+interface SentenceCardProps extends QueryOptionsState, SetDownloadStatus, SettingsDialogState {
 	sentence: Sentence;
-	isDownloadManagerVisible: boolean;
-	openDownloadManager: () => void;
 }
 
 function stackEdges(edges: Edge[]): asserts edges is StackedEdge[] {
@@ -129,7 +127,19 @@ function groupEdges<T extends Edge>(edges: T[], length: number) {
 	return edgeGroups;
 }
 
-export default function SentenceCard({ sentence: { language, voice, sentence }, inferenceMode, setDownloadState, isDownloadManagerVisible, openDownloadManager }: SentenceCardProps) {
+function replaceHakkaTones(language: string, hakkaToneMode: HakkaToneMode, pron: string) {
+	return language === "hakka" && hakkaToneMode === "diacritics"
+		? pron.replace(/(\D*[aeo]|\D*i(?=u\d)|\D*[iu]|\D*[mn])(\D*)(\d)/g, (_, $1, $2, $3) => $1 + " ́̄̆̀̆̀"[+$3] + $2)
+		: pron;
+}
+
+export default function SentenceCard({
+	sentence: { language, voice, sentence },
+	queryOptions,
+	setDownloadState,
+	currSettingsDialogPage,
+	setCurrSettingsDialogPage,
+}: SentenceCardProps) {
 	const [enabledEdges, setEnabledEdges] = useState(new Set<Edge>());
 	const edges = useMemo(() => {
 		const edges = parse(language, sentence);
@@ -161,9 +171,9 @@ export default function SentenceCard({ sentence: { language, voice, sentence }, 
 		const chars: JSX.Element[] = [];
 		while (i < edgesInGroup.end) {
 			chars.push(
-				<ruby className="px-2 py-1">
+				<ruby key={i} className="px-2 py-1">
 					{sentence[i]}
-					<rt>{flattenedProns[i].length > 1 ? flattenedProns[i] : "\xa0"}</rt>
+					<rt>{flattenedProns[i].length > 1 ? replaceHakkaTones(language, queryOptions.hakkaToneMode, flattenedProns[i]) : "\xa0"}</rt>
 				</ruby>,
 			);
 			i++;
@@ -198,7 +208,7 @@ export default function SentenceCard({ sentence: { language, voice, sentence }, 
 											: "border-slate-200 text-slate-600 hover:border-slate-300 hover:text-slate-800"
 									} transition-colors px-1 align-top`}
 									onClick={() => setEnabledEdges(enabledEdges => findOptimalEdges(edges, enabledEdges, edge, !enabledEdges.has(edge)))}>
-									<div className="text-base sm:text-lg">{edge.pron}</div>
+									<div className="text-base sm:text-lg">{replaceHakkaTones(language, queryOptions.hakkaToneMode, edge.pron)}</div>
 									<div className="text-xs sm:text-sm text-slate-500">{edge.note}</div>
 								</button>
 							</td>,
@@ -227,13 +237,13 @@ export default function SentenceCard({ sentence: { language, voice, sentence }, 
 			</div>
 			<div className="text-2.5xl/none sm:text-4xl mt-2 sm:mt-5">{tables}</div>
 			<AudioPlayer
-				inferenceMode={inferenceMode}
+				queryOptions={queryOptions}
 				language={language}
 				voice={voice}
-				syllables={inferenceMode === "lightweight" ? enabledEdgesProns : flattenedProns}
+				syllables={queryOptions.inferenceMode === "lightweight" ? enabledEdgesProns : flattenedProns}
 				setDownloadState={setDownloadState}
-				isDownloadManagerVisible={isDownloadManagerVisible}
-				openDownloadManager={openDownloadManager} />
+				currSettingsDialogPage={currSettingsDialogPage}
+				setCurrSettingsDialogPage={setCurrSettingsDialogPage} />
 		</div>
 	</div>;
 }

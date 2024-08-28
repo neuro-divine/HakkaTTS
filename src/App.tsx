@@ -1,21 +1,21 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 
-import { MdError, MdOutlineDownloadForOffline } from "react-icons/md";
+import { MdError, MdSettings } from "react-icons/md";
 
-import { DOWNLOAD_STATUS_INDICATOR_CLASS, DOWNLOAD_TYPE_LABEL, NO_AUTO_FILL } from "./consts";
+import { DOWNLOAD_STATUS_INDICATOR_CLASS, NO_AUTO_FILL } from "./consts";
 import { DBProvider } from "./db/DBContext";
-import DownloadManager from "./db/DownloadManager";
-import { useInferenceMode, useDownloadState } from "./hooks";
+import { useDownloadState, useQueryOptions } from "./hooks";
 import { segment } from "./parse";
 import Radio from "./Radio";
 import SentenceCard from "./SentenceCard";
+import SettingsDialog from "./SettingsDialog";
 
-import type { Voice, Language, Sentence } from "./types";
+import type { SettingsDialogPage, Sentence } from "./types";
 
 export default function App() {
-	const [language, setLanguage] = useState<Language>("waitau");
-	const [voice, setVoice] = useState<Voice>("male");
+	const queryOptions = useQueryOptions();
+	const { language, voice, inferenceMode, setLanguage, setVoice } = queryOptions;
 	const [sentences, setSentences] = useState<Sentence[]>([]);
 
 	const textArea = useRef<HTMLTextAreaElement>(null);
@@ -52,27 +52,22 @@ export default function App() {
 		return () => observer.unobserve(currTextArea);
 	}, [textArea, resizeElements]);
 
-	const [inferenceMode /* , setInferenceMode */] = useInferenceMode();
+	const [currSettingsDialogPage, setCurrSettingsDialogPage] = useState<SettingsDialogPage>(null);
+	const settingsDialog = useRef<HTMLDialogElement>(null);
 
-	const [isDownloadManagerVisible, setIsDownloadManagerVisible] = useState(false);
-	const downloadManager = useRef<HTMLDialogElement>();
-
-	const openDownloadManager = useCallback(() => {
-		setIsDownloadManagerVisible(true);
-		if (!downloadManager.current) return;
-		downloadManager.current.inert = true;
-		downloadManager.current.showModal();
-		downloadManager.current.inert = false;
-		downloadManager.current.addEventListener("close", () => setIsDownloadManagerVisible(false), { once: true });
-	}, [setIsDownloadManagerVisible]);
-
-	const onDownloadManagerReady = useCallback((newDownloadManager: HTMLDialogElement | null) => {
-		if (!newDownloadManager) return;
-		downloadManager.current = newDownloadManager;
-		openDownloadManager();
-	}, [openDownloadManager]);
+	useEffect(() => {
+		const { current: dialog } = settingsDialog;
+		if (dialog && !dialog.open && currSettingsDialogPage) {
+			dialog.inert = true;
+			dialog.showModal();
+			dialog.inert = false;
+			dialog.addEventListener("close", () => setCurrSettingsDialogPage(null), { once: true });
+		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [settingsDialog.current, currSettingsDialogPage, setCurrSettingsDialogPage]);
 
 	const [downloadState, setDownloadState] = useDownloadState();
+	const currInferenceModeDownloadState = inferenceMode === "online" ? "latest" : downloadState.get(inferenceMode)!;
 
 	return <DBProvider>
 		<div>
@@ -92,15 +87,24 @@ export default function App() {
 							<Radio name="btnvoice" className="btn-secondary" state={voice} setState={setVoice} value="female" />
 						</div>
 					</div>
-					{inferenceMode !== "online"
-						&& <div>
-							<button type="button" className="btn btn-ghost max-sm:btn-sm max-sm:px-2.5 relative flex-col flex-nowrap gap-0 text-base whitespace-nowrap h-20 min-h-20 text-slate-500 hover:bg-opacity-10" onClick={openDownloadManager}>
-								{downloadState !== "latest" && <MdError size="1.5em" className={`absolute top-1 right-1 ${DOWNLOAD_STATUS_INDICATOR_CLASS[downloadState]}`} />}
-								<MdOutlineDownloadForOffline size="2em" />
-								{DOWNLOAD_TYPE_LABEL[inferenceMode]}下載
-								{isDownloadManagerVisible && createPortal(<DownloadManager ref={onDownloadManagerReady} inferenceMode={inferenceMode} setDownloadState={setDownloadState} />, document.body)}
-							</button>
-						</div>}
+					<div>
+						<button type="button" className="btn btn-ghost max-sm:btn-sm max-sm:px-2.5 relative flex-col flex-nowrap gap-0 text-base whitespace-nowrap h-20 min-h-20 text-slate-500 hover:bg-opacity-10" onClick={() => setCurrSettingsDialogPage("settings")}>
+							{currInferenceModeDownloadState !== "latest" && <MdError size="1.5em" className={`absolute -top-1 -right-1 ${DOWNLOAD_STATUS_INDICATOR_CLASS[currInferenceModeDownloadState]}`} />}
+							<MdSettings size="2em" />
+							設定
+						</button>
+						{createPortal(
+							<SettingsDialog
+								key={currSettingsDialogPage}
+								ref={settingsDialog}
+								currSettingsDialogPage={currSettingsDialogPage}
+								setCurrSettingsDialogPage={setCurrSettingsDialogPage}
+								queryOptions={queryOptions}
+								downloadState={downloadState}
+								setDownloadState={setDownloadState} />,
+							document.body,
+						)}
+					</div>
 				</div>
 				<div className="join w-full">
 					<textarea
@@ -124,10 +128,10 @@ export default function App() {
 					<SentenceCard
 						key={sentences.length - i}
 						sentence={sentence}
-						inferenceMode={inferenceMode}
+						queryOptions={queryOptions}
 						setDownloadState={setDownloadState}
-						isDownloadManagerVisible={isDownloadManagerVisible}
-						openDownloadManager={openDownloadManager} />
+						currSettingsDialogPage={currSettingsDialogPage}
+						setCurrSettingsDialogPage={setCurrSettingsDialogPage} />
 				))}
 			</div>
 		</div>

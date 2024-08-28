@@ -1,12 +1,12 @@
 import type { DBSchema } from "idb";
-import type { Dispatch } from "react";
+import type { Dispatch, SetStateAction } from "react";
 
 export type CharsFile = { [P in "char" | "waitau" | "hakka" | "notes"]: string }[];
 export type WordsFile = { [P in "char" | "pron"]: string }[];
 
 export type Language = "waitau" | "hakka";
 export type Voice = "male" | "female";
-export type Terminology = Language | Voice;
+export type Terminology = Language | Voice | HakkaToneMode;
 
 export type PronToNoteMap = Map<string, string>;
 
@@ -29,6 +29,8 @@ export interface Sentence {
 
 export type OfflineInferenceMode = "offline" | "lightweight";
 export type InferenceMode = "online" | OfflineInferenceMode;
+
+export type HakkaToneMode = "digits" | "diacritics";
 
 export type ModelComponent = "enc" | "emb" | "sdp" | "flow" | "dec";
 
@@ -103,12 +105,21 @@ export type DownloadStatus =
 	| "save_failed"
 	| "save_incomplete";
 
-export interface InferenceModeState {
+export interface QueryOptions {
+	language: Language;
+	voice: Voice;
 	inferenceMode: InferenceMode;
+	voiceSpeed: number;
+	hakkaToneMode: HakkaToneMode;
+	setLanguage: Dispatch<Language>;
+	setVoice: Dispatch<Voice>;
+	setInferenceMode: Dispatch<InferenceMode>;
+	setVoiceSpeed: Dispatch<number>;
+	setHakkaToneMode: Dispatch<HakkaToneMode>;
 }
 
-export interface OfflineInferenceModeState {
-	inferenceMode: OfflineInferenceMode;
+export interface QueryOptionsState {
+	queryOptions: Pick<QueryOptions, "inferenceMode" | "voiceSpeed" | "hakkaToneMode">;
 }
 
 export interface DownloadState {
@@ -122,13 +133,15 @@ export interface SetDownloadStatus {
 	setDownloadState: Dispatch<DownloadState>;
 }
 
-export interface DownloadManagerState {
-	isDownloadManagerVisible: boolean;
-	openDownloadManager: () => void;
+export type SettingsDialogPage = null | "settings" | `${OfflineInferenceMode}_mode_downloads`;
+
+export interface SettingsDialogState {
+	currSettingsDialogPage: SettingsDialogPage;
+	setCurrSettingsDialogPage: Dispatch<SetStateAction<SettingsDialogPage>>;
 }
 
 export interface Actions {
-	infer(language: Language, model: ModelComponentToFile, syllables: string[]): Promise<Float32Array>;
+	infer(language: Language, model: ModelComponentToFile, syllables: string[], voiceSpeed: number): Promise<Float32Array>;
 }
 
 interface NamedMessage<K extends keyof Actions> {

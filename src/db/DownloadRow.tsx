@@ -4,7 +4,7 @@ import { CURRENT_AUDIO_VERSION, CURRENT_MODEL_VERSION } from "./version";
 import { ALL_AUDIO_COMPONENTS, ALL_MODEL_COMPONENTS, DatabaseError, DOWNLOAD_STATUS_LABEL, DOWNLOAD_STATUS_ACTION_LABEL, DOWNLOAD_STATUS_CLASS, DOWNLOAD_STATUS_ICON, TERMINOLOGY, VOICE_TO_ICON, MODEL_PATH_PREFIX, MODEL_COMPONENT_TO_N_CHUNKS, DOWNLOAD_TYPE_LABEL, AUDIO_PATH_PREFIX, AUDIO_COMPONENT_TO_N_CHUNKS } from "../consts";
 import { fromLength } from "../utils";
 
-import type { DownloadStatus, TTSDB, Language, DownloadComponent, Voice, DownloadComponentToFile, DownloadVersion, SetDownloadStatus, OfflineInferenceModeState, AudioComponent, ModelComponent, OfflineInferenceMode } from "../types";
+import type { DownloadStatus, TTSDB, Language, DownloadComponent, Voice, DownloadComponentToFile, DownloadVersion, SetDownloadStatus, AudioComponent, ModelComponent, OfflineInferenceMode } from "../types";
 import type { IDBPDatabase } from "idb";
 
 function getNumberOfChunks(inferenceMode: OfflineInferenceMode, component: DownloadComponent, language: Language) {
@@ -15,7 +15,8 @@ function getNumberOfChunks(inferenceMode: OfflineInferenceMode, component: Downl
 // eslint-disable-next-line @typescript-eslint/unbound-method
 const formatPercentage = Intl.NumberFormat("zh-HK", { style: "percent", minimumFractionDigits: 2, maximumFractionDigits: 2 }).format;
 
-interface DownloadRowProps extends OfflineInferenceModeState, SetDownloadStatus {
+interface DownloadRowProps extends SetDownloadStatus {
+	inferenceMode: OfflineInferenceMode;
 	db: IDBPDatabase<TTSDB>;
 	language: Language;
 	voice: Voice;

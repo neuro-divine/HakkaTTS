@@ -9,19 +9,30 @@ import { useDB } from "./db/DBContext";
 import { CURRENT_AUDIO_VERSION, CURRENT_MODEL_VERSION } from "./db/version";
 import API from "./inference/api";
 
-import type { Language, DownloadComponentToFile, DownloadManagerState, SetDownloadStatus, DownloadVersion, Voice, ModelComponentToFile, InferenceModeState, AudioComponentToFile, OfflineInferenceMode, AudioVersion } from "./types";
+import type { Language, DownloadComponentToFile, SettingsDialogState, SetDownloadStatus, DownloadVersion, Voice, ModelComponentToFile, AudioComponentToFile, OfflineInferenceMode, AudioVersion, QueryOptionsState } from "./types";
 import type { SyntheticEvent } from "react";
 
 const context = new AudioContext({ sampleRate: 44100 });
 const audioCache = new Map<string, Map<string, AudioBuffer>>();
 
-interface AudioPlayerProps extends InferenceModeState, SetDownloadStatus, DownloadManagerState {
+interface AudioPlayerProps extends QueryOptionsState, SetDownloadStatus, SettingsDialogState {
 	language: Language;
 	voice: Voice;
 	syllables: string[];
 }
 
-export default function AudioPlayer({ inferenceMode, language, voice, syllables, setDownloadState, isDownloadManagerVisible, openDownloadManager }: AudioPlayerProps) {
+export default function AudioPlayer({
+	queryOptions: {
+		inferenceMode,
+		voiceSpeed,
+	},
+	language,
+	voice,
+	syllables,
+	setDownloadState,
+	currSettingsDialogPage,
+	setCurrSettingsDialogPage,
+}: AudioPlayerProps) {
 	useEffect(() => void context.resume(), []);
 	const [buffer, setBuffer] = useState<AudioBuffer | undefined>();
 	const [sourceNode, setSourceNode] = useState<AudioBufferSourceNode | undefined>();
@@ -72,7 +83,7 @@ export default function AudioPlayer({ inferenceMode, language, voice, syllables,
 
 	useEffect(() => {
 		async function getDownloadComponents() {
-			if (inferenceMode === "online" || !db || download || isDownloadManagerVisible) return;
+			if (inferenceMode === "online" || !db || download || currSettingsDialogPage) return;
 			setDownloadError(undefined);
 			setBuffer(undefined);
 			try {
@@ -101,8 +112,9 @@ export default function AudioPlayer({ inferenceMode, language, voice, syllables,
 			}
 		}
 		void getDownloadComponents();
+		// `inferenceMode` and `voiceSpeed` intentionally excluded
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [db, download, inferenceMode, language, voice, setDownloadState, isDownloadManagerVisible, downloadRetryCounter]);
+	}, [db, download, language, voice, setDownloadState, currSettingsDialogPage, downloadRetryCounter]);
 
 	const [generationError, setGenerationError] = useState<Error>();
 	const [generationRetryCounter, generationRetry] = useReducer((n: number) => n + 1, 0);
@@ -111,7 +123,7 @@ export default function AudioPlayer({ inferenceMode, language, voice, syllables,
 		if (inferenceMode !== "online" && !download) return;
 		const [{ version }] = inferenceMode === "online" ? [{ version: "main" }] : Object.values(download!);
 		async function generateAudio() {
-			const key = `${inferenceMode}/${version}/${language}/${voice}`;
+			const key = `${inferenceMode}/${voiceSpeed}/${version}/${language}/${voice}`;
 			let textToBuffer = audioCache.get(key);
 			if (!textToBuffer) audioCache.set(key, textToBuffer = new Map<string, AudioBuffer>());
 			let buffer = textToBuffer.get(text);
@@ -120,7 +132,7 @@ export default function AudioPlayer({ inferenceMode, language, voice, syllables,
 					switch (inferenceMode) {
 						case "online":
 							try {
-								const response = await cachedFetch(`https://Chaak2.pythonanywhere.com/TTS/${language}/${encodeURI(text)}?voice=${voice}`);
+								const response = await cachedFetch(`https://Chaak2.pythonanywhere.com/TTS/${language}/${encodeURI(text)}?voice=${voice}&speed=${voiceSpeed}`);
 								if (response.ok) {
 									buffer = await context.decodeAudioData(await response.arrayBuffer());
 								}
@@ -134,7 +146,7 @@ export default function AudioPlayer({ inferenceMode, language, voice, syllables,
 							}
 							break;
 						case "offline": {
-							const channelData = await API.infer(language, download as ModelComponentToFile, syllables);
+							const channelData = await API.infer(language, download as ModelComponentToFile, syllables, voiceSpeed);
 							buffer = context.createBuffer(1, channelData.length, 44100);
 							buffer.copyToChannel(channelData, 0);
 							break;
@@ -170,8 +182,9 @@ export default function AudioPlayer({ inferenceMode, language, voice, syllables,
 		setGenerationError(undefined);
 		setBuffer(undefined);
 		void generateAudio();
+		// `inferenceMode` and `voiceSpeed` intentionally excluded
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [inferenceMode, language, voice, download, text, generationRetryCounter]);
+	}, [language, voice, download, text, generationRetryCounter]);
 
 	useEffect(() => {
 		if (buffer && isPlaying === null) playAudio();
@@ -266,7 +279,7 @@ export default function AudioPlayer({ inferenceMode, language, voice, syllables,
 						onClick={dbInitError
 							? dbInitRetry
 							: downloadError
-							? (downloadError instanceof FileNotDownloadedError ? openDownloadManager : downloadRetry)
+							? (downloadError instanceof FileNotDownloadedError ? () => setCurrSettingsDialogPage(`${inferenceMode as OfflineInferenceMode}_mode_downloads`) : downloadRetry)
 							: generationError
 							? generationRetry
 							: undefined}>

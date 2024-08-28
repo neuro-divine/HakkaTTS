@@ -1,12 +1,14 @@
-import { MdCancel, MdEject, MdFileDownload, MdFileDownloadDone, MdHourglassBottom, MdMan, MdRefresh, MdWoman } from "react-icons/md";
+import { MdCancel, MdEject, MdEnergySavingsLeaf, MdFileDownload, MdFileDownloadDone, MdFlight, MdHourglassBottom, MdLanguage, MdMan, MdRefresh, MdWoman } from "react-icons/md";
 
-import type { ActualDownloadStatus, InferenceMode, Language, ModelComponent, DownloadStatus, Terminology, Voice, OfflineInferenceMode, AudioComponent } from "./types";
+import type { ActualDownloadStatus, InferenceMode, Language, ModelComponent, DownloadStatus, Terminology, Voice, OfflineInferenceMode, AudioComponent, HakkaToneMode } from "./types";
 
 export const TERMINOLOGY: Record<Terminology, string> = {
 	waitau: "圍頭話",
 	hakka: "客家話",
 	male: "男聲",
 	female: "女聲",
+	digits: "數字",
+	diacritics: "調號",
 };
 
 export const VOICE_TO_ICON: Record<Voice, JSX.Element> = {
@@ -14,11 +16,30 @@ export const VOICE_TO_ICON: Record<Voice, JSX.Element> = {
 	female: <MdWoman size="1.375em" className="-mx-1" />,
 };
 
+export const INFERENCE_MODE_TO_LABEL: Record<InferenceMode, string> = {
+	online: "線上模式",
+	offline: "離線模式",
+	lightweight: "輕巧模式",
+};
+
+export const INFERENCE_MODE_TO_DESCRIPTION: Record<InferenceMode, string> = {
+	online: "在伺服器產生音訊。請注意，使用此模式可能會產生相關網絡費用。",
+	offline: "毋須網絡連線，直接於裝置進行運算並產生音訊。請注意，此模式僅適用於電腦或有大量可用記憶體的裝置，且需空間儲存模型。",
+	lightweight: "以輕巧方式快速於裝置產生音訊，質素較其餘兩個模式遜色。適用如記憶體容量較少的裝置。請注意，此模式仍需空間儲存數據。",
+};
+
+export const INFERENCE_MODE_TO_ICON: Record<InferenceMode, JSX.Element> = {
+	online: <MdLanguage size="1.25em" />,
+	offline: <MdFlight size="1.25em" />,
+	lightweight: <MdEnergySavingsLeaf size="1.25em" />,
+};
+
 export const ALL_LANGUAGES: readonly Language[] = ["waitau", "hakka"];
 export const ALL_VOICES: readonly Voice[] = ["male", "female"];
 export const ALL_INFERENCE_MODES: readonly InferenceMode[] = ["online", "offline", "lightweight"];
 export { ALL_MODEL_COMPONENTS } from "./inference/infer";
 export const ALL_AUDIO_COMPONENTS: readonly AudioComponent[] = ["chars", "words"];
+export const ALL_HAKKA_TONE_MODES: readonly HakkaToneMode[] = ["digits", "diacritics"];
 
 export const MODEL_COMPONENT_TO_N_CHUNKS: Record<ModelComponent, number> = {
 	enc: 2,
