@@ -17,12 +17,12 @@ export default class Resource {
 		for (const line of data) this.set(...line);
 	}
 
-	get(sentence: string[]): Edge[] {
-		return sentence.flatMap((_, i) => {
+	get(syllables: string[]): Edge[] {
+		return syllables.flatMap((_, i) => {
 			const edges: Edge[][] = [];
 			let u: Node | undefined = this.t;
-			for (let j = i; j < sentence.length; j++) {
-				u = u.get(sentence[j]);
+			for (let j = i; j < syllables.length; j++) {
+				u = u.get(syllables[j]);
 				if (!u) break;
 				if (u.v) edges.push(Array.from(u.v, ([pron, note]) => ({ start: i, end: j + 1, pron, note })));
 			}

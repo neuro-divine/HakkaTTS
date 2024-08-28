@@ -9,30 +9,24 @@ import { useDB } from "./db/DBContext";
 import { CURRENT_AUDIO_VERSION, CURRENT_MODEL_VERSION } from "./db/version";
 import API from "./inference/api";
 
-import type { Language, DownloadComponentToFile, SettingsDialogState, SetDownloadStatus, DownloadVersion, Voice, ModelComponentToFile, AudioComponentToFile, OfflineInferenceMode, AudioVersion, QueryOptionsState } from "./types";
+import type { DownloadComponentToFile, DownloadVersion, ModelComponentToFile, AudioComponentToFile, OfflineInferenceMode, AudioVersion, SentenceComponentState } from "./types";
 import type { SyntheticEvent } from "react";
 
 const context = new AudioContext({ sampleRate: 44100 });
 const audioCache = new Map<string, Map<string, AudioBuffer>>();
 
-interface AudioPlayerProps extends QueryOptionsState, SetDownloadStatus, SettingsDialogState {
-	language: Language;
-	voice: Voice;
-	syllables: string[];
-}
-
 export default function AudioPlayer({
-	queryOptions: {
+	sentence: {
+		language,
+		voice,
 		inferenceMode,
 		voiceSpeed,
+		syllables,
 	},
-	language,
-	voice,
-	syllables,
 	setDownloadState,
 	currSettingsDialogPage,
 	setCurrSettingsDialogPage,
-}: AudioPlayerProps) {
+}: SentenceComponentState) {
 	useEffect(() => void context.resume(), []);
 	const [buffer, setBuffer] = useState<AudioBuffer | undefined>();
 	const [sourceNode, setSourceNode] = useState<AudioBufferSourceNode | undefined>();

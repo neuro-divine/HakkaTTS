@@ -1,13 +1,13 @@
 import { useMemo, useState } from "react";
 
 import AudioPlayer from "./AudioPlayer";
-import { TERMINOLOGY } from "./consts";
+import { INFERENCE_MODE_TO_LABEL, TERMINOLOGY } from "./consts";
 import { normalizePauses, parse } from "./parse";
 
-import type { SettingsDialogState, Sentence, SetDownloadStatus, Edge, StackedEdge, QueryOptionsState, HakkaToneModes } from "./types";
+import type { Edge, StackedEdge, HakkaToneMode, SentenceComponentState } from "./types";
 
-interface SentenceCardProps extends QueryOptionsState, SetDownloadStatus, SettingsDialogState {
-	sentence: Sentence;
+interface SentenceCardProps extends SentenceComponentState {
+	hakkaToneMode: HakkaToneMode;
 }
 
 function stackEdges(edges: Edge[]): asserts edges is StackedEdge[] {
@@ -134,34 +134,34 @@ function replaceHakkaTones(language: string, hakkaToneMode: HakkaToneMode, pron:
 }
 
 export default function SentenceCard({
-	sentence: { language, voice, sentence },
-	queryOptions,
+	sentence: { language, voice, inferenceMode, voiceSpeed, syllables },
+	hakkaToneMode,
 	setDownloadState,
 	currSettingsDialogPage,
 	setCurrSettingsDialogPage,
 }: SentenceCardProps) {
 	const [enabledEdges, setEnabledEdges] = useState(new Set<Edge>());
 	const edges = useMemo(() => {
-		const edges = parse(language, sentence);
+		const edges = parse(language, syllables);
 		setEnabledEdges(findOptimalEdges(edges));
 		return edges;
-	}, [language, sentence]);
+	}, [language, syllables]);
 	const edgeGroups = useMemo(() => {
 		stackEdges(edges);
-		return groupEdges(edges, sentence.length);
-	}, [edges, sentence.length]);
+		return groupEdges(edges, syllables.length);
+	}, [edges, syllables.length]);
 
 	const enabledEdgesProns = useMemo(() => {
 		const prons: string[] = [];
 		let prevEnd = 0;
 		for (const edge of [...enabledEdges].sort((a, b) => a.start - b.start)) {
-			for (let i = prevEnd; i < edge.start; i++) prons.push(normalizePauses(sentence[i]));
+			for (let i = prevEnd; i < edge.start; i++) prons.push(normalizePauses(syllables[i]));
 			prons.push(edge.pron);
 			prevEnd = edge.end;
 		}
-		for (let i = prevEnd; i < sentence.length; i++) prons.push(normalizePauses(sentence[i]));
+		for (let i = prevEnd; i < syllables.length; i++) prons.push(normalizePauses(syllables[i]));
 		return prons;
-	}, [enabledEdges, sentence]);
+	}, [enabledEdges, syllables]);
 	const flattenedProns = useMemo(() => enabledEdgesProns.flatMap(pron => pron.split(" ")), [enabledEdgesProns]);
 
 	let i = 0;
@@ -172,8 +172,8 @@ export default function SentenceCard({
 		while (i < edgesInGroup.end) {
 			chars.push(
 				<ruby key={i} className="px-2 py-1">
-					{sentence[i]}
-					<rt>{flattenedProns[i].length > 1 ? replaceHakkaTones(language, queryOptions.hakkaToneMode, flattenedProns[i]) : "\xa0"}</rt>
+					{syllables[i]}
+					<rt>{flattenedProns[i].length > 1 ? replaceHakkaTones(language, hakkaToneMode, flattenedProns[i]) : "\xa0"}</rt>
 				</ruby>,
 			);
 			i++;
@@ -186,7 +186,7 @@ export default function SentenceCard({
 		i = start;
 		const cells: JSX.Element[] = [];
 		while (i < edgesInGroup.end) {
-			cells.push(<td key={i} className="text-xl sm:text-2xl text-[#9a190c] px-2 py-1">{sentence[i]}</td>);
+			cells.push(<td key={i} className="text-xl sm:text-2xl text-[#9a190c] px-2 py-1">{syllables[i]}</td>);
 			i++;
 		}
 
@@ -208,7 +208,7 @@ export default function SentenceCard({
 											: "border-slate-200 text-slate-600 hover:border-slate-300 hover:text-slate-800"
 									} transition-colors px-1 align-top`}
 									onClick={() => setEnabledEdges(enabledEdges => findOptimalEdges(edges, enabledEdges, edge, !enabledEdges.has(edge)))}>
-									<div className="text-base sm:text-lg">{replaceHakkaTones(language, queryOptions.hakkaToneMode, edge.pron)}</div>
+									<div className="text-base sm:text-lg">{replaceHakkaTones(language, hakkaToneMode, edge.pron)}</div>
 									<div className="text-xs sm:text-sm text-slate-500">{edge.note}</div>
 								</button>
 							</td>,
@@ -234,13 +234,12 @@ export default function SentenceCard({
 			<div className="join">
 				<span className="badge badge-primary join-item">{TERMINOLOGY[language]}</span>
 				<span className="badge badge-secondary join-item">{TERMINOLOGY[voice]}</span>
+				<span className="badge badge-accent join-item">{INFERENCE_MODE_TO_LABEL[inferenceMode]}</span>
+				<span className="badge badge-info join-item">{voiceSpeed}×</span>
 			</div>
 			<div className="text-2.5xl/none sm:text-4xl mt-2 sm:mt-5">{tables}</div>
 			<AudioPlayer
-				queryOptions={queryOptions}
-				language={language}
-				voice={voice}
-				syllables={queryOptions.inferenceMode === "lightweight" ? enabledEdgesProns : flattenedProns}
+				sentence={{ language, voice, inferenceMode, voiceSpeed, syllables: inferenceMode === "lightweight" ? enabledEdgesProns : flattenedProns }}
 				setDownloadState={setDownloadState}
 				currSettingsDialogPage={currSettingsDialogPage}
 				setCurrSettingsDialogPage={setCurrSettingsDialogPage} />

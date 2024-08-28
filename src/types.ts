@@ -24,7 +24,9 @@ export interface StackedEdge extends Edge {
 export interface Sentence {
 	language: Language;
 	voice: Voice;
-	sentence: string[];
+	inferenceMode: InferenceMode;
+	voiceSpeed: number;
+	syllables: string[];
 }
 
 export type OfflineInferenceMode = "offline" | "lightweight";
@@ -118,10 +120,6 @@ export interface QueryOptions {
 	setHakkaToneMode: Dispatch<HakkaToneMode>;
 }
 
-export interface QueryOptionsState {
-	queryOptions: Pick<QueryOptions, "inferenceMode" | "voiceSpeed" | "hakkaToneMode">;
-}
-
 export interface DownloadState {
 	inferenceMode: OfflineInferenceMode;
 	language: Language;
@@ -138,6 +136,10 @@ export type SettingsDialogPage = null | "settings" | `${OfflineInferenceMode}_mo
 export interface SettingsDialogState {
 	currSettingsDialogPage: SettingsDialogPage;
 	setCurrSettingsDialogPage: Dispatch<SetStateAction<SettingsDialogPage>>;
+}
+
+export interface SentenceComponentState extends SetDownloadStatus, SettingsDialogState {
+	sentence: Sentence;
 }
 
 export interface Actions {

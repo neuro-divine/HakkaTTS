@@ -40,8 +40,8 @@ export function segment(text: string) {
 	return result;
 }
 
-export function parse(language: Language, sentence: string[]): Edge[] {
-	return resources[language].get(sentence);
+export function parse(language: Language, syllables: string[]): Edge[] {
+	return resources[language].get(syllables);
 }
 
 const normalizedPunctuations: Record<string, string | undefined> = {

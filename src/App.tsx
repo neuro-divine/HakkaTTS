@@ -15,7 +15,7 @@ import type { SettingsDialogPage, Sentence } from "./types";
 
 export default function App() {
 	const queryOptions = useQueryOptions();
-	const { language, voice, inferenceMode, setLanguage, setVoice } = queryOptions;
+	const { language, voice, inferenceMode, voiceSpeed, hakkaToneMode, setLanguage, setVoice } = queryOptions;
 	const [sentences, setSentences] = useState<Sentence[]>([]);
 
 	const textArea = useRef<HTMLTextAreaElement>(null);
@@ -37,12 +37,12 @@ export default function App() {
 	const addSentence = useCallback(() => {
 		if (!textArea.current) return;
 		setSentences([
-			...textArea.current.value.split("\n").flatMap(text => (text.trim() ? [{ language, voice, sentence: segment(text) }] : [])),
+			...textArea.current.value.split("\n").flatMap(text => (text.trim() ? [{ language, voice, inferenceMode, voiceSpeed, syllables: segment(text) }] : [])),
 			...sentences,
 		]);
 		textArea.current.value = "";
 		resizeElements();
-	}, [textArea, voice, language, sentences, resizeElements]);
+	}, [textArea, language, voice, inferenceMode, voiceSpeed, sentences, resizeElements]);
 
 	useEffect(() => {
 		if (!textArea.current) return;
@@ -128,7 +128,7 @@ export default function App() {
 					<SentenceCard
 						key={sentences.length - i}
 						sentence={sentence}
-						queryOptions={queryOptions}
+						hakkaToneMode={hakkaToneMode}
 						setDownloadState={setDownloadState}
 						currSettingsDialogPage={currSettingsDialogPage}
 						setCurrSettingsDialogPage={setCurrSettingsDialogPage} />
