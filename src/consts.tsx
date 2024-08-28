@@ -16,7 +16,7 @@ export const VOICE_TO_ICON: Record<Voice, JSX.Element> = {
 
 export const ALL_LANGUAGES: readonly Language[] = ["waitau", "hakka"];
 export const ALL_VOICES: readonly Voice[] = ["male", "female"];
-export const ALL_INFERENCE_MODES: readonly InferenceMode[] = ["online", "offline", "plain"];
+export const ALL_INFERENCE_MODES: readonly InferenceMode[] = ["online", "offline", "lightweight"];
 export { ALL_MODEL_COMPONENTS } from "./inference/infer";
 export const ALL_AUDIO_COMPONENTS: readonly AudioComponent[] = ["chars", "words"];
 
@@ -32,7 +32,7 @@ export const MODEL_PATH_PREFIX = "https://cdn.jsdelivr.net/gh/hkilang/TTS-models
 
 export const DOWNLOAD_TYPE_LABEL: Record<OfflineInferenceMode, string> = {
 	offline: "模型",
-	plain: "數據",
+	lightweight: "數據",
 };
 
 export const DOWNLOAD_STATUS_LABEL: Record<DownloadStatus, string> = {

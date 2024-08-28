@@ -27,7 +27,7 @@ export interface Sentence {
 	sentence: string[];
 }
 
-export type OfflineInferenceMode = "offline" | "plain";
+export type OfflineInferenceMode = "offline" | "lightweight";
 export type InferenceMode = "online" | OfflineInferenceMode;
 
 export type ModelComponent = "enc" | "emb" | "sdp" | "flow" | "dec";

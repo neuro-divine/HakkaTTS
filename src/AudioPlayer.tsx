@@ -139,7 +139,7 @@ export default function AudioPlayer({ inferenceMode, language, voice, syllables,
 							buffer.copyToChannel(channelData, 0);
 							break;
 						}
-						case "plain": {
+						case "lightweight": {
 							const buffers = await Promise.all(syllables.map(async phrase => {
 								const component = phrase.includes(" ") ? "words" : "chars";
 								const offset = (await getOffsetMap(version as AudioVersion, language, voice, component)).get(phrase);

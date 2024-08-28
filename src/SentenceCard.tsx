@@ -230,7 +230,7 @@ export default function SentenceCard({ sentence: { language, voice, sentence }, 
 				inferenceMode={inferenceMode}
 				language={language}
 				voice={voice}
-				syllables={inferenceMode === "plain" ? enabledEdgesProns : flattenedProns}
+				syllables={inferenceMode === "lightweight" ? enabledEdgesProns : flattenedProns}
 				setDownloadState={setDownloadState}
 				isDownloadManagerVisible={isDownloadManagerVisible}
 				openDownloadManager={openDownloadManager} />
