@@ -1,21 +1,21 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 
-import { MdError, MdOutlineDownloadForOffline } from "react-icons/md";
+import { MdError, MdSettings } from "react-icons/md";
 
-import { MODEL_STATUS_INDICATOR_CLASS, NO_AUTO_FILL } from "./consts";
+import { DOWNLOAD_STATUS_INDICATOR_CLASS, NO_AUTO_FILL } from "./consts";
 import { DBProvider } from "./db/DBContext";
-import ModelManager from "./db/ModelManager";
-import { useModelsStatus } from "./hooks";
-import parse from "./parse";
+import { useDownloadState, useQueryOptions } from "./hooks";
+import { segment } from "./parse";
 import Radio from "./Radio";
 import SentenceCard from "./SentenceCard";
+import SettingsDialog from "./SettingsDialog";
 
-import type { Voice, Language, Sentence } from "./types";
+import type { SettingsDialogPage, Sentence } from "./types";
 
 export default function App() {
-	const [language, setLanguage] = useState<Language>("waitau");
-	const [voice, setVoice] = useState<Voice>("male");
+	const queryOptions = useQueryOptions();
+	const { language, voice, inferenceMode, voiceSpeed, hakkaToneMode, setLanguage, setVoice } = queryOptions;
 	const [sentences, setSentences] = useState<Sentence[]>([]);
 
 	const textArea = useRef<HTMLTextAreaElement>(null);
@@ -37,12 +37,12 @@ export default function App() {
 	const addSentence = useCallback(() => {
 		if (!textArea.current) return;
 		setSentences([
-			...textArea.current.value.split("\n").flatMap(line => (line.trim() ? [{ language, voice, sentence: parse(language, line) }] : [])),
+			...textArea.current.value.split("\n").flatMap(text => (text.trim() ? [{ language, voice, inferenceMode, voiceSpeed, syllables: segment(text) }] : [])),
 			...sentences,
 		]);
 		textArea.current.value = "";
 		resizeElements();
-	}, [textArea, voice, language, sentences, resizeElements]);
+	}, [textArea, language, voice, inferenceMode, voiceSpeed, sentences, resizeElements]);
 
 	useEffect(() => {
 		if (!textArea.current) return;
@@ -52,27 +52,22 @@ export default function App() {
 		return () => observer.unobserve(currTextArea);
 	}, [textArea, resizeElements]);
 
-	const [useOfflineModel /* , setUseOfflineModel */] = useState(() => new URLSearchParams(location.search).has("offline"));
+	const [currSettingsDialogPage, setCurrSettingsDialogPage] = useState<SettingsDialogPage>(null);
+	const settingsDialog = useRef<HTMLDialogElement>(null);
 
-	const [isModelManagerVisible, setIsModelManagerVisible] = useState(false);
-	const modelManager = useRef<HTMLDialogElement>();
+	useEffect(() => {
+		const { current: dialog } = settingsDialog;
+		if (dialog && !dialog.open && currSettingsDialogPage) {
+			dialog.inert = true;
+			dialog.showModal();
+			dialog.inert = false;
+			dialog.addEventListener("close", () => setCurrSettingsDialogPage(null), { once: true });
+		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [settingsDialog.current, currSettingsDialogPage, setCurrSettingsDialogPage]);
 
-	const openModelManager = useCallback(() => {
-		setIsModelManagerVisible(true);
-		if (!modelManager.current) return;
-		modelManager.current.inert = true;
-		modelManager.current.showModal();
-		modelManager.current.inert = false;
-		modelManager.current.addEventListener("close", () => setIsModelManagerVisible(false), { once: true });
-	}, [setIsModelManagerVisible]);
-
-	const onModelManagerReady = useCallback((newModelManager: HTMLDialogElement | null) => {
-		if (!newModelManager) return;
-		modelManager.current = newModelManager;
-		openModelManager();
-	}, [openModelManager]);
-
-	const [modelsStatus, setModelsStatus] = useModelsStatus();
+	const [downloadState, setDownloadState] = useDownloadState();
+	const currInferenceModeDownloadState = inferenceMode === "online" ? "latest" : downloadState.get(inferenceMode)!;
 
 	return <DBProvider>
 		<div>
@@ -92,14 +87,24 @@ export default function App() {
 							<Radio name="btnvoice" className="btn-secondary" state={voice} setState={setVoice} value="female" />
 						</div>
 					</div>
-					{useOfflineModel
-						&& <div>
-							<button type="button" className="btn btn-ghost max-sm:btn-sm max-sm:px-2.5 relative flex-col flex-nowrap gap-0 text-base whitespace-nowrap h-20 min-h-20 text-slate-500 hover:bg-opacity-10" onClick={openModelManager}>
-								{modelsStatus !== "latest" && <MdError size="1.5em" className={`absolute top-1 right-1 ${MODEL_STATUS_INDICATOR_CLASS[modelsStatus]}`} />}
-								<MdOutlineDownloadForOffline size="2em" />模型下載
-								{isModelManagerVisible && createPortal(<ModelManager ref={onModelManagerReady} setModelsStatus={setModelsStatus} />, document.body)}
-							</button>
-						</div>}
+					<div>
+						<button type="button" className="btn btn-ghost max-sm:btn-sm max-sm:px-2.5 relative flex-col flex-nowrap gap-0 text-base whitespace-nowrap h-20 min-h-20 text-slate-500 hover:bg-opacity-10" onClick={() => setCurrSettingsDialogPage("settings")}>
+							{currInferenceModeDownloadState !== "latest" && <MdError size="1.5em" className={`absolute -top-1 -right-1 ${DOWNLOAD_STATUS_INDICATOR_CLASS[currInferenceModeDownloadState]}`} />}
+							<MdSettings size="2em" />
+							設定
+						</button>
+						{createPortal(
+							<SettingsDialog
+								key={currSettingsDialogPage}
+								ref={settingsDialog}
+								currSettingsDialogPage={currSettingsDialogPage}
+								setCurrSettingsDialogPage={setCurrSettingsDialogPage}
+								queryOptions={queryOptions}
+								downloadState={downloadState}
+								setDownloadState={setDownloadState} />,
+							document.body,
+						)}
+					</div>
 				</div>
 				<div className="join w-full">
 					<textarea
@@ -123,10 +128,10 @@ export default function App() {
 					<SentenceCard
 						key={sentences.length - i}
 						sentence={sentence}
-						useOfflineModel={useOfflineModel}
-						setModelsStatus={setModelsStatus}
-						isModelManagerVisible={isModelManagerVisible}
-						openModelManager={openModelManager} />
+						hakkaToneMode={hakkaToneMode}
+						setDownloadState={setDownloadState}
+						currSettingsDialogPage={currSettingsDialogPage}
+						setCurrSettingsDialogPage={setCurrSettingsDialogPage} />
 				))}
 			</div>
 		</div>

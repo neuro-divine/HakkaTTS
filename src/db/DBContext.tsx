@@ -13,10 +13,14 @@ let pendingDBInstance: Promise<TTSDatabase> | undefined;
 function getDBInstance() {
 	async function createDBInstance() {
 		try {
-			return dbInstance = await openDB<TTSDB>("TTS", 1, {
+			return dbInstance = await openDB<TTSDB>("TTS", 2, {
 				upgrade(db) {
 					if (!db.objectStoreNames.contains("models")) {
 						const store = db.createObjectStore("models", { keyPath: "path" });
+						store.createIndex("language_voice", ["language", "voice"]);
+					}
+					if (!db.objectStoreNames.contains("audios")) {
+						const store = db.createObjectStore("audios", { keyPath: "path" });
 						store.createIndex("language_voice", ["language", "voice"]);
 					}
 				},

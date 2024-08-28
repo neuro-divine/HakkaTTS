@@ -1,4 +1,4 @@
-import type { PronToNoteMap, WordsFile } from "./types";
+import type { Edge, PronToNoteMap, WordsFile } from "./types";
 
 type Node = Map<string, Node> & { v?: PronToNoteMap };
 
@@ -17,32 +17,17 @@ export default class Resource {
 		for (const line of data) this.set(...line);
 	}
 
-	get(s: string | string[]): [string, PronToNoteMap][] {
-		const t = this.t;
-		const r: [string, PronToNoteMap | undefined, PronToNoteMap[]][] = Array.from(s, c => {
-			const v = t.get(c)?.v;
-			return [c, v, v ? [v] : []];
-		});
-		for (let i = 0; i < r.length; i++) {
-			const u = t.get(r[i][0]);
-			if (!u) continue;
-			for (let t = u, j = i + 1; j < r.length; j++) {
-				const u = t.get(r[j][0]);
+	get(syllables: string[]): Edge[] {
+		return syllables.flatMap((_, i) => {
+			const edges: Edge[][] = [];
+			let u: Node | undefined = this.t;
+			for (let j = i; j < syllables.length; j++) {
+				u = u.get(syllables[j]);
 				if (!u) break;
-				if ((t = u).v) {
-					const l = j - i;
-					for (const [p] of t.v) {
-						for (let d = p.split(" "), k = i; k <= j; k++) {
-							const s = r[k][2];
-							const v = d[k - i];
-							if (l in s) s[l].set(v, "");
-							else s[l] = new Map([[v, ""]]);
-						}
-					}
-				}
+				if (u.v) edges.push(Array.from(u.v, ([pron, note]) => ({ start: i, end: j + 1, pron, note })));
 			}
-		}
-		return r.map(([c, m, s]) => [c, new Map(s.reverse().flatMap(v => Array.from(v, ([p]) => [p.trim(), m?.get(p) || ""])))]);
+			return edges.reverse().flat();
+		});
 	}
 
 	set(k: string, v: PronToNoteMap) {

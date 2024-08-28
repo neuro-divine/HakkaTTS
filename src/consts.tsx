@@ -1,12 +1,14 @@
-import { MdCancel, MdEject, MdFileDownload, MdFileDownloadDone, MdHourglassBottom, MdMan, MdRefresh, MdWoman } from "react-icons/md";
+import { MdCancel, MdEject, MdEnergySavingsLeaf, MdFileDownload, MdFileDownloadDone, MdFlight, MdHourglassBottom, MdLanguage, MdMan, MdRefresh, MdWoman } from "react-icons/md";
 
-import type { ActualModelStatus, Language, ModelComponent, ModelStatus, Terminology, Voice } from "./types";
+import type { ActualDownloadStatus, InferenceMode, Language, ModelComponent, DownloadStatus, Terminology, Voice, OfflineInferenceMode, AudioComponent, HakkaToneMode } from "./types";
 
 export const TERMINOLOGY: Record<Terminology, string> = {
 	waitau: "圍頭話",
 	hakka: "客家話",
 	male: "男聲",
 	female: "女聲",
+	digits: "數字",
+	diacritics: "調號",
 };
 
 export const VOICE_TO_ICON: Record<Voice, JSX.Element> = {
@@ -14,9 +16,30 @@ export const VOICE_TO_ICON: Record<Voice, JSX.Element> = {
 	female: <MdWoman size="1.375em" className="-mx-1" />,
 };
 
+export const INFERENCE_MODE_TO_LABEL: Record<InferenceMode, string> = {
+	online: "線上模式",
+	offline: "離線模式",
+	lightweight: "輕巧模式",
+};
+
+export const INFERENCE_MODE_TO_DESCRIPTION: Record<InferenceMode, string> = {
+	online: "在伺服器產生音訊。請注意，使用此模式可能會產生相關網絡費用。",
+	offline: "毋須網絡連線，直接於裝置進行運算並產生音訊。請注意，此模式僅適用於電腦或有大量可用記憶體的裝置，且需空間儲存模型。",
+	lightweight: "以輕巧方式快速於裝置產生音訊，質素較其餘兩個模式遜色。適用如記憶體容量較少的裝置。請注意，此模式仍需空間儲存數據。",
+};
+
+export const INFERENCE_MODE_TO_ICON: Record<InferenceMode, JSX.Element> = {
+	online: <MdLanguage size="1.25em" />,
+	offline: <MdFlight size="1.25em" />,
+	lightweight: <MdEnergySavingsLeaf size="1.25em" />,
+};
+
 export const ALL_LANGUAGES: readonly Language[] = ["waitau", "hakka"];
 export const ALL_VOICES: readonly Voice[] = ["male", "female"];
+export const ALL_INFERENCE_MODES: readonly InferenceMode[] = ["online", "offline", "lightweight"];
 export { ALL_MODEL_COMPONENTS } from "./inference/infer";
+export const ALL_AUDIO_COMPONENTS: readonly AudioComponent[] = ["chars", "words"];
+export const ALL_HAKKA_TONE_MODES: readonly HakkaToneMode[] = ["digits", "diacritics"];
 
 export const MODEL_COMPONENT_TO_N_CHUNKS: Record<ModelComponent, number> = {
 	enc: 2,
@@ -28,23 +51,28 @@ export const MODEL_COMPONENT_TO_N_CHUNKS: Record<ModelComponent, number> = {
 
 export const MODEL_PATH_PREFIX = "https://cdn.jsdelivr.net/gh/hkilang/TTS-models";
 
-export const MODEL_STATUS_LABEL: Record<ModelStatus, string> = {
-	gathering_info: "正在取得模型檔案狀態……",
-	gather_failed: "無法取得模型檔案狀態：資料庫出錯",
+export const DOWNLOAD_TYPE_LABEL: Record<OfflineInferenceMode, string> = {
+	offline: "模型",
+	lightweight: "數據",
+};
+
+export const DOWNLOAD_STATUS_LABEL: Record<DownloadStatus, string> = {
+	gathering_info: "正在取得＿＿狀態……",
+	gather_failed: "無法取得＿＿狀態：資料庫出錯",
 	available_for_download: "可供下載",
 	new_version_available: "有新版本可供下載",
-	incomplete: "模型不完整",
+	incomplete: "＿＿不完整",
 	downloading: "下載中……",
 	download_failed: "下載失敗：網絡錯誤",
 	download_incomplete: "下載不完整：網絡錯誤",
-	cancelled_not_downloaded: "下載已被取消；模型尚未下載",
-	cancelled_incomplete: "下載已被取消；模型不完整",
+	cancelled_not_downloaded: "下載已被取消；＿＿尚未下載",
+	cancelled_incomplete: "下載已被取消；＿＿不完整",
 	save_failed: "下載失敗：儲存至資料庫時發生錯誤",
 	save_incomplete: "下載不完整：儲存至資料庫時發生錯誤",
 	latest: "已經為最新版本",
 };
 
-export const MODEL_STATUS_CLASS: Record<ModelStatus, string> = {
+export const DOWNLOAD_STATUS_CLASS: Record<DownloadStatus, string> = {
 	gathering_info: "text-info",
 	gather_failed: "text-error",
 	available_for_download: "text-info",
@@ -60,7 +88,7 @@ export const MODEL_STATUS_CLASS: Record<ModelStatus, string> = {
 	latest: "text-success",
 };
 
-export const MODEL_STATUS_ICON: Record<ModelStatus, JSX.Element> = {
+export const DOWNLOAD_STATUS_ICON: Record<DownloadStatus, JSX.Element> = {
 	gathering_info: <MdHourglassBottom />,
 	gather_failed: <MdRefresh />,
 	available_for_download: <MdFileDownload />,
@@ -76,7 +104,7 @@ export const MODEL_STATUS_ICON: Record<ModelStatus, JSX.Element> = {
 	latest: <MdFileDownloadDone />,
 };
 
-export const MODEL_STATUS_ACTION_LABEL: Record<ModelStatus, string | null> = {
+export const DOWNLOAD_STATUS_ACTION_LABEL: Record<DownloadStatus, string | null> = {
 	gathering_info: null,
 	gather_failed: "重試",
 	available_for_download: "下載",
@@ -92,13 +120,22 @@ export const MODEL_STATUS_ACTION_LABEL: Record<ModelStatus, string | null> = {
 	latest: null,
 };
 
-export const MODEL_STATUS_PRIORITY: readonly ActualModelStatus[] = ["incomplete", "available_for_download", "new_version_available", "latest"];
+export const DOWNLOAD_STATUS_PRIORITY: readonly ActualDownloadStatus[] = ["incomplete", "available_for_download", "new_version_available", "latest"];
 
-export const MODEL_STATUS_INDICATOR_CLASS: Record<Exclude<ActualModelStatus, "latest">, string> = {
+export const DOWNLOAD_STATUS_INDICATOR_CLASS: Record<Exclude<ActualDownloadStatus, "latest">, string> = {
 	available_for_download: "text-info",
 	new_version_available: "text-warning",
 	incomplete: "text-error",
 };
+
+export const AUDIO_COMPONENT_TO_N_CHUNKS: Record<`${Language}_${AudioComponent}`, number> = {
+	waitau_chars: 1,
+	waitau_words: 3,
+	hakka_chars: 1,
+	hakka_words: 4,
+};
+
+export const AUDIO_PATH_PREFIX = "https://cdn.jsdelivr.net/gh/hkilang/TTS-audios";
 
 export const NO_AUTO_FILL = {
 	autoComplete: "off",
@@ -107,13 +144,20 @@ export const NO_AUTO_FILL = {
 	spellCheck: "false",
 } as const;
 
+export class ServerError extends Error {
+	constructor(name: string, ...args: Parameters<ErrorConstructor>) {
+		super(...args);
+		this.name = name;
+	}
+}
+
 export class DatabaseError extends Error {
 	override name = "DatabaseError";
 }
 
-export class ModelNotDownloadedError extends Error {
-	override name = "ModelNotDownloadedError";
-	constructor(language: Language, voice: Voice, isComplete?: boolean, options?: ErrorOptions) {
-		super(`${TERMINOLOGY[language]}（${TERMINOLOGY[voice]}）模型尚未下載${isComplete ? "" : "完成"}`, options);
+export class FileNotDownloadedError extends Error {
+	override name = "FileNotDownloadedError";
+	constructor(inferenceMode: OfflineInferenceMode, language: Language, voice: Voice, isComplete?: boolean, options?: ErrorOptions) {
+		super(`${TERMINOLOGY[language]}（${TERMINOLOGY[voice]}）${DOWNLOAD_TYPE_LABEL[inferenceMode]}尚未下載${isComplete ? "" : "完成"}`, options);
 	}
 }

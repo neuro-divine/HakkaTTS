@@ -35,7 +35,8 @@ function loadSession(model: ModelComponentToFile) {
 
 type FloatTensorArray<Shape extends readonly number[]> = NDArray<Float32Array, Readonly<Shape>>;
 
-const transformWeight = NDArray.vectorize((d, m) => Math.ceil(Math.exp(d) * m), Float32Array);
+const expMultiply = NDArray.vectorize((d, m) => Math.exp(d) * m, Float32Array);
+const divideCeil = NDArray.vectorize((w, s) => Math.ceil(w / s), Float32Array);
 const lessThan = NDArray.vectorize((a, b) => +(a < b), Float32Array);
 const multiply = NDArray.vectorize((a, b) => a * b, Float32Array);
 const addNoise = NDArray.vectorize((m, p) => sampleNormal(m, 0.8 * Math.exp(p)), Float32Array);
@@ -81,7 +82,7 @@ function generatePath(duration: FloatTensorArray<[Batch, 1, Tx]>, mask: FloatTen
 	return path.map((value, _batch, _tx, _ty) => value ^ (_tx ? path.get(_batch, _tx - 1, _ty) : 0));
 }
 
-export default async function infer(model: ModelComponentToFile, seq: number[], tone: number[]) {
+export default async function infer(model: ModelComponentToFile, seq: number[], tone: number[], voiceSpeed: number) {
 	setRandom(seedrandom("42"));
 	const [enc, g, sdp, flow, dec] = await loadSession(model);
 	const { xout: x, m_p, logs_p, x_mask } = await enc.run({
@@ -94,7 +95,7 @@ export default async function infer(model: ModelComponentToFile, seq: number[], 
 	const { logw } = await sdp.run({ x, x_mask, zin, g });
 	const x_mask_array = await NDArray.fromTensor<[Batch, 1, Tx], "float32">(x_mask as FloatTensor);
 	const logw_array = await NDArray.fromTensor<[Batch, 1, Tx], "float32">(logw as FloatTensor);
-	const w_ceil = transformWeight(x_mask_array, logw_array);
+	const w_ceil = divideCeil(expMultiply(x_mask_array, logw_array), voiceSpeed);
 	const [batch, , t_x] = x_mask_array.shape;
 	const y_lengths = NDArray.grid([batch], Float32Array, batch => {
 		let sum = 0;
