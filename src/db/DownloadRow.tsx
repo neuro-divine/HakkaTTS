@@ -210,9 +210,9 @@ export default function DownloadRow({ db, inferenceMode, language, voice, setDow
 
 	// Items are stretched and paddings are intentionally moved to the icon for larger tooltip bounding box
 	return <li className="contents">
-		<button type="button" className={`btn btn-ghost gap-0 items-stretch rounded-none text-left font-normal px-0 py-4 h-auto min-h-0 border-0 border-b border-b-slate-300 text-slate-700 hover:border-b hover:bg-opacity-10${DOWNLOAD_STATUS_ACTION[status] ? "" : " pointer-events-none"}`} onClick={DOWNLOAD_STATUS_ACTION[status]}>
+		<button type="button" className={`flex items-stretch text-sm/4 text-left py-4 border-b border-b-slate-300 text-slate-700 ${DOWNLOAD_STATUS_ACTION[status] ? "transition-colors hover:bg-base-content hover:bg-opacity-10" : "pointer-events-none"}`} onClick={DOWNLOAD_STATUS_ACTION[status]}>
 			<div className="text-2xl flex items-center pl-4 pr-2">{VOICE_TO_ICON[voice]}</div>
-			<div className="flex-1 flex flex-col gap-1">
+			<div className="flex-1 flex flex-col gap-0.5">
 				<div className="text-xl font-medium">{TERMINOLOGY[language]} – {TERMINOLOGY[voice]}</div>
 				{status === "downloading"
 					? <div className="flex items-center gap-2">

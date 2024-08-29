@@ -72,7 +72,7 @@ const SettingsDialog = forwardRef<HTMLDialogElement, SettingDialogProps>(functio
 							{ALL_INFERENCE_MODES.map(mode => {
 								const currModeDownloadState = downloadState.get(mode as OfflineInferenceMode)!;
 								return <li key={mode} className="relative">
-									<label className="btn btn-ghost gap-0 w-full rounded-none text-left font-normal pl-2 pr-4 py-4 h-auto min-h-0 border-0 border-b border-b-slate-300 text-slate-700 hover:border-b hover:bg-opacity-10">
+									<label className="flex items-center text-sm/4 pl-2 pr-4 py-4 border-b border-b-slate-300 text-slate-700 cursor-pointer transition-colors hover:bg-base-content hover:bg-opacity-10">
 										<div className="text-2xl flex items-center px-2">{INFERENCE_MODE_TO_ICON[mode]}</div>
 										<div className="flex-1 flex flex-col">
 											<div className="text-xl font-medium">{INFERENCE_MODE_TO_LABEL[mode]}</div>
@@ -100,7 +100,7 @@ const SettingsDialog = forwardRef<HTMLDialogElement, SettingDialogProps>(functio
 						</ul>
 						<h4 className="px-4 py-2 border-b">選項</h4>
 						<ul>
-							<li className="flex items-center w-full pl-2 pr-4 py-4 h-auto min-h-0 border-0 border-b border-b-slate-300 text-slate-700 hover:border-b hover:bg-opacity-10">
+							<li className="flex items-center pl-2 pr-4 py-4 border-b border-b-slate-300 text-slate-700">
 								<div className="text-2xl flex items-center px-2">
 									<MdSpeed size="1.25em" />
 								</div>
@@ -120,7 +120,7 @@ const SettingsDialog = forwardRef<HTMLDialogElement, SettingDialogProps>(functio
 									</div>
 								</div>
 							</li>
-							<li className="flex items-center w-full pl-2 pr-4 py-4 h-auto min-h-0 border-0 border-b border-b-slate-300 text-slate-700 hover:border-b hover:bg-opacity-10">
+							<li className="flex items-center pl-2 pr-4 py-4 border-b border-b-slate-300 text-slate-700">
 								<div className="text-2xl flex items-center px-2">
 									<MdShowChart size="1.25em" />
 								</div>
