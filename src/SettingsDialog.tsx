@@ -40,7 +40,7 @@ const SettingsDialog = forwardRef<HTMLDialogElement, SettingDialogProps>(functio
 	const downloadManagerInferenceMode = currSettingsDialogPage?.slice(0, -15) as OfflineInferenceMode;
 
 	return <dialog ref={ref} className="modal modal-bottom sm:modal-middle">
-		<div className="modal-box p-0 flex flex-col sm:max-w-3xl h-[calc(100%-5rem)]">
+		<div className="modal-box p-0 flex flex-col sm:max-w-3xl h-[calc(100%-5rem)] overflow-hidden">
 			<form method="dialog">
 				<button type="submit" className="btn btn-ghost w-14 h-14 min-h-14 text-4.5xl absolute right-3 top-3 text-slate-500 hover:bg-opacity-10" aria-label="關閉">
 					<span>
