@@ -1,5 +1,6 @@
 import { cachedFetch } from "./cache";
-import { AUDIO_PATH_PREFIX, ServerError } from "./consts";
+import { AUDIO_PATH_PREFIX } from "./consts";
+import { ServerError } from "./errors";
 
 import type { AudioComponent, AudioVersion, Language, Voice } from "./types";
 
@@ -11,8 +12,14 @@ export async function getOffsetMap(version: AudioVersion, language: Language, vo
 	const path = `${version}/${language}/${voice}/${component}`;
 	let offsetMap = offsetCache.get(path);
 	if (offsetMap) return offsetMap;
-	const response = await cachedFetch(`${AUDIO_PATH_PREFIX}@${path}.csv`);
-	if (!response.ok) throw new ServerError("載入失敗");
+	let response: Response;
+	try {
+		response = await cachedFetch(`${AUDIO_PATH_PREFIX}@${path}.csv`);
+		if (!response.ok) throw new ServerError("無法載入語音數據", await response.text());
+	}
+	catch (error) {
+		throw error instanceof ServerError ? error : new ServerError("無法載入語音數據：網絡或伺服器錯誤", undefined, { cause: error });
+	}
 	const iter = (await response.text())[Symbol.iterator]();
 	// Skip header
 	for (const char of iter) {

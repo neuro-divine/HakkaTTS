@@ -143,21 +143,3 @@ export const NO_AUTO_FILL = {
 	autoCapitalize: "off",
 	spellCheck: "false",
 } as const;
-
-export class ServerError extends Error {
-	constructor(name: string, ...args: Parameters<ErrorConstructor>) {
-		super(...args);
-		this.name = name;
-	}
-}
-
-export class DatabaseError extends Error {
-	override name = "DatabaseError";
-}
-
-export class FileNotDownloadedError extends Error {
-	override name = "FileNotDownloadedError";
-	constructor(inferenceMode: OfflineInferenceMode, language: Language, voice: Voice, isComplete?: boolean, options?: ErrorOptions) {
-		super(`${TERMINOLOGY[language]}（${TERMINOLOGY[voice]}）${DOWNLOAD_TYPE_LABEL[inferenceMode]}尚未下載${isComplete ? "" : "完成"}`, options);
-	}
-}

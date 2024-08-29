@@ -3,9 +3,11 @@ import seedrandom from "seedrandom";
 import { setRandom, sampleNormal } from "vega-statistics";
 
 import NDArray from "./NDArray";
+import { getDBInstance } from "../db/instance";
+import { DatabaseError } from "../errors";
 import { fromLength } from "../utils";
 
-import type { ModelComponent, ModelComponentToFile } from "../types";
+import type { Language, ModelComponent, Voice } from "../types";
 import type { TypedTensor } from "onnxruntime-web";
 
 export const ALL_MODEL_COMPONENTS: readonly ModelComponent[] = ["enc", "emb", "sdp", "flow", "dec"];
@@ -56,17 +58,28 @@ function generatePath(duration: FloatTensorArray<[Batch, 1, Tx]>, mask: FloatTen
 	return path.map((value, _batch, _tx, _ty) => value ^ (_tx ? path.get(_batch, _tx - 1, _ty) : 0));
 }
 
-export default async function infer(model: ModelComponentToFile, seq: number[], tone: number[], voiceSpeed = 1, sdpNoiseScale = 0.6, seqNoiseScale = 0.8) {
+export default async function infer(language: Language, voice: Voice, seq: number[], tone: number[], voiceSpeed = 1, sdpNoiseScale = 0.6, seqNoiseScale = 0.8) {
+	const db = await getDBInstance();
+	async function getSession(component: ModelComponent) {
+		let file: ArrayBuffer;
+		try {
+			({ file } = (await db.get("models", `${language}/${voice}/${component}`))!);
+		}
+		catch (error) {
+			throw new DatabaseError("無法存取語音模型：資料庫出錯", { cause: error });
+		}
+		return InferenceSession.create(file);
+	}
 	setRandom(seedrandom("42"));
 
-	const emb = await InferenceSession.create(model.emb);
+	const emb = await getSession("emb");
 	const sid = new Tensor("int64", [0]);
 	let { g } = await emb.run({ sid });
 	await emb.release();
 	sid.dispose();
 	g = g.reshape([...g.dims, 1]);
 
-	const enc = await InferenceSession.create(model.enc);
+	const enc = await getSession("enc");
 	const seqTensor = new Tensor("int64", seq, [1, seq.length]);
 	const toneTensor = new Tensor("int64", tone, [1, tone.length]);
 	const languageTensor = new Tensor("int64", Array.from(seq, () => 0), [1, seq.length]);
@@ -76,7 +89,7 @@ export default async function infer(model: ModelComponentToFile, seq: number[], 
 	toneTensor.dispose();
 	languageTensor.dispose();
 
-	const sdp = await InferenceSession.create(model.sdp);
+	const sdp = await getSession("sdp");
 	const zin = new Tensor("float32", fromLength(x.dims[0] * 2 * x.dims[2], () => sampleNormal(0, sdpNoiseScale)), [x.dims[0], 2, x.dims[2]]);
 	const { logw } = await sdp.run({ x, x_mask, zin, g });
 	await sdp.release();
@@ -113,7 +126,7 @@ export default async function infer(model: ModelComponentToFile, seq: number[], 
 	new_m_p.dispose();
 	new_logs_p.dispose();
 
-	const flow = await InferenceSession.create(model.flow);
+	const flow = await getSession("flow");
 	const z_p_tensor = new Tensor("float32", z_p.data, z_p.shape);
 	z_p.dispose();
 	const y_mask_tensor = new Tensor("float32", y_mask_array.data, y_mask_array.shape);
@@ -123,7 +136,7 @@ export default async function infer(model: ModelComponentToFile, seq: number[], 
 	z_p_tensor.dispose();
 	y_mask_tensor.dispose();
 
-	const dec = await InferenceSession.create(model.dec);
+	const dec = await getSession("dec");
 	const { o } = await dec.run({ z_in, g });
 	await dec.release();
 	z_in.dispose();
