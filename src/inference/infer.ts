@@ -14,23 +14,26 @@ type FloatTensor = TypedTensor<"float32">;
 
 const sessionCache = new Map<string, InferenceSession | FloatTensor>();
 
-function loadSession(model: ModelComponentToFile) {
-	return Promise.all(
-		ALL_MODEL_COMPONENTS.map(async component => {
-			const { version, path, file } = model[component];
-			const key = `${version}/${path}`;
-			let session = sessionCache.get(key);
-			if (!session) {
-				session = await InferenceSession.create(file);
-				if (component === "emb") {
-					const { g } = await session.run({ sid: new Tensor("int64", [0]) });
-					session = g.reshape([...g.dims, 1]) as FloatTensor;
-				}
-				sessionCache.set(key, session);
+async function loadSession(model: ModelComponentToFile) {
+	// Sessions must be initialized sequentially and not parallelly, so we can’t use `Promise.all`,
+	// See https://github.com/microsoft/onnxruntime/issues/19443
+	// return Array.fromAsync(ALL_MODEL_COMPONENTS[Symbol.iterator]().map(f));
+	const sessions = [] as unknown as [enc: InferenceSession, g: FloatTensor, sdp: InferenceSession, flow: InferenceSession, dec: InferenceSession];
+	for (const component of ALL_MODEL_COMPONENTS) {
+		const { version, path, file } = model[component];
+		const key = `${version}/${path}`;
+		let session = sessionCache.get(key);
+		if (!session) {
+			session = await InferenceSession.create(file);
+			if (component === "emb") {
+				const { g } = await session.run({ sid: new Tensor("int64", [0]) });
+				session = g.reshape([...g.dims, 1]) as FloatTensor;
 			}
-			return session;
-		}),
-	) as Promise<[enc: InferenceSession, g: FloatTensor, sdp: InferenceSession, flow: InferenceSession, dec: InferenceSession]>;
+			sessionCache.set(key, session);
+		}
+		sessions.push(session);
+	}
+	return sessions;
 }
 
 type FloatTensorArray<Shape extends readonly number[]> = NDArray<Float32Array, Readonly<Shape>>;
