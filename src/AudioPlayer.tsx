@@ -4,16 +4,24 @@ import { MdErrorOutline, MdFileDownload, MdPause, MdPlayArrow, MdRefresh, MdStop
 
 import { getOffsetMap } from "./audio";
 import { cachedFetch } from "./cache";
-import { ALL_AUDIO_COMPONENTS, ALL_MODEL_COMPONENTS, DatabaseError, DOWNLOAD_TYPE_LABEL, FileNotDownloadedError, NO_AUTO_FILL, ServerError } from "./consts";
+import { DOWNLOAD_TYPE_LABEL, NO_AUTO_FILL, TERMINOLOGY } from "./consts";
 import { useDB } from "./db/DBContext";
 import { CURRENT_AUDIO_VERSION, CURRENT_MODEL_VERSION } from "./db/version";
+import { DatabaseError, ServerError } from "./errors";
 import API from "./inference/api";
 
-import type { DownloadComponentToFile, DownloadVersion, ModelComponentToFile, AudioComponentToFile, OfflineInferenceMode, AudioVersion, SentenceComponentState } from "./types";
+import type { DownloadVersion, AudioComponentToFile, OfflineInferenceMode, AudioVersion, SentenceComponentState, Language, Voice } from "./types";
 import type { SyntheticEvent } from "react";
 
 const context = new AudioContext({ sampleRate: 44100 });
 const audioCache = new Map<string, Map<string, AudioBuffer>>();
+
+export class FileNotDownloadedError extends Error {
+	override name = "FileNotDownloadedError";
+	constructor(inferenceMode: OfflineInferenceMode, language: Language, voice: Voice, isComplete?: boolean, options?: ErrorOptions) {
+		super(`${TERMINOLOGY[language]}（${TERMINOLOGY[voice]}）${DOWNLOAD_TYPE_LABEL[inferenceMode]}尚未下載${isComplete ? "" : "完成"}`, options);
+	}
+}
 
 export default function AudioPlayer({
 	sentence: {
@@ -69,55 +77,39 @@ export default function AudioPlayer({
 	const { db, error: dbInitError, retry: dbInitRetry } = useDB();
 	const [downloadError, setDownloadError] = useState<Error>();
 	const [downloadRetryCounter, downloadRetry] = useReducer((n: number) => n + 1, 0);
-	const [download, setDownload] = useState<DownloadComponentToFile>();
+	const [downloadVersion, setDownloadVersion] = useState<DownloadVersion>();
 
 	const store = inferenceMode === "offline" ? "models" : "audios";
 	const CURRENT_VERSION = inferenceMode === "offline" ? CURRENT_MODEL_VERSION : CURRENT_AUDIO_VERSION;
-	const ALL_COMPONENTS = inferenceMode === "offline" ? ALL_MODEL_COMPONENTS : ALL_AUDIO_COMPONENTS;
 
 	useEffect(() => {
 		async function getDownloadComponents() {
-			if (inferenceMode === "online" || !db || download || currSettingsDialogPage) return;
+			if (inferenceMode === "online" || !db || downloadVersion || currSettingsDialogPage) return;
+			setDownloadVersion(undefined);
 			setDownloadError(undefined);
 			setBuffer(undefined);
 			try {
-				const availableFiles = await db.getAllFromIndex(store, "language_voice", [language, voice]);
-				if (availableFiles.length !== ALL_COMPONENTS.length) {
-					setDownloadError(new FileNotDownloadedError(inferenceMode, language, voice, !availableFiles.length));
-					setDownloadState({ inferenceMode, language, voice, status: availableFiles.length ? "incomplete" : "available_for_download" });
-					return;
-				}
-				const components = {} as DownloadComponentToFile;
-				const versions = new Set<DownloadVersion>();
-				for (const file of availableFiles) {
-					components[file.component] = file;
-					versions.add(file.version);
-				}
-				if (versions.size !== 1) {
-					setDownloadError(new FileNotDownloadedError(inferenceMode, language, voice));
-					setDownloadState({ inferenceMode, language, voice, status: "incomplete" });
-					return;
-				}
-				setDownload(components);
-				setDownloadState({ inferenceMode, language, voice, status: versions.values().next().value === CURRENT_VERSION ? "latest" : "new_version_available" });
+				const fileStatus = await db.get(`${store}_status`, `${language}/${voice}`);
+				const isComplete = fileStatus && !fileStatus.missingComponents.size;
+				if (isComplete) setDownloadVersion(fileStatus.version);
+				else setDownloadError(new FileNotDownloadedError(inferenceMode, language, voice, !fileStatus));
+				setDownloadState({ inferenceMode, language, voice, status: fileStatus ? isComplete ? fileStatus.version === CURRENT_VERSION ? "latest" : "new_version_available" : "incomplete" : "available_for_download" });
 			}
 			catch (error) {
-				setDownloadError(new DatabaseError(`無法存取語音${DOWNLOAD_TYPE_LABEL[inferenceMode]}：資料庫出錯`, { cause: error }));
+				setDownloadError(new DatabaseError(`無法取得${DOWNLOAD_TYPE_LABEL[inferenceMode]}狀態：資料庫出錯`, { cause: error }));
 			}
 		}
 		void getDownloadComponents();
-		// `inferenceMode` and `voiceSpeed` intentionally excluded
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [db, download, language, voice, setDownloadState, currSettingsDialogPage, downloadRetryCounter]);
+	}, [db, language, voice, inferenceMode, voiceSpeed, setDownloadState, currSettingsDialogPage, downloadRetryCounter]);
 
 	const [generationError, setGenerationError] = useState<Error>();
 	const [generationRetryCounter, generationRetry] = useReducer((n: number) => n + 1, 0);
 	const text = syllables.join(" ");
 	useEffect(() => {
-		if (inferenceMode !== "online" && !download) return;
-		const [{ version }] = inferenceMode === "online" ? [{ version: "main" }] : Object.values(download!);
+		if (inferenceMode !== "online" && !downloadVersion) return;
 		async function generateAudio() {
-			const key = `${inferenceMode}/${voiceSpeed}/${version}/${language}/${voice}`;
+			const key = `${inferenceMode}/${voiceSpeed}/${downloadVersion}/${language}/${voice}`;
 			let textToBuffer = audioCache.get(key);
 			if (!textToBuffer) audioCache.set(key, textToBuffer = new Map<string, AudioBuffer>());
 			let buffer = textToBuffer.get(text);
@@ -136,22 +128,28 @@ export default function AudioPlayer({
 								}
 							}
 							catch (error) {
-								throw error instanceof ServerError ? error : new ServerError("載入失敗", undefined, { cause: error });
+								throw error instanceof ServerError ? error : new ServerError("無法載入音訊：網絡或伺服器錯誤", undefined, { cause: error });
 							}
 							break;
 						case "offline": {
-							const channelData = await API.infer(language, download as ModelComponentToFile, syllables, voiceSpeed);
+							const channelData = await API.infer(language, voice, syllables, voiceSpeed);
 							buffer = context.createBuffer(1, channelData.length, 44100);
 							buffer.copyToChannel(channelData, 0);
 							break;
 						}
 						case "lightweight": {
+							const components: Partial<AudioComponentToFile> = {};
 							const buffers = await Promise.all(syllables.map(async phrase => {
 								const component = phrase.includes(" ") ? "words" : "chars";
-								const offset = (await getOffsetMap(version as AudioVersion, language, voice, component)).get(phrase);
+								const offset = (await getOffsetMap(downloadVersion as AudioVersion, language, voice, component)).get(phrase);
 								if (!offset) return context.createBuffer(1, 8820, 44100);
-								const data = (download as AudioComponentToFile)[component].file;
-								return context.decodeAudioData(data.slice(...offset));
+								try {
+									components[component] ??= (await db!.get("audios", `${language}/${voice}/${component}`))!.file;
+								}
+								catch (error) {
+									throw new DatabaseError("無法存取語音數據：資料庫出錯", { cause: error });
+								}
+								return context.decodeAudioData(components[component].slice(...offset));
 							}));
 							buffer = context.createBuffer(1, buffers.reduce((length, buffer) => length + buffer.length, 0), 44100);
 							const channelData = buffer.getChannelData(0);
@@ -176,9 +174,8 @@ export default function AudioPlayer({
 		setGenerationError(undefined);
 		setBuffer(undefined);
 		void generateAudio();
-		// `inferenceMode` and `voiceSpeed` intentionally excluded
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [language, voice, download, text, generationRetryCounter]);
+	}, [language, voice, inferenceMode, voiceSpeed, downloadVersion, text, generationRetryCounter]);
 
 	useEffect(() => {
 		if (buffer && isPlaying === null) playAudio();
@@ -286,10 +283,7 @@ export default function AudioPlayer({
 							</>}
 					</button>
 				</div>
-				: <div className="flex items-center gap-3 font-medium">
-					{db ? inferenceMode === "online" || download ? "正在生成語音，請稍候……" : `正在存取語音${DOWNLOAD_TYPE_LABEL[inferenceMode]}……` : "資料庫載入中……"}
-					<span className="loading loading-spinner max-sm:w-8 sm:loading-lg" />
-				</div>}
+				: <span className="loading loading-spinner max-sm:w-8 sm:loading-lg" />}
 		</div>}
 	</div>;
 }

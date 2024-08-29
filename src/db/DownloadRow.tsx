@@ -1,10 +1,11 @@
 import { useState, useRef, useReducer, useEffect } from "react";
 
 import { CURRENT_AUDIO_VERSION, CURRENT_MODEL_VERSION } from "./version";
-import { ALL_AUDIO_COMPONENTS, ALL_MODEL_COMPONENTS, DatabaseError, DOWNLOAD_STATUS_LABEL, DOWNLOAD_STATUS_ACTION_LABEL, DOWNLOAD_STATUS_CLASS, DOWNLOAD_STATUS_ICON, TERMINOLOGY, VOICE_TO_ICON, MODEL_PATH_PREFIX, MODEL_COMPONENT_TO_N_CHUNKS, DOWNLOAD_TYPE_LABEL, AUDIO_PATH_PREFIX, AUDIO_COMPONENT_TO_N_CHUNKS } from "../consts";
+import { ALL_AUDIO_COMPONENTS, ALL_MODEL_COMPONENTS, DOWNLOAD_STATUS_LABEL, DOWNLOAD_STATUS_ACTION_LABEL, DOWNLOAD_STATUS_CLASS, DOWNLOAD_STATUS_ICON, TERMINOLOGY, VOICE_TO_ICON, MODEL_PATH_PREFIX, MODEL_COMPONENT_TO_N_CHUNKS, DOWNLOAD_TYPE_LABEL, AUDIO_PATH_PREFIX, AUDIO_COMPONENT_TO_N_CHUNKS } from "../consts";
+import { DatabaseError } from "../errors";
 import { fromLength } from "../utils";
 
-import type { DownloadStatus, TTSDB, Language, DownloadComponent, Voice, DownloadComponentToFile, DownloadVersion, SetDownloadStatus, AudioComponent, ModelComponent, OfflineInferenceMode } from "../types";
+import type { DownloadStatus, TTSDB, Language, DownloadComponent, Voice, SetDownloadStatus, AudioComponent, ModelComponent, OfflineInferenceMode } from "../types";
 import type { IDBPDatabase } from "idb";
 
 function getNumberOfChunks(inferenceMode: OfflineInferenceMode, component: DownloadComponent, language: Language) {
@@ -24,7 +25,7 @@ interface DownloadRowProps extends SetDownloadStatus {
 
 export default function DownloadRow({ db, inferenceMode, language, voice, setDownloadState }: DownloadRowProps) {
 	const [status, setStatus] = useState<DownloadStatus>("gathering_info");
-	const [missingComponents, setMissingComponents] = useState<DownloadComponent[]>([]);
+	const [missingComponents, setMissingComponents] = useState(new Set<DownloadComponent>());
 	const [progress, setProgress] = useState(0);
 	const [error, setError] = useState<Error>();
 	const [retryCounter, retry] = useReducer((n: number) => n + 1, 0);
@@ -39,37 +40,15 @@ export default function DownloadRow({ db, inferenceMode, language, voice, setDow
 	useEffect(() => {
 		async function getMissingComponents() {
 			try {
-				const availableFiles = await db.getAllFromIndex(store, "language_voice", [language, voice]);
-				const components: Partial<DownloadComponentToFile> = {};
-				const versions = new Set<DownloadVersion>();
-				for (const file of availableFiles) {
-					components[file.component] = file;
-					versions.add(file.version);
-				}
-				const newMissingComponents: DownloadComponent[] = [];
-				let isIncomplete = versions.size !== 1;
-				let hasNewVersion = false;
-				for (const component of ALL_COMPONENTS) {
-					if (!components[component]) {
-						isIncomplete = true;
-						newMissingComponents.push(component);
-					}
-					else if (components[component].version !== CURRENT_VERSION) {
-						hasNewVersion = true;
-						newMissingComponents.push(component);
-					}
-				}
-				const status = isIncomplete
-					? newMissingComponents.length === ALL_COMPONENTS.length ? "available_for_download" : "incomplete"
-					: hasNewVersion
-					? "new_version_available"
-					: "latest";
+				const fileStatus = await db.get(`${store}_status`, `${language}/${voice}`);
+				const isComplete = fileStatus && !fileStatus.missingComponents.size;
+				const status = fileStatus ? isComplete ? fileStatus.version === CURRENT_VERSION ? "latest" : "new_version_available" : "incomplete" : "available_for_download";
 				setStatus(status);
 				setDownloadState({ inferenceMode, language, voice, status });
-				setMissingComponents(newMissingComponents);
+				setMissingComponents(fileStatus?.missingComponents || new Set(ALL_COMPONENTS));
 			}
 			catch (error) {
-				setError(new DatabaseError("Failed to get entries", { cause: error }));
+				setError(new DatabaseError("Failed to get download status", { cause: error }));
 			}
 		}
 		setError(undefined);
@@ -79,13 +58,13 @@ export default function DownloadRow({ db, inferenceMode, language, voice, setDow
 	}, [db, retryCounter]);
 
 	async function startDownload() {
-		if (!missingComponents.length) return;
+		if (!missingComponents.size) return;
 		setError(undefined);
 		setStatus("downloading");
 		setProgress(0);
 
 		const { signal } = abortController.current = new AbortController();
-		const fetchFiles = missingComponents.flatMap(component => {
+		const fetchFiles = [...missingComponents].flatMap(component => {
 			const nChunks = getNumberOfChunks(inferenceMode, component, language);
 			return nChunks === 1
 				? [[component, component] as [DownloadComponent, string]]
@@ -181,9 +160,21 @@ export default function DownloadRow({ db, inferenceMode, language, voice, setDow
 		);
 		if (hasDownloadedComponent) {
 			setDownloadState({ inferenceMode, language, voice, status: errors.length ? "incomplete" : "latest" });
+			try {
+				await db.put(`${store}_status`, {
+					path: `${language}/${voice}`,
+					language,
+					voice,
+					version: CURRENT_VERSION,
+					missingComponents: newMissingComponents,
+				} as never);
+			}
+			catch (error) {
+				errors.push(new DatabaseError("Failed to save download status", { cause: error }));
+			}
 		}
 		setError(errors.length ? errors.length === 1 ? errors[0] : new AggregateError(errors) : undefined);
-		setMissingComponents([...newMissingComponents]);
+		setMissingComponents(newMissingComponents);
 	}
 
 	function cancelDownload() {
@@ -219,9 +210,9 @@ export default function DownloadRow({ db, inferenceMode, language, voice, setDow
 
 	// Items are stretched and paddings are intentionally moved to the icon for larger tooltip bounding box
 	return <li className="contents">
-		<button type="button" className={`btn btn-ghost gap-0 items-stretch rounded-none text-left font-normal px-0 py-4 h-auto min-h-0 border-0 border-b border-b-slate-300 text-slate-700 hover:border-b hover:bg-opacity-10${DOWNLOAD_STATUS_ACTION[status] ? "" : " pointer-events-none"}`} onClick={DOWNLOAD_STATUS_ACTION[status]}>
+		<button type="button" className={`flex items-stretch text-sm/4 text-left py-4 border-b border-b-slate-300 text-slate-700 ${DOWNLOAD_STATUS_ACTION[status] ? "transition-colors hover:bg-base-content hover:bg-opacity-10" : "pointer-events-none"}`} onClick={DOWNLOAD_STATUS_ACTION[status]}>
 			<div className="text-2xl flex items-center pl-4 pr-2">{VOICE_TO_ICON[voice]}</div>
-			<div className="flex-1 flex flex-col gap-1">
+			<div className="flex-1 flex flex-col gap-0.5">
 				<div className="text-xl font-medium">{TERMINOLOGY[language]} – {TERMINOLOGY[voice]}</div>
 				{status === "downloading"
 					? <div className="flex items-center gap-2">

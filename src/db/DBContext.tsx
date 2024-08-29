@@ -1,37 +1,9 @@
 import { useEffect, useReducer, createContext, useContext } from "react";
 
-import { openDB } from "idb";
+import { getDBInstance } from "./instance";
 
-import type { TTSDB } from "../types";
-import type { IDBPDatabase } from "idb";
+import type { TTSDatabase } from "./instance";
 import type { Dispatch } from "react";
-
-type TTSDatabase = IDBPDatabase<TTSDB>;
-let dbInstance: TTSDatabase | undefined;
-let pendingDBInstance: Promise<TTSDatabase> | undefined;
-
-function getDBInstance() {
-	async function createDBInstance() {
-		try {
-			return dbInstance = await openDB<TTSDB>("TTS", 2, {
-				upgrade(db) {
-					if (!db.objectStoreNames.contains("models")) {
-						const store = db.createObjectStore("models", { keyPath: "path" });
-						store.createIndex("language_voice", ["language", "voice"]);
-					}
-					if (!db.objectStoreNames.contains("audios")) {
-						const store = db.createObjectStore("audios", { keyPath: "path" });
-						store.createIndex("language_voice", ["language", "voice"]);
-					}
-				},
-			});
-		}
-		finally {
-			pendingDBInstance = undefined;
-		}
-	}
-	return dbInstance || (pendingDBInstance ||= createDBInstance());
-}
 
 interface DBState {
 	db: TTSDatabase | undefined;

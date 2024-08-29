@@ -125,7 +125,9 @@ export default class NDArray<Type extends TypedArray, const Shape extends readon
 	}
 
 	static async fromTensor<const Shape extends readonly number[], TensorType extends Exclude<Tensor.Type, "string" | "bool">>(tensor: TypedTensor<TensorType>) {
-		return new NDArray(tensor.dims as Shape, await tensor.getData());
+		const array = new NDArray(tensor.dims as Shape, await tensor.getData());
+		tensor.dispose();
+		return array;
 	}
 
 	static vectorize<Constructor extends TypedArrayConstructor>(
@@ -244,5 +246,10 @@ export default class NDArray<Type extends TypedArray, const Shape extends readon
 
 	set(value: DataType<Type>, ...indices: IndicesOfShape<Shape>) {
 		this.data[this.fromIndices(indices)] = value;
+	}
+
+	dispose() {
+		// eslint-disable-next-line @typescript-eslint/no-dynamic-delete
+		delete this["data" as never];
 	}
 }

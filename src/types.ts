@@ -36,7 +36,7 @@ export type HakkaToneMode = "digits" | "diacritics";
 
 export type ModelComponent = "enc" | "emb" | "sdp" | "flow" | "dec";
 
-export type ModelComponentToFile = Record<ModelComponent, ModelFile>;
+export type ModelComponentToFile = Record<ModelComponent, ArrayBuffer>;
 
 export type ModelVersion = string & { readonly brand: unique symbol };
 
@@ -49,9 +49,17 @@ export interface ModelFile {
 	file: ArrayBuffer;
 }
 
+export interface ModelFileStatus {
+	path: `${Language}/${Voice}`;
+	language: Language;
+	voice: Voice;
+	version: ModelVersion;
+	missingComponents: Set<ModelComponent>;
+}
+
 export type AudioComponent = "chars" | "words";
 
-export type AudioComponentToFile = Record<AudioComponent, AudioFile>;
+export type AudioComponentToFile = Record<AudioComponent, ArrayBuffer>;
 
 export type AudioVersion = string & { readonly brand: unique symbol };
 
@@ -64,30 +72,44 @@ export interface AudioFile {
 	file: ArrayBuffer;
 }
 
-export interface TTSDB extends DBSchema {
+export interface AudioFileStatus {
+	path: `${Language}/${Voice}`;
+	language: Language;
+	voice: Voice;
+	version: AudioVersion;
+	missingComponents: Set<AudioComponent>;
+}
+
+export type DatabaseStore = "models" | "models_status" | "audios" | "audios_status";
+
+export interface TTSDB extends DBSchema, Record<DatabaseStore, DBSchema[string]> {
 	models: {
 		key: ModelFile["path"];
 		value: ModelFile;
-		indexes: {
-			language_voice: [Language, Voice];
-		};
+	};
+	models_status: {
+		key: ModelFileStatus["path"];
+		value: ModelFileStatus;
 	};
 	audios: {
 		key: AudioFile["path"];
 		value: AudioFile;
-		indexes: {
-			language_voice: [Language, Voice];
-		};
+	};
+	audios_status: {
+		key: AudioFileStatus["path"];
+		value: AudioFileStatus;
 	};
 }
 
 export type DownloadComponent = ModelComponent | AudioComponent;
 
-export type DownloadComponentToFile = Record<DownloadComponent, DownloadFile>;
+export type DownloadComponentToFile = Record<DownloadComponent, ArrayBuffer>;
 
 export type DownloadVersion = ModelVersion | AudioVersion;
 
 export type DownloadFile = ModelFile | AudioFile;
+
+export type DownloadFileStatus = ModelFileStatus | AudioFileStatus;
 
 export type ActualDownloadStatus =
 	| "available_for_download"
@@ -143,7 +165,7 @@ export interface SentenceComponentState extends SetDownloadStatus, SettingsDialo
 }
 
 export interface Actions {
-	infer(language: Language, model: ModelComponentToFile, syllables: string[], voiceSpeed: number): Promise<Float32Array>;
+	infer(language: Language, voice: Voice, syllables: string[], voiceSpeed: number): Promise<Float32Array>;
 }
 
 interface NamedMessage<K extends keyof Actions> {
