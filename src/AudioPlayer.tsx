@@ -70,6 +70,7 @@ export default function AudioPlayer({
 	const [downloadError, setDownloadError] = useState<Error>();
 	const [downloadRetryCounter, downloadRetry] = useReducer((n: number) => n + 1, 0);
 	const [download, setDownload] = useState<DownloadComponentToFile>();
+	const [version, setVersion] = useState<DownloadVersion>();
 
 	const store = inferenceMode === "offline" ? "models" : "audios";
 	const CURRENT_VERSION = inferenceMode === "offline" ? CURRENT_MODEL_VERSION : CURRENT_AUDIO_VERSION;
@@ -89,9 +90,9 @@ export default function AudioPlayer({
 				}
 				const components = {} as DownloadComponentToFile;
 				const versions = new Set<DownloadVersion>();
-				for (const file of availableFiles) {
-					components[file.component] = file;
-					versions.add(file.version);
+				for (const { component, version, file } of availableFiles) {
+					components[component] = file;
+					versions.add(version);
 				}
 				if (versions.size !== 1) {
 					setDownloadError(new FileNotDownloadedError(inferenceMode, language, voice));
@@ -99,23 +100,23 @@ export default function AudioPlayer({
 					return;
 				}
 				setDownload(components);
-				setDownloadState({ inferenceMode, language, voice, status: versions.values().next().value === CURRENT_VERSION ? "latest" : "new_version_available" });
+				const [version] = versions;
+				setVersion(version);
+				setDownloadState({ inferenceMode, language, voice, status: version === CURRENT_VERSION ? "latest" : "new_version_available" });
 			}
 			catch (error) {
 				setDownloadError(new DatabaseError(`無法存取語音${DOWNLOAD_TYPE_LABEL[inferenceMode]}：資料庫出錯`, { cause: error }));
 			}
 		}
 		void getDownloadComponents();
-		// `inferenceMode` and `voiceSpeed` intentionally excluded
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [db, download, language, voice, setDownloadState, currSettingsDialogPage, downloadRetryCounter]);
+	}, [db, download, language, voice, inferenceMode, voiceSpeed, setDownloadState, currSettingsDialogPage, downloadRetryCounter]);
 
 	const [generationError, setGenerationError] = useState<Error>();
 	const [generationRetryCounter, generationRetry] = useReducer((n: number) => n + 1, 0);
 	const text = syllables.join(" ");
 	useEffect(() => {
 		if (inferenceMode !== "online" && !download) return;
-		const [{ version }] = inferenceMode === "online" ? [{ version: "main" }] : Object.values(download!);
 		async function generateAudio() {
 			const key = `${inferenceMode}/${voiceSpeed}/${version}/${language}/${voice}`;
 			let textToBuffer = audioCache.get(key);
@@ -150,7 +151,7 @@ export default function AudioPlayer({
 								const component = phrase.includes(" ") ? "words" : "chars";
 								const offset = (await getOffsetMap(version as AudioVersion, language, voice, component)).get(phrase);
 								if (!offset) return context.createBuffer(1, 8820, 44100);
-								const data = (download as AudioComponentToFile)[component].file;
+								const data = (download as AudioComponentToFile)[component];
 								return context.decodeAudioData(data.slice(...offset));
 							}));
 							buffer = context.createBuffer(1, buffers.reduce((length, buffer) => length + buffer.length, 0), 44100);
@@ -176,9 +177,8 @@ export default function AudioPlayer({
 		setGenerationError(undefined);
 		setBuffer(undefined);
 		void generateAudio();
-		// `inferenceMode` and `voiceSpeed` intentionally excluded
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [language, voice, download, text, generationRetryCounter]);
+	}, [language, voice, inferenceMode, voiceSpeed, download, version, text, generationRetryCounter]);
 
 	useEffect(() => {
 		if (buffer && isPlaying === null) playAudio();

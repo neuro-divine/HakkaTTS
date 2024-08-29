@@ -11,31 +11,6 @@ import type { TypedTensor } from "onnxruntime-web";
 export const ALL_MODEL_COMPONENTS: readonly ModelComponent[] = ["enc", "emb", "sdp", "flow", "dec"];
 
 type FloatTensor = TypedTensor<"float32">;
-
-const sessionCache = new Map<string, InferenceSession | FloatTensor>();
-
-async function loadSession(model: ModelComponentToFile) {
-	// Sessions must be initialized sequentially and not parallelly, so we can’t use `Promise.all`,
-	// See https://github.com/microsoft/onnxruntime/issues/19443
-	// return Array.fromAsync(ALL_MODEL_COMPONENTS[Symbol.iterator]().map(f));
-	const sessions = [] as unknown as [enc: InferenceSession, g: FloatTensor, sdp: InferenceSession, flow: InferenceSession, dec: InferenceSession];
-	for (const component of ALL_MODEL_COMPONENTS) {
-		const { version, path, file } = model[component];
-		const key = `${version}/${path}`;
-		let session = sessionCache.get(key);
-		if (!session) {
-			session = await InferenceSession.create(file);
-			if (component === "emb") {
-				const { g } = await session.run({ sid: new Tensor("int64", [0]) });
-				session = g.reshape([...g.dims, 1]) as FloatTensor;
-			}
-			sessionCache.set(key, session);
-		}
-		sessions.push(session);
-	}
-	return sessions;
-}
-
 type FloatTensorArray<Shape extends readonly number[]> = NDArray<Float32Array, Readonly<Shape>>;
 
 const lessThan = NDArray.vectorize((a, b) => +(a < b), Float32Array);
@@ -83,18 +58,35 @@ function generatePath(duration: FloatTensorArray<[Batch, 1, Tx]>, mask: FloatTen
 
 export default async function infer(model: ModelComponentToFile, seq: number[], tone: number[], voiceSpeed = 1, sdpNoiseScale = 0.6, seqNoiseScale = 0.8) {
 	setRandom(seedrandom("42"));
-	const [enc, g, sdp, flow, dec] = await loadSession(model);
-	const { xout: x, m_p, logs_p, x_mask } = await enc.run({
-		x: new Tensor("int64", seq, [1, seq.length]),
-		t: new Tensor("int64", tone, [1, tone.length]),
-		language: new Tensor("int64", Array.from(seq, () => 0), [1, seq.length]),
-		g,
-	});
+
+	const emb = await InferenceSession.create(model.emb);
+	const sid = new Tensor("int64", [0]);
+	let { g } = await emb.run({ sid });
+	await emb.release();
+	sid.dispose();
+	g = g.reshape([...g.dims, 1]);
+
+	const enc = await InferenceSession.create(model.enc);
+	const seqTensor = new Tensor("int64", seq, [1, seq.length]);
+	const toneTensor = new Tensor("int64", tone, [1, tone.length]);
+	const languageTensor = new Tensor("int64", Array.from(seq, () => 0), [1, seq.length]);
+	const { xout: x, m_p, logs_p, x_mask } = await enc.run({ x: seqTensor, t: toneTensor, language: languageTensor, g });
+	await enc.release();
+	seqTensor.dispose();
+	toneTensor.dispose();
+	languageTensor.dispose();
+
+	const sdp = await InferenceSession.create(model.sdp);
 	const zin = new Tensor("float32", fromLength(x.dims[0] * 2 * x.dims[2], () => sampleNormal(0, sdpNoiseScale)), [x.dims[0], 2, x.dims[2]]);
 	const { logw } = await sdp.run({ x, x_mask, zin, g });
+	await sdp.release();
+	zin.dispose();
+	x.dispose();
+
 	const x_mask_array = await NDArray.fromTensor<[Batch, 1, Tx], "float32">(x_mask as FloatTensor);
 	const logw_array = await NDArray.fromTensor<[Batch, 1, Tx], "float32">(logw as FloatTensor);
 	const w_ceil = NDArray.vectorize((d, m) => Math.ceil(Math.exp(d) * m / voiceSpeed), Float32Array)(x_mask_array, logw_array);
+	logw_array.dispose();
 	const [batch, , t_x] = x_mask_array.shape;
 	const y_lengths = NDArray.grid([batch], Float32Array, batch => {
 		let sum = 0;
@@ -104,18 +96,40 @@ export default async function infer(model: ModelComponentToFile, seq: number[], 
 		return Math.max(1, Math.min(100000, sum));
 	});
 	const y_mask_array = sequenceMask(y_lengths).expandDims(1);
+	y_lengths.dispose();
 	const attn_mask = multiply(x_mask_array.expandDims(2), y_mask_array.expandDims(-1));
+	x_mask_array.dispose();
 	const attn = generatePath(w_ceil, attn_mask);
+	w_ceil.dispose();
+	attn_mask.dispose();
 	const m_p_array = await NDArray.fromTensor<[Batch, FeatureDim, Tx], "float32">(m_p as FloatTensor);
-	const logs_p_array = await NDArray.fromTensor<[Batch, FeatureDim, Tx], "float32">(logs_p as FloatTensor);
 	const new_m_p = transformUsingAttention(attn, m_p_array);
+	m_p_array.dispose();
+	const logs_p_array = await NDArray.fromTensor<[Batch, FeatureDim, Tx], "float32">(logs_p as FloatTensor);
 	const new_logs_p = transformUsingAttention(attn, logs_p_array);
+	attn.dispose();
+	logs_p_array.dispose();
 	const z_p = NDArray.vectorize((m, p) => sampleNormal(m, Math.exp(p) * seqNoiseScale), Float32Array)(new_m_p, new_logs_p);
-	const { z: z_in } = await flow.run({
-		z_p: new Tensor("float32", z_p.data, z_p.shape),
-		y_mask: new Tensor("float32", y_mask_array.data, y_mask_array.shape),
-		g,
-	});
-	const { o: output } = await dec.run({ z_in, g });
-	return output.getData() as Promise<Float32Array>;
+	new_m_p.dispose();
+	new_logs_p.dispose();
+
+	const flow = await InferenceSession.create(model.flow);
+	const z_p_tensor = new Tensor("float32", z_p.data, z_p.shape);
+	z_p.dispose();
+	const y_mask_tensor = new Tensor("float32", y_mask_array.data, y_mask_array.shape);
+	y_mask_array.dispose();
+	const { z: z_in } = await flow.run({ z_p: z_p_tensor, y_mask: y_mask_tensor, g });
+	await flow.release();
+	z_p_tensor.dispose();
+	y_mask_tensor.dispose();
+
+	const dec = await InferenceSession.create(model.dec);
+	const { o } = await dec.run({ z_in, g });
+	await dec.release();
+	z_in.dispose();
+	g.dispose();
+
+	const output = await o.getData() as Float32Array;
+	o.dispose();
+	return output;
 }

@@ -36,7 +36,7 @@ export type HakkaToneMode = "digits" | "diacritics";
 
 export type ModelComponent = "enc" | "emb" | "sdp" | "flow" | "dec";
 
-export type ModelComponentToFile = Record<ModelComponent, ModelFile>;
+export type ModelComponentToFile = Record<ModelComponent, ArrayBuffer>;
 
 export type ModelVersion = string & { readonly brand: unique symbol };
 
@@ -51,7 +51,7 @@ export interface ModelFile {
 
 export type AudioComponent = "chars" | "words";
 
-export type AudioComponentToFile = Record<AudioComponent, AudioFile>;
+export type AudioComponentToFile = Record<AudioComponent, ArrayBuffer>;
 
 export type AudioVersion = string & { readonly brand: unique symbol };
 
@@ -83,7 +83,7 @@ export interface TTSDB extends DBSchema {
 
 export type DownloadComponent = ModelComponent | AudioComponent;
 
-export type DownloadComponentToFile = Record<DownloadComponent, DownloadFile>;
+export type DownloadComponentToFile = Record<DownloadComponent, ArrayBuffer>;
 
 export type DownloadVersion = ModelVersion | AudioVersion;
 
