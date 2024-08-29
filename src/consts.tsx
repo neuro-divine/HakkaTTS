@@ -25,7 +25,7 @@ export const INFERENCE_MODE_TO_LABEL: Record<InferenceMode, string> = {
 export const INFERENCE_MODE_TO_DESCRIPTION: Record<InferenceMode, string> = {
 	online: "在伺服器產生音訊。請注意，使用此模式可能會產生相關網絡費用。",
 	offline: "毋須網絡連線，直接於裝置進行運算並產生音訊。請注意，此模式僅適用於電腦或有大量可用記憶體的裝置，且需空間儲存模型。",
-	lightweight: "以輕巧方式快速於裝置產生音訊，質素較其餘兩個模式遜色。適用如記憶體容量較少的裝置。請注意，此模式仍需空間儲存數據。",
+	lightweight: "以輕巧方式快速於裝置產生音訊，質素較其餘兩個模式遜色。適用於記憶體容量較少的裝置。請注意，此模式仍需空間儲存數據。",
 };
 
 export const INFERENCE_MODE_TO_ICON: Record<InferenceMode, JSX.Element> = {
