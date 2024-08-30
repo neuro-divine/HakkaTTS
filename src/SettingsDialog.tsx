@@ -48,7 +48,7 @@ const SettingsDialog = forwardRef<HTMLDialogElement, SettingDialogProps>(functio
 					</span>
 				</button>
 			</form>
-			<h3 className="flex items-center gap-2 mx-6 mt-6 mb-4.5">
+			{currSettingsDialogPage && <h3 className="flex items-center gap-2 mx-6 mt-6 mb-4.5">
 				{currSettingsDialogPage === "settings"
 					? <>
 						<MdSettings size="1.125em" />設定
@@ -62,9 +62,9 @@ const SettingsDialog = forwardRef<HTMLDialogElement, SettingDialogProps>(functio
 						<MdOutlineDownloadForOffline size="1.125em" />
 						{DOWNLOAD_TYPE_LABEL[downloadManagerInferenceMode]}下載
 					</>}
-			</h3>
+			</h3>}
 			<hr />
-			<div className={`flex-1 overflow-x-hidden overflow-y-auto${currSettingsDialogPage === "settings" || db ? "" : " flex items-center justify-center"}`}>
+			{currSettingsDialogPage && <div className={`flex-1 overflow-x-hidden overflow-y-auto${currSettingsDialogPage === "settings" || db ? "" : " flex items-center justify-center"}`}>
 				{currSettingsDialogPage === "settings"
 					? <>
 						<h4 className="px-4 py-2 border-b">模式</h4>
@@ -161,7 +161,7 @@ const SettingsDialog = forwardRef<HTMLDialogElement, SettingDialogProps>(functio
 						)}
 					</ul>
 					: <h4>資料庫載入中……</h4>}
-			</div>
+			</div>}
 		</div>
 	</dialog>;
 });

@@ -95,7 +95,6 @@ export default function App() {
 						</button>
 						{createPortal(
 							<SettingsDialog
-								key={currSettingsDialogPage}
 								ref={settingsDialog}
 								currSettingsDialogPage={currSettingsDialogPage}
 								setCurrSettingsDialogPage={setCurrSettingsDialogPage}
