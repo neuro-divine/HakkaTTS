@@ -48,6 +48,12 @@
 		--tooltip-tail: 0.5rem;
 		--tooltip-offset: calc(100% + var(--tooltip-tail));
 	}
+	.tooltip.tooltip-close:hover:before,
+	.tooltip.tooltip-close:hover:after,
+	.tooltip.tooltip-close:has(:focus-visible):before,
+	.tooltip.tooltip-close:has(:focus-visible):after,
+	.tooltip.tooltip-open:not([data-tip]):hover:before,
+	.tooltip.tooltip-open:not([data-tip]):hover:after,
 	.dropdown-content:not(:hover):focus-within {
 		@apply invisible opacity-0;
 	}

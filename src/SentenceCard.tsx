@@ -3,6 +3,7 @@ import { useMemo, useState } from "react";
 import AudioPlayer from "./AudioPlayer";
 import { INFERENCE_MODE_TO_LABEL, TERMINOLOGY } from "./consts";
 import { normalizePauses, parse } from "./parse";
+import SentenceCopy from "./SentenceCopy";
 
 import type { Edge, StackedEdge, HakkaToneMode, SentenceComponentState } from "./types";
 
@@ -221,9 +222,9 @@ export default function SentenceCard({
 			</tbody>
 		</table>;
 
-		return <div className="dropdown dropdown-hover" key={key}>
+		return <div className="dropdown dropdown-hover group" key={key}>
 			{/* eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex */}
-			<label tabIndex={0} className="text-[#0a469f]">{chars}</label>
+			<div tabIndex={0} className="text-[#0a469f] group-hover:bg-[#f7f9fd] rounded-lg transition-colors">{chars}</div>
 			{/* eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex */}
 			<ul tabIndex={0} className="dropdown-content left-1/2 -translate-x-1/2 z-10 p-2 min-w-full shadow bg-[#fffefd] border border-base-200 rounded-box whitespace-nowrap">{dropdown}</ul>
 		</div>;
@@ -237,7 +238,8 @@ export default function SentenceCard({
 				<span className="badge badge-accent join-item">{INFERENCE_MODE_TO_LABEL[inferenceMode]}</span>
 				<span className="badge badge-info join-item">{voiceSpeed}×</span>
 			</div>
-			<div className="text-2.5xl/none sm:text-4xl mt-2 sm:mt-5">{tables}</div>
+			<SentenceCopy syllables={syllables} prons={flattenedProns} />
+			<div className="text-2.5xl/none sm:text-4xl mt-1">{tables}</div>
 			<AudioPlayer
 				sentence={{ language, voice, inferenceMode, voiceSpeed, syllables: inferenceMode === "lightweight" ? enabledEdgesProns : flattenedProns }}
 				setDownloadState={setDownloadState}

@@ -1,4 +1,4 @@
-import { useEffect, useReducer, useState } from "react";
+import { useCallback, useEffect, useReducer, useRef, useState } from "react";
 
 import { ALL_HAKKA_TONE_MODES, ALL_INFERENCE_MODES, ALL_LANGUAGES, ALL_VOICES, DOWNLOAD_STATUS_PRIORITY } from "./consts";
 
@@ -54,4 +54,36 @@ export function useQueryOptions(): QueryOptions {
 			return `${location.origin}${location.pathname}?${String(new URLSearchParams(queryOptions as unknown as Record<string, string>))}`; // This is fine: number is automatically coalesced to string
 		},
 	};
+}
+
+export function useCopyState() {
+	const [copyState, setCopyState] = useState<"copied" | "failed">();
+	const prevCopyState = useRef<"copied" | "failed">();
+	useEffect(() => {
+		prevCopyState.current = copyState;
+	}, [copyState]);
+	const timeout = useRef<ReturnType<typeof setTimeout>>();
+	const copy = useCallback(async (text: string) => {
+		if (timeout.current) clearTimeout(timeout.current);
+		setCopyState(undefined);
+		try {
+			await navigator.clipboard.writeText(text);
+			setCopyState("copied");
+		}
+		catch {
+			setCopyState("failed");
+		}
+		timeout.current = setTimeout(() => setCopyState(undefined), 2500);
+	}, []);
+	const displayCopyState = copyState || prevCopyState.current;
+	return {
+		copy,
+		tooltipStyle: `tooltip tooltip-left ${displayCopyState === "copied" ? "tooltip-primary" : "tooltip-error"} ${copyState ? "tooltip-open" : "tooltip-close"} before:transition-opacity after:transition-opacity before:text-lg`,
+		tooltipText: displayCopyState && (displayCopyState === "copied" ? "已複製至剪貼簿" : "無法複製至剪貼簿"),
+	};
+}
+
+export function useBindArgs<A extends unknown[], R>(f: (...args: A) => R, ...args: A): () => R {
+	// eslint-disable-next-line react-hooks/exhaustive-deps
+	return useCallback(() => f(...args), [f, ...args]);
 }
