@@ -76,12 +76,12 @@ const SettingsDialog = forwardRef<HTMLDialogElement, SettingDialogProps>(functio
 										<div className="text-2xl flex items-center px-2">{INFERENCE_MODE_TO_ICON[mode]}</div>
 										<div className="flex-1 flex flex-col">
 											<div className="text-xl font-medium">{INFERENCE_MODE_TO_LABEL[mode]}</div>
-											<div className="text-sm">{INFERENCE_MODE_TO_DESCRIPTION[mode]}</div>
+											<div className="text-sm text-slate-500">{INFERENCE_MODE_TO_DESCRIPTION[mode]}</div>
 										</div>
-										{mode !== "online" && <div className="w-40"></div>}
+										{mode !== "online" && <div className="w-36"></div>}
 										<input
 											type="radio"
-											className="radio radio-primary"
+											className="radio radio-primary ml-3"
 											name="inferenceMode"
 											value={mode}
 											{...NO_AUTO_FILL}
@@ -109,7 +109,7 @@ const SettingsDialog = forwardRef<HTMLDialogElement, SettingDialogProps>(functio
 									<div className="flex items-center gap-2">
 										<input
 											type="range"
-											className="range range-primary range-xs grow"
+											className="range range-primary range-sm sm:range-xs grow"
 											min={0.5}
 											max={2}
 											value={voiceSpeed}
