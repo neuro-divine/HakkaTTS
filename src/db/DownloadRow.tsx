@@ -45,7 +45,7 @@ export default function DownloadRow({ db, inferenceMode, language, voice, setDow
 				const status = fileStatus ? isComplete ? fileStatus.version === CURRENT_VERSION ? "latest" : "new_version_available" : "incomplete" : "available_for_download";
 				setStatus(status);
 				setDownloadState({ inferenceMode, language, voice, status });
-				setMissingComponents(fileStatus?.missingComponents || new Set(ALL_COMPONENTS));
+				setMissingComponents(fileStatus?.version === CURRENT_VERSION ? fileStatus.missingComponents : new Set(ALL_COMPONENTS));
 			}
 			catch (error) {
 				setError(new DatabaseError("Failed to get download status", { cause: error }));
