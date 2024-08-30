@@ -3,6 +3,7 @@ import { forwardRef, useEffect } from "react";
 import { MdClose, MdOutlineDownloadForOffline, MdSettings, MdSpeed, MdRefresh, MdError, MdArrowBack, MdShowChart } from "react-icons/md";
 
 import { ALL_INFERENCE_MODES, DOWNLOAD_TYPE_LABEL, INFERENCE_MODE_TO_DESCRIPTION, INFERENCE_MODE_TO_ICON, INFERENCE_MODE_TO_LABEL, NO_AUTO_FILL, ALL_LANGUAGES, ALL_VOICES, DOWNLOAD_STATUS_INDICATOR_CLASS } from "./consts";
+import CopyURLRow from "./CopyURLRow";
 import { useDB } from "./db/DBContext";
 import DownloadRow from "./db/DownloadRow";
 import Radio from "./Radio";
@@ -28,6 +29,7 @@ const SettingsDialog = forwardRef<HTMLDialogElement, SettingDialogProps>(functio
 		setVoiceSpeed,
 		hakkaToneMode,
 		setHakkaToneMode,
+		urlWithQuery,
 	},
 	downloadState,
 	setDownloadState,
@@ -130,6 +132,7 @@ const SettingsDialog = forwardRef<HTMLDialogElement, SettingDialogProps>(functio
 									<Radio name="hakkaToneMode" className="btn-primary h-10 min-h-10" state={hakkaToneMode} setState={setHakkaToneMode} value="diacritics" />
 								</div>
 							</li>
+							<CopyURLRow urlWithQuery={urlWithQuery} />
 						</ul>
 					</>
 					: error

@@ -140,6 +140,7 @@ export interface QueryOptions {
 	setInferenceMode: Dispatch<InferenceMode>;
 	setVoiceSpeed: Dispatch<number>;
 	setHakkaToneMode: Dispatch<HakkaToneMode>;
+	get urlWithQuery(): string;
 }
 
 export interface DownloadState {

@@ -2,7 +2,7 @@ import { useEffect, useReducer, useState } from "react";
 
 import { ALL_HAKKA_TONE_MODES, ALL_INFERENCE_MODES, ALL_LANGUAGES, ALL_VOICES, DOWNLOAD_STATUS_PRIORITY } from "./consts";
 
-import type { ActualDownloadStatus, DownloadState, HakkaToneMode, InferenceMode, Language, OfflineInferenceMode, Voice } from "./types";
+import type { ActualDownloadStatus, DownloadState, HakkaToneMode, InferenceMode, Language, OfflineInferenceMode, QueryOptions, Voice } from "./types";
 
 const currentDownloadStates = new Map<OfflineInferenceMode, Map<string, ActualDownloadStatus>>();
 
@@ -20,9 +20,10 @@ export function useDownloadState() {
 	return useReducer(downloadStateReducer, new Map<OfflineInferenceMode, ActualDownloadStatus>([["offline", "latest"], ["lightweight", "latest"]]));
 }
 
-export function useQueryOptions() {
+export function useQueryOptions(): QueryOptions {
 	const [queryOptions, setQueryOptions] = useState(() => {
 		const searchParams = new URLSearchParams(location.search);
+		history.replaceState(null, document.title, location.pathname); // Remove query
 		function parseOption<T>(key: string, allValues: readonly T[]) {
 			return ([searchParams.get(key), localStorage.getItem(key)] as T[]).find(value => allValues.includes(value)) || allValues[0];
 		}
@@ -35,7 +36,6 @@ export function useQueryOptions() {
 		};
 	});
 	useEffect(() => {
-		history.replaceState(null, document.title, `?${String(new URLSearchParams(queryOptions as unknown as Record<string, string>))}`); // This is fine: number is automatically coalesced to string
 		Object.assign(localStorage, queryOptions);
 	}, [queryOptions]);
 	const { language, voice, mode: inferenceMode, speed: voiceSpeed, hakka_tones: hakkaToneMode } = queryOptions;
@@ -50,5 +50,8 @@ export function useQueryOptions() {
 		setInferenceMode: (inferenceMode: InferenceMode) => setQueryOptions(oldOptions => ({ ...oldOptions, mode: inferenceMode })),
 		setVoiceSpeed: (voiceSpeed: number) => setQueryOptions(oldOptions => ({ ...oldOptions, speed: voiceSpeed })),
 		setHakkaToneMode: (hakkaToneMode: HakkaToneMode) => setQueryOptions(oldOptions => ({ ...oldOptions, hakka_tones: hakkaToneMode })),
+		get urlWithQuery() {
+			return `${location.origin}${location.pathname}?${String(new URLSearchParams(queryOptions as unknown as Record<string, string>))}`; // This is fine: number is automatically coalesced to string
+		},
 	};
 }

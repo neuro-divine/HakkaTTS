@@ -221,7 +221,7 @@ export default function DownloadRow({ db, inferenceMode, language, voice, setDow
 					</div>
 					: <div className={DOWNLOAD_STATUS_CLASS[status]}>{DOWNLOAD_STATUS_LABEL[status].replace("＿＿", DOWNLOAD_TYPE_LABEL[inferenceMode])}</div>}
 			</div>
-			<div className="text-2xl flex items-center pl-2 pr-4 tooltip tooltip-left tooltip-primary before:text-lg before" data-tip={DOWNLOAD_STATUS_ACTION_LABEL[status]}>{DOWNLOAD_STATUS_ICON[status]}</div>
+			<div className="text-2xl flex items-center pl-2 pr-4 tooltip tooltip-left tooltip-primary before:text-lg" data-tip={DOWNLOAD_STATUS_ACTION_LABEL[status]}>{DOWNLOAD_STATUS_ICON[status]}</div>
 		</button>
 	</li>;
 }
