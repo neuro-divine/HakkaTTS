@@ -7,8 +7,8 @@ export const TERMINOLOGY: Record<Terminology, string> = {
 	hakka: "客家話",
 	male: "男聲",
 	female: "女聲",
-	digits: "數字",
 	diacritics: "調號",
+	digits: "數字",
 };
 
 export const VOICE_TO_ICON: Record<Voice, JSX.Element> = {
@@ -39,7 +39,7 @@ export const ALL_VOICES: readonly Voice[] = ["male", "female"];
 export const ALL_INFERENCE_MODES: readonly InferenceMode[] = ["online", "offline", "lightweight"];
 export { ALL_MODEL_COMPONENTS } from "./inference/infer";
 export const ALL_AUDIO_COMPONENTS: readonly AudioComponent[] = ["chars", "words"];
-export const ALL_HAKKA_TONE_MODES: readonly HakkaToneMode[] = ["digits", "diacritics"];
+export const ALL_HAKKA_TONE_MODES: readonly HakkaToneMode[] = ["diacritics", "digits"];
 
 export const MODEL_COMPONENT_TO_N_CHUNKS: Record<ModelComponent, number> = {
 	enc: 2,

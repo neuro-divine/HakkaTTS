@@ -32,7 +32,7 @@ export interface Sentence {
 export type OfflineInferenceMode = "offline" | "lightweight";
 export type InferenceMode = "online" | OfflineInferenceMode;
 
-export type HakkaToneMode = "digits" | "diacritics";
+export type HakkaToneMode = "diacritics" | "digits";
 
 export type ModelComponent = "enc" | "emb" | "sdp" | "flow" | "dec";
 
