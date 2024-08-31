@@ -88,7 +88,7 @@ export default function App() {
 						</div>
 					</div>
 					<div>
-						<button type="button" className="btn btn-ghost max-sm:btn-sm max-sm:px-2.5 relative flex-col flex-nowrap gap-0 text-base whitespace-nowrap h-20 min-h-20 text-slate-500 hover:bg-opacity-10" onClick={() => setCurrSettingsDialogPage("settings")}>
+						<button type="button" className="btn btn-ghost max-sm:btn-sm max-sm:px-2.5 relative flex-col flex-nowrap gap-0 text-base whitespace-nowrap h-20 min-h-20 text-slate-500 font-extrabold hover:bg-opacity-10" onClick={() => setCurrSettingsDialogPage("settings")}>
 							{currInferenceModeDownloadState !== "latest" && <MdError size="1.5em" className={`absolute -top-1 -right-1 ${DOWNLOAD_STATUS_INDICATOR_CLASS[currInferenceModeDownloadState]}`} />}
 							<MdSettings size="2em" />
 							設定
