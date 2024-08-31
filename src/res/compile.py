@@ -57,8 +57,7 @@ df_canto["pron"] = df_canto["pron"].apply(rom_map)
 df_charpron = df_chars.set_index(["char", "canton"])
 df_canto["order"] = df_canto.index
 df_chars["order"] = df_charpron.index.map(df_canto.set_index(["char", "pron"])["order"])
-df_chars.sort_values(["char", "order", "canton"], inplace=True)
-df_chars[["char", "waitau", "hakka", "notes"]].to_csv("chars.csv", index=False)
+df_chars.drop_duplicates(inplace=True)
 
 df_canto = df_canto.loc[(df_canto["char"].str.len() > 1) & (df_canto["freq"] >= 10), ["char", "pron"]]
 df_charpron.sort_index(inplace=True)
@@ -77,17 +76,34 @@ df_collocations = df_chars.explode("collocation")
 df_collocations.dropna(subset="collocation", inplace=True)
 df_collocations.set_index(["collocation", "char"], inplace=True)
 df_collocations.sort_index(inplace=True)
-df_chars.set_index("char", inplace=True)
-df_chars.sort_index(inplace=True)
+df_chars_lookup = df_chars.set_index("char")
+df_chars_lookup.sort_index(inplace=True)
 
 def generate(language):
+	global df_chars
+
 	df_words = pd.read_csv(f"{language.capitalize()}Words.csv", header=0, usecols=[5, 7, 8], **str_columns(["char", "pron", "valid"]))
 	df_words["char"] = df_words["char"].apply(normalize_char)
 	df_words["pron"] = df_words["pron"].apply(normalize_pron)
 	df_words = df_words.loc[(df_words["char"].str.len() - df_words["pron"].str.count(" ") == 1) & (df_words["valid"] == "OK"), ["char", "pron"]]
 
+	df_is_monosyllabic_words = df_words["char"].str.len() == 1
+	df_monosyllabic_words = df_words[df_is_monosyllabic_words]
+	df_chars_native_prons = df_chars.set_index(["char", language])
 	other_chars = []
-	other_prons = []
+
+	for row in df_monosyllabic_words.itertuples(index=False):
+		charpron = (row.char, row.pron)
+		try:
+			df_chars_native_prons.loc[charpron]
+		except KeyError:
+			if charpron not in other_chars:
+				other_chars.append(charpron)
+
+	char_col, pron_col = zip(*other_chars)
+	df_chars = pd.concat([df_chars, pd.DataFrame({"char": char_col, language: pron_col})])
+
+	other_words = []
 
 	def get_prons(df, index):
 		try:
@@ -109,27 +125,29 @@ def generate(language):
 		return False
 
 	for collocation, df_collocation_chars in df_collocations.groupby(level=0):
-		if any(len(get_prons(df_chars, char)) > 1 for char in collocation):
+		if any(len(get_prons(df_chars_lookup, char)) > 1 for char in collocation):
 			prons = []
 			if all(append_prons(df_collocation_chars, (collocation, char))
-					or append_prons(df_chars, char) for char in collocation) \
+					or append_prons(df_chars_lookup, char) for char in collocation) \
 					and len(prons) == len(collocation):
-				other_chars.append(collocation)
-				other_prons.append(" ".join(prons))
+				other_words.append((collocation, " ".join(prons)))
 
 	for row in df_canto.itertuples(index=False):
 		chars = row.char
 		roms = row.pron.split()
-		if any(len(get_prons(df_chars, char)) > 1 for char in chars):
+		if any(len(get_prons(df_chars_lookup, char)) > 1 for char in chars):
 			prons = []
 			if all(append_prons(df_charpron, charpron) for charpron in zip(chars, roms)) \
 					and len(prons) == len(chars):
-				other_chars.append(chars)
-				other_prons.append(" ".join(prons))
+				other_words.append((chars, " ".join(prons)))
 
-	df_words = pd.concat([df_words, pd.DataFrame({"char": other_chars, "pron": other_prons})])
+	char_col, pron_col = zip(*other_words)
+	df_words = pd.concat([df_words[~df_is_monosyllabic_words], pd.DataFrame({"char": char_col, "pron": pron_col})])
 	df_words.drop_duplicates(inplace=True)
 	df_words.to_csv(f"{language}_words.csv", index=False)
 
 generate("waitau")
 generate("hakka")
+
+df_chars.sort_values(["char", "order", "canton"], kind="stable", inplace=True)
+df_chars[["char", "waitau", "hakka", "notes"]].to_csv("chars.csv", index=False)

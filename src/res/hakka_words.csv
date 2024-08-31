@@ -1,7 +1,6 @@
 char,pron
 日頭,ngit5 teu2
 月光,ngiet6 gong1
-星,sin1
 天瀉屎,tien1 sia4 si3
 掃把星,sau4 ba3 sin1
 天河,tien1 ho2
@@ -11,8 +10,6 @@ char,pron
 打風差,da3 fung1 cai1
 皺風鬼,zeu4 fung1 gui3
 頂頭風,din3 teu2 fung1
-雲,yun2
-水,sui3
 水毛,sui3 mau1
 落水,lok6 sui3
 晴水,ciang2 sui3
@@ -22,18 +19,13 @@ char,pron
 火蛇囁,fo3 sa2 ngiap5
 露水,lu4 sui3
 打露水,da3 lu4 sui3
-霧,mu4
 落霧,lok6 mu4
-霜,song1
 落霜,lok6 song1
 天弓,tien1 giung1
-雹,pok6
 落雹,lok6 pok6
 過雲水,go4 yun2 sui3
-雪,siet5
 落雪,lok6 siet5
 融雪,yung2 siet5
-冰,ben1
 結冰,giet5 ben1
 結嗨冰,giet5 hoi1 ben1
 天時,tien1 si2
@@ -41,12 +33,7 @@ char,pron
 好天,hau3 tien1
 天旱,tien1 hon1
 浸大水,zim4 tai4 sui3
-熱,ngiet6
-熻,hip5
-冷,lang1
-涼,liong2
 涼爽,liong2 song3
-暖,lon1
 嶺崗,liang1 gong1
 嶺頂,liang1 dang3
 半山,ban4 san1
@@ -54,41 +41,25 @@ char,pron
 山崖,san1 ngai2
 崩崗,ben1 gong1
 嶺背後,liang1 boi4 heu1
-海,hoi3
-湖,fu2
-河,ho2
 河邊,ho2 bien1
 河壆,ho2 bok5
 陂頭,bi1 teu2
 沙壩,sa1 ba4
 坑瀝,hang1 lak5
-圳,zun4
-塘,tong2
 湖氹,fu2 tem2
 平地,piang2 ti4
 鵝卵石,ngo2 on3 sak6
 沙公,sa1 gung1
-泥,lai2
 爛泥,lan4 lai2
 泥塵,lai2 cin2
 垃圾,lot5 sot5
-魯,lu1
-銹,sio4
 木絲,muk5 si1
 刨茸,pau2 yung2
-粉,fun3
-碎,sui4
-硝,siau1
 石灰,sak6 foi1
 紅毛泥,fung2 mau1 lai2
 玻璃,bo1 li1
 油漆,yiu2 cit5
 磁挾,ci2 hiap6
-金,gim1
-銀,ngiun2
-銅,tung2
-鐵,diet5
-錫,siak5
 冷水,lang1 sui3
 拿暖水,la2 lon1 sui3
 燒水,sau1 sui3
@@ -97,15 +68,7 @@ char,pron
 洗米水,se3 mi3 sui3
 街肚,gai1 du3
 農村裡,lung2 cun1 li1
-村,cun1
-巷,hong4
-路,lu4
 東西,dung1 si1
-色,set5
-聲,sang1
-味,mui4
-光,gong1
-影,yang3
 風景,fung1 gin3
 臉前,ngiam4 cien2
 背後,boi4 heu1
@@ -186,27 +149,19 @@ char,pron
 拌禾,pan1 vo2
 禾稈草,vo2 gon3 cau3
 禾稈頭,vo2 gon3 teu2
-敥,yam4
 漚肥,eu4 pui2
 钁鋤,giok5 co2
-柄,biang4
 鐵鏟,tiet5 can3
 釘鋤,dang1 co2
 番釘,fan1 dang1
 禾鐮,vo2 liam2
 鐮刀,liam2 dau1
 柴刀,cai2 dau1
-犁,lai2
-耙,pa2
 水車,sui3 ca1
 風櫃,fung1 kui4
 拌桶,pan1 tung3
 簸箕,boi4 gi1
-籮,lo2
-篩,si1
-磨,mo4
 礱磨,lung2 mo4
-碓,doi4
 碓坎,doi4 ham3
 碓頭,doi4 teu2
 碾子,lien4 zu3
@@ -248,42 +203,18 @@ char,pron
 煮飯,zu3 fan4
 燜飯,mun1 fan4
 煮菜,zu3 coi4
-炆,mun1
-煠,sap6
 煲順,bau1 sun4
 淥順,luk5 sun4
-湓,pun2
-抹,mat5
-撿,giam3
-養,yong1
 掌屋,zong3 vuk5
-聯,lien2
 洗衫,se3 sam1
 晾燥,lang2 zau1
-縈,yang1
-煮,zu3
-入,ngip6
-淥,luk6
 火燭,fo3 zuk5
 火燒屋,fo3 sau1 vuk5
-烏,vu2
 出力,cut5 lit6
-斣,deu4
-整,zin3
-擇,tok6
-存,sun2
-炕,kong4
-熏,hiun1
-醃,yap5
-攤,tang1
-禾,vo2
-穀,guk5
 禾串,vo2 con4
 泛穀,pang4 guk5
-米,mi3
 糯米,lo4 mi3
 粘米,zam1 mi3
-麥,mak6
 狗尾粟,geu3 mui1 suk5
 包粟,bau1 suk5
 高粱粟,gau1 liong2 suk5
@@ -297,10 +228,8 @@ char,pron
 薯仔,su2 zai3
 地豆,ti4 teu4
 地豆米,ti4 teu4 mi3
-菇,gu1
 風栗,fung1 lit6
 粟子,lit6 zu3
-蔗,za4
 青菜,ciang1 coi4
 角菜,gok5 coi4
 黃芽白,vong2 nga2 pak6
@@ -331,19 +260,15 @@ char,pron
 蒜頭,son4 teu2
 蕎頭,kiau1 teu2
 薑嫲,giong1 ma2
-梗,gang3
 菜心,coi4 sim1
-菜,coi4
 菜根,coi4 gin1
 菜秧,coi4 yong1
 薸仔,piau2 zai3
 生果,sang1 go3
 桃仔,tau2 zai3
-杏,hen4
 李仔,li3 zai3
 腍柿,lem2 se2
 石榴,sak6 liu2
-梨,li2
 橘仔,git5 zai3
 柑仔,gam1 zai3
 橙仔,zang2 zai3
@@ -351,7 +276,6 @@ char,pron
 梅仔,moi2 zai3
 葡萄子,pu2 tau2 zu3
 櫻桃,yin1 tau2
-欖,lam3
 紅棗,fung2 zau3
 合桃,hap6 tau2
 山渣,san1 za1
@@ -359,10 +283,6 @@ char,pron
 荔果,lai1 go3
 龍眼,lung2 ngan3
 西瓜,si1 ga1
-筍,sun3
-核,fut6
-皮,pi2
-花,fa1
 梅花,moi2 fa1
 杏花,hen4 fa1
 桃花,tau2 fa1
@@ -391,7 +311,6 @@ char,pron
 油茶樹,yiu2 ca2 su4
 棕櫚樹,zung1 li1 su4
 樟樹,zong1 su4
-竹,zuk5
 車桐竹,ca1 tung2 zuk5
 竹根,zuk5 gin1
 竹衣,zuk5 yi1
@@ -400,13 +319,11 @@ char,pron
 榔箕,long1 gi1
 溜苔,liu1 toi2
 蘆茅,lu2 mau2
-艾,ngioi4
 樹桍,su4 ka1
 樹尾,su4 mui1
 樹頭,su4 teu2
 樹葉,su4 yap6
 裹粽葉,go3 zung4 yap6
-竻,let5
 杉樹,cam4 su4
 柏樹,pak5 su4
 松樹,cung2 su4
@@ -422,12 +339,8 @@ char,pron
 牛嫲,ngiu2 ma2
 牛仔,ngiu2 zai3
 牛角,ngiu2 gok5
-蹄,tai2
-吥,but5
-羊,yong2
 羊牯,yong2 gu3
 羊嫲,yong2 ma2
-豬,zu1
 豬牯,zu1 gu3
 豬家,zu1 ga1
 豬嫲,zu1 ma2
@@ -435,11 +348,8 @@ char,pron
 豬仔,zu1 zai3
 養豬仔,yong1 zu1 zai3
 走水,zeu3 sui3
-狗,geu3
 狗牯,geu3 gu3
 狗嫲,geu3 ma2
-吠,poi4
-貓,miau4
 貓牯,miau4 gu3
 貓嫲,miau4 ma2
 貓起群,miau4 hi3 kiun2
@@ -451,25 +361,13 @@ char,pron
 雞春,gai1 cun1
 雞胗,gai1 kin1
 生春,sang1 cun1
-伏,pu4
-蹣,pan2
-抄,cau4
-跒,kia4
-啼,tai2
-啄,duk5
-噹,diong1
 打踏,da3 tap6
-鵝,ngo2
-鴨,ap5
 野性,ya1 sin4
 老虎,lau4 fu3
 獅子,su1 zu3
-豹,bau4
-狼,long2
 狐狸,fu2 li2
 猴哥,heu2 go1
 馬騮,ma1 liu1
-鹿,luk6
 兔仔,tu4 zai3
 老鼠,lau4 cu3
 鳥仔,diau1 zai3
@@ -486,11 +384,6 @@ char,pron
 月鴿,ngiet6 gap5
 白鴿,pak6 gap5
 鷯哥,liau4 go1
-春,cun1
-竇,deu4
-翼,yit6
-尾,mui1
-揈,vin4
 腳爪,giok5 zau3
 蝲蜞,la2 kia2
 蟲蚿,cung2 hien3
@@ -499,10 +392,7 @@ char,pron
 壁蛇,biak5 sa2
 鳥蠅,vu1 yin2
 牛鳥蠅,ngiu2 vu1 yin2
-摟,leu1
-蚊,mun1
 齧仔,ngat5 zai3
-叼,diau1
 乾蜱,gon1 bi1
 狗虱,geu3 sit5
 虱嫲,sit5 ma2
@@ -526,7 +416,6 @@ char,pron
 湖鰍,fu2 ciu1
 蛇哥,sa2 go1
 湖蜞,fu2 ki2
-蚌,pong1
 吔螺蟲,ye2 lo2 cung2
 冷蜞,lang1 ki2
 老蟹,lau4 hai3
@@ -535,32 +424,20 @@ char,pron
 黃鱔,vong2 sien1
 鯉嫲,li1 ma2
 鯽魚,zit5 ng2
-鱗,lin1
 屋下,vuk5 ka1
-屋,vuk5
-起,hi3
 挑地腳,tiau1 ti4 giok5
 舂籬,zung1 li2
-磚,zon1
 磚碌,zon1 luk5
 泥磚,lai2 zon1
-瓦,nga1
-樑,liong2
 上樑,song3 liong2
-桁,hang2
 屋簷,vuk5 yam2
-柱,cu1
 柱躉,cu1 dun3
 間肚,gan1 du3
 正廳,zin4 tiang1
 偏廳,pien1 tiang1
 天井,tien1 ziang3
-坪,piang2
-墻,siong2
 壁頭,biak5 teu2
-結,giet5
 窗門,cung1 mun2
-門,mun2
 側門,zet5 mun2
 門檻,mun2 kiam1
 天棚,tien1 pang2
@@ -568,7 +445,6 @@ char,pron
 石級,sak6 gap5
 樓梯,leu2 toi1
 陡梯,deu3 toi1
-井,ziang3
 灶下,zau4 ha1
 廚房,cu2 fong2
 煙囪銜,yen1 cung1 ham2
@@ -577,7 +453,6 @@ char,pron
 廁所,ci4 so3
 角落頭,gok5 lok6 teu2
 窿空,lung2 kung1
-坼,cak5
 雞竇,gai1 deu4
 雞籠,gai1 lung1
 雞塒,gai1 zi4
@@ -586,19 +461,12 @@ char,pron
 傢俬,ga1 su1
 桌頭,zok5 teu2
 交椅,gau4 yi3
-凳,den4
 條凳,ban3 den4
 書桌,su1 zok5
-櫃,kui4
-櫥,cu2
 拖箱,to1 siong1
-箱,siong1
 眠床,min2 cong2
 竹席,zuk5 ciak6
 草席,zau3 ciak6
-被,pi1
-褥,yuk6
-氈,zien1
 枕頭,zim3 teu2
 冷線,lang1 sien1
 蚊帳,min1 zong4
@@ -606,7 +474,6 @@ char,pron
 面盆,mien4 pun2
 手巾,siu3 gin1
 番鹼,fan1 gan3
-鏡,giang4
 梳仔,so1 zai3
 牙刷,nga2 sot5
 牙擦,nga2 cat5
@@ -614,24 +481,16 @@ char,pron
 勺嫲,sok6 ma2
 葫蘆杓,pu2 lu2 sok6
 擂搥,lui2 cui2
-缸,gong1
 水缸,sui3 gong1
-埕,cin2
 缽頭,bat5 teu2
 罌哥,ang1 go1
-樽,zun1
-卒,zut5
 茶盅,ca2 zung1
-杯,bui1
-碗,von3
 沸水壼,bui4 sui3 fu2
 茶壼,ca2 fu2
 暖壼,lon1 fu2
 調羹,ci2 gang1
 飯勺,fan4 sok6
 筷子,kai4 zu3
-柴,cai2
-煤,moi2
 火炭,fo3 tan4
 火灰,fo3 foi1
 爐墩,lu2 dun3
@@ -666,8 +525,6 @@ char,pron
 鎖頭,so3 teu2
 蓑衣,so1 yi1
 笠嫲,lip5 ma2
-扇,sien4
-遮,za1
 掃杆,sau4 gon3
 掃把,sau4 ba3
 竹篙,zuk5 gau1
@@ -688,19 +545,13 @@ char,pron
 鉤仔,geu1 zai3
 鐵釘,tiet5 dang1
 剪刀,zien3 dau1
-針,zim1
 頂指,din3 zi3
-線,sien4
 衣車,yi1 ca1
-叾,duk5
 邊唇,bien1 sun2
-影,yang4
 開坼,hoi1 cak5
 衫褲,sam1 fu4
 剪布,zien3 bu4
 烏布,vu1 bu4
-剪,zien3
-試,ci4
 面衫,mien4 sam1
 恤衫,sut6 sam1
 底衫,dai3 sam1
@@ -708,54 +559,37 @@ char,pron
 背搭,boi4 dap5
 大褸,tai4 leu1
 冷衫,lang1 sam1
-面,mien4
 被肉,pi1 ngiuk5
 背心,boi4 sim1
-褲,fu4
 短褲,don3 fu4
 褲腳,fu4 giok5
 褲襠,fu4 long4
 開襠褲,hoi1 long4 fu4
 密襠褲,mit6 long4 fu4
-裙,kiun2
 衫袖,sam1 ciu4
 衫領,sam1 liang1
-縐,ziu4
-爛,lan4
 衫袋,sam1 toi4
 啪扭,bak6 leu3
 紐仔,leu3 zai3
 結針,giet5 zim1
 帽仔,mau4 zai3
 草帽,cau3 mau4
-鞋,hai2
 拖鞋,to1 hai3
-屐,kiak6
 水鞋,sui3 hai2
 鞋底,hai2 dai3
-靴,hio1
-襪,mat5
 手襪,siu3 mat5
 手巾仔,siu3 gin1 zai3
-結,git5
 頸巾,giang3 gin1
 口水枷,heu3 sui3 ga1
 圍裙,vui2 sin1
 肚搭,du3 dap5
 尿片,ngiau4 pien4
 燙斗,tong4 deu3
-飯,fan4
 麵粉,mien4 fun3
-麵,mien4
-糠,hong1
 舊飯,kiu4 fan4
-餿,seu1
-盈,yin4
 粥飲,zuk5 yim3
-粥,zuk5
 飯癩,fan4 lat5
 食飯,sit6 fan4
-渴,hot5
 食茶,sit6 ca2
 食酒,sit6 ziu3
 米酒,mi3 ziu3
@@ -767,20 +601,14 @@ char,pron
 煙仔,yen1 zai3
 食煙,sit6 yen1
 煙灰,yen1 foi1
-朝,zau1
 食朝,sit6 zau1
-晝,ziu4
 食晝,sit6 ziu4
-夜,ya4
 食夜,sit6 ya4
 舀飯,yau3 fan4
 豬肉,zu1 ngiuk5
 瘦肉,seu4 ngiuk5
 精豬肉,ziang1 zu1 ngiuk5
 臘肉,lap6 ngiuk5
-葷,fun1
-齋,zai1
-順,sun4
 豬蹄,zu1 tai2
 豬肝,zu1 gon1
 豬舌嫲,zu1 set6 ma2
@@ -789,14 +617,11 @@ char,pron
 下水,ha4 sui3
 夾菜,gap5 coi4
 淘飯,tau2 fan4
-燶,lung1
 豆腐乾,teu4 fu4 gon1
 豆腐,teu4 fu4
 豆腐花,teu4 fu4 fa1
 豆腐霉,teu4 fu4 moi1
 萊絲仔,loi2 su1 zai3
-傍,bong3
-飽,bau3
 打胲約,da3 goi1 yok5
 轉嗉,zon3 sio4
 打呃督,da3 et6 duk6
@@ -805,7 +630,6 @@ char,pron
 饅頭,man2 teu2
 餃子,gau3 zu3
 雲吞,vun2 tun1
-餡,ham4
 雪丸板,siet5 yen2 ban3
 糖丸,tong2 yen2
 餈粑,ci2 ba1
@@ -815,8 +639,6 @@ char,pron
 點心,diam3 sim1
 宵夜,siau1 ya4
 配料,pui4 liau4
-醋,cu4
-鹽,yam2
 豬油,zu1 yiu2
 麻油,ma2 yiu2
 黃糖,vong2 tong2
@@ -824,22 +646,18 @@ char,pron
 麻糖,ma2 tong2
 糖仔,tong2 zai3
 豉油,si4 yiu2
-腳,giok5
 蜜糖,mit6 tong2
 身魁,sin1 foi1
 頭那,teu2 la1
 光頭,gong1 teu2
 頭那毛,teu2 la1 mau1
-旋,con4
 毛辮仔,mau1 bien1 zai3
-髻,gi4
 頭鱗,teu2 lin1
 頭皮,teu2 pi2
 酒凹,ziu3 ngiap5
 額門頭,ngiak5 mun2 teu2
 梅子罌,moi2 zu1 ang1
 腦囟,lau3 sim4
-眼,ngan3
 眼珠仁,ngan3 zu1 yin2
 眼汁,ngan3 zip5
 目睡毛,muk5 soi4 mau1
@@ -854,7 +672,6 @@ char,pron
 嘴角,zoi3 gok5
 嘴唇,zoi4 sun2
 舌嫲,set6 ma2
-牙,nga2
 大牙,tai4 nga2
 暴牙,pau4 nga2
 牙床肉,nga2 cong1 ngiuk5
@@ -863,7 +680,6 @@ char,pron
 頦啱下,goi1 ngam1 ha1
 口水,heu3 sui3
 喉連,heu2 lien2
-頸,giang3
 肩頭,gien1 teu2
 心肝頭,sim1 gon1 teu2
 背樑,boi4 long2
@@ -872,7 +688,6 @@ char,pron
 手臂,siu3 bi3
 手踭,siu3 zang1
 脈門,mak5 mun2
-手,siu3
 左手,zo3 siu3
 右手,yiu4 siu3
 手巴掌,siu3 ba1 zong3
@@ -880,9 +695,6 @@ char,pron
 手指公,siu3 zi3 gung1
 臘尾指,lap6 mui1 zi3
 手指甲,siu3 zi3 gap5
-腡,lo2
-箕,gi1
-繭,gan3
 肋坼下,lak6 cak5 ha1
 嬭姑,len4 gu1
 嬭頭,len4 teu2
@@ -893,13 +705,10 @@ char,pron
 打脧鳥,da3 zoi1 diau1
 髀罅,bi3 la4
 褲襠下,fu4 long4 ha1
-卵,lin3
 春袋,cun1 toi4
 核卵,hak6 lon3
 卵屎,lin3 si3
-脧,zoi1
 支屄,zi1 biet5
-屌,diau3
 大髀,tai4 bi3
 膝頭,cit5 teu2
 腳囊肚,giok5 lang2 du3
@@ -909,7 +718,6 @@ char,pron
 腳盤,giok5 pan2
 腳板心,giok5 ban3 sim1
 腳跡,giok5 ziak5
-㿸,man4
 老哥,lau3 go1
 婦娘,bu1 ngiong2
 老伯頭,lau3 bak5 teu2
@@ -970,23 +778,15 @@ char,pron
 生保人,sang1 bau3 ngin2
 人客,ngin2 hak5
 有性,yiu1 siang4
-臭,ciu4
 小相,siau3 siong4
-歪,vai1
 大方,tai4 fong1
 捨得,sa3 det5
-叻,liak6
 能替,len2 tai4
 勤力,kin2 lit6
-懶,lan1
 慳儉,han1 kiam4
-精,ziang1
 爽直,song3 cit6
-蠢,cun3
-梟,hiau1
 牛王,ngiu2 vong2
 刻簿,ket5 pok6
-奸,gan1
 陰毒,yim1 tuk6
 蠱惑,gu3 vak6
 好心,hau3 sim1
@@ -994,22 +794,18 @@ char,pron
 唔聲,m1 sang1
 畏羞,vui4 siu1
 可憐,ko3 lien2
-靚,liang4
-醜,ciu3
 齊整,ce2 zin1
 就亼,ciu4 zip6
 累贅,lui4 zui4
 囉嗦,lo4 so4
 聽話,tang4 va4
 頑皮,ngan2 pi2
-細,se4
 偷懶,teu1 lan1
 磨嗦,mo4 so4
 賴死,lai4 si3
 下流,ha4 liu2
 唔愛面,m1 oi4 mien4
 講大話,gong3 tai4 va4
-映,yang3
 阿爸,a1 ba1
 阿媽,a1 ma1
 阿咪,a1 mi1
@@ -1127,7 +923,6 @@ char,pron
 棺材,gon1 coi2
 入殮,ngip6 liam1
 送葬,sung4 zong4
-埋,mai2
 溪錢,kai1 cien2
 爆仗,bau4 cong4
 墳頭,fun2 teu2
@@ -1143,7 +938,6 @@ char,pron
 發大冷,bot5 tai4 lang1
 吃吃震,git6 git6 zun1
 發呷,bot5 hap5
-凵,kiem3
 冷倒,lang1 dau3
 發痧,bot5 sa1
 熱氣,ngiet6 hi4
@@ -1152,8 +946,6 @@ char,pron
 肚胈屙,du3 pat6 o1
 唔消化,m1 siau1 fa4
 頭那暈,teu2 la1 vin2
-嘔,eu3
-痛,tung4
 抽筋,ciu4 gin1
 著驚,cok6 giang1
 喊同年,ham4 tung2 ngien2
@@ -1166,10 +958,7 @@ char,pron
 熱痱,ngiet5 mui3
 長球,zong3 kiu2
 貢膿,gung4 lung2
-庀,pi3
 結庀,giet5 pi3
-疤,ba1
-痣,zi4
 狐忽臊,fu2 fit6 sau1
 大核卵,tai4 hak6 lon3
 烏蠅屎,vu1 yin2 si3
@@ -1182,7 +971,6 @@ char,pron
 拉倒,lai3 dau3
 打扽坐,da3 dun4 co1
 爆趼公,bau4 gien1 gung1
-啞,a3
 看病,gon4 piang4
 打脈,da3 mak5
 中藥,zung1 yok6
@@ -1190,24 +978,15 @@ char,pron
 丸仔,yen2 zai3
 藥粉,yok6 fun3
 煲涼茶,bau1 liong2 ca2
-茶,ca2
 見功,gien4 gung1
 睡醒,soi4 siang3
 亢身,hong4 sin1
-疊,tiap6
-著,zok5
 洗面,se3 mien4
 梳頭,so1 teu2
-拼,pin1
-剃,tai4
 剃頭,tai4 teu2
 做工,zo4 gung1
-遲,ci2
 收工,siu1 gung1
-攰,kioi4
-敨,teu3
 轉屋下,zon3 vuk5 ka1
-去,hi4
 屙屎,o1 si3
 屙尿,o1 ngiau4
 打屁,da3 pi4
@@ -1238,7 +1017,6 @@ char,pron
 去學堂,hi4 hok6 tong2
 返學,fan1 hok6
 放學,fong4 hok6
-書,su1
 簿仔,pu1 zai3
 教書先生,gau1 su1 sin1 sang1
 學生,hok5 sang1
@@ -1248,24 +1026,16 @@ char,pron
 水筆,sui3 bit5
 鉛筆,yen2 bit5
 筆筒套,bit5 tung2 tau4
-紙,zi3
 撳釘,kim4 dang1
 信筒,sin4 tung2
 信肉,sim4 ngiuk5
 漿糊,ziong1 fu2
 刀仔,dau1 zai3
-砒,pai1
-尺,cak5
 擦紙膠,cat5 zi3 gau1
 橡筋,siong4 gin1
 墨湖,met6 fu2
-墨,met6
 墨汁,met6 zip5
 墨水,met5 sui3
-蘸,ziam3
-漬,zi4
-草,cau3
-塗,tu2
 逃學,tau2 hok6
 考試,kau3 si4
 徛堂,ki1 tong2
@@ -1276,10 +1046,6 @@ char,pron
 相片,siong4 pien4
 影畫戲,yang3 fa4 hi4
 電影,tien4 yang3
-畫,fa4
-對,dui4
-聊,liau4
-波,bo1
 踢足球,tiak5 zuk5 kiu2
 打韆鞦,da3 cin1 ciu1
 放紙鷂,fong4 zi3 yau4
@@ -1287,19 +1053,16 @@ char,pron
 唱歌,cong4 go1
 銀雞,ngiun2 gai1
 打符繡,da3 fu2 siu4
-簫,siau1
 吹笛,cui1 tiak6
 捉棋,zok5 ki2
 游水,yiu2 sui3
 沕水,mi4 sui3
 打水片,da3 sui3 pien3
-搞,gau3
 曉功夫,hiau3 gung1 fu1
 撮把戲,cot5 ba3 hi4
 打翻車,da3 fan2 ca1
 勾腳,giu1 giok5
 屏人子,biang4 ngin2 zu1
-捻,liem1
 跳飛機,tiau4 fui1 gi1
 舞龍,mu3 lung2
 拉二弦,lai1 ngi4 hien2
@@ -1318,14 +1081,12 @@ char,pron
 請坐,ciang3 co1
 客氣,hak5 hi4
 退茶,tui4 ca2
-派,pai4
 坐席,co1 cit6
 上菜,song1 coi4
 倒酒,dau3 ziu3
 慢慢行,man4 man4 hang2
 亂嗑,lon4 kap5
 招呼,zau1 fu1
-拜,bai4
 唱惹,cong4 ya1
 威風,vui1 fung1
 擺面子,bai3 mien4 zu3
@@ -1333,33 +1094,20 @@ char,pron
 見笑,gien4 siau4
 連累,lien2 lui4
 難為你,lan2 vui2 ngi2
-刮,gat5
-湊,ceu4
 遇到,ngi4 dau3
-探,tam4
 講話,gong3 va4
 講本地,gong3 bun3 ti4
 捧大腳,bung3 tai4 giok5
 吩咐,fun1 fu4
-喝,hot5
-撮,cot5
 死咯,si3 lo3
-話,va4
 罵人,ma4 ngin2
 分人打,bin1 ngin2 da3
 吵交,cau2 gau1
 打交,da3 gau1
 幫等,bong1 den3
-分,bin1
-喊,hiem1
 做得,zo4 det5
 唔錯,m1 co4
 唔准,m1 zun3
-唆,so2
-頂,din3
-撩,liau2
-佮,gap5
-就,ciu4
 轉鄉下,zon3 hiong1 ha4
 邏人客,la2 ngin2 hak5
 冇閒,mau2 han2
@@ -1368,14 +1116,12 @@ char,pron
 辦好,pan4 hau3
 搞掂,gau3 tiam4
 行運,hang2 yun4
-興,hin1
 鋪頭,pu4 teu2
 茶居,ca2 gi1
 飯店,fan4 diam4
 客棧,hak5 can4
 擺檔,bai3 dong4
 小販,siau3 fan4
-好,hau3
 開張,hoi1 zong1
 盤點,pan2 diam3
 打快扒,da3 kai4 pa2
@@ -1385,43 +1131,27 @@ char,pron
 伙記,fo2 gi4
 師傅,su4 fu4
 徒弟,tu2 ti4
-客,hak5
 講價,gong3 ga4
 還價,van2 ga4
 跌價,det5 ga4
-賒,ca2
 欠賬,kiam4 zong4
 追帳,zui1 zong4
 算盤,son4 pan2
-秤,cin4
 厘秤,li2 cin4
 皮費,pi2 fui4
 本錢,bun3 cien2
 佮份,gap5 fun4
-斂,liam1
-錢,cien2
 銀紙,ngiun2 zi3
 硬幣,ngan4 bi4
 大紙,tai4 zi3
 散紙,san3 zi3
-數,su4
-找,zau3
-爭,zang1
-利,li4
-賺,can4
 蝕本,set5 bun3
-抵,dai3
 夠秤,geu4 cin4
 唔夠秤,m1 geu4 cin4
-慳,han1
 著數,cok6 su4
 唔著數,m1 cok6 su4
-貴,gui4
-平,piang2
 車站,ca1 zam4
 碼頭,ma1 teu2
-橋,kiau2
-街,gai1
 行人路,hang2 ngin2 lu4
 馬路,ma1 lu4
 汽車,hi4 ca1
@@ -1431,7 +1161,6 @@ char,pron
 人力車,ngin2 lit6 ca1
 三輪車,san1 lin2 ca1
 雞公車,gai1 gung1 ca1
-輪,lin2
 火船,fo3 son2
 帆船,fan2 son2
 船仔,son2 zai3
@@ -1443,357 +1172,112 @@ char,pron
 水腳,sui3 giok5
 車飛,ca1 fui1
 搭車,dap5 ca1
-宕,tong4
 暈車,vin2 ca1
 座位,co4 vui4
 司機,su1 gi1
 開車,hoi1 ca1
 擔起,dam1 hi3
-頷,ngam3
-側,zet5
-仰,ngong1
 扭轉,ngiu4 zon3
-擘,mak5
 霎眯,sap5 mi1
 瞪大眼,zen4 tai4 ngan3
-囁,ngiap5
-瞄,miau2
-䁓,zong1
-看,kon4
-掌,zong3
-聽,tang4
-皺,ziu4
-鼻,pi4
-嘗,song2
-嘟,lu3
-眯,mi4
 斟嘴,zim1 zoi4
-嚼,ciau4
-咬,ngau1
-吞,tun1
-食,sit6
-啜,zot6
-吸,kip5
-舐,se1
-吐,tu4
-含,ham2
-銜,ham2
-噴,pun4
-歕,pun2
-叫,giau4
-笑,siau4
-拿,la1
-拉,lai1
-牽,kien1
-扯,ca3
-舉,gi3
-擎,kia2
-抽,ciu1
-撈,lak5
-刻,kat6
-放,fong4
-撳,kim4
-㩳,tui1
-夾,kiap6
-浸,kim4
-攬,lam3
-掇,dot5
-爬,pa2
-撕,su1
-撚,ngien3
-扡,ya3
-捉,zuk5
-撏,ciam2
-掹,bang1
-探,tam1
-摘,zak5
-拗,au3
-扲,lem2
-搖,yau2
-摸,mo1
-揀,gan3
-攝,ngiap5
-捽,zut6
-拍,pak5
-橫,vang4
-跌,diet5
-拂,fit5
-掟,dang1
-強,kiong1
-托,tok5
-捧,bung3
-揞,em1
-屏,biang4
-壅,vung1
-拍,pok5
-搭,dap5
-拌,pan1
-擦,cat5
-戽,fu4
-耷,dep6
-拂,fit6
-裹,go3
-層,cen4
-筒,tung2
-幫,bong1
-扒,pa2
-撩,liau1
-挑,tiau1
-厾,duk5
-削,siok5
-綁,bong3
-綯,tau2
 隔渣,gak5 za1
-泌,bi4
-攪,gau3
-淘,tau2
-墊,siap5
-沖,cung1
-樋,dung3
-撩,tiau1
-掖,yap6
-捼,lo2
-磧,zak5
-豎,su4
-冚,kiem2
-扣,keu4
-挖,vet5
-捋,lot6
-攝,ngiap6
-執,zep5
-舀,yau3
-搬,ban1
-徛,ki1
-蹬,diam4
-踞,kiu2
-踩,cai3
-踢,tiak5
-行,hang2
-走,zeu3
-吖,ap6
-跳,tiau4
-覆,puk5
-抌,dem3
-徑,gang4
 跌倒,det5 dau3
 上來,song1 loi2
 下去,ha1 hi4
-逐,diak5
-攔,lan2
-孭,ba2
-抬,toi2
-㧡,kai1
-憑,pen4
-嗻,zak5
-尋,cim2
-溜,liu1
-射,sa4
-櫼,ziam1
-浮,feu2
-墜,diet5
-翹,hiau4
 浸死,zim4 si3
-擋,dong3
-繞,van1
-丁,din1
-搬,pan1
-撈,lau1
-研,ngan2
-毒,teu4
-交,gau4
 輪流,lun2 liu2
-詐,za4
 縱壞,zung3 fai4
-薰,hiun1
-濁,cuk6
-濁,gang3
-凹,ngiap5
-凸,tut6
-知,di1
-曉,hiau3
-識,sit5
 覺得,gok5 det5
-估,gu3
 記掛,gi4 ga4
-愁,seu2
 OK,fat5 fo3
 冤枉,yen1 vong3
-惶,kong2
 小心,siau3 sim1
 想起,siong3 hi3
 甘願,gam1 ngien4
 中意,zung1 yi4
-惱,lau1
 眼紅,ngan3 fung2
 眼熱,ngang3 ngiet2
-惜,siak5
 發火,fat5 fo3
-煩,fan2
-興,hin3
 添忘,tiam1 mong4
-怨,yen4
-信,sin4
-嫌,hiam2
-勸,kien4
 傷心,song1 sim1
 唔捨得,m1 sa3 det5
-靜,cin4
 陰涼,yim1 liong2
 輕鬆,kiang1 sung1
 射眼,sa4 ngan3
 濁鼻,guk6 pi4
 振耳,zin3 ngi3
-恒,hen2
-狹,kiap6
-燒,sau1
-膩,li4
-痎,hoi2
-焗,guk6
-拋,pau1
-埂,yin4
-刺,yap5
-長,cong2
-短,don3
-矮,ai3
-闊,fat5
-新,sin1
-辣,lat6
-鹹,ham2
-澀,giap5
-淡,tam1
-濃,ngiung2
-稠,leu2
-鮮,sien1
-圓,yen2
-扁,bien3
-渾,vun2
-暗,am4
-大,tai4
-快,kai1
-生,sang1
 過核,go4 fut6
-亂,lon4
-穩,vun3
-爻,ngau2
-密,mit6
-落,lau4
 轉潮,zon3 cau2
 轉潤,zon3 yun4
-差,ca1
-唄,bia3
-酥,su1
-崎,ki1
 結實,giet5 sit6
 回南,fui2 lam2
-旺,vong4
 伶俐,lang2 li4
 漚漏,eu4 leu4
 麻煩,ma2 fan2
 難搞,lan2 gau3
-快,kai4
 容易,yung2 yi4
-直,cit6
 筆直,bit5 zit6
-粗,cu1
 好粗,hau3 cu1
-幼,yiu4
 好幼,hau3 yiu4
-滿,mun1
 滿卒卒,man1 zut5 zut5
-笨,pun1
-薄,pok6
 薄翼翼,pok6 yit6 yit6
 光華華,gong1 va2 va2
-腥,siang1
 腥瘟瘟,siang1 vin1 vin1
-嫩,lun4
 嫩術術,lun4 sut6 sut6
 生痛,sang3 tung4
-高,gau1
 矮耷耷,ai3 dep6 dep6
-肥,pui2
-肭,lep5
 肥嘟嘟,pui2 dut5 dut5
 仂卒卒,lep5 zut5 zut5
-瘦,seu4
 痩蜢蜢,seu4 mang1 mang1
 瘦馬靈鉗,seu4 ma1 liang2 kiang2
-老,lau3
 老麥麥,lau3 mak6 mak6
 老嚙嚙,lau1 ngat5 ngat5
 好亂,hau3 lon4
 好快,hau3 kai4
-慢,man4
 慢吞吞,man4 tun1 tun1
 好燒,hau3 sau1
 燒焓焓,sau1 hem2 hem2
 好冷,hau3 lang1
 冷挖挖,lang1 vat5 vat5
 沸淥淥,bui4 luk6 luk6
-紅,fung2
 烔紅,dung4 fung2
 紅淮淮,fung2 fai1 fai1
-黃,vong2
 好黃,hau3 vong2
 黃貢貢,vong2 gung4 gung4
-青,ciang1
 好青,hau3 ciang1
-白,pak6
 雪白,sut6 pak6
 白雪雪,pak6 sut6 sut6
-烏,vu1
 烏黷黷,vu1 du4 du4
 烏矂矂,vu1 sau1 sau1
-酸,son1
 好酸,hau3 son1
 酸丟丟,son1 diu2 diu2
-甜,tiam2
 鮮甜,sien1 tiam2
 甜津津,tiam2 zin1 zin1
-苦,fu3
 好苦,hau3 fu3
 苦丟丟,fu3 diu1 diu1
-香,hiong1
 噴香,pun4 hiong1
 香噴噴,hiong1 pun4 pun4
 臭垠,ciu4 hien1
 臭垠臭蟹,ciu4 hien1 ciu4 hai3
-垠,hien1
 好臭垠,hau3 ciu4 hien1
 爛臭垠,lan4 ciu4 hien1
-滑,vat6
 好滑,hau3 vat6
 滑律律,vat6 lut6 lut6
-重,cung1
 好重,hau3 cung1
 重墜墜,cung1 dem2 dem2
-輕,kiang1
 好輕,hau3 kiang1
 輕匹匹,kiang1 pit6 pit6
-燥,zau1
 好燥,hau3 zau1
 燥麥麥,zau1 mak6 mak6
-濕,sip5
 好濕,hau3 sip5
 濕荅荅,sip5 dap5 dap5
-硬,ngang4
 好硬,hau3 ngang4
 硬角角,ngang4 gok6 gok6
-軟,ngion1
 好軟,hau3 ngion1
 軟入入,ngion1 ngip6 ngip6
 好光滑,hau3 gong1 vat6
 滑凸凸,vat6 tut6 tut6
-一,yit5
-二,ngi4
-三,sam1
-四,si4
-五,ng3
-六,luk6
-七,cit5
-八,bat5
-九,giu3
-十,sip6
 十五,sip6 ng3
 廿二,ngip6 ngi4
 三十三,sam1 sip6 sam1
@@ -1808,41 +1292,6 @@ OK,fat5 fo3
 兩斤二兩,liong3 gin1 ngi4 liong1
 兩尺,liong3 cak5
 斤半,gin1 ban4
-隻,zak5
-條,tiau2
-朵,do3
-棵,po1
-堆,doi1
-餐,con1
-件,kien3
-身,sin1
-雙,sung1
-番,fon1
-頂,dang3
-張,cong1
-間,gan1
-架,ga4
-班,ban1
-桍,ka3
-啖,tam4
-緬,mien3
-壢,lak6
-塊,kai4
-家,ga1
-點,diam3
-陣,cin4
-把,ba3
-涿,duk5
-團,ton2
-服,fuk6
-拈,ngiam3
-毫,hau2
-分,fun1
-到,dau4
-趟,tong4
-厓,ngai2
-你,ngi2
-佢,gi2
 厓哋,ngai2 di1
 吾兜,nga1 deu1
 你兜,ngia1 deu1
@@ -1874,8 +1323,6 @@ OK,fat5 fo3
 這邊,ngia3 bien1
 該邊,ai4 bien1
 哪邊,lai4 bien1
-恁,an2
-恁,an4
 恁樣做,an2 yong4 zo4
 恁樣做,an4 yong4 zo4
 樣邊做,yong4 bien1 zo4
@@ -1892,36 +1339,25 @@ OK,fat5 fo3
 乜介,mak5 gai4
 做乜介,zo4 mak5 gai4
 上下,song4 ha4
-分,fun4
-正,zang4
 啱線,ngam1 sien4
 一直,yit6 cit6
 不留,but5 liu4
 長日,cong2 ngit5
 食等,sit6 den3
 快滴,kai4 dit6
-緊,gin3
 黏腳,ngiam2 giok5
 一下子,yit5 ha4 zu3
-幾,git5
-最,zui4
 忒過,tet5 go4
 特別,tet6 piet6
 有滴仔,yiu1 dit6 zai3
-都,du1
 好彩,hau3 coi3
 總都,zung3 du1
-淨,ciang4
 就係,ciu4 he4
 一下,yit5 ha4
 直登,cit6 dang1
-唔,m1
 唔係,m1 he4
-冇,mau2
 唔使,m1 su3
 唔好,m1 hau3
-還,han2
-愛,oi4
 搏命,bok5 miang4
 還過,han2 go4
 大莫約,tai4 mok5 yok5
@@ -1939,18 +1375,8 @@ OK,fat5 fo3
 或者,fet6 za3
 只要,zik5 yau4
 只有,zik5 yiu1
-將,ziong1
-在,coi1
-由,yiu2
-適,zak5
-照,zau4
-沿,yen2
-向,hiong4
 從細,cung2 se4
 除嗨,cu2 hoi1
-等,den3
-用,yung4
-比,bi3
 餓死咯,ngo4 si3 lo3
 餓死嗨,ngo4 si3 hoi1
 冷死咯,lang1 si3 lo3

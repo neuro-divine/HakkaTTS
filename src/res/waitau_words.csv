@@ -1,7 +1,5 @@
 char,pron
 熱頭,ngik6 täu2
-月,yük6
-星,seng2
 飛星,fi1 säng1
 掃把星,säu1 ba2 seng1
 天河,ting1 ho4
@@ -10,8 +8,6 @@ char,pron
 發風,fæk2 fung1
 發大風,fæk2 dai6 fung1
 逆風,ngæk6 fung1
-雲,wäng4
-雨,yü1
 雨粉,yü1 fäng2
 落雨,lok6 yü1
 天晴,ting1 cäng4
@@ -21,17 +17,12 @@ char,pron
 天攝,ting1 sip2
 露水,lu6 söi2
 打霧,da2 mu6
-霧,mu6
 起霧,hi2 mu6
-霜,söng1
 落霜,lok6 söng1
 天弓,ting1 gung1
-雹,bok6
 落雹,lok6 bok6
-雪,sük2
 降雪,gong6 sük2
 融雪,yung4 sük2
-冰,bäng1
 結冰,gik2 bäng1
 天候,ting1 häu6
 天時,ting1 si4
@@ -39,33 +30,20 @@ char,pron
 好天,häu2 ting1
 天乾,ting1 gwung1
 水浸,söi2 zäm1
-熱,ngik6
 翳悶,ngäi4 mung6
 凍鐵鐵,dung6 dik2 dik2
-涼,löng4
 涼爽,löng4 song2
-暖,nüng1
 和暖,wo4 nüng1
-山,sæng1
 山腰,sæng1 yiu1
 山腳,sæng1 gök2
 山崖,sæng1 ngai4
 山谷,sæng1 guk2
 山前,sæng1 cing4
 山後,sæng1 häu6
-海,fui2
-河,ho4
-湖,fu4
 水澗,söi2 gæng1
-岸,wung6
-壩,ba1
-壆,bok2
 沙攔,sa1 læng2
-坑,hæng1
 坑渠,hæng1 kü4
 水瀝,söi2 lek2
-塘,tong4
-氹,täm1
 水氹,söi2 täm1
 平地,peng6 di6
 石仔,sek6 zäi2
@@ -80,37 +58,18 @@ char,pron
 垃圾,lap6 sap2
 生銹,sæng1 säu2
 木屑,muk6 sip2
-粉,fäng2
-碎,söi1
 石灰,sek6 fui1
 紅毛泥,hung4 mäu4 näi4
 玻璃,bo1 li2
-油,yäu2
 攝石,sip2 sek6
-金,gäm1
-銀,ngäng4
-銅,tung4
-鐵,tik2
-錫,sek6
-鋁,lü1
 凍水,dung1 söi2
 暖水,nüng1 söi2
 熱水,ngik6 söi2
 滾水,gwäng2 söi2
-滾,gwäng2
 潲水,sau1 söi2
-城,seng2
 鄉下,höng1 ha2
-村,cüng1
-巷,hong6
-路,lu6
-嘢,ya1
 色水,säk2 söi2
-聲,seng1
-膸,cöi4
 味道,mi6 däu6
-皓,hau6
-影,yäng2
 風景,fung1 gäng2
 前邊,cing4 bing6
 後邊,häu6 bing6
@@ -191,7 +150,6 @@ char,pron
 眨下眼,zam2 ha1 ngæng2
 時候,si4 häu6
 水田,söi2 ting4
-田,ting4
 田壆,ting4 bok2
 耕田,gæng1 ting4
 蒔田,si1 ting4
@@ -201,31 +159,20 @@ char,pron
 打穀,da2 guk2
 禾稈草,wo4 gwung2 cäu2
 禾稈頭,wo4 gwun2 täu4
-撤,sæk2
-漚,äu1
 鋤頭,co4 täu4
-柄,beng1
-鏟,cæng2
 番釘,fæng1 deng1
 禾鐮,wo4 lim2
 草鐮,cäu2 lim2
 柴刀,cai6 däu1
-犁,läi4
-耙,pa4
 水車,söi2 ce1
 風車,fung1 ce1
 拌桶,pæng1 tung2
 穀臿,guk2 cap2
-臿,cap2
 穀籮,guk2 lo4
-篩,säi1
-磨,mo6
 泥磨,näi4 mo2
-碓,döi2
 地堂,di6 tong2
 窩攔,wo1 læng4
 擔竿,dam1 gung1
-繩,säng4
 繩仔,säng4 zäi2
 打樁,da2 zong1
 門楔,mung4 sip2
@@ -259,44 +206,20 @@ char,pron
 煮飯,zü2 fæng6
 焗飯,guk6 fæng6
 煮餸,zü2 sung1
-燉,däng6
-煠,sap6
 煲湯,bäu1 tong1
 滾湯,gwäng2 tong1
-潟,se2
 盪碗,long1 wung2
-抹,mæk2
 執拾,zap2 säp6
-養,yöng1
 供養,gung1 yöng1
 掌屋,zöng2 uk2
-聯,lüng4
-浪,long2
 晾衫,long6 sam2
 晾燥,long6 zau1
-繑,kiu1
-煲,bäu1
-裝,zong4
-焫,nak2
 火燭,fo2 zuk2
-烏,wu1
 出力,cäk2 läk6
-安,wung1
-整,zäng2
-執,zäp2
-揀,gæng2
-湊,cäu1
-焙,bui6
-拔,bäk2
-醃,yip2
 攤凍,tæng1 dung1
-禾,wo4
-穀,guk2
 泛穀,pæng1 guk2
-米,mäi1
 糯米,no6 mäi1
 粘米,zim1 mäi1
-麥,mak6
 米仔,mäi1 zäi2
 狗尾粟,gäu2 mi1 suk2
 高粱,gäu1 löng4
@@ -312,10 +235,7 @@ char,pron
 薯仔,sü2 zäi2
 地豆,di6 däu6
 地豆米,di6 däu6 mäi1
-菇,gu1
 栗子,läk6 zi1
-蔗,ze1
-菜,cöi1
 菠菜,bo2 cöi1
 黃芽白,wong4 nga4 bæk6
 矮瓜,äi2 gwa1
@@ -337,30 +257,21 @@ char,pron
 蓮藕,ling4 ngäu1
 馬蹄,ma1 täi2
 菱角,läng4 gok2
-蔥,cung2
 蒜頭,süng1 täu4
 蒜梗,süng1 kwæng2
 蕎頭,kiu1 täu4
-薑,göng1
-梗,kwäng2
 菜梗,cöi1 kwæng2
 菜根,cöi1 gäng2
-苗,miu4
 浮仔,fäu4 zäi2
 浮薸,pou4 piu4
 生果,sæng1 gwo2
-杏,häng6
 李仔,li2 zäi2
 石榴,sek6 läu4
 雪梨,sük2 li2
-柑,gäm1
-橙,cæng2
 碌柚,luk2 yäu2
-梅,mui2
 梅仔,mui4 zäi2
 菩提子,pu4 täi4 zi2
 櫻桃,yäng1 täu4
-欖,lam2
 紅棗,hung4 zäu2
 合桃,häp6 täu4
 山楂,sæng1 za1
@@ -368,10 +279,6 @@ char,pron
 荔枝,läi6 zi2
 龍眼,lung4 ngæng1
 西瓜,säi1 gwa1
-芽,nga4
-核,wäk6
-皮,pi4
-花,fa1
 梅花,mui4 fa1
 杏花,häng6 fa1
 桃花,täu4 fa1
@@ -399,7 +306,6 @@ char,pron
 茶樹,ca4 sü6
 山茶,sæng1 ca4
 棕櫚,zung1 lü1
-竹,zuk2
 竹根,zuk2 gäng1
 竹衣,zuk2 yi1
 竹筍,zuk2 säng2
@@ -408,15 +314,11 @@ char,pron
 榔箕,long4 gi1
 青苔,ceng1 töi4
 蘆葦,lu4 wäi1
-艾,ngai6
 樹枝,sü6 zi1
 樹尾,sü6 mi2
 樹頭,sü6 täu4
 樹葉,sü6 yip6
 粽葉,zung2 yip6
-竻,läk6
-杉,cam1
-柏,pæk6
 松樹,cung4 sü6
 松果,cung4 gwo2
 松針,cung4 zäm1
@@ -430,13 +332,9 @@ char,pron
 牛乸,ngäu4 na2
 牛仔,ngäu4 zäi2
 牛角,ngäu4 gok2
-蹄,tai4
-蹺,kiu1
-羊,yöng4
 羊牯,yöng4 gu2
 羊乸,yöng4 na2
 羊仔,yöng4 zäi2
-豬,zü1
 豬公,zü1 gung1
 豬婆,zu3 po4
 閹豬,yim1 zü1
@@ -444,11 +342,8 @@ char,pron
 生仔,sæng1 zäi2
 配種,pui1 zung2
 打種,da2 zung2
-狗,gäu2
 狗公,gäu2 gung1
 狗乸,gäu2 na2
-吠,fäi6
-貓,miu4
 貓公,miu2 gung1
 貓乸,miu2 na2
 叫春,giu1 cäng1
@@ -460,27 +355,15 @@ char,pron
 雞春,gäi1 cäng1
 雞胗,gäi1 käng2
 生春,sæng1 cäng1
-伏,bu6
-扒,pa4
-搲,wa2
-啼,täi4
-啄,dök2
-噹,döng2
-鵝,ngo4
-鴨,ap2
 老虎,läu1 fu2
 獅子,si1 zi2
-豹,pau1
-狼,long4
 狐狸,fu4 li2
 馬騮,ma1 läu4
-鹿,luk6
 兔仔,tu1 zäi2
 老鼠,läu1 sü2
 雀仔,zök2 zäi2
 麻雀,ma4 zök2
 鴉鵲,a1 zök2
-雁,ngæng6
 牙鷹,nga4 yäng1
 枕虼,zäm2 ngäk6
 燕子,ying1 zi2
@@ -488,14 +371,7 @@ char,pron
 盲老鼠,mæng4 läu1 sü2
 白鴿,bæk6 gäp2
 鷯哥,liu2 go2
-春,cäng1
-竇,däu1
-翼,yäk6
-尾,mi2
-擺,bai2
-爪,zau2
 蠄蟧,käm4 lo2
-蟻,ngäi1
 鵝蚿,ngo4 hüng2
 蛇蚿,se4 hüng2
 禾蚿,wo4 hüng2
@@ -504,10 +380,7 @@ char,pron
 簷蛇,yim4 se2
 鳥蠅,fu1 yäng4
 金鳥蠅,gäm1 fu1 yäng4
-摟,läu1
-蚊,män2
 囓仔,ngæk2 zai2
-咬,ngau1
 木虱,muk6 sät2
 跳蚤,tiu1 zäu2
 虱乸,sät2 na2
@@ -519,7 +392,6 @@ char,pron
 螢火蟲,yäng4 fo2 cung4
 蜜仔,mät6 zäi2
 鵝蜂,ngo4 hung1
-顎,ngok2
 蛐蛐,go4 go2
 烏氹仔,wu2 däm2 zäi2
 蛤乸,gäp2 na2
@@ -529,44 +401,30 @@ char,pron
 水魚,söi2 yü4
 蝦公,ha1 gung1
 泥劣仔,näi4 lük2 zäi2
-蛇,se4
 牛蜞,ngäu4 ki4
 沙伯,sa1 bæk2
 包仔螺,bau1 zäi2 lö2
 鼻涕蟲,bi6 täi1 cung4
-蟹,hai1
 田螺,ting4 lö2
 黃鱔,wong4 sing1
 鯉魚,li1 yü4
 鯽魚,zäk2 yü4
-鱗,läng4
-春,cän1
 屋企,uk2 ki2
-屋,uk2
 起屋,hi2 uk2
 打地腳,da2 di6 gök2
 起籬牆,hi2 läi4 cöng4
-磚,züng2
 斷磚,tüng1 züng1
 生磚,sæng1 züng1
-瓦,nga1
 爛瓦,læng6 nga1
 瓦片,nga1 ping2
-樑,löng4
 上樑,söng1 löng4
-桁,hæng2
-簷,yim4
-柱,cü1
 柱躉,cü1 däng2
 房間,fong4 gæng1
 天間,ting1 gæng1
 花廳,fa1 teng2
 天井,ting1 zeng2
 籬壆,li4 bok2
-牆,cöng4
-搭,dap2
 窗門,cöng1 mung2
-門,mung4
 側門,zäk2 mung2
 門檻,mung4 cam1
 門扣,mung4 käu1
@@ -574,39 +432,27 @@ char,pron
 欄河,læng4 ho2
 石級,sek6 käp2
 樓梯,läu4 täi1
-井,zeng2
 下間,ha6 gæng1
 煙通,ying1 tung1
 打灶,da2 zäu1
 屎坑,si2 hæng1
 角落頭,gok2 lok2 täu2
-窿,lung2
-罅,la1
 雞欄,gäi1 læng2
 雞籠,gäi1 lung4
 牛欄,ngäu4 læng4
 傢生,ga1 sæng1
 傢俬,ga1 si1
-檯,töi2
-凳,däng1
-椅,yi2
 凳仔,däng1 zäi2
 長凳,cöng4 däng1
 板凳,bæng2 däng1
 書檯,sü1 töi2
-櫃,gwäi6
 沙櫃,sa6 gwäi6
 廚櫃,cü4 gwäi6
 櫃桶,gwäi6 tung2
-箱,söng1
-槓,lung1
-床,cong4
 竹席,zuk2 zek6
 草席,cäu2 zek6
-被,pi1
 床褥,cong4 yuk2
 褥仔,yuk6 zäi2
-氈,zing2
 枕頭,zäm2 täu4
 毛冷,mäu4 lang2
 蚊帳,mäng2 zöng1
@@ -614,32 +460,20 @@ char,pron
 面盆,ming6 pung2
 手巾,säu2 gäng1
 番鹼,fæng1 gæng2
-鏡,geng1
-梳,so1
-篦,bi1
 牙刷,nga4 cak2
 牙膏,nga4 gäu1
 葫蘆殼,pu4 lu4 hok2
 大甕,dai6 ung1
 水甕,söi2 ung1
-埕,cäng4
 缽頭,but2 täu4
-罐,gwung1
-樽,zäng1
-塞,säk2
 茶碗,ca4 wung2
 茶杯,ca4 bui1
-碗,wung2
 熱水壺,ngik6 söi2 fu4
 茶壺,ca4 fu4
 熱水壺,yit6 söi2 fu2
 調羹,tiu4 gæng1
 飯殼,fæng6 hok2
 筷子,fai1 zi2
-箸,zü6
-柴,cai4
-煤,mui4
-炭,tæng1
 火屎,fo2 si2
 火爐,fo2 lu4
 起火,hi2 fo2
@@ -672,49 +506,30 @@ char,pron
 吊桶,diu2 tung2
 水桶,söi2 dung2
 鎖匙,so2 si4
-鎖,so2
 蓑衣,so1 yi1
 斗笠,däu2 läp2
-扇,sing1
 掃把,säu1 ba2
 大掃,dai6 säu2
 糞箕,fäng1 gi1
 窩欄,wo1 læng4
 竹篙,zuk2 gäu1
-叉,ca2
 丫叉,a1 ca1
 拐杖,gwai2 zöng2
 魚籠,yü4 lung4
 釣竿,diu1 gwung1
 傢生,ga1 cang1
 錘仔,cöi4 zäi2
-錐,yöi2
 斧頭,fu2 täu4
-鉗,kim2
 鉗仔,kim4 zäi2
-夾,gap6
-鋸,gü1
-銼,co1
-鉆,züng1
-刨,pau4
-鉤,ngäu2
-釘,deng1
 鉸剪,gau1 zing2
-針,zam1
 頂指,däng2 zi2
-線,sing1
 衣車,yi1 ce2
-托,tuk2
-邊,bing1
-裂,lik2
-痕,häng2
 爆裂,bau1 lik6
 衣裳,yi1 söng4
 買布,mai1 bu1
 黑布,häk2 bu1
 剪布,zing2 bu1
 試身,si1 säng1
-衫,sam2
 恤衫,sük2 sam1
 底衫,däi2 sam1
 棉衲,ming4 nap6
@@ -722,33 +537,22 @@ char,pron
 冷衫,læng2 sam1
 被袋,pi1 döi2
 背褡,bi1 dap2
-褲,fu1
 短褲,düng2 fu1
 牛頭褲,ngäu4 täu4 fu1
 褲腳,fu1 gök2
 褲襠,fu1 nong6
 開襠褲,fui1 nong6 fu1
-裙,kwäng4
-袖,zäu6
-領,leng1
-皺,cau4
-爛,læng6
 衫袋,sam1 döi2
 啪紐,bæk2 näu2
-扣,käu1
 扣針,käu1 zäm1
 帽仔,mäu6 zäi2
 草帽,cäu2 mäu6
-鞋,hai4
 拖鞋,to1 hai4
 水鞋,söi2 hai4
 鞋墊,hai4 ding1
 長筒鞋,cöng4 tung2 hai4
-襪,mæk6
 手襪,säu1 mæk6
 手巾仔,säu2 gäng6 zäi2
-咧,lik2
-結,gik2
 頸巾,geng2 gäng1
 口水肩,häu2 söi2 ging1
 圍裙,wäi4 kwäng2
@@ -756,16 +560,11 @@ char,pron
 尿布,niu6 bu1
 燙斗,tong1 däu2
 肚餓,du2 ngo6
-飯,fæng6
 麵粉,ming6 fäng2
-麵,ming6
-糠,hong1
 冷飯,læng1 fæng6
 臭餿,cäu1 säu2
-剩,säng6
 米水,mäi1 söi2
 粥飲,zuk2 yäm2
-粥,zuk2
 飯焦,fæng6 ziu1
 喫飯,hek2 fæng6
 頸渴,geng2 fuk2
@@ -789,9 +588,6 @@ char,pron
 豬肉,zü1 yuk6
 瘦肉,säu1 yuk6
 臘肉,lap6 yuk6
-肉,yuk6
-齋,zäi1
-湯,tong2
 豬手,zü1 säu2
 豬腳,zü1 gök2
 豬肝,zü1 gwung1
@@ -800,30 +596,22 @@ char,pron
 雞下水,gäi6 ha6 söi2
 鉗餸,kim4 sung3
 撈飯,läu6 fæng6
-減,gam2
-燶,nung1
 豆腐乾,däu6 fu6 gwung1
 豆腐,däu6 fu6
 豆腐花,däu6 fu6 fa1
 豆腐霉,däu2 fu2 mui4
 萊絲,löi4 si1
 粉仔,fän2 zäi2
-飽,bau2
 打思噫,da2 si2 yik2
-包,bau2
 水餃,söi2 gau2
 雲吞,wäng4 täng1
-餡,ham2
 湯圓,tong6 yüng2
 糯米餈,no6 mäi1 ci4
-粽,zung2
 口立濕,häu2 läp6 säp2
 瘦食,säu1 säp2
 茶果,ca4 gwo2
 宵夜,siu1 ya6
 配料,pui1 liu2
-醋,cu1
-鹽,yim4
 海沙,fui2 sa2
 豬油,zü1 yäu4
 麻油,ma4 yäu4
@@ -837,15 +625,10 @@ char,pron
 頭殼,äu4 hok2
 光頭,gwong1 täu4
 頭毛,täu4 mäu4
-辮,bing1
-髻,gäi1
 頭皮,täu4 pi4
-面,ming6
 酒凹,zäu2 näp2
-額,ngæk6
 魂精,wäng4 zeng2
 腦囟,näu1 säng2
-眼,ngæng1
 眼光仔,ngæng1 gwong6 zäi2
 眼淚,ngæng1 löi6
 眼泣毛,ngæng6 yäp2 mäu4
@@ -858,19 +641,14 @@ char,pron
 耳仔,ngi1 zäi2
 耳梗,ngi1 gäk2
 耳屎,ngi1 si2
-嘴,zöi2
 嘴唇,zöi2 säng4
-脷,li6
-牙,nga4
 大牙,dai6 nga4
 齙牙,bau1 nga4
 牙肉,nga4 yuk6
 牙屎,nga4 si2
-鬚,su1
 下巴,ha6 pa4
 口水,häu2 söi2
 喉嚨,häu4 lung4
-頸,geng2
 膞頭,bok2 täu4
 心口,säm3 häu2
 心口窟,säm1 häu2 fäk2
@@ -881,7 +659,6 @@ char,pron
 手臂,säu2 bi1
 手踭,säu2 zæng2
 手凹,säu2 näp2
-手,säu2
 左手,zo2 säu2
 右手,yäu2 säu2
 手掌,säu2 zöng2
@@ -890,26 +667,17 @@ char,pron
 手指公,säu2 zi2 gung1
 手指尾,säu2 zi2 mi1
 指甲,zi2 gap2
-腡,lö2
 起枕,hi2 zäm2
 隔肋底,gak2 lak2 däi2
 媽仔,ma2 zäi2
 奶頭,nai2 täu4
-奶,nai1
-乳,yöi1
-肚,du2
 肚臍,du2 ci4
 屎窟窿,si2 fäk2 lung2
 褲襠,fu6 nong6
 褲襠底,fu6 long6 däi2
 卡窿下,ka6 la6 ha2
-卵,läng2
 春袋,cäng1 döi6
 鵝仔,ngo4 zäi2
-屄,bik2
-谿,häi1
-屌,diu2
-腳,gök2
 大髀,dai6 bi2
 腳肚仔,gök2 du2 zäi2
 膝頭哥,sät2 täu4 go2
@@ -920,7 +688,6 @@ char,pron
 腳板底,gök2 bæng6 däi2
 腳掌心,gök2 zöng2 säm1
 腳印,gök2 yäng2
-佬,läu2
 婦娘,fu1 löng4
 後生,häu6 sæng2
 妹仔,mui6 zäi2
@@ -976,25 +743,17 @@ char,pron
 生保人,sæng1 bäu2 yäng4
 人客,yäng4 hæk2
 大火氣,dai6 fo2 hi1
-臭,cäu1
 大方,dai6 fong2
 能解,läng4 hai1
 勤力,gäng4 läk6
 懶性,læng1 säng1
-懶,læng1
-慳,hæng1
 慳儉,hæng1 gim6
 叻仔,lek2 zäi2
 聰明,cung1 mäng4
-精,zeng1
-爽,song2
 爽快,song2 fai1
-蠢,cän2
 笨實,beng6 säk6
-毒,duk6
 牛精,ngäu4 zäng2
 牛王,ngäu4 wong4
-奸,gæng1
 陰毒,yäm1 duk6
 整蠱,zäng2 gu2
 好心,häu2 säm1
@@ -1003,17 +762,14 @@ char,pron
 怕醜,pa1 cäu2
 陰公,yäm1 gung1
 後生,häu6 sæng1
-灑,sa2
 肉酸,yuk6 süng1
 唔好睇,m4 häu2 täi2
 企理,ki1 li1
 垠屎,ngäng2 si2
 邋遢,læk6 täk2
-乖,gwai1
 百厭,bæk2 yim1
 硬頸,ngæng6 geng2
 牛頸,ngäu4 geng2
-細,säi1
 偷懶,täu2 læng1
 糜摸,mi2 mo2
 古惑,gu2 wæk6
@@ -1065,21 +821,16 @@ char,pron
 契娘,käi1 nöng4
 契媽,käi1 ma2
 細民仔,säi1 mäng1 zäi2
-仔,zäi2
 孻仔,lai1 zäi2
 新婦,sän1 fu1
-女,nü2
 孻女,lai1 nü2
 女婿,nü1 säi1
-孫,süng1
 女孫,nü1 süng1
 孫女,süng1 nü1
-息,säk2
 外孫,wui6 süng1
 外孫女,wui6 süng1 nü1
 外甥,wui6 sæng1
 外甥女,wui6 sæng1 nü2
-侄,zäk6
 侄女,zäk6 nü1
 兩仔爺,löng1 zäi2 ya4
 兩公婆,löng1 gung1 po4
@@ -1144,7 +895,6 @@ char,pron
 墳頭,fäng4 täu4
 墓碑,mu6 bi1
 拜山,bai1 sæng1
-病,beng6
 難頂,nang4 däng2
 頂唔順,däng2 m4 säng6
 發燒,fæk2 siu1
@@ -1162,8 +912,6 @@ char,pron
 疴肚仔,ngo6 du2 zäi2
 喫滯,hek2 zäi6
 頭暈,täu4 wäng4
-嘔,äu2
-痛,tung1
 抽筋,cäu1 gäng1
 嚇驚,hæk2 geng1
 喊驚,ham1 geng1
@@ -1175,51 +923,34 @@ char,pron
 熱痱,ngik6 fäi2
 酒米,zäu2 mäi2
 含膿,ham4 nung4
-疤,ba1
-那,na2
-墨,mäk2
 小腸氣,siu2 cöng4 hi1
 墨屎,mäk2 si2
 雞皮,gäi1 pi4
-赧,nang1
 發雞盲,fæk2 gäi1 mäng4
 痲瘋,ma4 fung1
-惹,ya1
-扭,näu2
-扽,dän1
 爆裂,bau1 lik2
 爆坼,bau1 cak2
 醫病,yi1 beng6
 打脈,da2 mäk6
 把脈,ba2 mäk6
-茶,ca4
 苦茶,fu2 ca4
-單,dæng1
 藥單,yök6 dæng1
 執藥,zäp2 yök6
 執茶,zäp2 ca4
-散,sæng2
 藥散,yök6 sæng2
 煲藥,bäu6 yök6
 煲茶,bäu6 ca4
 見效,ging6 hau6
-醒,seng2
 起身,hi2 säng1
-摺,zip2
-著,zok2
 洗面,säi2 ming6
 梳頭,so1 täu4
-繽,bäng1
 剃鬚筍,täi1 fu4 su1
 剃鬚,täi1 su1
 磨頭,mo4 täu4
 剃頭,täi3 täu4
 返工,fæng1 gung1
-晏,æng1
 收工,säu1 gung1
-攰,gui6
 去歸,hü1 gwäi1
-去,hü1
 屙屎,o1 si2
 屙尿,o1 niu6
 屙屁,o1 pi1
@@ -1228,7 +959,6 @@ char,pron
 抹身,mæk2 säng1
 敨涼,täu2 löng4
 稍涼,säu2 löng4
-曬,sai1
 熱頭烘,ngik6 täu4 hung1
 打牙交,da2 nga4 gau1
 瞌眼睏,häp2 ngang1 fäng1
@@ -1253,8 +983,6 @@ char,pron
 啟蒙,käi2 mung4
 返學,fæng1 hok6
 放學,fong1 hok6
-書,sü1
-簿,bu2
 教書先生,gau1 sü1 sing1 sang1
 學生,hok6 sæng2
 第一名,däi6 yäk2 mäng4
@@ -1263,24 +991,17 @@ char,pron
 墨水筆,mäk4 söi2 bäk2
 鉛筆,yüng4 bäk2
 筆筒,bäk2 tung2
-紙,zi2
 撳釘,gäm6 deng2
 信封,säng1 fung2
 信紙,säng1 zi2
 漿糊,zöng1 fu4
 刀仔,däu1 zäi2
-砒,päi1
-尺,cek2
 擦紙膠,cæk2 zi2 gau1
 擦膠,cæk2 gau1
 橡筋,zöng6 gäng2
 墨硯,mäk6 hing2
-墨,mäk6
 墨汁,mäk6 zäp2
 墨水,mäk6 söi2
-掭,tim1
-舐,lai2
-化,fa1
 草書,zäu1 sü1
 考試,hau2 si1
 考唔倒,hau2 m1 dau2
@@ -1290,13 +1011,8 @@ char,pron
 襟章,käm1 zöng1
 郵電局,yäu4 ding6 kuk2
 郵局,yäu4 kuk2
-相,söng2
 影畫戲,yäng2 wa2 hi1
-畫,wa2
-對,döi1
 對聯,döi1 lüng2
-聊,liu6
-波,bo2
 踢波,täk2 bo1
 打韆鞦,da2 cing2 cäu2
 放紙鷂,fong1 zi2 yiu2
@@ -1313,7 +1029,6 @@ char,pron
 游水,yäu4 söi2
 沕水,mi6 söi2
 打水片,da2 söi2 ping2
-舞,mu2
 識打功夫,säk2 da2 gong1 fu2
 變把戲,bing1 ba2 hi1
 變戲法,bing1 hi1 fak2
@@ -1338,8 +1053,6 @@ char,pron
 生保人,sæng1 bäu2 hæk2
 請坐,ceng2 co1
 客氣,hæk2 hi2
-斟,zäm1
-派,pai1
 開始,fui1 ci2
 入席,yäp6 zäk6
 起菜,hi2 cöi1
@@ -1357,34 +1070,24 @@ char,pron
 冇面,mäu1 ming2
 陀累,to4 löi6
 難為你,næng4 wäi2 ni2
-理,li1
-喊,ham1
 撞到,zong6 däu2
-探,tam1
 講話,gong2 wa6
 托大腳,to2 dai6 gök2
 吩咐,fän1 fu1
 搭嘴,dap2 zöi2
 插嘴,cap2 zöi2
-喝,fuk2
 死啦,si2 la1
-數,su2
-鬧,nau6
 講爛口,gong2 lang6 häu2
 挨打,ngai4 da2
 畀人打,bi2 yän4 da2
 嗌交,ai1 gau2
 打交,da2 gau2
 勸交,hüng1 gau1
-幫,bong1
 唔錯,m4 co1
 唔准,m4 zäng2
 唆擺,so1 bai2
 頂嘴,däng2 zöi2
 駁嘴,bok2 zöi2
-撩,liu4
-佮,gap2
-就,zäu6
 返鄉下,fang1 höng1 ha2
 探親戚,tam1 cäm1 cäk2
 唔得閒,m4 däk2 hæng4
@@ -1392,14 +1095,12 @@ char,pron
 搞掂,gau2 dim6
 行運,hæng4 wäng6
 行衰運,hæng4 söi1 wäng6
-興,häng1
 鋪頭,pu1 täu2
 茶樓,ca4 läu4
 茶居,ca4 gü2
 客棧,hæk2 zæng2
 擺檔,bai2 dong2
 小販,siu2 fæng2
-旺,wong6
 開張,fui1 zöng2
 盤點,pung4 dim2
 計數,gäi2 su1
@@ -1419,35 +1120,21 @@ char,pron
 磧數,zæk2 su1
 追債,zöi1 zai2
 算盤,süng1 pung4
-秤,cäng1
 厘秤,li4 cäng1
 皮費,pi4 fäi2
-本,bung2
-弄,nung6
-錢,cing2
 銀紙,ngäng4 zi2
 大銀,dai6 ngäng4
 毫子,häu4 zi2
 大紙,dai6 zi2
 散紙,sæng2 zi2
-點,dim2
-找,zau2
-爭,zæng1
-賺,zæng6
-搵,wäng2
 蝕本,sik6 bung2
-抵,däi2
 足秤,zuk2 cäng1
 唔足秤,m4 gäu1 cäng1
 著數,zök6 su1
 唔著數,m4 zök6 su1
-貴,gwäi2
-平,peng4
 車站,ce1 cam6
 碼頭,ma1 täu4
 渡頭,du6 täu4
-橋,kiu4
-街,gai1
 行人路,hæng4 yäng4 lu6
 馬路,ma1 lu6
 私家車,si2 ga2 ce2
@@ -1468,196 +1155,34 @@ char,pron
 搭車,dap2 ce1
 搭唔切車,dap2 m4 cik2 ce1
 暈車浪,wäng4 ce1 long6
-位,wäi2
 揸車,za1 ce2
 擔高頭,dam1 gäu1 täu4
-耷,däp2
 點頭,dim2 täu4
-擰,näng2
-側,läi2
-顎,ngok6
 擰轉,näng6 täu4
 擘大眼,mak2 dai1 ngæng2
 眯埋眼,mi1 mai4 ngæng2
 睜大眼,zäng1 dai1 ngæng2
-眨,zam2
-掃,säu4
-裝,zong2
-睇,täi2
-聽,teng1
-皺,zäu1
-聞,män4
-嘗,söng4
-試,si1
-擘,mæk2
-嘟,düt2
-抿,mit2
-錫,sek2
-嚼,ziu6
-吞,täng1
-喫,hek2
-飲,yäm2
-啜,zük2
-吸,käp2
-吮,süng2
-漯,lö2
-含,häm4
-啗,dam1
-噴,pän1
-吹,cöi1
-哭,huk2
-笑,siu1
-荷,kai1
-拉,lai1
-扯,ce2
-斮,sok2
-擧,gü2
-撿,gim2
-抽,cäu1
-撈,lau4
-劃,wæk2
-放,fong1
-撳,gäm6
-擁,ung2
-捻,ning2
-壓,ngäk2
-攬,lam2
-抱,päu1
-擒,käm4
-爬,pa4
-省,sang2
-搣,mik2
-拏,na2
-揸,za1
-抓,za1
-掹,mäng1
-摘,zæk2
-拗,au2
-酓,yäm4
-岑,säm4
-摸,mo2
-揀,gang2
-攝,sip2
-捽,zäk2
-拍,pæk2
-揼,däm2
-擗,pek2
-賴,lai6
-劈,pek2
-揈,fäng6
-撓,ngäu1
-撐,cæng1
-捧,bung2
-揞,äm2
-屏,beng1
-壅,ung1
-鑿,zok6
-搉,gok2
-冚,käm2
-綁,bong2
-抹,mak2
-擦,cæk2
-戽,fu1
-托,tok2
-耷,däp6
-拂,fik6
-裹,gwo2
-包,bau1
-冧,läm6
-筒,tung4
-刮,gwæk2
-斬,zam2
-批,päi1
-挑,tiu1
-捉,zuk2
-濾,lü6
-攪,gau2
-撈,läu1
-塱,long1
-掃,säu1
-沖,cung1
-倒,däu2
-抄,cau1
-捅,tung2
-挑,tiu2
-掖,yap6
-捼,no4
-捧,pung2
-磧,zæk2
-戙,dung6
-挖,wæk2
-捋,lük2
-攝,yip2
-搬,bung1
-徛,ki1
-屹,ngäk2
 保頭,bäu2 täu4
-踩,cai2
-踢,tek2
-行,hæng4
-走,zäu2
-纜,lam1
-跳,tiu1
-伏,buk6
-抌,däm6
-迓,nga6
-砑,nga1
-梗,gwæng1
-仆,puk2
 上來,söng1 löi4
 落去,lok6 hü1
-追,zöi1
-攔,læng4
-背,bi1
-孭,me2
-抬,töi4
-擔,dam1
-憑,bäng6
-挨,ai1
 唔見,m4 ging1
-跣,sing2
-唧,cik2
-磨,mo4
-櫼,zim1
-浮,pu4
-跌,dik2
-墜,zöi1
-翹,hiu1
 浸死,zäm1 si2
-擋,dong2
 屈路,wäk2 lu6
 兜路,däu2 lu6
 氹氹轉,täm4 täm4 züng2
 氹圈,täm4 hüng2
-頂,däng2
-捱,ngai4
-攪,gau1
-摻,zam1
-研,ngang4
-毒,däu6
 調換,diu6 wung6
 調轉,diu4 züng2
 輪流,läng4 läu2
 輪住,läng4 zü6
-詐,za1
-縱,zung1
-慣,gwæng1
-凹,näp2
-凸,däk6
-知,di1
-曉,hiu2
-識,säk2
 以為,yi1 wäi4
-估,gu2
 測估,zäk2 gu2
-掛,kwa1
 擔心,dam1 säm1
 愁心,cäu1 säm1
 怒氣,nu6 hi1
 發火,fak2 fo2
 谷氣,guk2 hi1
 委屈,wäi2 wäk2
-惶,kong4
 小心,siu2 säm1
 睇住,täi2 zü6
 諗起,näm2 hi2
@@ -1667,150 +1192,66 @@ char,pron
 唔中意,m4 zung1 yi1
 眼紅,ngang1 hung4
 眼赤,ngang1 ce2
-惜,sek2
-緊,gäng2
-煩,fæng4
 得戚,däk2 cäk2
 唔記得,m4 gi1 däk2
-怨,yüng2
-信,säng1
 懷疑,wai4 yi4
 思疑,si1 yi4
-嫌,yim4
-勸,hüng1
 高興,gäu1 häng1
 唔捨得,m4 se2 däk2
-靜,zäng6
 陰涼,yäm1 löng4
 好過,häu2 gwo1
-攰,gwöi6
 晟眼,cang4 ngang1
 攻鼻,gung1 bi6
 刺耳,ci1 yi1
 夾腳,gap6 gök2
-窄,zæk2
-癢,yöng1
-痎,hai4
-扽,däng1
 拮肉,gäk2 yuk6
-嗱,na2
-長,cöng4
-短,düng2
-矮,ai2
-新,säng1
-辣,læk6
-面,ming4
-鹹,ham4
-濃,yung4
-稀,hi1
-圓,yüng4
-扁,bing2
-濁,zuk6
-清,cäng1
-大,dai6
-快,fai1
-利,li6
-生,sæng1
-蠢,cäng2
-熟,suk6
-亂,lüng6
-穩,wäng2
 穩陣,wän2 zän6
-歪,me2
-密,mäk6
-疏,so1
 厲害,li6 fui6
-勁,käng1
-腍,näm4
-跩,yäi4
-脆,cöi1
-斜,ce1
 硬淨,ngæng6 zæng6
-乜,me2
-搖,yiu4
-凹,nip2
-潮,ciu4
 伶俐,läng4 li6
 骯屎,äng2 si2
 麻煩,ma4 fæng4
 容易,yung4 yi6
-直,zäk6
 好直,häu2 zäk6
-粗,cu1
 好粗,häu2 cu1
-幼,yäu1
 好幼,häu2 yäu1
-滿,mung1
 好滿,häu2 mung1
 好拼,häu2 päng1
-薄,bok6
 好薄,häu2 bok6
 好皓,häu2 hau6
-腥,seng1
 臭腥,cäu1 seng1
-嫩,nüng6
 好嫩,häu2 nüng6
 好腍,häu2 näm4
 好痛,häu2 tung1
-高,gäu1
-肥,fi4
 肥騰騰,fi4 täng4 täng4
-瘦,säu1
 瘦蜢蜢,säu1 mæng2 mæng2
-老,lau1
 老壓壓,läu1 ngäk6 ngäk6
-慢,mæng6
 慢吞吞,mæng6 täng4 täng4
 好利,häu2 li6
 好焫,häu2 ngit6
 熱辣辣,yik6 læk6 læk6
-凍,dung1
 凍赤赤,dung1 zek2 zek2
 凍喋喋,dung1 tik2 tik2
-紅,hung4
 鮮紅,sing1 hung4
 紅當當,hung4 dong2 dong1
-黃,wong4
 黃金金,wong4 gäm4 gäm4
-青,ceng1
 青比比,ceng1 bi2 bi2
-白,bæk6
 白雪雪,bæk6 süt2 süt2
 白嗮嗮,bæk6 sai1 sai1
 白吞吞,bæk6 täng1 täng1
-酸,süng1
 酸咪咪,süng1 mi2 mi2
-甜,tim4
 甜耶耶,tim4 yai4 yai4
-苦,fu2
-香,höng1
 香噴噴,höng2 päng1 päng1
-臭,cäu3
 臭垠,cäu1 häng1
 臭臊,cäu1 ou1
-滑,wæk6
 滑溜溜,wæk6 lük2 lük2
-重,cung1
 重沉沉,cung1 däm4 däm4
-輕,heng1
 輕青青,heng1 ceng4 ceng4
-燥,zau1
 燥乾,zau1 gwung1
-濕,säp2
 濕吶吶,säp2 näp6 näp6
-硬,ngang6
 硬轟轟,ngang6 gwäng4 gwäng4
 光滑,gwong6 wak6
 滑律律,wak6 lük2 lük2
-二,ngi6
-三,sam1
-四,si1
-五,ng1
-六,luk6
-七,cäk2
-八,bæk2
-九,gäu2
-十,säp6
 十五,säp6 ng1
 二十二,ngi6 säp6 ngi6
 廿二,ngip6 ngi6
@@ -1822,44 +1263,8 @@ char,pron
 兩斤,löng1 gäng1
 二兩,ngi6 löng2
 斤半,gäng1 bung1
-個,go1
-隻,zek2
-朵,dö2
-條,tiu4
-匹,päk2
-棵,po1
-兜,däu1
-堆,döi1
-支,zi1
-件,ging6
-套,täu1
-張,zöng1
-番,fæng1
-頂,deng2
-把,ba2
-間,gang1
-架,ga1
-班,bang1
-疊,dap6
-啖,dam6
-塊,fai1
-轆,luk2
-楷,kai2
-潭,täm1
-壢,lek6
-家,ga1
-滴,däk6
-場,cöng4
-涿,duk2
-球,gäu6
-兜,däu2
-服,fuk6
 一抩長,yäk2 nam1 cöng4
 一抩,yäk2 nam1
-身,säng1
-輪,läng4
-我,ngo1
-你,ni1
 佢人,kü2 yäng4
 邊個,bing2 go2
 哪誰,lai2 söi1
@@ -1883,8 +1288,6 @@ char,pron
 呢邊,ne2 bing6
 個邊,go2 bing6
 選邊,süng2 bing6
-咁,gäm1
-咁,gäm2
 點做,dim2 zu1
 呢下,ne2 ha1
 嗰陣,go2 zäng2
@@ -1896,9 +1299,7 @@ char,pron
 咩嘢,mi2 ya2
 點解,dim2 gai2
 上下,söng6 ha6
-分,fäng6
 啱啱,ngam2 ngam2
-啱,ngam2
 眨下眼,zam2 ha1 ngang1
 不留,bäk2 läu2
 經常,gäng1 söng4
@@ -1906,28 +1307,20 @@ char,pron
 成日,seng4 yäk6
 即刻,zäk2 häk2
 陣間,zäng6 gang2
-幾,gi2
-最,zöi2
 太過,tai1 gwo1
 特別,däk6 bik6
 少少,siu2 siu2
-都,du2
 共埋,gung6 mai4
 好彩,hou2 cöi2
 特只,däk6 zi2
 橫掂,wæng4 dim6
 淨係,zeng6 häi6
-淨,zeng6
 偏偏,ping1 ping1
 一齊,yäk2 cäi4
 一定,yät2 däng6
-唔,m4
 唔係,m4 häi6
-冇,mau4
 唔使,m4 säi2
-重,zung6
 忽然間,fäk2 ying4 gæng1
-愛,wui1
 重加,zung6 ga1
 約莫,yök2 mok2
 爭滴,zæng2 dik2
@@ -1936,32 +1329,19 @@ char,pron
 仲係,zung6 häi6
 好似,hou2 ci1
 連隨,ling4 cöi4
-都,du1
 經已,gäng1 yi1
 稍為,sau2 wäi4
 臨時,läm4 si4
 臨急,läm4 gäp2
 真係,zäng6 häi6
 先講,sing2 gong2
-同,tung4
 話唔定,wa6 m4 däng6
 只要,zi2 yiu1
 淨係,zäng6 häi6
 淨得,zäng6 däk2
-畀,bi2
-將,zöng1
-喺,häi2
-由,yäu4
-沿,yüng4
-問,mäng6
-向,höng1
 則小,zäk2 siu2
 自細,zi6 säi1
-在,cöi1
-除,cü4
 由得,yäu4 däk2
-到,däu1
-比,bi2
 餓到死咯,ngo6 däu1 si2 lo1
 餓死嘅,ngo6 si2 ge1
 冷死咯,læng1 si2 lo1
