@@ -39,12 +39,6 @@ def normalize_notes(row):
 df_chars["char"] = df_chars["char"].apply(normalize_char)
 df_chars[["canton", "waitau", "hakka"]] = df_chars[["canton", "waitau", "hakka"]].applymap(normalize_pron)
 df_chars["notes"] = df_chars.apply(normalize_notes, axis=1)
-df_chars[["char", "waitau", "hakka", "notes"]].to_csv("chars.csv", index=False)
-
-df_canto = pd.read_csv("public.csv", header=0, usecols=[0, 1, 8], names=["char", "pron", "freq"], dtype={"char": "str", "pron": "str", "freq": "int64"}, na_filter=False)
-df_canto = df_canto.loc[(df_canto["char"].str.len() > 1) & (df_canto["freq"] >= 10), ["char", "pron"]]
-df_charpron = df_chars.set_index(["char", "canton"])
-df_charpron.sort_index(inplace=True)
 
 ROM_MAPPING = {
 	"a": "ä",
@@ -57,6 +51,17 @@ ROM_MAPPING = {
 
 def rom_map(jyutping):
 	return re.sub("(g|k)u(?!ng|k)", "\\1wu", reduce(lambda pron, rule: pron.replace(*rule), ROM_MAPPING.items(), jyutping))
+
+df_canto = pd.read_csv("public.csv", header=0, usecols=[0, 1, 8], names=["char", "pron", "freq"], dtype={"char": "str", "pron": "str", "freq": "int64"}, na_filter=False)
+df_canto["pron"] = df_canto["pron"].apply(rom_map)
+df_charpron = df_chars.set_index(["char", "canton"])
+df_canto["order"] = df_canto.index
+df_chars["order"] = df_charpron.index.map(df_canto.set_index(["char", "pron"])["order"])
+df_chars.sort_values(["char", "order", "canton"], inplace=True)
+df_chars[["char", "waitau", "hakka", "notes"]].to_csv("chars.csv", index=False)
+
+df_canto = df_canto.loc[(df_canto["char"].str.len() > 1) & (df_canto["freq"] >= 10), ["char", "pron"]]
+df_charpron.sort_index(inplace=True)
 
 def get_collocations(row):
 	note = row["notes"]
@@ -114,7 +119,7 @@ def generate(language):
 
 	for row in df_canto.itertuples(index=False):
 		chars = row.char
-		roms = rom_map(row.pron).split()
+		roms = row.pron.split()
 		if any(len(get_prons(df_chars, char)) > 1 for char in chars):
 			prons = []
 			if all(append_prons(df_charpron, charpron) for charpron in zip(chars, roms)) \
