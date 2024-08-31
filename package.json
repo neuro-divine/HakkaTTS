@@ -50,8 +50,7 @@
 		"typescript": "^5.5.3",
 		"vite": "^5.3.3",
 		"vite-plugin-image-optimizer": "^1.1.8",
-		"vite-plugin-minify": "^1.5.2",
-		"vite-plugin-static-copy": "^1.0.6"
+		"vite-plugin-minify": "^1.5.2"
 	},
 	"browserslist": "> 0.5% in HK and fully supports es6-module and not dead",
 	"license": "MIT"

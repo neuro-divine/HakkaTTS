@@ -8,7 +8,6 @@ import tailwindcss from "tailwindcss";
 import tailwindcssNesting from "tailwindcss/nesting";
 import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
 import { ViteMinifyPlugin } from "vite-plugin-minify";
-import { viteStaticCopy } from "vite-plugin-static-copy";
 
 import type { UserConfig } from "vite";
 
@@ -30,15 +29,6 @@ export default {
 		},
 		ViteMinifyPlugin(),
 		ViteImageOptimizer(),
-		// https://stackoverflow.com/a/76185792
-		viteStaticCopy({
-			targets: [
-				{
-					src: "node_modules/onnxruntime-web/dist/*.wasm",
-					dest: ".",
-				},
-			],
-		}),
 	],
 	css: {
 		postcss: {
