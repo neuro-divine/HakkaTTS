@@ -18,7 +18,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Get Latest Code
-              uses: actions/checkout@v3
+              uses: actions/checkout@v4
             - name: Setup Bun
               uses: oven-sh/setup-bun@v2
             - name: Install Dependencies
@@ -26,8 +26,8 @@ jobs:
             - name: Build Project
               run: bun run build
             - name: Upload Artifact
-              uses: actions/upload-pages-artifact@v1
+              uses: actions/upload-pages-artifact@v3
               with:
                   path: "./build"
             - name: Deploy to GitHub Pages
-              uses: actions/deploy-pages@v1
+              uses: actions/deploy-pages@v4
