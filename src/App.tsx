@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 
+import { Converter } from "opencc-js";
 import { MdError, MdLanguage, MdRecordVoiceOver, MdSettings, MdSwapHoriz } from "react-icons/md";
 
 import { DOWNLOAD_STATUS_INDICATOR_CLASS, LANGUAGE_TO_TEXT_COLOR_CLASS, NO_AUTO_FILL, TERMINOLOGY } from "./consts";
@@ -13,6 +14,9 @@ import SentenceCard from "./SentenceCard";
 import SettingsDialog from "./SettingsDialog";
 
 import type { SettingsDialogPage, Sentence } from "./types";
+
+// TODO: Some glyphs need to be normalised, e.g. 爲 → 為
+const convertSimpToTrad = Converter({ from: "cn", to: "t" });
 
 export default function App() {
 	const queryOptions = useQueryOptions();
@@ -38,7 +42,7 @@ export default function App() {
 	const addSentence = useCallback(() => {
 		if (!textArea.current || !language) return;
 		setSentences([
-			...textArea.current.value.split("\n").flatMap(text => (text.trim() ? [{ language, voice, inferenceMode, voiceSpeed, syllables: segment(text) }] : [])),
+			...textArea.current.value.split("\n").flatMap(text => (text.trim() ? [{ language, voice, inferenceMode, voiceSpeed, syllables: segment(convertSimpToTrad(text)) }] : [])),
 			...sentences,
 		]);
 		textArea.current.value = "";
