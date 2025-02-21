@@ -1,6 +1,6 @@
 import { MdCancel, MdEject, MdEnergySavingsLeaf, MdFileDownload, MdFileDownloadDone, MdFlight, MdHourglassBottom, MdLanguage, MdMan, MdRefresh, MdWoman } from "react-icons/md";
 
-import type { ActualDownloadStatus, InferenceMode, Language, ModelComponent, DownloadStatus, Terminology, Voice, OfflineInferenceMode, AudioComponent, HakkaToneMode } from "./types";
+import type { ActualDownloadStatus, InferenceMode, Language, ModelComponent, DownloadStatus, Terminology, Voice, OfflineInferenceMode, AudioComponent, HakkaToneMode, LanguageOrUndefined } from "./types";
 
 export const TERMINOLOGY: Record<Terminology, string> = {
 	waitau: "圍頭話",
@@ -9,6 +9,11 @@ export const TERMINOLOGY: Record<Terminology, string> = {
 	female: "女聲",
 	diacritics: "調號",
 	digits: "數字",
+};
+
+export const LANGUAGE_TO_TEXT_COLOR_CLASS: Record<Language, string> = {
+	waitau: "text-[#c73350]",
+	hakka: "text-[#9c31b7]",
 };
 
 export const VOICE_TO_ICON: Record<Voice, JSX.Element> = {
@@ -40,6 +45,8 @@ export const ALL_INFERENCE_MODES: readonly InferenceMode[] = ["online", "offline
 export { ALL_MODEL_COMPONENTS } from "./inference/infer";
 export const ALL_AUDIO_COMPONENTS: readonly AudioComponent[] = ["chars", "words"];
 export const ALL_HAKKA_TONE_MODES: readonly HakkaToneMode[] = ["diacritics", "digits"];
+
+export const ALL_LANGUAGES_OR_UNDEFINED: readonly LanguageOrUndefined[] = [undefined, "waitau", "hakka"];
 
 export const MODEL_COMPONENT_TO_N_CHUNKS: Record<ModelComponent, number> = {
 	enc: 2,

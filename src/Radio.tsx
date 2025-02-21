@@ -6,17 +6,21 @@ import type { Dispatch } from "react";
 export default function Radio<T extends Terminology>({
 	name,
 	className,
+	activeClassName = "",
+	nonActiveClassName = "",
 	state,
 	setState,
 	value,
 }: {
 	name: string;
 	className: string;
+	activeClassName?: string;
+	nonActiveClassName?: string;
 	state: T;
 	setState: Dispatch<T>;
 	value: T;
 }) {
-	return <label className={`btn btn-outline text-base join-item ${className}${state === value ? " btn-active" : ""}`}>
+	return <label className={`${className} ${state === value ? activeClassName : nonActiveClassName}`}>
 		<input
 			type="radio"
 			className="sr-only"
@@ -26,6 +30,9 @@ export default function Radio<T extends Terminology>({
 			checked={state === value}
 			onChange={() => setState(value)} />
 		{VOICE_TO_ICON[value as Voice]}
-		{TERMINOLOGY[value]}
+		<div>
+			<div>{TERMINOLOGY[value]}</div>
+			<div className="text-[60%]">{value[0].toUpperCase() + value.slice(1)}</div>
+		</div>
 	</label>;
 }

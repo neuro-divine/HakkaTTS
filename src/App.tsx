@@ -1,11 +1,12 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 
-import { MdError, MdSettings } from "react-icons/md";
+import { MdError, MdLanguage, MdRecordVoiceOver, MdSettings, MdSwapHoriz } from "react-icons/md";
 
-import { DOWNLOAD_STATUS_INDICATOR_CLASS, NO_AUTO_FILL } from "./consts";
+import { DOWNLOAD_STATUS_INDICATOR_CLASS, LANGUAGE_TO_TEXT_COLOR_CLASS, NO_AUTO_FILL, TERMINOLOGY } from "./consts";
 import { DBProvider } from "./db/DBContext";
 import { useDownloadState, useQueryOptions } from "./hooks";
+import LanguageSelectionDialog from "./LanguageSelectionDialog";
 import { segment } from "./parse";
 import Radio from "./Radio";
 import SentenceCard from "./SentenceCard";
@@ -35,7 +36,7 @@ export default function App() {
 	}, [textArea, btnAddSentence]);
 
 	const addSentence = useCallback(() => {
-		if (!textArea.current) return;
+		if (!textArea.current || !language) return;
 		setSentences([
 			...textArea.current.value.split("\n").flatMap(text => (text.trim() ? [{ language, voice, inferenceMode, voiceSpeed, syllables: segment(text) }] : [])),
 			...sentences,
@@ -51,6 +52,20 @@ export default function App() {
 		observer.observe(currTextArea);
 		return () => observer.unobserve(currTextArea);
 	}, [textArea, resizeElements]);
+
+	const languageSelectionDialog = useRef<HTMLDialogElement>(null);
+	const showLanguageSelectionDialog = useCallback(() => {
+		const { current: dialog } = languageSelectionDialog;
+		if (dialog && !dialog.open) {
+			setLanguage(undefined);
+			dialog.inert = true;
+			dialog.showModal();
+			dialog.inert = false;
+		}
+	}, [setLanguage]);
+	useEffect(() => {
+		if (!language) showLanguageSelectionDialog();
+	}, [language, showLanguageSelectionDialog]);
 
 	const [currSettingsDialogPage, setCurrSettingsDialogPage] = useState<SettingsDialogPage>(null);
 	const settingsDialog = useRef<HTMLDialogElement>(null);
@@ -72,19 +87,49 @@ export default function App() {
 	return <DBProvider>
 		<div>
 			<div>
-				<div className="flex items-end gap-3 mb-4">
+				<div className="flex items-top gap-3 mb-4">
 					<div>
-						<div className="text-primary text-lg font-semibold ms-0.5 mb-0.5 tracking-widest">語言</div>
-						<div className="join bg-base-100" role="group" aria-label="選擇語言">
-							<Radio name="btnlanguage" className="btn-primary" state={language} setState={setLanguage} value="waitau" />
-							<Radio name="btnlanguage" className="btn-primary" state={language} setState={setLanguage} value="hakka" />
+						<div className="flex items-center gap-1 text-slate-700 text-lg font-semibold mb-1 tracking-widest">
+							<MdLanguage className="relative top-[1px]" />
+							語言
+						</div>
+						<div className={`flex flex-col items-center justify-center h-12 text-2xl/tight font-semibold ${language ? LANGUAGE_TO_TEXT_COLOR_CLASS[language] : "text-[#318ab6]"}`}>
+							<div>{TERMINOLOGY[language!] || "未選擇"}</div>
+							<div className={language ? "text-[60%]" : "text-[50%]"}>{language ? language[0].toUpperCase() + language.slice(1) : "Unselected"}</div>
 						</div>
 					</div>
 					<div>
-						<div className="text-secondary text-lg font-semibold ms-0.5 mb-0.5 tracking-widest">聲線</div>
-						<div className="join bg-base-100" role="group" aria-label="選擇聲線">
-							<Radio name="btnvoice" className="btn-secondary" state={voice} setState={setVoice} value="male" />
-							<Radio name="btnvoice" className="btn-secondary" state={voice} setState={setVoice} value="female" />
+						<button type="button" className="btn btn-ghost max-sm:btn-sm max-sm:px-2.5 relative flex-col flex-nowrap gap-0 text-lg whitespace-nowrap h-20 min-h-20 text-slate-500 font-extrabold hover:bg-opacity-10" onClick={showLanguageSelectionDialog}>
+							<MdSwapHoriz size="2em" />
+							{language ? "更改語言" : "選擇語言"}
+							{createPortal(
+								<LanguageSelectionDialog ref={languageSelectionDialog} queryOptions={queryOptions} />,
+								document.body,
+							)}
+						</button>
+					</div>
+					<div>
+						<div className="flex items-center gap-1 text-slate-700 text-lg font-semibold ms-0.5 mb-0.5 tracking-widest">
+							<MdRecordVoiceOver />
+							聲線
+						</div>
+						<div className="join" role="group" aria-label="選擇聲線">
+							<Radio
+								name="btnvoice"
+								className="btn join-item text-base/tight border-[#2189f1] hover:bg-[#126fcb] hover:border-[#126fcb] hover:text-base-100 border-r-0"
+								activeClassName="bg-[#2189f1] text-base-100"
+								nonActiveClassName="btn-outline bg-white text-[#126fcb]"
+								state={voice}
+								setState={setVoice}
+								value="male" />
+							<Radio
+								name="btnvoice"
+								className="btn join-item text-base/tight border-[#f553a3] hover:bg-[#d13f87] hover:border-[#d13f87] hover:text-base-100 border-l-0"
+								activeClassName="bg-[#f553a3] text-base-100"
+								nonActiveClassName="btn-outline bg-white text-[#d13f87]"
+								state={voice}
+								setState={setVoice}
+								value="female" />
 						</div>
 					</div>
 					<div>

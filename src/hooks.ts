@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useReducer, useRef, useState } from "react";
 
-import { ALL_HAKKA_TONE_MODES, ALL_INFERENCE_MODES, ALL_LANGUAGES, ALL_VOICES, DOWNLOAD_STATUS_PRIORITY } from "./consts";
+import { ALL_HAKKA_TONE_MODES, ALL_INFERENCE_MODES, ALL_LANGUAGES_OR_UNDEFINED, ALL_VOICES, DOWNLOAD_STATUS_PRIORITY } from "./consts";
 
-import type { ActualDownloadStatus, DownloadState, HakkaToneMode, InferenceMode, Language, OfflineInferenceMode, QueryOptions, Voice } from "./types";
+import type { ActualDownloadStatus, DownloadState, HakkaToneMode, InferenceMode, LanguageOrUndefined, OfflineInferenceMode, QueryOptions, Voice } from "./types";
 
 const currentDownloadStates = new Map<OfflineInferenceMode, Map<string, ActualDownloadStatus>>();
 
@@ -28,7 +28,7 @@ export function useQueryOptions(): QueryOptions {
 			return ([searchParams.get(key), localStorage.getItem(key)] as T[]).find(value => allValues.includes(value)) || allValues[0];
 		}
 		return {
-			language: parseOption("language", ALL_LANGUAGES),
+			language: parseOption("language", ALL_LANGUAGES_OR_UNDEFINED),
 			voice: parseOption("voice", ALL_VOICES),
 			mode: ALL_INFERENCE_MODES.find(mode => searchParams.has(mode)) || parseOption("mode", ALL_INFERENCE_MODES),
 			speed: +([searchParams.get("speed"), localStorage.getItem("speed")].find((speed): speed is string => !!speed && +speed >= 0.5 && +speed <= 2) || "1"),
@@ -45,7 +45,7 @@ export function useQueryOptions(): QueryOptions {
 		inferenceMode,
 		voiceSpeed,
 		hakkaToneMode,
-		setLanguage: (language: Language) => setQueryOptions(oldOptions => ({ ...oldOptions, language })),
+		setLanguage: (language: LanguageOrUndefined) => setQueryOptions(oldOptions => ({ ...oldOptions, language })),
 		setVoice: (voice: Voice) => setQueryOptions(oldOptions => ({ ...oldOptions, voice })),
 		setInferenceMode: (inferenceMode: InferenceMode) => setQueryOptions(oldOptions => ({ ...oldOptions, mode: inferenceMode })),
 		setVoiceSpeed: (voiceSpeed: number) => setQueryOptions(oldOptions => ({ ...oldOptions, speed: voiceSpeed })),

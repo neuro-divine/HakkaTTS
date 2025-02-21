@@ -8,6 +8,8 @@ export type Language = "waitau" | "hakka";
 export type Voice = "male" | "female";
 export type Terminology = Language | Voice | HakkaToneMode;
 
+export type LanguageOrUndefined = Language | undefined; // Using `undefined` since `URLSearchParams#get` returns `null` when the parameter is absent. If so, a `null` in `allValues` in `hooks.ts` will cause the result of `localStorage.getItem` to be ignored
+
 export type PronToNoteMap = Map<string, string>;
 
 export interface Edge {
@@ -130,12 +132,12 @@ export type DownloadStatus =
 	| "save_incomplete";
 
 export interface QueryOptions {
-	language: Language;
+	language: LanguageOrUndefined;
 	voice: Voice;
 	inferenceMode: InferenceMode;
 	voiceSpeed: number;
 	hakkaToneMode: HakkaToneMode;
-	setLanguage: Dispatch<Language>;
+	setLanguage: Dispatch<LanguageOrUndefined>;
 	setVoice: Dispatch<Voice>;
 	setInferenceMode: Dispatch<InferenceMode>;
 	setVoiceSpeed: Dispatch<number>;

@@ -128,8 +128,20 @@ const SettingsDialog = forwardRef<HTMLDialogElement, SettingDialogProps>(functio
 								</div>
 								<div className="flex-1 flex flex-col gap-1 text-xl font-medium">客家話標調方式</div>
 								<div className="join" role="group">
-									<Radio name="hakkaToneMode" className="btn-primary h-10 min-h-10" state={hakkaToneMode} setState={setHakkaToneMode} value="diacritics" />
-									<Radio name="hakkaToneMode" className="btn-primary h-10 min-h-10" state={hakkaToneMode} setState={setHakkaToneMode} value="digits" />
+									<Radio
+										name="hakkaToneMode"
+										className="btn join-item btn-primary text-base/tight h-11 min-h-11 pb-[1px]"
+										nonActiveClassName="btn-outline"
+										state={hakkaToneMode}
+										setState={setHakkaToneMode}
+										value="diacritics" />
+									<Radio
+										name="hakkaToneMode"
+										className="btn join-item btn-primary text-base/tight h-11 min-h-11 pb-[1px]"
+										nonActiveClassName="btn-outline"
+										state={hakkaToneMode}
+										setState={setHakkaToneMode}
+										value="digits" />
 								</div>
 							</li>
 							<CopyURLRow urlWithQuery={urlWithQuery} />
